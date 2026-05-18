@@ -104,6 +104,26 @@
       padding: 3px 8px;
       margin-bottom: 10px;
     }
+    .machine-img {
+      margin: 14px 0 4px 0;
+      border: 1px solid var(--rule);
+      background: var(--paper-dk);
+      padding: 6px;
+      display: inline-block;
+      max-width: 100%;
+    }
+    .machine-img img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+    .machine-img-caption {
+      font-size: 10px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--ink-faint);
+      margin-top: 5px;
+    }
   </style>
 </head>
 <body>
@@ -219,6 +239,10 @@
           </p>
         </div>
 
+        <div class="machine-img">
+          <img src="equipment/literature/wubook/clip_image002.gif" alt="Western Union Field Service Manual">
+          <div class="machine-img-caption">Western Union Field Technical Service Manual</div>
+        </div>
         <div class="dl-row">
           <a href="equipment/literature/wubook/cover.pdf"    class="dl-tag">&#9660; Cover</a>
           <a href="equipment/literature/wubook/contents.pdf" class="dl-tag">&#9660; Contents</a>
@@ -304,36 +328,6 @@
         </div>
       </div>
 
-      <!-- Introduction to Amateur RTTY -->
-      <div class="doc-entry" id="hoff-intro">
-        <div class="doc-hed">Introduction to Amateur Radio Teletype</div>
-        <div class="doc-meta">
-          Frederick Electronics Corporation &bull; Complete Booklet
-        </div>
-        <div class="author-credit">Irvin M. Hoff K8DKG</div>
-        <div class="doc-body">
-          <p>
-            Written by Irvin M. Hoff K8DKG for Frederick Electronics Corporation, this
-            booklet remains one of the clearest and most complete introductions to amateur
-            RTTY ever published. It covers the theory of Baudot telegraphy, the mechanics
-            of teletype machines, terminal unit design, and the practical aspects of
-            getting on the air &mdash; all from the perspective of an operator and designer
-            who built some of the most widely used terminal units in the hobby.
-          </p>
-          <p>
-            Hoff is the designer of the Mainline TT/L, ST-3, ST-5, ST-6, and UT-2
-            demodulators documented in the
-            <a href="equipment-tu.html" style="color:var(--red)">Terminal Units</a> section.
-            His writing reflects practical expertise accumulated over decades of amateur
-            RTTY operation, and the booklet is as useful today as when it was written.
-          </p>
-        </div>
-        <div class="dl-row">
-          <a href="equipment/literature/introduction.htm"
-             class="dl-tag primary">&#9654; Read Online</a>
-        </div>
-      </div>
-
     </main>
 
     <!-- Sidebar -->
@@ -345,7 +339,6 @@
         <div class="sb-item"><a href="#wubook">&#9654; Western Union Field Service Manual</a></div>
         <div class="sb-item"><a href="#ttytools">&#9654; TTY Maintenance Tools Catalog</a></div>
         <div class="sb-item"><a href="#stuntbox">&#9654; The Stunt Box Book</a></div>
-        <div class="sb-item"><a href="#hoff-intro">&#9654; Introduction to Amateur RTTY</a></div>
       </div>
 
       <div class="sb-box">

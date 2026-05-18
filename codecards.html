@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Code Card Corner — RTTY.COM</title>
+  <meta name="description" content="Teletype and teleprinter code cards — pocket and wallet reference cards carried by teletype repairmen and data communications professionals.">
+  <link rel="stylesheet" href="css/rtty.css">
+  <style>
+    .card-item {
+      margin-bottom: 36px;
+      padding-bottom: 36px;
+      border-bottom: 1px solid var(--rule);
+      scroll-margin-top: 16px;
+    }
+    .card-item:last-child { border-bottom: none; margin-bottom: 0; }
+
+    .card-name {
+      font-family: 'Special Elite', serif;
+      font-size: 20px;
+      color: var(--ink);
+      margin-bottom: 4px;
+    }
+    .card-meta {
+      font-size: 11px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--ink-ghost);
+      margin-bottom: 14px;
+    }
+    .card-img {
+      margin: 10px 0 6px;
+    }
+    .card-img img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      border: 1px solid var(--rule);
+    }
+    .card-img-caption {
+      font-size: 11px;
+      color: var(--ink-faint);
+      font-style: italic;
+      margin-top: 4px;
+    }
+    .card-pair {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin: 10px 0;
+    }
+  </style>
+</head>
+<body>
+
+<canvas id="tapeTop" class="tape" aria-hidden="true"></canvas>
+
+<header class="masthead">
+  <div class="mh-side">PRESERVATION OF RTTY HISTORY<br>TELETYPE ART &amp; CULTURE<br>EST. LATE 1990S</div>
+  <div class="mh-center">
+    <a href="index.html" class="site-name">RTTY.COM</a>
+    <span class="site-tag">The Radio Teletype Reference &amp; Archive</span>
+  </div>
+  <div class="mh-side mh-right">THE INTERNET'S OLDEST<br>RTTY RESOURCE<br>BAUDOT &bull; TELETYPE &bull; WIRE</div>
+</header>
+
+<nav class="site-nav" aria-label="Main navigation">
+  <a href="index.html">Home</a>
+  <a href="history.html">History</a>
+  <a href="gallery.html">RTTY Art</a>
+  <a href="equipment.html">Equipment</a>
+  <a href="itty.html">ITTY</a>
+  <a href="resources.html" class="active">Resources</a>
+  <a href="community.html">Community</a>
+  <a href="links.html">Links</a>
+</nav>
+
+<div class="dateline">
+  <strong>CODE CARD CORNER</strong> &mdash;
+  TELETYPE &amp; DATA COMMUNICATIONS REFERENCE CARDS
+</div>
+
+<div class="page-wrap">
+  <div class="two-col">
+
+    <main class="col-main">
+
+      <div class="prose" style="margin-bottom:28px">
+        <p>
+          Teletype repairmen and data communications professionals almost always
+          carried pocket and wallet reference cards listing the codes, character
+          positions, and signal parameters for the machines they serviced. They
+          were issued by manufacturers, telephone companies, and training programs
+          &mdash; often trade-show giveaways or badges of honor from technical schools.
+          The collection below preserves a sample of these cards. Contributions
+          are welcome; contact W2TTY.
+        </p>
+        <p style="font-size:12px;color:var(--ink-faint);font-style:italic">
+          Copyright &copy; George Hutchison W7TTY &amp; Bill Bytheway K7TTY. All rights reserved.
+        </p>
+      </div>
+
+      <!-- 1 -->
+      <div class="card-item" id="model28">
+        <div class="card-name">Model 28 Teletype Code Card</div>
+        <div class="card-img">
+          <img src="equipment/codecard/codcrd01.jpg" alt="Model 28 Teletype Code Card">
+          <div class="card-img-caption">Teletype Model 28 code card — Baudot ITA2 character table</div>
+        </div>
+      </div>
+
+      <!-- 2 -->
+      <div class="card-item" id="50th">
+        <div class="card-name">Teletype Corporation 50th Anniversary Code Card</div>
+        <div class="card-img">
+          <img src="equipment/codecard/codcrd02.jpg" alt="Teletype Corporation 50th Anniversary Code Card">
+          <div class="card-img-caption">Commemorative code card issued for the Teletype Corporation&rsquo;s 50th anniversary</div>
+        </div>
+      </div>
+
+      <!-- 3 -->
+      <div class="card-item" id="model35typebox">
+        <div class="card-name">Model 35 TypeBox Code Chart</div>
+        <div class="card-img">
+          <img src="equipment/codecard/codcrd3.jpg" alt="Model 35 TypeBox Code Chart">
+          <div class="card-img-caption">Character code chart for the Teletype Model 35 TypeBox print mechanism</div>
+        </div>
+      </div>
+
+      <!-- 4 -->
+      <div class="card-item" id="cncp">
+        <div class="card-name">Canadian Pacific &mdash; Canadian National Telecommunications Code Card</div>
+        <div class="card-img">
+          <img src="equipment/codecard/codcrd04.jpg" alt="Canadian Pacific - Canadian National Telecommunications Code Card">
+          <div class="card-img-caption">CP/CN Telecommunications code reference card</div>
+        </div>
+      </div>
+
+      <!-- 5 -->
+      <div class="card-item" id="model28typebox">
+        <div class="card-name">Model 28 TypeBox Code Chart</div>
+        <div class="card-img">
+          <img src="equipment/codecard/codcrd5.jpg" alt="Model 28 Typebox Code Chart">
+          <div class="card-img-caption">Character code chart for the Teletype Model 28 TypeBox print mechanism</div>
+        </div>
+      </div>
+
+      <!-- 6 -->
+      <div class="card-item" id="mergenthaler">
+        <div class="card-name">Mergenthaler Composition Systems Code Card</div>
+        <div class="card-img">
+          <img src="equipment/codecard/codcrd6.jpg" alt="Mergenthaler Composition Systems Code Card">
+          <div class="card-img-caption">Mergenthaler Linotype Company code reference for composition systems</div>
+        </div>
+      </div>
+
+      <!-- 7 -->
+      <div class="card-item" id="ge">
+        <div class="card-name">General Electric Service USASCII Code Chart</div>
+        <div class="card-img">
+          <img src="equipment/codecard/gecrds.jpg" alt="General Electric Service USASCII Code chart">
+          <div class="card-img-caption">GE Service division ASCII code reference chart</div>
+        </div>
+      </div>
+
+      <!-- 8 -->
+      <div class="card-item" id="westernunion1968">
+        <div class="card-name">Western Union 1968 ASCII &amp; Five-Level Codes</div>
+        <div class="card-meta">Contributed by Russ Miller WA3FRP</div>
+        <div class="card-pair">
+          <div class="card-img">
+            <img src="equipment/codecard/WesternUnionCodeCardBack.jpg" alt="Western Union 1968 Code Card — back">
+            <div class="card-img-caption">Back — ASCII code table</div>
+          </div>
+          <div class="card-img">
+            <img src="equipment/codecard/WesternUnionCodeCardFront.jpg" alt="Western Union 1968 Code Card — front">
+            <div class="card-img-caption">Front — Five-level Baudot and ASCII comparison</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 9 -->
+      <div class="card-item" id="uk-post">
+        <div class="card-name">United Kingdom Post Office &mdash; International Telegraphs Five Unit Slip Reading</div>
+        <div class="card-meta">Contributed by Larry Rice VK6CP</div>
+        <div class="card-img">
+          <img src="equipment/codecard/POIT-UK.jpg" alt="UK Post Office International Telegraphs Five Unit Slip Reading">
+          <div class="card-img-caption">British Post Office ITA2 five-unit code slip-reading reference</div>
+        </div>
+      </div>
+
+      <!-- 10 -->
+      <div class="card-item" id="au-ita2">
+        <div class="card-name">Telecom Australia &mdash; International Telegraph Code No. 2</div>
+        <div class="card-meta">Contributed by Larry Rice VK6CP</div>
+        <div class="card-img">
+          <img src="equipment/codecard/AUNr2.jpg" alt="Telecom Australia International Telegraph Code No. 2">
+          <div class="card-img-caption">Australian ITA2 (International Telegraph Alphabet No. 2) reference card</div>
+        </div>
+      </div>
+
+      <!-- 11 -->
+      <div class="card-item" id="au-ia5">
+        <div class="card-name">Telecom Australia &mdash; International Alphabet No. 5</div>
+        <div class="card-meta">Contributed by Larry Rice VK6CP</div>
+        <div class="card-img">
+          <img src="equipment/codecard/AUNr5.jpg" alt="Telecom Australia International Alphabet No. 5">
+          <div class="card-img-caption">Australian IA5 (ASCII) reference card</div>
+        </div>
+      </div>
+
+      <!-- 12 -->
+      <div class="card-item" id="model3335">
+        <div class="card-name">Model 33/35 ASCII</div>
+        <div class="card-meta">Contributed by Steve Ripper</div>
+        <div class="card-pair">
+          <div class="card-img">
+            <img src="equipment/codecard/Card_9-A.jpg" alt="Model 33/35 ASCII code card — side A">
+            <div class="card-img-caption">Side A</div>
+          </div>
+          <div class="card-img">
+            <img src="equipment/codecard/Card_9-B.jpg" alt="Model 33/35 ASCII code card — side B">
+            <div class="card-img-caption">Side B</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 13 -->
+      <div class="card-item" id="model32">
+        <div class="card-name">Model 32 BAUDOT</div>
+        <div class="card-meta">Contributed by Steve Ripper</div>
+        <div class="card-pair">
+          <div class="card-img">
+            <img src="equipment/codecard/Card_8-A.jpg" alt="Model 32 Baudot code card — side A">
+            <div class="card-img-caption">Side A</div>
+          </div>
+          <div class="card-img">
+            <img src="equipment/codecard/Card_8-B.jpg" alt="Model 32 Baudot code card — side B">
+            <div class="card-img-caption">Side B</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 14 -->
+      <div class="card-item" id="terminet">
+        <div class="card-name">TermiNet 300 Data Communications Printer</div>
+        <div class="card-meta">Contributed by Steve Ripper</div>
+        <div class="card-pair">
+          <div class="card-img">
+            <img src="equipment/codecard/Card_7-A.jpg" alt="TermiNet 300 code card — side A">
+            <div class="card-img-caption">Side A</div>
+          </div>
+          <div class="card-img">
+            <img src="equipment/codecard/Card_7-B.jpg" alt="TermiNet 300 code card — side B">
+            <div class="card-img-caption">Side B</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 15 -->
+      <div class="card-item" id="wu-keyboard">
+        <div class="card-name">Western Union Keyboard &amp; 5-Channel Tape Codes</div>
+        <div class="card-meta">Contributed by Steve Ripper</div>
+        <div class="card-pair">
+          <div class="card-img">
+            <img src="equipment/codecard/Card_6-B.jpg" alt="Western Union keyboard and tape codes — side B">
+            <div class="card-img-caption">Side B — 5-channel tape code chart</div>
+          </div>
+          <div class="card-img">
+            <img src="equipment/codecard/Card_6-A.jpg" alt="Western Union keyboard and tape codes — side A">
+            <div class="card-img-caption">Side A — keyboard layout</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 16 -->
+      <div class="card-item" id="pulse">
+        <div class="card-name">Pulse Communications, Inc.</div>
+        <div class="card-meta">Contributed by Steve Ripper</div>
+        <div class="card-pair">
+          <div class="card-img">
+            <img src="equipment/codecard/Card_5-B.jpg" alt="Pulse Communications code card — side B">
+            <div class="card-img-caption">Side B</div>
+          </div>
+          <div class="card-img">
+            <img src="equipment/codecard/Card_5-A.jpg" alt="Pulse Communications code card — side A">
+            <div class="card-img-caption">Side A</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 17 -->
+      <div class="card-item" id="cncp2">
+        <div class="card-name">CNCP Telecommunications</div>
+        <div class="card-meta">Contributed by Steve Ripper</div>
+        <div class="card-pair">
+          <div class="card-img">
+            <img src="equipment/codecard/Card_4-B.jpg" alt="CNCP Telecommunications code card — side B">
+            <div class="card-img-caption">Side B</div>
+          </div>
+          <div class="card-img">
+            <img src="equipment/codecard/Card_4-A.jpg" alt="CNCP Telecommunications code card — side A">
+            <div class="card-img-caption">Side A</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 18 -->
+      <div class="card-item" id="northern-electric">
+        <div class="card-name">Northern Electric NE-32 Teleprinter</div>
+        <div class="card-meta">Contributed by Steve Ripper</div>
+        <div class="card-pair">
+          <div class="card-img">
+            <img src="equipment/codecard/Card_3-B.jpg" alt="Northern Electric NE-32 code card — side B">
+            <div class="card-img-caption">Side B</div>
+          </div>
+          <div class="card-img">
+            <img src="equipment/codecard/Card_3-A.jpg" alt="Northern Electric NE-32 code card — side A">
+            <div class="card-img-caption">Side A</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 19 -->
+      <div class="card-item" id="cncp-ebcdic">
+        <div class="card-name">CNCP Telecommunications System Training &mdash; EBCDIC/ASCII</div>
+        <div class="card-meta">Contributed by Steve Ripper</div>
+        <div class="card-pair">
+          <div class="card-img">
+            <img src="equipment/codecard/Card_2-B.jpg" alt="CNCP EBCDIC/ASCII training card — side B">
+            <div class="card-img-caption">Side B</div>
+          </div>
+          <div class="card-img">
+            <img src="equipment/codecard/Card_2-A.jpg" alt="CNCP EBCDIC/ASCII training card — side A">
+            <div class="card-img-caption">Side A</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 20 -->
+      <div class="card-item" id="cncp-eia">
+        <div class="card-name">CNCP Telecommunications System Training &mdash; EIA Modem</div>
+        <div class="card-meta">Contributed by Steve Ripper</div>
+        <div class="card-pair">
+          <div class="card-img">
+            <img src="equipment/codecard/Card_1-B.jpg" alt="CNCP EIA Modem training card — side B">
+            <div class="card-img-caption">Side B</div>
+          </div>
+          <div class="card-img">
+            <img src="equipment/codecard/Card_1-A.jpg" alt="CNCP EIA Modem training card — side A">
+            <div class="card-img-caption">Side A</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 21 -->
+      <div class="card-item" id="stone-straw">
+        <div class="card-name">Stone Straw Corporation</div>
+        <div class="card-meta">Contributed by Steve Ripper</div>
+        <div class="card-img">
+          <img src="equipment/codecard/Card_10.jpg" alt="Stone Straw Corporation code card">
+          <div class="card-img-caption">Stone Straw Corporation teletype code card</div>
+        </div>
+      </div>
+
+    </main>
+
+    <!-- Sidebar -->
+    <aside class="col-side">
+
+      <div class="sb-box">
+        <div class="sb-hed">On This Page</div>
+        <div class="sb-note" style="font-size:12px">
+          <a href="#model28"        style="display:block;padding:4px 0;border-bottom:1px dotted var(--rule);color:var(--ink-mid);text-decoration:none">&#9654; Model 28 Code Card</a>
+          <a href="#50th"           style="display:block;padding:4px 0;border-bottom:1px dotted var(--rule);color:var(--ink-mid);text-decoration:none">&#9654; TTY Corp 50th Anniversary</a>
+          <a href="#model35typebox" style="display:block;padding:4px 0;border-bottom:1px dotted var(--rule);color:var(--ink-mid);text-decoration:none">&#9654; Model 35 TypeBox</a>
+          <a href="#cncp"           style="display:block;padding:4px 0;border-bottom:1px dotted var(--rule);color:var(--ink-mid);text-decoration:none">&#9654; CP/CN Telecommunications</a>
+          <a href="#model28typebox" style="display:block;padding:4px 0;border-bottom:1px dotted var(--rule);color:var(--ink-mid);text-decoration:none">&#9654; Model 28 TypeBox</a>
+          <a href="#mergenthaler"   style="display:block;padding:4px 0;border-bottom:1px dotted var(--rule);color:var(--ink-mid);text-decoration:none">&#9654; Mergenthaler</a>
+          <a href="#ge"             style="display:block;padding:4px 0;border-bottom:1px dotted var(--rule);color:var(--ink-mid);text-decoration:none">&#9654; GE Service USASCII</a>
+          <a href="#westernunion1968" style="display:block;padding:4px 0;border-bottom:1px dotted var(--rule);color:var(--ink-mid);text-decoration:none">&#9654; Western Union 1968</a>
+          <a href="#uk-post"        style="display:block;padding:4px 0;border-bottom:1px dotted var(--rule);color:var(--ink-mid);text-decoration:none">&#9654; UK Post Office</a>
+          <a href="#au-ita2"        style="display:block;padding:4px 0;border-bottom:1px dotted var(--rule);color:var(--ink-mid);text-decoration:none">&#9654; Telecom Australia ITA2</a>
+          <a href="#au-ia5"         style="display:block;padding:4px 0;border-bottom:1px dotted var(--rule);color:var(--ink-mid);text-decoration:none">&#9654; Telecom Australia IA5</a>
+          <a href="#model3335"      style="display:block;padding:4px 0;border-bottom:1px dotted var(--rule);color:var(--ink-mid);text-decoration:none">&#9654; Model 33/35 ASCII</a>
+          <a href="#model32"        style="display:block;padding:4px 0;border-bottom:1px dotted var(--rule);color:var(--ink-mid);text-decoration:none">&#9654; Model 32 BAUDOT</a>
+          <a href="#terminet"       style="display:block;padding:4px 0;border-bottom:1px dotted var(--rule);color:var(--ink-mid);text-decoration:none">&#9654; TermiNet 300</a>
+          <a href="#wu-keyboard"    style="display:block;padding:4px 0;border-bottom:1px dotted var(--rule);color:var(--ink-mid);text-decoration:none">&#9654; WU Keyboard &amp; 5-Ch. Tape</a>
+          <a href="#pulse"          style="display:block;padding:4px 0;border-bottom:1px dotted var(--rule);color:var(--ink-mid);text-decoration:none">&#9654; Pulse Communications</a>
+          <a href="#cncp2"          style="display:block;padding:4px 0;border-bottom:1px dotted var(--rule);color:var(--ink-mid);text-decoration:none">&#9654; CNCP Telecommunications</a>
+          <a href="#northern-electric" style="display:block;padding:4px 0;border-bottom:1px dotted var(--rule);color:var(--ink-mid);text-decoration:none">&#9654; Northern Electric NE-32</a>
+          <a href="#cncp-ebcdic"    style="display:block;padding:4px 0;border-bottom:1px dotted var(--rule);color:var(--ink-mid);text-decoration:none">&#9654; CNCP EBCDIC/ASCII</a>
+          <a href="#cncp-eia"       style="display:block;padding:4px 0;border-bottom:1px dotted var(--rule);color:var(--ink-mid);text-decoration:none">&#9654; CNCP EIA Modem</a>
+          <a href="#stone-straw"    style="display:block;padding:4px 0;color:var(--ink-mid);text-decoration:none">&#9654; Stone Straw Corporation</a>
+        </div>
+      </div>
+
+      <div class="sb-box">
+        <div class="sb-hed">Also See</div>
+        <div class="sb-note">
+          <a href="resources.html"
+             style="display:block;padding:5px 0;border-bottom:1px dotted var(--rule);color:var(--ink-mid);text-decoration:none">
+            &#9654; Resources &amp; Reference
+          </a>
+          <a href="equipment-service.html"
+             style="display:block;padding:5px 0;border-bottom:1px dotted var(--rule);color:var(--ink-mid);text-decoration:none">
+            &#9654; Kretzman Technical Library
+          </a>
+          <a href="equipment-tu.html"
+             style="display:block;padding:5px 0;color:var(--ink-mid);text-decoration:none">
+            &#9654; Terminal Unit Schematics
+          </a>
+        </div>
+      </div>
+
+      <div class="sb-box">
+        <div class="sb-hed">About This Collection</div>
+        <div class="sb-note" style="font-size:12px;line-height:1.7">
+          Cards contributed by Russ Miller WA3FRP, Larry Rice VK6CP, Steve Ripper,
+          and others. Collection assembled by George Hutchison W7TTY and Bill Bytheway K7TTY.
+          <br><br>
+          To contribute a card scan, contact
+          <span style="color:var(--red);font-weight:700">W2TTY</span>.
+        </div>
+      </div>
+
+    </aside>
+
+  </div>
+</div>
+
+<footer class="site-footer">
+  <span>RTTY.COM &mdash; W2TTY &mdash; ARVADA, CO</span>
+  <span>NON-COMMERCIAL ARCHIVE &mdash; NO TRACKING</span>
+  <span>BAUDOT 1870 &bull; TELETYPE 1906 &bull; RTTY 1922</span>
+</footer>
+
+<canvas id="tapeBot" class="tape" aria-hidden="true"></canvas>
+<script src="js/tape.js"></script>
+</body>
+</html>
