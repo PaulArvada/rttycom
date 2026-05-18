@@ -1,0 +1,194 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+
+<meta name="GENERATOR" content="Microsoft FrontPage 6.0">
+<title>Mark-Hold and Motor-Start for the W2JAV RTTY Demodulator</title>
+</head>
+
+<body background="ltbluegrid.gif">
+
+<h1 align="center"><em><b>Mark-Hold and Motor-Start</b></em></h1>
+
+<h1 align="center"><em><b>for the</b></em></h1>
+
+<h1 align="center"><em><b>W2JAV RTTY Demodulator</b></em></h1>
+
+<p>&nbsp;</p>
+
+<p>A simple circuit, using two relays and three tubes, for
+shutting off the motor of the Teletype machine when there is no
+mark signal present BY L. G. DEDEL,<sup> </sup>WA2MSY.</p>
+
+<p><strong>DESCRIPTION</strong><br>
+My Model 19 has printed quite a few miles of &quot;brag
+tapes&quot; which are always generously offered, and seems to
+make a special effort to print without errors when informed that
+it is in contact with another W2JAV de modulator. We the machine
+and I are working with the reliable-tube model, and wonder if we
+could be happier switching to the most recent demodulator design;
+since the introduction of the &quot;Mainline TT/L&quot;, an
+astounding number of RTTY enthusiasts have found the time and
+energy to build one and applaud its performance.</p>
+
+<p>This article is written for the RTTY'er whose energy was all
+spent in the construction of his W2JAV, or whose rig looks too
+beautiful to discard, or whose mind is made up that nothing will
+ever work better than what he owns now. Well, if you are
+determined to cling to that pet of yours, at least treat it and
+yourself to a bit of &quot;automation&quot; which will up-date it
+and provide increased operating pleasure.</p>
+
+<p>When we modernize a piece of equipment, don't we all first try
+it the easy way and search through years of accumulated ham
+magazines to find the pertinent article? Why devote weeks of
+work, errors and tests to a problem that someone else has already
+solved? But this &quot;mark-hold plus autostart&quot; circuit was
+an elusive one, and the older the magazines the less they
+contained about RTTY in general. I dare assume that no similar
+circuitry has been described before. The aim of the circuit, Fig.
+1, is to create an artificial mar condition to prevent the
+printer from running &quot;open&quot; in the absence of an RTTY
+signal, and eventually to shut off the motor as well.</p>
+
+<p>Since space for expansion is hardly available on your
+demodulator chassis it would be smart to assemble a plug-in
+module, whose dimensions must be left to the requirements of the
+constructor. I obtained a 5-inch length of 4 x 2 x 1/8 inch
+aluminum angle and mounted a male octal plug on the 2-inch side
+to mate with an octal socket installed on the chassis. All
+components were then mounted on the large face of the angle.</p>
+
+<p>The RTTY signal for the module was picked up at the arm of the
+50,000-ohm balance control through a 22,000 ohm isolating
+resistor. This connection had no adverse effects on the detector
+stages of the W2JAV demodulator. The 88-mh. toroid filter, LC,
+being sharply tuned to 2125 cycles, will now separate the mark
+tone from unwanted audio frequencies, which will be severely
+attenuated. A grid-leak detector, <i>V</i><sub><i>1</i></sub><i> </i>is
+used to rectify the signal, and at filter resonance the rectified
+signal at the grid was 4 volts negative. (A 0.01 microfarad
+capacitor from grid to ground by passes remaining AC from noise
+pulses which get past the filter without attenuation.) The -4
+volts at the grid will cut off the 12AX7, <i>V</i><sub><i>1</i></sub><i>
+</i>raising the voltage on the plate sufficiently to fire the
+NE-2 neon bulb. <i>C</i><sub><i>2</i></sub><i> </i>then becomes
+positively charged and relay tube <i>V</i><sub><i>2</i></sub><i> </i>which
+was cut off by the fixed bias from a voltage divider, now
+conducts. This closes relay <i>K</i><sub><i>1</i></sub><i> </i>thereby
+disconnecting the grid of the 6AQ5 <i>V6 </i>in the W2JAV) from
+ground, and the demodulator is set up for reception.</p>
+
+<p><i>K</i><sub><i>1 </i></sub>has now, in its closed position,
+connected a -6 volt bias supply to the grids of the 12AT7,
+cutting off the plate current in this tube. With the interruption
+of current, <i>K</i><sub><i>2</i></sub><i> </i>will drop out and
+will now, through its back contact, close the 115- volt circuit
+for the printer motor, and the whole system is in operation.</p>
+
+<p>On reception of a space signal, or noise pulses in absence of
+a signal, the tuned detector filter will no longer supply that
+high negative potential to the grid continuously, and <i>V</i><sub><i>2</i></sub><i>
+</i>is no longer cut off: plate current flows, lowering the
+voltage at the plate, and the NE-2 stops firing. Some noise
+pulses will occasionally hit the cutoff value, but their duration
+is too short to charge <i>C</i><sub><i>2</i></sub><i>. </i>The
+positive voltage at the grid of <i>V</i><sub><i>2 </i></sub>now
+discharges through <i>R</i><sub><i>1 </i></sub>and this tube
+stops conduct ing. <i>K</i><sub><i>1 </i></sub>drops out,
+grounding the grid of <i>V</i><sub><i>6 </i></sub>and creating an
+effective mark-hold condition. The other pole of <i>K</i><sub><i>1
+</i></sub>becomes disconnected from the -6 volt supply, and the
+charge on C<sub>3</sub> bleeds off. <i>V</i><sub><i>3 </i></sub>begins
+to conduct and relay <i>K</i><sub><i>2</i></sub><i> </i>closes,
+thereby opening the 115-volt circuit to the motor; the whole
+system is now shut off.</p>
+
+<p align="center"><img src="w2jav_fig1.jpg" width="600" height="300"></p>
+
+<p align="left"><b>Fig. 1 Circuit of the mark-hold autastart
+system for the W2JAV converter. Except asindicated, fixed
+resistors are 1/2 watt composition. Capacitances are in
+microfarad.; except as listed below, capacitors are ceramic.
+Negative 6-volt supply may be obtained from dry cells or other
+convenient source.<br>
+</b></p>
+
+<table border="0">
+    <tr>
+        <td><ul>
+            <li><em>C</em><sub><em>1</em></sub> - Mica.</li>
+            <li><em>C</em><sub><em>2</em></sub> - Paper, 200
+                volts.</li>
+            <li><em>C</em><sub><em>3</em></sub> - Paper, low
+                voltage (lower-capacitance units may be
+                paralleled).</li>
+            <li><em>K</em><sub><em>1</em></sub> - Plate-circuit
+                relay, d.p.d.t., 10,000-ohm coil (Guardian 121
+                5-2C-1 0 or equivalent).</li>
+        </ul>
+        </td>
+        <td><ul>
+            <li><em>K</em><sub><em>2</em></sub> - S.p.s.t. or
+                s.p.d.t., 2500-ohm coil (Potter-Brumfield KCP-5
+                or equivalent).</li>
+            <li><em>L</em><sub><em>1</em></sub> - 88-mh. toroid,
+                with connection to common connection of coils.</li>
+            <li><em>R</em><sub><em>1</em></sub> - 5-megohm
+                linear-taper-control.</li>
+        </ul>
+        </td>
+    </tr>
+</table>
+
+<p>Now for some pin-point information: The response of the mark
+filter at the detector is amazingly sharp and will deprive the
+grid of its -4 volts within lot) cycles either side of resonance.
+If you wish to broaden the filter, lower the loading resistor
+across the filter from 22K to a value of, say, 18K. Don't go too
+low, because the negative voltage at the grid will be lowered
+correspondingly.</p>
+
+<p>There is a delay of approximately 3 to 5 seconds before the
+system begins to operate on the reception of an RTTY signal. The
+delay before the mark-hold feature takes over can be varied by
+means of R<sub>1</sub>, but should not be less than 3 seconds as
+the resistance of the potentiometer becomes so low as to make it
+impossible for <i>C</i><sub><i>2</i></sub><i> </i>to accumulate
+any charge. The time constant at the grid of <i>V</i><sub><i>3</i></sub><i>
+</i>is not at all critical. The com bination of 5 microfarad and
+220K provides a delay of about 25 seconds before the printer
+motor shots off.</p>
+
+<p>The manual switch, S1 is an absolute necessity for
+disconnecting the adapter from the demodulator. Printing on space
+only with the module in the circuit would be impossible, as the
+system would simply shut down. The sys tem is capable of handling
+narrow shift equally well.</p>
+
+<p>The values of the remaining components are fairly critical,
+and their suggested values should be adhered to. The only item
+not available in my junk box or on the surplus market was <i>K</i><sub><i>1</i></sub><i>,
+K</i><sub><i>2 </i></sub>can be obtained at negligible cost from
+surplus houses. Be sure to resonate your mark filter at exactly
+2125 cycles or your detector grid voltage will not be
+sufficiently high to work the system at optimum efficiency.</p>
+
+<p>I have worked with this adapter in my de modulator for some
+months now, and while I don't claim that it could not be improved
+upon, it has been working better than expected; as a matter of
+fact, it works without flaw, at least as far as RTTY signals are
+concerned. A CW signal copied exactly on mark will activate your
+printer in rhythm, but the printer will not run open as on space.
+No amount of atmospheric noise, regardless of its amplitude, will
+cancel the mark-hold condition.</p>
+
+<p>You'll be pleased with the performance of this module and will
+wonder how you managed to bear the noise of an open machine all
+these years!</p>
+
+<hr>
+</body>
+</html>
