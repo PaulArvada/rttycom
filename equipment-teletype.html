@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teletype Machines — Equipment — RTTY.COM</title>
+  <meta name="description" content="Technical reference for Teletype Corporation machines: Models 14, 15, 19, 28, 32, MITE, and tape equipment.">
+  <link rel="stylesheet" href="css/rtty.css">
+  <style>
+    .machine-entry {
+      margin-bottom: 32px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid var(--rule);
+      scroll-margin-top: 16px;
+    }
+    .machine-entry:last-child { border-bottom: none; margin-bottom: 0; }
+
+    .machine-hed {
+      font-family: 'Special Elite', serif;
+      font-size: 24px;
+      color: var(--ink);
+      margin-bottom: 4px;
+      line-height: 1.2;
+    }
+    .machine-meta {
+      font-size: 10px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--ink-ghost);
+      margin-bottom: 12px;
+    }
+    .machine-body {
+      font-size: 16px;
+      line-height: 1.85;
+      color: var(--ink-mid);
+    }
+    .machine-body p { margin-bottom: 1em; }
+    .machine-body p:last-of-type { margin-bottom: 12px; }
+
+    .dl-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px dotted var(--rule);
+    }
+    .dl-tag {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--ink-faint);
+      padding: 5px 10px;
+      background: var(--paper-dk);
+      border: 1px solid var(--rule);
+      text-decoration: none;
+      transition: all .15s;
+      white-space: nowrap;
+    }
+    .dl-tag:hover { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+
+    /* Sidebar nav */
+    .machine-nav .sb-item { font-size: 11px; }
+    .machine-nav .sb-item a {
+      color: var(--ink-mid);
+      text-decoration: none;
+      display: block;
+    }
+    .machine-nav .sb-item a:hover { color: var(--red); }
+
+    .note-box {
+      background: var(--paper-dk);
+      border-left: 3px solid var(--rule-dk);
+      padding: 10px 14px;
+      font-size: 12px;
+      color: var(--ink-faint);
+      font-style: italic;
+      margin: 12px 0;
+      line-height: 1.7;
+    }
+  </style>
+</head>
+<body>
+
+<canvas id="tapeTop" class="tape" aria-hidden="true"></canvas>
+
+<header class="masthead">
+  <div class="mh-side">PRESERVATION OF RTTY HISTORY<br>TELETYPE ART &amp; CULTURE<br>EST. LATE 1990S</div>
+  <div class="mh-center">
+    <a href="index.html" class="site-name">RTTY.COM</a>
+    <span class="site-tag">The Radio Teletype Reference &amp; Archive</span>
+  </div>
+  <div class="mh-side mh-right">THE INTERNET'S OLDEST<br>RTTY RESOURCE<br>BAUDOT &bull; TELETYPE &bull; WIRE</div>
+</header>
+
+<nav class="site-nav" aria-label="Main navigation">
+  <a href="index.html">Home</a>
+  <a href="history.html">History</a>
+  <a href="gallery.html">RTTY Art</a>
+  <a href="equipment.html" class="active">Equipment</a>
+  <a href="itty.html">ITTY</a>
+  <a href="resources.html">Resources</a>
+  <a href="community.html">Community</a>
+  <a href="links.html">Links</a>
+</nav>
+
+<div class="dateline">
+  <strong>TELETYPE MACHINES</strong> &mdash;
+  KRETZMAN TECHNICAL LIBRARY &mdash;
+  <a href="equipment.html" style="color:var(--ink-faint);text-decoration:none">&#8592; Back to Equipment</a>
+</div>
+
+<div class="page-wrap">
+  <div class="two-col">
+
+    <main class="col-main">
+
+      <!-- Model 14 -->
+      <div class="machine-entry" id="model-14">
+        <div class="machine-hed">Model 14 Typing &amp; Non-Typing Reperforator</div>
+        <div class="machine-meta">Teletype Corporation &bull; Military &amp; Bell System</div>
+        <div class="machine-body">
+          <p>
+            The Model 14 Reperforator was produced in numerous wiring configurations for both
+            military and Bell System applications. The schematics presented here were scanned
+            from War Department Technical Manual TM-11-2223, issued September 1947, and include
+            all diagrams from that manual.
+          </p>
+          <p>
+            The principal differences between machines will be found in the motor type and the
+            selector type. <strong>Pulling magnet selectors</strong> have round coils covered
+            with black insulation resembling friction tape, or a greenish-grey insulating material;
+            these are wired only in series and operated only on 60 milliamperes loop current.
+            <strong>Holding magnet selectors</strong> are characterized by rectangular-shaped coils
+            with &ldquo;HM&rdquo; stamped on the range finder; these offer series or parallel
+            operation via a toggle switch or terminal strip, at either 20 or 60 milliamperes.
+          </p>
+          <p>
+            <strong>Synchronous motors</strong> are characterized by a fan mounted on the rear.
+            <strong>Governed motors</strong> feature a black-and-white target assembly; speed is
+            adjustable and set by viewing the target through a specially shuttered 87.6 VPS tuning
+            fork. Running speed was typically 2100 RPM. The schematics are thirteen pages; they
+            are scanned so that pages may be trimmed and taped together to reconstruct full-size
+            drawings. Vertical registration is consistent.
+          </p>
+        </div>
+        <div class="dl-row">
+          <a href="equipment/teletype/model-14/model14-schematics.pdf" class="dl-tag">&#9660; Schematics PDF (13 pages)</a>
+        </div>
+      </div>
+
+      <!-- Model 15 -->
+      <div class="machine-entry" id="model-15">
+        <div class="machine-hed">Model 15 KSR</div>
+        <div class="machine-meta">Teletype Corporation &bull; 60 WPM &bull; Page Printer</div>
+        <div class="machine-body">
+          <p>
+            The Model 15 is a self-contained page printer with keyboard and motor. It uses a
+            single magnet selector which can be operated direct from a terminal unit or through
+            a polar relay. Two selector types exist: the <strong>pull type</strong>, which requires
+            current to pull the selector back after each operation; and the <strong>holding type</strong>,
+            which mechanically returns the selector after each operation. Both types can be operated
+            with the two coils in series or parallel for 30 or 60 milliampere operation.
+          </p>
+          <p>
+            The paper is held on a roller that does not move laterally; the type basket travels
+            from left to right as copy is received. The range finder is located on the left side
+            and is adjustable through a small door. An unshift-on-space cut-out lever is provided
+            under the front of the printer &mdash; of particular value when copying weak DX signals,
+            as it prevents a static pulse on the shift line from putting the machine into upper case.
+          </p>
+          <p>
+            The keyboard has the standard distribution assembly shared with the Models 12, 14, 19,
+            24, and 26. The coil and condenser across the keyboard contacts must be removed for
+            direct FSK operation, though it may be left in place when a polar relay is used, to
+            reduce RF noise from the contact break.
+          </p>
+          <p>
+            Normal amateur operation is at 60 WPM using gear wheels numbered 74912 and 74913.
+            The selector magnet terminals 41 and 42 are used for the printer in a direct connection
+            setup. For polar relay installations, specific wiring changes are required as described
+            in the original documentation.
+          </p>
+          <p>
+            Optional features available on some machines include automatic carriage return and tab
+            function (upper case G). A keyboard perforator can replace the standard keyboard,
+            making the 15 similar in capability to a Model 19, though this requires a 500
+            milliampere, 110-volt DC power supply.
+          </p>
+        </div>
+        <div class="dl-row">
+          <span class="dl-tag" style="cursor:default;opacity:.6">Photos: Back &bull; Bottom &bull; Right side &bull; Typing unit &bull; Electrical</span>
+        </div>
+      </div>
+
+      <!-- Model 19 -->
+      <div class="machine-entry" id="model-19">
+        <div class="machine-hed">Model 19 Teletypewriter Set</div>
+        <div class="machine-meta">Teletype Corporation &bull; KSR with Perforator-Transmitter</div>
+        <div class="machine-body">
+          <p>
+            The Model 19 combined a keyboard send-receive printer with an integrated
+            perforator-transmitter, making it the standard workhorse of amateur RTTY for many
+            years. The set included a motor-driven transmitter distributor (TD) and a separate
+            rectifier unit (REC-30).
+          </p>
+          <p>
+            Diagrams available include the typing unit, base, and relay schematic and wiring;
+            the perforator-transmitter schematic and actual wiring; the REC-30 rectifier schematic
+            and actual wiring; the Model 19 table schematic and actual wiring; and the Model 14
+            Transmitter-Distributor wiring diagram.
+          </p>
+        </div>
+        <div class="dl-row">
+          <a href="equipment/teletype/model-19/tu-base-relay-schematic.pdf" class="dl-tag">&#9660; Typing Unit / Base / Relay Schematic</a>
+          <a href="equipment/teletype/model-19/tu-base-relay-wiring.pdf" class="dl-tag">&#9660; Typing Unit / Base / Relay Wiring</a>
+          <a href="equipment/teletype/model-19/perf-tx-schematic.pdf" class="dl-tag">&#9660; Perforator-TX Schematic</a>
+          <a href="equipment/teletype/model-19/perf-tx-wiring.pdf" class="dl-tag">&#9660; Perforator-TX Wiring</a>
+          <a href="equipment/teletype/model-19/rec30-schematic.pdf" class="dl-tag">&#9660; REC-30 Rectifier Schematic</a>
+          <a href="equipment/teletype/model-19/rec30-wiring.pdf" class="dl-tag">&#9660; REC-30 Rectifier Wiring</a>
+          <a href="equipment/teletype/model-19/table-schematic.pdf" class="dl-tag">&#9660; Table Schematic</a>
+          <a href="equipment/teletype/model-19/table-wiring.pdf" class="dl-tag">&#9660; Table Wiring</a>
+          <a href="equipment/teletype/model-19/m14-td-wiring.pdf" class="dl-tag">&#9660; Model 14 TD Wiring</a>
+        </div>
+      </div>
+
+      <!-- Model 28 ASR -->
+      <div class="machine-entry" id="model-28-asr">
+        <div class="machine-hed">Model 28 ASR</div>
+        <div class="machine-meta">Teletype Corporation &bull; Automatic Send-Receive &bull; 1950s</div>
+        <div class="machine-body">
+          <p>
+            The Model 28 ASR (Automatic Send-Receive) is the machine most commonly encountered
+            in amateur RTTY. It combines a keyboard printer, paper tape punch (reperforator),
+            and tape reader in a single unit, allowing unattended transmission from pre-punched
+            tape as well as simultaneous send-receive operation.
+          </p>
+          <p>
+            The Model 28 was designed for adaptability across a wide variety of installations.
+            A number of wiring options were available; Bell System shop personnel would wire
+            in the desired configuration and cross out unused options in crayon directly on the
+            wiring diagrams, which were typically stored in the base of the machine.
+          </p>
+          <p>
+            Electrical drawings are available for four configurations, each covering a different
+            ESU (Electrical Service Unit) type. Images open at 640&times;400 for on-screen
+            viewing; high-resolution JPG versions (approximately 1 MB each) are available for
+            printing at full scale.
+          </p>
+        </div>
+        <div class="dl-row">
+          <a href="equipment/teletype/model28ASR/m28-13.gif" class="dl-tag">&#9654; M28 ASR w/LESU 13</a>
+          <a href="equipment/teletype/model28ASR/m28-13.jpg" class="dl-tag">&#9660; LESU 13 Hi-Res JPG</a>
+          <a href="equipment/teletype/model28ASR/m28-29.gif" class="dl-tag">&#9654; M28 ASR w/LESU 29</a>
+          <a href="equipment/teletype/model28ASR/m28-29.jpg" class="dl-tag">&#9660; LESU 29 Hi-Res JPG</a>
+          <a href="equipment/teletype/model28ASR/m28-415.gif" class="dl-tag">&#9654; M28 ASR w/415-9 Pulse Com Selector</a>
+          <a href="equipment/teletype/model28ASR/m28-415.jpg" class="dl-tag">&#9660; 415-9 Hi-Res JPG</a>
+          <a href="equipment/teletype/model28ASR/m28-esu.gif" class="dl-tag">&#9654; M28 ASR w/7/134,151 ESU</a>
+          <a href="equipment/teletype/model28ASR/m28-esu.jpg" class="dl-tag">&#9660; ESU Hi-Res JPG</a>
+        </div>
+      </div>
+
+      <!-- Model 28 KSR -->
+      <div class="machine-entry" id="model-28-ksr">
+        <div class="machine-hed">Model 28 KSR / RO Wiring Diagrams</div>
+        <div class="machine-meta">Teletype Corporation &bull; Keyboard Send-Receive &amp; Receive Only</div>
+        <div class="machine-body">
+          <p>
+            These are Teletype Corporation and Western Electric shop diagrams, typically found
+            in the base of machines from telco installations. The Model 28 was designed for a
+            large variety of installation options; shop personnel wired in the desired options
+            and crossed out those not installed. The cross-outs on individual drawings are part
+            of the record — the information is present regardless.
+          </p>
+          <p>
+            Drawings are in PDF format, scanned to allow paper-doll trimming and taping so that
+            complete full-size drawings can be reconstructed. There is some intentional overlap
+            between drawings to facilitate this. When printing, use <strong>Shrink to Fit</strong>
+            to avoid cropping the left and right edges.
+          </p>
+        </div>
+        <div class="dl-row">
+          <a href="equipment/teletype/model28KSR/wd2874.pdf" class="dl-tag">&#9660; WD2874</a>
+          <a href="equipment/teletype/model28KSR/wd2875.pdf" class="dl-tag">&#9660; WD2875</a>
+          <a href="equipment/teletype/model28KSR/wd2876.pdf" class="dl-tag">&#9660; WD2876</a>
+          <a href="equipment/teletype/model28KSR/wd2879.pdf" class="dl-tag">&#9660; WD2879</a>
+          <a href="equipment/teletype/model28KSR/wo470-1.pdf" class="dl-tag">&#9660; WO470-1</a>
+          <a href="equipment/teletype/model28KSR/wo470-2.pdf" class="dl-tag">&#9660; WO470-2</a>
+          <a href="equipment/teletype/model28KSR/wo470-3.pdf" class="dl-tag">&#9660; WO470-3</a>
+        </div>
+      </div>
+
+      <!-- Model 28 XASR -->
+      <div class="machine-entry" id="model-28-xasr">
+        <div class="machine-hed">Model 28 XASR (Extended ASR)</div>
+        <div class="machine-meta">Teletype Corporation &bull; Dual Typing Unit &bull; Government</div>
+        <div class="machine-body">
+          <p>
+            The Model 28 XASR (&ldquo;Stretch ASR&rdquo;) is a dual typing-unit developed
+            for government use, satisfying the need for a single operator position with dual
+            keyboards and typing units. It contains dual tape punches and a single underdome
+            reperforator unit independently selectable from each current loop, giving it the
+            flexibility to support communication operations while conserving floor space.
+            Only 347 units were ever manufactured.
+          </p>
+        </div>
+      </div>
+
+      <!-- Model 32 -->
+      <div class="machine-entry" id="model-32">
+        <div class="machine-hed">Model 32 ASR</div>
+        <div class="machine-meta">Teletype Corporation &bull; 1964 &bull; 60 WPM</div>
+        <div class="machine-body">
+          <p>
+            Of all the various Teletype models in amateur use, no single unit offers all the
+            features found in the 32 ASR. It provides facilities for transmission or reading
+            of perforated tape, and for page copy from either the local loop or a terminal unit.
+            The 32 ASR may be used for keyboard transmission with simultaneous page copy and
+            optional tape perforation; tape reader transmission with page copy; or keyboard
+            tape perforation with page copy.
+          </p>
+          <p>
+            Dimensions: 22&Prime; wide, 18&frac12;&Prime; deep, 8&frac38;&Prime; high,
+            approximately 44 lbs. The stand adds 24&frac12;&Prime; in height and 12 lbs.
+            The unit is finished to match contemporary amateur radio equipment styling.
+          </p>
+          <p>
+            The printer differs significantly from earlier Teletype printers. The type-wheel is
+            rotationally and vertically positioned to select the character; a small hammer drives
+            it against the ribbon and paper. Automatic carriage return and line feed occur after
+            the 72nd character. Unshift on space is built in.
+          </p>
+          <p>
+            The selector magnet requires 500 milliamperes at 20 volts, supplied by a printed
+            circuit selector magnet driver card. The input can be strapped for 20 or 60 milliampere
+            operation by a strap change on the rear terminal strip. A &ldquo;here is&rdquo; key
+            provides automatic identification using a 22-character code drum; characters are
+            coded by breaking off plastic tines. The tape reader is electrically operated via
+            the same PC distributor used by the keyboard, making it notably quiet.
+          </p>
+          <p>
+            The motor is a two-pole single-phase synchronous motor at 3600 RPM with two internal
+            fans and one external fan. Nylon gears and a flexible belt provide very quiet operation.
+          </p>
+        </div>
+        <div class="dl-row">
+          <a href="equipment/teletype/model-32/m32.jpg" class="dl-tag">&#9654; Front view</a>
+          <a href="equipment/teletype/model-32/m32-side.jpg" class="dl-tag">&#9654; Side view</a>
+          <a href="equipment/teletype/model-32/m32-rear.jpg" class="dl-tag">&#9654; Rear view</a>
+        </div>
+      </div>
+
+      <!-- Tactical MITE -->
+      <div class="machine-entry" id="mite">
+        <div class="machine-hed">Tactical MITE &mdash; AN/TGC-14A(V)</div>
+        <div class="machine-meta">Military &bull; Miniaturized &bull; 100 WPM &bull; &minus;55&deg;C to +55&deg;C</div>
+        <div class="machine-body">
+          <p>
+            The MITE (AN/TGC-14A(V)) is the first miniaturized mobile send-receive teletypewriter
+            designed specifically for military tactical use. It transmits and prints page copy at
+            100 words per minute under adverse environmental and tactical conditions, and can be
+            set up to operate within one minute of connection to a power source &mdash; whether
+            on the ground, in aircraft, or in armored vehicles.
+          </p>
+          <p>
+            The unit is modular in construction for easy access and inspection, and weighs
+            approximately 36 pounds complete with transmitting keyboard, receiving page-printer,
+            connecting chassis with internal line battery supply, and airborne-type case with
+            shock mounting. It is designed and qualified to MIL-E-5400 and MIL-E-16400
+            specifications, withstanding severe shock, vibration, dust, and salt spray atmosphere.
+          </p>
+          <p>
+            All units use solid-state electronic line sensing in lieu of conventional
+            electromechanical relays, improving operating characteristics and service life.
+            Self-contained heaters allow operation at ambient temperatures as low as &minus;54&deg;C
+            with less than 40 minutes warm-up time.
+          </p>
+          <p>
+            Related variants include the TT-264/AG (air-to-air and ground-to-ground), TT-299A/UG
+            (shipboard and submarine), and TT-395/UG (general communication use). Receive-only
+            versions (TT-298A/UG and TT-394/UG) are mechanically identical to their send-receive
+            counterparts and can be converted to full capability by insertion of the keyboard
+            without tools.
+          </p>
+        </div>
+        <div class="dl-row">
+          <a href="equipment/teletype/mite/tgc-14a.jpg" class="dl-tag">&#9654; AN/TGC-14A(V)</a>
+          <a href="equipment/teletype/mite/tt-264.jpg" class="dl-tag">&#9654; TT-264/AG</a>
+          <a href="equipment/teletype/mite/model-119.jpg" class="dl-tag">&#9654; Model 119</a>
+          <a href="equipment/teletype/mite/case.jpg" class="dl-tag">&#9654; Carrying case</a>
+        </div>
+      </div>
+
+      <!-- TD Tape -->
+      <div class="machine-entry" id="td-tape">
+        <div class="machine-hed">Tape Equipment &amp; Transmitter Distributors (TD)</div>
+        <div class="machine-meta">Teletype Corporation &bull; Presented with permission of Teletype Corporation</div>
+        <div class="machine-body">
+          <p>
+            Tape equipment provides the most rapid and reliable means of handling traffic on
+            amateur frequencies. It permits preparation of a reply while receiving from another
+            station, makes even the slowest typist sound experienced, and enables bulletins and
+            net rosters to be sent accurately at full machine speed.
+          </p>
+          <p>
+            The <strong>Transmitter Distributor (TD)</strong> is a motor-driven device which
+            translates code combinations perforated in paper tape into electrical impulses and
+            transmits them to one or more receiving stations. Two kinds exist: five-unit code
+            and six-unit code (the latter accommodating wider tape and one additional impulse).
+          </p>
+          <p>
+            The tape sensing mechanism uses contact levers that pivot on a shaft and have
+            extensions carrying tape pins; these enter code holes in the tape as the operating
+            cam rotates. The distributor completes connections to the signal line in sequence at
+            constant speed via brushes traversing segments and a collector ring.
+          </p>
+          <p>
+            The <strong>Model 14 TD</strong> (L4TD) is the most commonly encountered unit in
+            amateur use. Nine figures illustrate the mechanism and its components.
+          </p>
+        </div>
+        <div class="dl-row">
+          <a href="equipment/teletype/td-tape/fig-1.jpg" class="dl-tag">&#9654; Fig. 1 &mdash; Model 14 TD</a>
+          <a href="equipment/teletype/td-tape/fig-2.jpg" class="dl-tag">&#9654; Fig. 2</a>
+          <a href="equipment/teletype/td-tape/fig-3.jpg" class="dl-tag">&#9654; Fig. 3</a>
+          <a href="equipment/teletype/td-tape/fig-4.jpg" class="dl-tag">&#9654; Fig. 4</a>
+          <a href="equipment/teletype/td-tape/fig-5.jpg" class="dl-tag">&#9654; Fig. 5</a>
+          <a href="equipment/teletype/td-tape/fig-6.jpg" class="dl-tag">&#9654; Fig. 6</a>
+          <a href="equipment/teletype/td-tape/fig-7.jpg" class="dl-tag">&#9654; Fig. 7</a>
+          <a href="equipment/teletype/td-tape/fig-8.jpg" class="dl-tag">&#9654; Fig. 8</a>
+          <a href="equipment/teletype/td-tape/fig-9.jpg" class="dl-tag">&#9654; Fig. 9</a>
+        </div>
+      </div>
+
+    </main>
+
+    <!-- Sidebar -->
+    <aside class="col-side">
+
+      <div class="sb-box machine-nav">
+        <div class="sb-hed">On This Page</div>
+        <div class="sb-item"><a href="#model-14">&#9654; Model 14 Reperforator</a></div>
+        <div class="sb-item"><a href="#model-15">&#9654; Model 15 KSR</a></div>
+        <div class="sb-item"><a href="#model-19">&#9654; Model 19 Set</a></div>
+        <div class="sb-item"><a href="#model-28-asr">&#9654; Model 28 ASR</a></div>
+        <div class="sb-item"><a href="#model-28-ksr">&#9654; Model 28 KSR / RO</a></div>
+        <div class="sb-item"><a href="#model-28-xasr">&#9654; Model 28 XASR</a></div>
+        <div class="sb-item"><a href="#model-32">&#9654; Model 32 ASR</a></div>
+        <div class="sb-item"><a href="#mite">&#9654; Tactical MITE</a></div>
+        <div class="sb-item"><a href="#td-tape">&#9654; Tape Equipment / TD</a></div>
+      </div>
+
+      <div class="sb-box">
+        <div class="sb-hed">Equipment Section</div>
+        <div class="sb-item"><a href="equipment.html" style="color:var(--red);text-decoration:none">&#9632; Library Index</a></div>
+        <div class="sb-item"><a href="equipment-teletype.html" style="color:var(--ink-mid);text-decoration:none;font-weight:bold">&#9654; Teletype Machines</a></div>
+        <div class="sb-item"><a href="equipment-tu.html" style="color:var(--ink-mid);text-decoration:none">&#9654; Terminal Units</a></div>
+        <div class="sb-item"><a href="equipment-service.html" style="color:var(--ink-mid);text-decoration:none">&#9654; Service &amp; Documents</a></div>
+      </div>
+
+      <div class="sb-box">
+        <div class="sb-hed">About the Drawings</div>
+        <div class="sb-note">
+          Schematics and wiring diagrams are scanned from original Teletype Corporation,
+          Western Electric, and War Department publications. Large drawings are formatted
+          for paper-doll trimming and taping to reconstruct full-size prints.
+          <br><br>
+          Copyright &copy; 2011<br>
+          William Bytheway K7TTY<br>
+          George Hutchison W7TTY
+        </div>
+      </div>
+
+    </aside>
+
+  </div>
+</div>
+
+<footer class="site-footer">
+  <span>RTTY.COM &mdash; W2TTY &mdash; ARVADA, CO</span>
+  <span>NON-COMMERCIAL ARCHIVE &mdash; NO TRACKING</span>
+  <span>BAUDOT 1870 &bull; TELETYPE 1906 &bull; RTTY 1922</span>
+</footer>
+
+<canvas id="tapeBot" class="tape" aria-hidden="true"></canvas>
+<script src="js/tape.js"></script>
+</body>
+</html>

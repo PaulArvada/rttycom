@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>History — RTTY.COM</title>
+  <meta name="description" content="The history of radioteletype: Baudot code, the Teletype Corporation, amateur RTTY, and the AP/UPI wire services.">
+  <link rel="stylesheet" href="css/rtty.css">
+</head>
+<body>
+
+<!-- Top Baudot tape strip: encodes RTTY.COM in ITA2 -->
+<canvas id="tapeTop" class="tape" aria-hidden="true"></canvas>
+
+<!-- ── Masthead ── -->
+<header class="masthead">
+  <div class="mh-side">
+    PRESERVATION OF RTTY HISTORY<br>
+    TELETYPE ART &amp; CULTURE<br>
+    EST. LATE 1990S
+  </div>
+  <div class="mh-center">
+    <a href="index.html" class="site-name">RTTY.COM</a>
+    <span class="site-tag">The Radio Teletype Reference &amp; Archive</span>
+  </div>
+  <div class="mh-side mh-right">
+    THE INTERNET'S OLDEST<br>
+    RTTY RESOURCE<br>
+    BAUDOT &bull; TELETYPE &bull; WIRE
+  </div>
+</header>
+
+<!-- ── Navigation ── -->
+<nav class="site-nav" aria-label="Main navigation">
+  <a href="index.html">Home</a>
+  <a href="history.html" class="active">History</a>
+  <a href="gallery.html">RTTY Art</a>
+  <a href="equipment.html">Equipment</a>
+  <a href="itty.html">ITTY</a>
+  <a href="resources.html">Resources</a>
+  <a href="community.html">Community</a>
+  <a href="links.html">Links</a>
+</nav>
+
+<!-- ── Dateline ── -->
+<div class="dateline">
+  <strong>RTTY HISTORY</strong> &mdash;
+  BAUDOT 1870 &bull; TELETYPE CORPORATION 1906 &bull;
+  AMATEUR RTTY 1950S &bull; WIRE SERVICES 1930S&ndash;1990S
+</div>
+
+<!-- ── Page content ── -->
+<div class="page-wrap">
+  <div class="two-col">
+
+    <!-- Main content column -->
+    <main class="col-main">
+
+      <h1 class="section-hed" style="margin-top:0">A Brief History of Radioteletype</h1>
+
+      <div class="prose">
+        <p>
+          <span class="dropcap">R</span>adioteletype &mdash; RTTY &mdash; is a method of
+          transmitting printed text by radio. A sending station encodes typed characters as
+          audio tones using frequency-shift keying (FSK): a &ldquo;mark&rdquo; tone for a
+          binary 1, a &ldquo;space&rdquo; tone for a binary 0. A receiving station decodes
+          these tones and drives a mechanical teleprinter that types the message on paper.
+          The result is a printed record &mdash; a hard copy &mdash; of everything transmitted.
+        </p>
+        <p>
+          The system requires no operator at the receiving end. The machine prints continuously
+          as long as the transmitter is active and the signal is readable. In its commercial
+          heyday, RTTY circuits ran 24 hours a day, delivering news, weather, financial data,
+          and military communications to receivers around the world.
+        </p>
+      </div>
+
+      <hr class="rule-sep">
+
+      <h2 class="section-hed">The Baudot Code</h2>
+      <div class="prose">
+        <p>
+          At the heart of every RTTY transmission is the Baudot code &mdash; a five-unit binary
+          encoding invented by French telegraph engineer &Eacute;mile Baudot in 1870 and
+          standardized internationally as ITA2 (International Telegraph Alphabet No.&nbsp;2).
+          Five bits yields 32 possible combinations; by using two &ldquo;shift&rdquo; states
+          &mdash; Letters and Figures &mdash; the same 32 codes serve double duty, providing
+          the full uppercase alphabet plus digits and punctuation.
+        </p>
+        <p>
+          The genius of the Baudot code lies in its mechanical simplicity. Each character is
+          transmitted as a sequence of five equal-duration mark or space intervals, making it
+          ideal for electromechanical reproduction. At 45.45 baud &mdash; the North American
+          standard for amateur RTTY &mdash; each character takes 22 milliseconds to transmit,
+          yielding approximately 60 words per minute. The 75-baud standard allows approximately
+          100 WPM.
+        </p>
+        <p>
+          The punched tape strips at the top and bottom of this page encode real ITA2 Baudot:
+          RTTY.COM on top, DE W2TTY on the bottom. Anyone who knows the code can read them
+          hole by hole.
+        </p>
+      </div>
+
+      <div class="callout">
+        Baudot never saw the full flowering of his invention. He died in 1903, before RTTY
+        became widespread &mdash; yet his five-unit code is still in active use today,
+        transmitted by ITTY on this website, decoded by mechanical teleprinters built
+        sixty years ago.
+      </div>
+
+      <hr class="rule-sep">
+
+      <h2 class="section-hed">The Teletype Corporation</h2>
+      <div class="prose">
+        <p>
+          Founded in 1906, the Teletype Corporation manufactured the electromechanical machines
+          that defined a century of telecommunications. Beginning with the crude mechanical
+          printers of the early telegraphic era, Teletype progressively refined the technology
+          into precision instruments that became standard equipment in newsrooms, military
+          installations, weather services, and amateur radio shacks worldwide.
+        </p>
+        <p>
+          The company's landmark models &mdash; the Model 14, 15, 19, 28, 32, and 33 &mdash;
+          each represented a significant advance in speed, reliability, and capability. The
+          Model 15, introduced in the 1930s, became the dominant machine in American commercial
+          telegraphy. The Model 28 of the 1950s brought modern industrial design to the product
+          line. The Model 33, designed for data communications with ASCII encoding, bridged the
+          gap between the mechanical telegraphy era and the computer age.
+        </p>
+        <p>
+          Teletype became a subsidiary of Western Electric and ultimately AT&amp;T. When AT&amp;T
+          was broken up in 1984, Teletype ceased manufacturing. Millions of machines remained in
+          service for years afterward; the last commercial RTTY circuits were not decommissioned
+          until well into the 1990s.
+        </p>
+        <p>
+          See the <a href="equipment.html" style="color:var(--red)">Equipment</a> section for
+          technical reference on individual Teletype models and the terminal units used to
+          interface them to radio.
+        </p>
+      </div>
+
+      <hr class="rule-sep">
+
+      <h2 class="section-hed">The Wire Services</h2>
+      <div class="prose">
+        <p>
+          For fifty years, the Associated Press, United Press International, and other news wire
+          services ran around-the-clock RTTY circuits delivering copy to radio stations,
+          television stations, and newspapers. The machines never slept. Rolls of yellow paper
+          advanced continuously through clattering mechanisms, printing a ceaseless flow of
+          dispatches from around the world.
+        </p>
+        <p>
+          The newsroom of a mid-twentieth-century radio station was defined by the sound of
+          these machines &mdash; the background rhythm against which everything else happened.
+          Editors tore copy from the machines, marked it up, and handed it to the newsreader.
+          The wire service was the pipeline; the teletype machine was the tap.
+        </p>
+        <p>
+          The ITTY service recreates this experience. Content sourced from modern wire services
+          is formatted and transmitted in authentic Baudot RTTY at the original machine speeds.
+          Owners of restored Teletype machines can connect, tune their modem, and watch the
+          news print just as it would have in 1965. See the
+          <a href="itty.html" style="color:var(--red)">ITTY</a> section for connection details.
+        </p>
+      </div>
+
+      <hr class="rule-sep">
+
+      <h2 class="section-hed">RTTY in Amateur Radio</h2>
+      <div class="prose">
+        <p>
+          Amateur radio operators began experimenting with radioteletype in the late 1940s and
+          early 1950s, initially using surplus commercial Teletype machines acquired as the wire
+          services upgraded their equipment. The appeal was immediate: RTTY offered something no
+          voice transmission could provide &mdash; a permanent printed record of every exchange.
+        </p>
+        <p>
+          By the late 1950s, amateur RTTY had its own community, its own frequencies, and its
+          own art form. Operators exchanged character art &mdash; images constructed from Baudot
+          characters and transmitted over the air in real time. The overstrike technique, which
+          allowed multiple characters to print on the same position by sending a carriage return
+          without a line feed, gave the art form a unique expressive range unavailable to
+          typewriter artists. The gallery on this site preserves the best of that tradition.
+        </p>
+        <p>
+          The North American amateur RTTY standard &mdash; 45.45 baud (60 WPM), 170&nbsp;Hz
+          shift, lower sideband &mdash; remains the format of the ITTY broadcasts today.
+        </p>
+      </div>
+
+      <hr class="rule-sep">
+
+      <!-- Teletype Story download block -->
+      <div class="dl-block">
+        <div class="dl-title">The Teletype Story</div>
+        <div class="dl-meta">Teletype Corporation &bull; Copyright 1958 &bull; 40 pages &bull; 6.4 MB</div>
+        <div class="dl-desc">
+          Produced to commemorate the Golden Anniversary of the Teletype Corporation in 1957,
+          this booklet was given away at special occasions and to good customers; today, few
+          originals remain. RTTY.COM borrowed the NADCOMM copy, scanned all 40 pages at high
+          resolution, and assembled it here as a single PDF. The cover &mdash; deep red with
+          punched tape strips running across it &mdash; is a striking artifact of the era.
+        </div>
+        <a href="downloads/teletype-story.pdf" class="btn">&#9660;&nbsp;&nbsp;Download PDF</a>
+        &nbsp;
+        <span style="font-size:10px;color:var(--ink-ghost);letter-spacing:.08em">
+          40 PAGES &bull; COLOR SCANS &bull; 6.4 MB
+        </span>
+      </div>
+
+    </main>
+
+    <!-- Sidebar -->
+    <aside class="col-side">
+
+      <div class="sb-box">
+        <div class="sb-hed">Key Dates</div>
+        <div class="tl-item"><span class="tl-year">1870</span><span class="tl-event">Baudot invents the 5-unit code</span></div>
+        <div class="tl-item"><span class="tl-year">1903</span><span class="tl-event">Baudot dies; code already in commercial use</span></div>
+        <div class="tl-item"><span class="tl-year">1906</span><span class="tl-event">Charles &amp; Howard Krum develop working printing telegraph model; Morkrum Company incorporated Oct. 5, 1907</span></div>
+        <div class="tl-item"><span class="tl-year">1930s</span><span class="tl-event">Model 15 becomes commercial standard; wire services expand</span></div>
+        <div class="tl-item"><span class="tl-year">1950s</span><span class="tl-event">Model 28 introduced; amateur RTTY begins</span></div>
+        <div class="tl-item"><span class="tl-year">1957</span><span class="tl-event">Teletype Corporation Golden Anniversary (50 years). <em>The Teletype Story</em> booklet published 1958.</span></div>
+        <div class="tl-item"><span class="tl-year">1960s</span><span class="tl-event">RTTY art emerges in the amateur community</span></div>
+        <div class="tl-item"><span class="tl-year">1984</span><span class="tl-event">AT&amp;T breakup; Teletype ceases manufacturing</span></div>
+        <div class="tl-item"><span class="tl-year">1990s</span><span class="tl-event">Wire services transition away from RTTY; RTTY.COM founded</span></div>
+        <div class="tl-item"><span class="tl-year">2001</span><span class="tl-event">W2TTY takes over ITTY service and RTTY.COM</span></div>
+        <div class="tl-item"><span class="tl-year">Today</span><span class="tl-event">ITTY serves four channels 24/7; machines still print the news</span></div>
+      </div>
+
+      <div class="sb-box">
+        <div class="sb-hed">Technical Standards</div>
+        <div class="sb-note">
+          <strong style="color:var(--ink)">Encoding:</strong> ITA2 (Baudot), 5-unit<br>
+          <strong style="color:var(--ink)">Speed (60 WPM):</strong> 45.45 baud<br>
+          <strong style="color:var(--ink)">Speed (100 WPM):</strong> 75 baud<br>
+          <strong style="color:var(--ink)">Shift:</strong> 170 Hz (NA standard)<br>
+          <strong style="color:var(--ink)">Mode:</strong> FSK, lower sideband<br>
+          <strong style="color:var(--ink)">Character set:</strong> Uppercase only<br>
+          <br>
+          These are the parameters of the ITTY broadcast. Any receiver and 170&nbsp;Hz FSK
+          demodulator can decode the signal.
+        </div>
+      </div>
+
+      <div class="sb-box">
+        <div class="sb-hed">In This Section</div>
+        <div class="sb-note">
+          &#9632; <a href="history.html" style="color:var(--red);text-decoration:none">Brief History</a> (this page)<br>
+          &#9632; <a href="downloads/teletype-story.pdf" style="color:var(--ink-mid);text-decoration:none">The Teletype Story (PDF)</a>
+        </div>
+      </div>
+
+      <div class="sb-box">
+        <div class="sb-hed">Related</div>
+        <div class="sb-note">
+          <a href="equipment.html" style="color:var(--ink-mid);text-decoration:none">&#9654; Teletype machine reference</a><br>
+          <a href="gallery.html"   style="color:var(--ink-mid);text-decoration:none">&#9654; RTTY art gallery</a><br>
+          <a href="itty.html"      style="color:var(--ink-mid);text-decoration:none">&#9654; Connect to ITTY</a>
+        </div>
+      </div>
+
+    </aside>
+  </div><!-- .two-col -->
+</div><!-- .page-wrap -->
+
+<!-- ── Footer ── -->
+<footer class="site-footer">
+  <span>RTTY.COM &mdash; W2TTY &mdash; ARVADA, CO</span>
+  <span>NON-COMMERCIAL ARCHIVE &mdash; NO TRACKING</span>
+  <span>BAUDOT 1870 &bull; TELETYPE 1906 &bull; RTTY 1922</span>
+</footer>
+
+<!-- Bottom Baudot tape strip: encodes DE W2TTY in ITA2 -->
+<canvas id="tapeBot" class="tape" aria-hidden="true"></canvas>
+
+<script src="js/tape.js"></script>
+</body>
+</html>

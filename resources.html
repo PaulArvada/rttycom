@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resources — RTTY.COM</title>
+  <meta name="description" content="Software, frequency references, and resources for amateur RTTY operators — including RTTYMailer, RTTYApp, and RTTY decoder software.">
+  <link rel="stylesheet" href="css/rtty.css">
+  <style>
+    .res-section {
+      margin-bottom: 32px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid var(--rule);
+      scroll-margin-top: 16px;
+    }
+    .res-section:last-child { border-bottom: none; margin-bottom: 0; }
+
+    .software-item {
+      margin-bottom: 20px;
+      padding-bottom: 20px;
+      border-bottom: 1px dotted var(--rule);
+    }
+    .software-item:last-child { border-bottom: none; margin-bottom: 0; }
+
+    .sw-name {
+      font-family: 'Special Elite', serif;
+      font-size: 19px;
+      color: var(--ink);
+      margin-bottom: 3px;
+    }
+    .sw-meta {
+      font-size: 11px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--ink-ghost);
+      margin-bottom: 8px;
+    }
+    .sw-desc {
+      font-size: 16px;
+      line-height: 1.8;
+      color: var(--ink-mid);
+      margin-bottom: 10px;
+    }
+
+    .freq-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+      margin: 14px 0;
+    }
+    .freq-table th {
+      background: var(--ink);
+      color: var(--paper);
+      font-family: 'Courier Prime', monospace;
+      font-size: 10px;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      padding: 7px 12px;
+      text-align: left;
+      font-weight: 700;
+    }
+    .freq-table td {
+      padding: 8px 12px;
+      border-bottom: 1px solid var(--rule);
+      color: var(--ink-mid);
+      vertical-align: top;
+    }
+    .freq-table tr:last-child td { border-bottom: none; }
+    .freq-table tr:nth-child(even) td { background: var(--paper-dk); }
+    .freq-table td:first-child {
+      font-weight: 700;
+      color: var(--ink);
+      white-space: nowrap;
+    }
+    .freq-table td code {
+      font-family: 'Courier Prime', monospace;
+      font-size: 13px;
+    }
+
+    .dl-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 8px;
+    }
+    .dl-tag {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--ink-faint);
+      padding: 5px 12px;
+      background: var(--paper-dk);
+      border: 1px solid var(--rule);
+      text-decoration: none;
+      transition: all .15s;
+    }
+    .dl-tag:hover { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+    .dl-tag.primary {
+      background: var(--ink);
+      color: var(--paper);
+      border-color: var(--ink);
+    }
+    .dl-tag.primary:hover { background: var(--red); border-color: var(--red); }
+
+    .notice-box {
+      background: var(--paper-dk);
+      border-left: 3px solid var(--rule-dk);
+      padding: 11px 15px;
+      font-size: 13px;
+      color: var(--ink-faint);
+      font-style: italic;
+      line-height: 1.7;
+      margin: 10px 0;
+    }
+  </style>
+</head>
+<body>
+
+<canvas id="tapeTop" class="tape" aria-hidden="true"></canvas>
+
+<header class="masthead">
+  <div class="mh-side">PRESERVATION OF RTTY HISTORY<br>TELETYPE ART &amp; CULTURE<br>EST. LATE 1990S</div>
+  <div class="mh-center">
+    <a href="index.html" class="site-name">RTTY.COM</a>
+    <span class="site-tag">The Radio Teletype Reference &amp; Archive</span>
+  </div>
+  <div class="mh-side mh-right">THE INTERNET'S OLDEST<br>RTTY RESOURCE<br>BAUDOT &bull; TELETYPE &bull; WIRE</div>
+</header>
+
+<nav class="site-nav" aria-label="Main navigation">
+  <a href="index.html">Home</a>
+  <a href="history.html">History</a>
+  <a href="gallery.html">RTTY Art</a>
+  <a href="equipment.html">Equipment</a>
+  <a href="itty.html">ITTY</a>
+  <a href="resources.html" class="active">Resources</a>
+  <a href="community.html">Community</a>
+  <a href="links.html">Links</a>
+</nav>
+
+<div class="dateline">
+  <strong>RESOURCES</strong> &mdash;
+  SOFTWARE &bull; FREQUENCIES &bull; REFERENCE
+</div>
+
+<div class="page-wrap">
+  <div class="two-col">
+
+    <main class="col-main">
+
+      <!-- Software -->
+      <div class="res-section" id="software">
+        <h2 class="section-hed" style="margin-top:0">Software</h2>
+
+        <div class="software-item">
+          <div class="sw-name">RTTYMailer</div>
+          <div class="sw-meta">Windows &bull; Free &bull; ITTY submission client</div>
+          <div class="sw-desc">
+            RTTYMailer is the recommended way to submit articles to the ITTY AUTOSTART
+            channel. Written specifically for ITTY by Bill Bytheway K7TTY, it handles
+            all server configuration automatically &mdash; no SMTP setup required.
+            Write your article, select a channel, and click Send.
+          </div>
+          <div class="dl-row">
+            <a href="https://www.rtty.com/itty/RTTYMailer%20v16.zip"
+               class="dl-tag primary">&#9660; Download RTTYMailer v16</a>
+          </div>
+        </div>
+
+        <div class="software-item">
+          <div class="sw-name">RTTYApp</div>
+          <div class="sw-meta">Windows &bull; SMTP listener &bull; Queue manager &bull; Modem driver</div>
+          <div class="sw-desc">
+            RTTYApp is the server-side software that manages the article queue for each
+            ITTY channel and drives the HAL ST8000 modem. It operates as an SMTP listener,
+            receiving submissions from RTTYMailer and feeding them to the teletype machine
+            in sequence. RTTYApp is used by channel operators, not end listeners.
+          </div>
+          <div class="notice-box">
+            RTTYApp download location is currently being verified. Check back or contact
+            W2TTY for access.
+          </div>
+        </div>
+
+        <div class="software-item">
+          <div class="sw-name">MMTTY</div>
+          <div class="sw-meta">Windows &bull; Free &bull; RTTY decoder / encoder</div>
+          <div class="sw-desc">
+            MMTTY is the most widely used software RTTY decoder for Windows. It decodes
+            FSK audio to text and can encode text to audio for transmitting. Use it with
+            a virtual audio cable to decode the ITTY stream, or with a radio interface
+            for on-air RTTY.
+          </div>
+          <div class="dl-row">
+            <a href="https://hamsoft.ca/pages/mmtty.php"
+               class="dl-tag" target="_blank" rel="noopener">&#8599; MMTTY Download Page</a>
+          </div>
+        </div>
+
+        <div class="software-item">
+          <div class="sw-name">fldigi</div>
+          <div class="sw-meta">Windows / Mac / Linux &bull; Free &bull; Multi-mode decoder</div>
+          <div class="sw-desc">
+            fldigi is a cross-platform multi-mode digital decoder that includes RTTY.
+            It runs on Windows, Mac, and Linux, making it the best option for non-Windows
+            users who want to decode ITTY streams. Configure it for RTTY mode, 170&nbsp;Hz
+            shift, and the appropriate baud rate for your chosen channel.
+          </div>
+          <div class="dl-row">
+            <a href="https://sourceforge.net/projects/fldigi/"
+               class="dl-tag" target="_blank" rel="noopener">&#8599; fldigi at SourceForge</a>
+          </div>
+        </div>
+
+        <div class="software-item">
+          <div class="sw-name">VB-Cable / BlackHole / Jack</div>
+          <div class="sw-meta">Virtual audio routing &bull; Required for stream decoding</div>
+          <div class="sw-desc">
+            To decode an ITTY stream, you need to route the audio from your media player
+            to your decoder software. These virtual audio cable utilities create a loopback
+            audio device that makes this possible without a physical cable connection.
+          </div>
+          <div class="dl-row">
+            <a href="https://vb-audio.com/Cable/"
+               class="dl-tag" target="_blank" rel="noopener">&#8599; VB-Cable (Windows)</a>
+            <a href="https://existential.audio/blackhole/"
+               class="dl-tag" target="_blank" rel="noopener">&#8599; BlackHole (Mac)</a>
+            <a href="https://jackaudio.org/"
+               class="dl-tag" target="_blank" rel="noopener">&#8599; Jack (Linux)</a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Frequencies -->
+      <div class="res-section" id="frequencies">
+        <h2 class="section-hed">RTTY Frequencies</h2>
+        <div class="prose">
+          <p>
+            The following are the standard amateur RTTY frequency segments as generally
+            observed in North America. RTTY uses lower sideband (LSB) with a 170&nbsp;Hz
+            shift at the North American amateur standard. The mark tone is typically
+            placed at 2125&nbsp;Hz in the audio passband, and the space tone at
+            1955&nbsp;Hz (170&nbsp;Hz below mark).
+          </p>
+        </div>
+
+        <table class="freq-table">
+          <thead>
+            <tr>
+              <th>Band</th>
+              <th>Frequency Range</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>80m</td>
+              <td><code>3.570 &ndash; 3.620 MHz</code></td>
+              <td>US primary RTTY segment; 3.605 MHz is a common calling frequency</td>
+            </tr>
+            <tr>
+              <td>40m</td>
+              <td><code>7.080 &ndash; 7.125 MHz</code></td>
+              <td>Active segment; watch for interference from voice stations</td>
+            </tr>
+            <tr>
+              <td>20m</td>
+              <td><code>14.070 &ndash; 14.112 MHz</code></td>
+              <td>14.095 MHz is the most active RTTY frequency in the world</td>
+            </tr>
+            <tr>
+              <td>15m</td>
+              <td><code>21.070 &ndash; 21.110 MHz</code></td>
+              <td>Good DX band when open; 21.090 MHz commonly used</td>
+            </tr>
+            <tr>
+              <td>10m</td>
+              <td><code>28.070 &ndash; 28.150 MHz</code></td>
+              <td>Excellent DX when the band is open near solar maximum</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="prose">
+          <p>
+            ITTY does not use radio frequencies &mdash; it is an internet audio stream.
+            The FSK signal in the stream uses standard 170&nbsp;Hz shift at the appropriate
+            baud rate for each channel. See the <a href="itty.html" style="color:var(--red)">ITTY</a>
+            page for stream URLs and technical details.
+          </p>
+        </div>
+      </div>
+
+      <!-- Baudot Code Reference -->
+      <div class="res-section" id="baudot">
+        <h2 class="section-hed">Baudot Code Reference</h2>
+        <div class="prose">
+          <p>
+            The ITA2 (International Telegraph Alphabet No.&nbsp;2) is the five-unit
+            Baudot code used by all ITTY channels. Each character is represented by five
+            binary elements &mdash; mark or space &mdash; plus a start element and a stop
+            element. Two shift states (LTRS and FIGS) double the available characters to
+            cover the full uppercase alphabet, digits, and punctuation.
+          </p>
+          <p>
+            Baudot code cards are available in the
+            <a href="gallery.html" style="color:var(--red)">RTTY Art</a> section.
+            For a complete ITA2 character table and introduction to the code, see
+            <a href="equipment/literature/introduction.htm" style="color:var(--red)">
+            Introduction to Amateur Radio Teletype</a> by Irv Hoff K8DKG in the
+            <a href="equipment-service.html" style="color:var(--red)">Equipment Library</a>.
+          </p>
+        </div>
+      </div>
+
+    </main>
+
+    <!-- Sidebar -->
+    <aside class="col-side">
+
+      <div class="sb-box">
+        <div class="sb-hed">On This Page</div>
+        <div class="sb-note">
+          <a href="#software"   style="display:block;padding:5px 0;border-bottom:1px dotted var(--rule);color:var(--ink-mid);text-decoration:none">&#9654; Software</a>
+          <a href="#frequencies" style="display:block;padding:5px 0;border-bottom:1px dotted var(--rule);color:var(--ink-mid);text-decoration:none">&#9654; RTTY Frequencies</a>
+          <a href="#baudot"     style="display:block;padding:5px 0;color:var(--ink-mid);text-decoration:none">&#9654; Baudot Code Reference</a>
+        </div>
+      </div>
+
+      <div class="sb-box">
+        <div class="sb-hed">Quick Downloads</div>
+        <div class="sb-note">
+          <a href="https://www.rtty.com/itty/RTTYMailer%20v16.zip"
+             style="display:block;padding:6px 0;border-bottom:1px dotted var(--rule);color:var(--ink);text-decoration:none;font-weight:700">
+            &#9660; RTTYMailer v16
+          </a>
+          <a href="https://hamsoft.ca/pages/mmtty.php" target="_blank" rel="noopener"
+             style="display:block;padding:6px 0;border-bottom:1px dotted var(--rule);color:var(--ink);text-decoration:none">
+            &#8599; MMTTY
+          </a>
+          <a href="https://sourceforge.net/projects/fldigi/" target="_blank" rel="noopener"
+             style="display:block;padding:6px 0;color:var(--ink);text-decoration:none">
+            &#8599; fldigi
+          </a>
+        </div>
+      </div>
+
+      <div class="sb-box">
+        <div class="sb-hed">Also See</div>
+        <div class="sb-note">
+          <a href="equipment-service.html"
+             style="display:block;padding:5px 0;border-bottom:1px dotted var(--rule);color:var(--ink-mid);text-decoration:none">
+            &#9654; Kretzman Technical Library
+          </a>
+          <a href="equipment-tu.html"
+             style="display:block;padding:5px 0;border-bottom:1px dotted var(--rule);color:var(--ink-mid);text-decoration:none">
+            &#9654; Terminal Unit Schematics
+          </a>
+          <a href="itty.html"
+             style="display:block;padding:5px 0;color:var(--ink-mid);text-decoration:none">
+            &#9654; ITTY Connection Guide
+          </a>
+        </div>
+      </div>
+
+    </aside>
+
+  </div>
+</div>
+
+<footer class="site-footer">
+  <span>RTTY.COM &mdash; W2TTY &mdash; ARVADA, CO</span>
+  <span>NON-COMMERCIAL ARCHIVE &mdash; NO TRACKING</span>
+  <span>BAUDOT 1870 &bull; TELETYPE 1906 &bull; RTTY 1922</span>
+</footer>
+
+<canvas id="tapeBot" class="tape" aria-hidden="true"></canvas>
+<script src="js/tape.js"></script>
+</body>
+</html>

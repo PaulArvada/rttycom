@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terminal Units &amp; Demodulators — Equipment — RTTY.COM</title>
+  <meta name="description" content="Schematics and technical documentation for FSK demodulators and terminal units used in amateur RTTY, including the classic Mainline series by Irv Hoff W6FFC.">
+  <link rel="stylesheet" href="css/rtty.css">
+  <style>
+    .machine-entry {
+      margin-bottom: 32px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid var(--rule);
+      scroll-margin-top: 16px;
+    }
+    .machine-entry:last-child { border-bottom: none; margin-bottom: 0; }
+
+    .machine-hed {
+      font-family: 'Special Elite', serif;
+      font-size: 24px;
+      color: var(--ink);
+      margin-bottom: 4px;
+      line-height: 1.2;
+    }
+    .machine-meta {
+      font-size: 11px;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: var(--ink-ghost);
+      margin-bottom: 12px;
+    }
+    .machine-body {
+      font-size: 16px;
+      line-height: 1.85;
+      color: var(--ink-mid);
+    }
+    .machine-body p { margin-bottom: 1em; }
+    .machine-body p:last-of-type { margin-bottom: 12px; }
+
+    .dl-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px dotted var(--rule);
+    }
+    .dl-tag {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--ink-faint);
+      padding: 5px 10px;
+      background: var(--paper-dk);
+      border: 1px solid var(--rule);
+      text-decoration: none;
+      transition: all .15s;
+      white-space: nowrap;
+    }
+    .dl-tag:hover { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+
+    .author-credit {
+      display: inline-block;
+      font-size: 13px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--ink-ghost);
+      background: var(--paper-dk);
+      border: 1px solid var(--rule);
+      padding: 3px 8px;
+      margin-bottom: 10px;
+    }
+
+    .machine-nav .sb-item a {
+      color: var(--ink-mid);
+      text-decoration: none;
+      display: block;
+      font-size: 12px;
+    }
+    .machine-nav .sb-item a:hover { color: var(--red); }
+
+    .series-intro {
+      background: var(--paper-dk);
+      border-left: 3px solid var(--rule-dk);
+      padding: 12px 16px;
+      margin-bottom: 28px;
+      font-size: 16px;
+      color: var(--ink-mid);
+      line-height: 1.75;
+    }
+    .series-intro strong { color: var(--ink); }
+  </style>
+</head>
+<body>
+
+<canvas id="tapeTop" class="tape" aria-hidden="true"></canvas>
+
+<header class="masthead">
+  <div class="mh-side">PRESERVATION OF RTTY HISTORY<br>TELETYPE ART &amp; CULTURE<br>EST. LATE 1990S</div>
+  <div class="mh-center">
+    <a href="index.html" class="site-name">RTTY.COM</a>
+    <span class="site-tag">The Radio Teletype Reference &amp; Archive</span>
+  </div>
+  <div class="mh-side mh-right">THE INTERNET'S OLDEST<br>RTTY RESOURCE<br>BAUDOT &bull; TELETYPE &bull; WIRE</div>
+</header>
+
+<nav class="site-nav" aria-label="Main navigation">
+  <a href="index.html">Home</a>
+  <a href="history.html">History</a>
+  <a href="gallery.html">RTTY Art</a>
+  <a href="equipment.html" class="active">Equipment</a>
+  <a href="itty.html">ITTY</a>
+  <a href="resources.html">Resources</a>
+  <a href="community.html">Community</a>
+  <a href="links.html">Links</a>
+</nav>
+
+<div class="dateline">
+  <strong>TERMINAL UNITS &amp; DEMODULATORS</strong> &mdash;
+  KRETZMAN TECHNICAL LIBRARY &mdash;
+  <a href="equipment.html" style="color:var(--ink-faint);text-decoration:none">&#8592; Back to Equipment</a>
+</div>
+
+<div class="page-wrap">
+  <div class="two-col">
+
+    <main class="col-main">
+
+      <!-- Mainline series intro -->
+      <div class="series-intro">
+        <strong>The Mainline Series</strong> &mdash; The TT/L, ST-3, ST-5, ST-6, and UT-2
+        demodulators were designed by <strong>Irvin M. Hoff</strong>, variously W6FFC and K8DKG,
+        and published in QST and the RTTY Journal from 1964 through 1975. They became the
+        standard reference designs for amateur RTTY terminal units and were built by thousands
+        of operators. Documentation is reproduced here for archival and reference purposes.
+      </div>
+
+      <!-- Alltronics Model-A -->
+      <div class="machine-entry" id="alltronics">
+        <div class="machine-hed">Alltronics Model-A Receiving Converter</div>
+        <div class="machine-meta">1955 &bull; Early Commercial Converter</div>
+        <div class="machine-body">
+          <p>
+            The Alltronics Model-A was one of the earliest commercially available receiving
+            converters for amateur RTTY. Introduced in 1955, it provided a straightforward
+            path for amateurs to interface a surplus teletype machine to a communications
+            receiver without building a terminal unit from scratch.
+          </p>
+          <p>
+            The unit accepted audio from a receiver and produced the current loop signals
+            required to drive a standard teletype machine. Documentation includes the
+            schematic and operating notes as originally published.
+          </p>
+        </div>
+        <div class="dl-row">
+          <a href="equipment/tu/alltronics/alltronics.htm" class="dl-tag">&#9654; View Documentation</a>
+        </div>
+      </div>
+
+      <!-- W5HFZ-W5RJG -->
+      <div class="machine-entry" id="w5hfz">
+        <div class="machine-hed">W5HFZ-W5RJG RTTY Converter</div>
+        <div class="machine-meta">1955 &bull; Amateur Construction</div>
+        <div class="machine-body">
+          <p>
+            This converter design by W5HFZ and W5RJG appeared in 1955 and represented
+            an early homebrew approach to amateur RTTY demodulation. Like the Alltronics
+            unit of the same era, it was designed to interface a communications receiver
+            to a surplus teletype machine using readily available components.
+          </p>
+          <p>
+            The documentation preserves the original circuit and construction notes
+            as published.
+          </p>
+        </div>
+        <div class="dl-row">
+          <a href="equipment/tu/w5hfz-w5rjg/w5hfz-w5rjg.htm" class="dl-tag">&#9654; View Documentation</a>
+        </div>
+      </div>
+
+      <!-- Mainline TT/L -->
+      <div class="machine-entry" id="ttl">
+        <div class="machine-hed">Mainline TT/L FSK Demodulator</div>
+        <div class="machine-meta">1964 &bull; Mainline Series</div>
+        <div class="author-credit">Irv Hoff K8DKG &amp; Keith Petersen W8SDZ</div>
+        <div class="machine-body">
+          <p>
+            The TT/L (Transistor-Transistor Logic) FSK Demodulator was the first of the
+            Mainline series, published in 1964. Designed by Irv Hoff K8DKG and Keith
+            Petersen W8SDZ, it marked a transition from the tube-based designs of the
+            1950s to solid-state circuitry using TTL logic devices that were just becoming
+            commercially available.
+          </p>
+          <p>
+            The TT/L established the design approach that Hoff would refine through the
+            ST-3, ST-5, ST-6, and UT-2 over the following decade. Documentation includes
+            the complete schematic, parts list, and construction notes.
+          </p>
+        </div>
+        <div class="dl-row">
+          <a href="equipment/tu/ttl-fsk/ttl-fsk.htm" class="dl-tag">&#9654; View Documentation</a>
+        </div>
+      </div>
+
+      <!-- Mainline ST-3 -->
+      <div class="machine-entry" id="st-3">
+        <div class="machine-hed">Mainline ST-3 Demodulator</div>
+        <div class="machine-meta">1970 &bull; Mainline Series</div>
+        <div class="author-credit">Irv Hoff W6FFC</div>
+        <div class="machine-body">
+          <p>
+            The ST-3 (Solid-state Teletype, version 3) was published in 1970 and became
+            one of the most widely built amateur RTTY terminal units of its era. Irv Hoff
+            W6FFC refined the TT/L design into a more accessible construction project,
+            with improved sensitivity and better performance on marginal signals.
+          </p>
+          <p>
+            The ST-3 used a phase-locked loop approach to FSK detection, which gave it
+            superior performance compared to discriminator-based designs on noisy or
+            drifting signals. It remained in popular use well into the 1980s.
+          </p>
+        </div>
+        <div class="dl-row">
+          <a href="equipment/tu/st-3/st-3.htm" class="dl-tag">&#9654; View Documentation</a>
+        </div>
+      </div>
+
+      <!-- Mainline ST-5 -->
+      <div class="machine-entry" id="st-5">
+        <div class="machine-hed">Mainline ST-5 Demodulator</div>
+        <div class="machine-meta">1970 / Updated 1973 &bull; Mainline Series</div>
+        <div class="author-credit">Irv Hoff W6FFC</div>
+        <div class="machine-body">
+          <p>
+            The ST-5 was published alongside the ST-3 in 1970 as a higher-performance
+            variant. An updated version followed in 1973 incorporating improvements based
+            on operator experience with the original design. The 1973 update is sometimes
+            referred to as the ST-5a.
+          </p>
+          <p>
+            Both versions are documented here. The original 1970 design and the 1973
+            update are presented separately, allowing direct comparison of the changes
+            made between revisions.
+          </p>
+        </div>
+        <div class="dl-row">
+          <a href="equipment/tu/st-5/st-5_basic.htm" class="dl-tag">&#9654; ST-5 Original (1970)</a>
+          <a href="equipment/tu/st-5/st-5_update.htm" class="dl-tag">&#9654; ST-5 Updated (1973)</a>
+        </div>
+      </div>
+
+      <!-- Mainline ST-6 -->
+      <div class="machine-entry" id="st-6">
+        <div class="machine-hed">Mainline ST-6 Demodulator</div>
+        <div class="machine-meta">1970 &bull; Mainline Series</div>
+        <div class="author-credit">Irv Hoff W6FFC</div>
+        <div class="machine-body">
+          <p>
+            The ST-6 was the third Mainline design published in 1970, positioned as the
+            top-of-line unit in the series. It offered additional features and improved
+            performance over the ST-3 and ST-5, at the cost of somewhat greater
+            construction complexity.
+          </p>
+          <p>
+            The ST-6 was notable for its RS-232 output option, which allowed it to
+            interface directly with computer terminals and early personal computers
+            in addition to mechanical teletype machines. This made it a transitional
+            design bridging the mechanical and digital eras of RTTY.
+          </p>
+        </div>
+        <div class="dl-row">
+          <a href="equipment/tu/st-6/st-6.htm" class="dl-tag">&#9654; View Documentation</a>
+        </div>
+      </div>
+
+      <!-- Mainline UT-2 -->
+      <div class="machine-entry" id="ut-2">
+        <div class="machine-hed">Mainline UT-2</div>
+        <div class="machine-meta">1975 &bull; Mainline Series</div>
+        <div class="author-credit">Irv Hoff W6FFC</div>
+        <div class="machine-body">
+          <p>
+            The UT-2 was Irv Hoff&rsquo;s final Mainline design, published in 1975.
+            It incorporated the accumulated experience of a decade of Mainline designs
+            into a refined, high-performance unit suitable for both mechanical teletype
+            machines and computer interfacing.
+          </p>
+          <p>
+            Documentation includes the complete schematic and construction details
+            as originally published.
+          </p>
+        </div>
+        <div class="dl-row">
+          <a href="equipment/tu/ut-2/ut-2.htm" class="dl-tag">&#9654; View Documentation</a>
+        </div>
+      </div>
+
+      <!-- DT-600 -->
+      <div class="machine-entry" id="dt-600">
+        <div class="machine-hed">DT-500 / DT-600 Demodulator</div>
+        <div class="machine-meta">1977 &bull; Data Technology Associates</div>
+        <div class="machine-body">
+          <p>
+            The DT-500 and DT-600 were commercial FSK demodulators manufactured by
+            Data Technology Associates in 1977. They occupied the market between the
+            amateur homebrew designs of the Mainline series and the professional
+            commercial units, offering a factory-built alternative at a moderate price.
+          </p>
+          <p>
+            Documentation is from a 1977 technical memorandum covering both models,
+            including circuit description, alignment procedure, and specifications.
+          </p>
+        </div>
+        <div class="dl-row">
+          <a href="equipment/tu/dt-600/dt-600.htm" class="dl-tag">&#9654; View Documentation</a>
+        </div>
+      </div>
+
+      <!-- Frederick 1632 -->
+      <div class="machine-entry" id="fred1632">
+        <div class="machine-hed">Frederick Electronics 1632</div>
+        <div class="machine-meta">Frederick Electronics Corporation</div>
+        <div class="machine-body">
+          <p>
+            The Frederick Electronics 1632 was a commercial terminal unit produced by
+            Frederick Electronics Corporation, a company that also published Irv Hoff&rsquo;s
+            <em>Introduction to Amateur Radio Teletype</em>. The 1632 was a popular
+            factory-built alternative to the Mainline homebrew designs for operators who
+            preferred a ready-made unit.
+          </p>
+          <p>
+            Documentation is available as a PDF containing the full technical reference
+            for the 1632.
+          </p>
+        </div>
+        <div class="dl-row">
+          <a href="equipment/tu/FRED1632/fred1632.pdf" class="dl-tag">&#9660; Download PDF</a>
+        </div>
+      </div>
+
+      <!-- RTTY-CW-800A -->
+      <div class="machine-entry" id="rtty-cw-800a">
+        <div class="machine-hed">RTTY-CW-800A</div>
+        <div class="machine-meta">Multi-Mode Terminal Unit</div>
+        <div class="machine-body">
+          <p>
+            The RTTY-CW-800A was a multi-mode terminal unit capable of handling both
+            RTTY and CW (Morse code) signals. It offered operators a single unit for
+            both modes, which was a practical advantage in a shack where both modes
+            were used.
+          </p>
+          <p>
+            Technical documentation is preserved here in PDF format.
+          </p>
+        </div>
+        <div class="dl-row">
+          <a href="equipment/tu/RTTY-CW-800A/RTTY-CW-800A.pdf" class="dl-tag">&#9660; Download PDF</a>
+        </div>
+      </div>
+
+      <!-- Model K Converter -->
+      <div class="machine-entry" id="model-k">
+        <div class="machine-hed">Model K Converter</div>
+        <div class="machine-meta">FSK Receiving Converter</div>
+        <div class="machine-body">
+          <p>
+            The Model K was an FSK receiving converter designed to interface a
+            communications receiver to a teletype machine. Technical documentation
+            is preserved here in PDF format.
+          </p>
+        </div>
+        <div class="dl-row">
+          <a href="equipment/tu/Model-K-Converter/model-k001.pdf" class="dl-tag">&#9660; Download PDF</a>
+        </div>
+      </div>
+
+    </main>
+
+    <!-- Sidebar -->
+    <aside class="col-side">
+
+      <div class="sb-box machine-nav">
+        <div class="sb-hed">On This Page</div>
+        <div class="sb-item"><a href="#alltronics">&#9654; Alltronics Model-A (1955)</a></div>
+        <div class="sb-item"><a href="#w5hfz">&#9654; W5HFZ-W5RJG (1955)</a></div>
+        <div class="sb-item"><a href="#ttl">&#9654; Mainline TT/L (1964)</a></div>
+        <div class="sb-item"><a href="#st-3">&#9654; Mainline ST-3 (1970)</a></div>
+        <div class="sb-item"><a href="#st-5">&#9654; Mainline ST-5 (1970/73)</a></div>
+        <div class="sb-item"><a href="#st-6">&#9654; Mainline ST-6 (1970)</a></div>
+        <div class="sb-item"><a href="#ut-2">&#9654; Mainline UT-2 (1975)</a></div>
+        <div class="sb-item"><a href="#dt-600">&#9654; DT-500 / DT-600 (1977)</a></div>
+        <div class="sb-item"><a href="#fred1632">&#9654; Frederick 1632</a></div>
+        <div class="sb-item"><a href="#rtty-cw-800a">&#9654; RTTY-CW-800A</a></div>
+        <div class="sb-item"><a href="#model-k">&#9654; Model K Converter</a></div>
+      </div>
+
+      <div class="sb-box">
+        <div class="sb-hed">Equipment Section</div>
+        <div class="sb-item"><a href="equipment.html"
+          style="color:var(--red);text-decoration:none;font-size:12px">&#9632; Library Index</a></div>
+        <div class="sb-item"><a href="equipment-teletype.html"
+          style="color:var(--ink-mid);text-decoration:none;font-size:12px">&#9654; Teletype Machines</a></div>
+        <div class="sb-item"><a href="equipment-tu.html"
+          style="color:var(--ink-mid);text-decoration:none;font-size:12px;font-weight:bold">&#9654; Terminal Units</a></div>
+        <div class="sb-item"><a href="equipment-service.html"
+          style="color:var(--ink-mid);text-decoration:none;font-size:12px">&#9654; Service &amp; Documents</a></div>
+      </div>
+
+      <div class="sb-box">
+        <div class="sb-hed">The Mainline Series</div>
+        <div class="sb-note">
+          Five designs spanning 1964&ndash;1975, all by
+          <strong style="color:var(--ink)">Irv Hoff W6FFC</strong>
+          (also K8DKG). Published in QST and the RTTY Journal. Built by
+          thousands of operators and still in use today.
+          <br><br>
+          TT/L &rarr; ST-3 &rarr; ST-5 &rarr; ST-6 &rarr; UT-2
+        </div>
+      </div>
+
+      <div class="sb-box">
+        <div class="sb-hed">About the Library</div>
+        <div class="sb-note">
+          Copyright &copy; 2011<br>
+          William Bytheway K7TTY<br>
+          George Hutchison W7TTY<br>
+          <br>
+          Schematics reproduced for archival and reference purposes.
+        </div>
+      </div>
+
+    </aside>
+
+  </div>
+</div>
+
+<footer class="site-footer">
+  <span>RTTY.COM &mdash; W2TTY &mdash; ARVADA, CO</span>
+  <span>NON-COMMERCIAL ARCHIVE &mdash; NO TRACKING</span>
+  <span>BAUDOT 1870 &bull; TELETYPE 1906 &bull; RTTY 1922</span>
+</footer>
+
+<canvas id="tapeBot" class="tape" aria-hidden="true"></canvas>
+<script src="js/tape.js"></script>
+</body>
+</html>

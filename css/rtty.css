@@ -1,0 +1,352 @@
+/*
+ * rtty.css — RTTY.COM shared stylesheet
+ * Paper / ink / teletype aesthetic
+ * Fonts: Special Elite (display), Courier Prime (body)
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --paper:     #f2ede0;
+  --paper-dk:  #e8e0cc;
+  --ink:       #1a1510;
+  --ink-mid:   #3a2e20;
+  --ink-faint: #7a6a50;
+  --ink-ghost: #b8a888;
+  --rule:      #c8b898;
+  --rule-dk:   #9a8868;
+  --red:       #8b1a1a;
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+  min-height: 100vh;
+}
+
+/* ── Baudot tape strip ─────────────────────────────────── */
+canvas.tape { display: block; width: 100%; height: 52px; }
+
+/* ── Masthead ──────────────────────────────────────────── */
+.masthead {
+  border-bottom: 3px double var(--rule-dk);
+  padding: 18px 32px 14px;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: end;
+  gap: 16px;
+}
+.mh-side  { font-size: 13px; letter-spacing: .08em; color: var(--ink-faint); line-height: 1.8; }
+.mh-right { text-align: right; }
+.mh-center { text-align: center; }
+
+.site-name {
+  font-family: 'Special Elite', serif;
+  font-size: 52px;
+  letter-spacing: .08em;
+  line-height: 1;
+  display: block;
+  text-decoration: none;
+  color: var(--ink);
+}
+.site-tag {
+  font-size: 10px;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  display: block;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  padding: 4px 0;
+  margin-top: 4px;
+}
+
+/* ── Navigation ────────────────────────────────────────── */
+.site-nav {
+  background: var(--ink);
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  border-bottom: 3px solid var(--rule-dk);
+}
+.site-nav a {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--paper-dk);
+  padding: 10px 18px;
+  border-right: 1px solid #3a3020;
+  text-decoration: none;
+  transition: background .15s;
+  display: inline-block;
+}
+.site-nav a:first-child { border-left: 1px solid #3a3020; }
+.site-nav a:hover  { background: #3a2e20; color: var(--paper); }
+.site-nav a.active { background: var(--red); color: var(--paper); }
+
+/* ── Dateline ──────────────────────────────────────────── */
+.dateline {
+  background: var(--paper-dk);
+  border-bottom: 1px solid var(--rule);
+  padding: 7px 32px;
+  font-size: 13px;
+  letter-spacing: .12em;
+  color: var(--ink-faint);
+  text-align: center;
+}
+.dateline strong { color: var(--red); }
+
+/* ── Page layout ───────────────────────────────────────── */
+.page-wrap {
+  max-width: 900px;
+  margin: 0 auto;
+  border-left: 1px solid var(--rule);
+  border-right: 1px solid var(--rule);
+}
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 270px;
+}
+.col-main  { padding: 26px 30px; border-right: 1px solid var(--rule); }
+.col-side  { padding: 22px 20px; }
+.full-col  { padding: 26px 36px; }
+
+/* ── Section rule label ────────────────────────────────── */
+.srule { display: flex; align-items: center; gap: 8px; margin-bottom: 14px; }
+.srule::before, .srule::after { content: ''; flex: 1; height: 1px; background: var(--rule-dk); }
+.srule-label { font-size: 12px; letter-spacing: .32em; text-transform: uppercase; color: var(--ink-faint); white-space: nowrap; }
+
+/* ── Body text ─────────────────────────────────────────── */
+.prose { font-size: 16px; line-height: 1.88; color: var(--ink-mid); }
+.prose p { margin-bottom: 1.2em; }
+.prose p:last-child { margin-bottom: 0; }
+
+.dropcap {
+  font-family: 'Special Elite', serif;
+  font-size: 52px;
+  line-height: .8;
+  float: left;
+  margin-right: 5px;
+  margin-top: 6px;
+  color: var(--ink);
+}
+
+.section-hed {
+  font-family: 'Special Elite', serif;
+  font-size: 25px;
+  color: var(--ink);
+  margin: 28px 0 10px;
+  line-height: 1.2;
+}
+.section-hed:first-child { margin-top: 0; }
+
+hr.rule-sep { border: none; border-top: 1px dashed var(--rule); margin: 22px 0; }
+
+.callout {
+  border-left: 3px solid var(--rule-dk);
+  padding: 10px 18px;
+  margin: 18px 0;
+  font-size: 13px;
+  color: var(--ink-faint);
+  font-style: italic;
+  line-height: 1.75;
+}
+
+/* ── Sidebar boxes ─────────────────────────────────────── */
+.sb-box { margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid var(--rule); }
+.sb-box:last-child { border-bottom: none; margin-bottom: 0; }
+.sb-hed {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .28em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  padding-bottom: 6px;
+  margin-bottom: 10px;
+  border-bottom: 2px solid var(--ink);
+}
+.sb-note { font-size: 15px; line-height: 1.75; color: var(--ink-mid); }
+
+/* Timeline in sidebar */
+.tl-item {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: 10px;
+  padding: 7px 0;
+  border-bottom: 1px dotted var(--rule);
+  font-size: 13px;
+  line-height: 1.45;
+}
+.tl-item:last-child { border-bottom: none; }
+.tl-year  { font-weight: 700; color: var(--red); letter-spacing: .04em; padding-top: 1px; }
+.tl-event { color: var(--ink-mid); }
+
+/* ── Download / feature block ──────────────────────────── */
+.dl-block {
+  background: var(--paper-dk);
+  border: 1px solid var(--rule-dk);
+  border-left: 4px solid var(--ink);
+  padding: 18px 22px;
+  margin: 22px 0;
+}
+.dl-title  { font-family: 'Special Elite', serif; font-size: 20px; color: var(--ink); margin-bottom: 8px; }
+.dl-meta   { font-size: 10px; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-ghost); margin-bottom: 10px; }
+.dl-desc   { font-size: 15px; color: var(--ink-mid); line-height: 1.75; margin-bottom: 14px; }
+
+/* ── Buttons ───────────────────────────────────────────── */
+.btn {
+  display: inline-block;
+  font-family: 'Courier Prime', monospace;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--paper);
+  background: var(--ink);
+  padding: 8px 16px;
+  cursor: pointer;
+  border: none;
+  text-decoration: none;
+  transition: background .15s;
+}
+.btn:hover { background: var(--red); color: var(--paper); }
+.btn-out {
+  background: transparent;
+  color: var(--ink-mid);
+  border: 1px solid var(--rule-dk);
+  color: var(--ink-mid);
+}
+.btn-out:hover { background: var(--paper-dk); color: var(--ink); }
+
+/* ── About credits ─────────────────────────────────────── */
+.credit-row { margin-bottom: 12px; padding-bottom: 12px; border-bottom: 1px dotted var(--rule); }
+.credit-row:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+.credit-role { font-size: 12px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: var(--ink); margin-bottom: 3px; }
+.credit-name { font-size: 14px; color: var(--ink-mid); line-height: 1.65; }
+.credit-call { color: var(--ink-faint); }
+.sk { font-size: 9px; letter-spacing: .12em; color: var(--red); text-transform: uppercase; font-weight: 700; }
+
+/* ── Footer ────────────────────────────────────────────── */
+.site-footer {
+  border-top: 3px double var(--rule-dk);
+  background: var(--paper-dk);
+  padding: 14px 32px;
+  font-size: 13px;
+  letter-spacing: .08em;
+  color: var(--ink-mid);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px 28px;
+  text-align: center;
+}
+
+/* ── Wire items (homepage news entries) ────────────────── */
+.wire-item {
+  margin-bottom: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--rule);
+}
+.wire-item:last-child { border-bottom: none; margin-bottom: 0; }
+
+.wire-slug {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: .28em;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 4px;
+}
+.wire-hed {
+  font-family: 'Special Elite', serif;
+  font-size: 20px;
+  line-height: 1.3;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+.wire-body {
+  font-size: 16px;
+  line-height: 1.72;
+  color: var(--ink-mid);
+}
+.wire-byline {
+  font-size: 14px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--ink-ghost);
+  margin-top: 6px;
+}
+.wire-byline a { color: var(--ink-ghost); text-decoration: none; }
+.wire-byline a:hover { color: var(--red); }
+
+/* ── Channel grid (homepage ITTY status) ───────────────── */
+.channel-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+.channel-tile {
+  background: var(--paper-dk);
+  border: 1px solid var(--rule);
+  padding: 10px 10px 8px;
+}
+.channel-live {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .14em;
+  color: var(--red);
+  margin-bottom: 3px;
+}
+.channel-live::before {
+  content: '';
+  width: 5px; height: 5px;
+  border-radius: 50%;
+  background: var(--red);
+  flex-shrink: 0;
+}
+.channel-name { font-size: 15px; font-weight: 700; letter-spacing: .1em; color: var(--ink); }
+.channel-speed { font-size: 13px; color: var(--ink-faint); margin-top: 2px; }
+
+/* ── RTTY art preview (sidebar CRT look) ───────────────── */
+.art-preview {
+  background: var(--ink);
+  font-family: 'Courier Prime', Courier, monospace;
+  font-size: 5.5px;
+  line-height: 1.1;
+  color: #c8d890;
+  padding: 10px;
+  overflow: hidden;
+  height: 88px;
+  margin-bottom: 8px;
+  white-space: pre;
+  letter-spacing: .05em;
+}
+
+/* ── Lede paragraph (homepage intro) ──────────────────── */
+.lede-wrap {
+  margin-bottom: 18px;
+  padding-bottom: 18px;
+  border-bottom: 1px dashed var(--rule);
+  font-size: 16px;
+  line-height: 1.88;
+  color: var(--ink-mid);
+}
+
+/* ── Responsive ────────────────────────────────────────── */
+@media (max-width: 680px) {
+  .masthead    { grid-template-columns: 1fr; text-align: center; }
+  .mh-right    { text-align: center; }
+  .two-col     { grid-template-columns: 1fr; }
+  .col-main    { border-right: none; border-bottom: 1px solid var(--rule); }
+  .site-name   { font-size: 38px; }
+  .site-footer { flex-direction: column; text-align: center; }
+}

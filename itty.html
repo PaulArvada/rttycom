@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ITTY — Live Teletype Wire Service — RTTY.COM</title>
+  <meta name="description" content="ITTY is a live Baudot RTTY audio stream delivering wire service news to teletype machines. Four channels, 24 hours a day. Connect with any browser or media player.">
+  <link rel="stylesheet" href="css/rtty.css">
+  <style>
+    /* Channel cards */
+    .channel-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin: 20px 0;
+    }
+    .ch-card {
+      background: var(--paper-dk);
+      border: 1px solid var(--rule);
+      border-top: 3px solid var(--ink);
+      padding: 16px 16px 14px;
+    }
+    .ch-live {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: .2em;
+      color: var(--red);
+      margin-bottom: 6px;
+    }
+    .ch-live::before {
+      content: '';
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--red);
+      flex-shrink: 0;
+    }
+    .ch-name {
+      font-family: 'Special Elite', serif;
+      font-size: 20px;
+      color: var(--ink);
+      margin-bottom: 4px;
+    }
+    .ch-spec {
+      font-size: 11px;
+      letter-spacing: .08em;
+      color: var(--ink-faint);
+      margin-bottom: 10px;
+      line-height: 1.6;
+    }
+    .ch-desc {
+      font-size: 16px;
+      color: var(--ink-mid);
+      line-height: 1.7;
+      margin-bottom: 14px;
+    }
+    .ch-listen {
+      display: inline-block;
+      font-family: 'Courier Prime', monospace;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: var(--paper);
+      background: var(--red);
+      padding: 7px 14px;
+      text-decoration: none;
+      transition: background .15s;
+    }
+    .ch-listen:hover { background: var(--ink); }
+    .ch-url {
+      display: block;
+      font-size: 10px;
+      letter-spacing: .06em;
+      color: var(--ink-ghost);
+      margin-top: 7px;
+      font-family: 'Courier Prime', monospace;
+    }
+
+    /* How-to steps */
+    .steps {
+      counter-reset: step;
+      margin: 14px 0;
+    }
+    .step {
+      display: grid;
+      grid-template-columns: 32px 1fr;
+      gap: 12px;
+      padding: 12px 0;
+      border-bottom: 1px dotted var(--rule);
+      align-items: start;
+    }
+    .step:last-child { border-bottom: none; }
+    .step-num {
+      counter-increment: step;
+      content: counter(step);
+      font-family: 'Special Elite', serif;
+      font-size: 22px;
+      color: var(--rule-dk);
+      line-height: 1;
+      text-align: center;
+      padding-top: 2px;
+    }
+    .step-num::before { content: counter(step); }
+    .step-body {
+      font-size: 16px;
+      color: var(--ink-mid);
+      line-height: 1.7;
+    }
+    .step-body strong { color: var(--ink); }
+    .step-body code {
+      font-family: 'Courier Prime', monospace;
+      font-size: 12px;
+      background: var(--paper-dk);
+      padding: 1px 5px;
+      border: 1px solid var(--rule);
+      color: var(--ink);
+    }
+
+    /* Technical specs table */
+    .spec-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+      margin: 14px 0;
+    }
+    .spec-table th {
+      background: var(--ink);
+      color: var(--paper);
+      font-family: 'Courier Prime', monospace;
+      font-size: 10px;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      padding: 7px 12px;
+      text-align: left;
+      font-weight: 700;
+    }
+    .spec-table td {
+      padding: 8px 12px;
+      border-bottom: 1px solid var(--rule);
+      color: var(--ink-mid);
+      vertical-align: top;
+    }
+    .spec-table tr:last-child td { border-bottom: none; }
+    .spec-table tr:nth-child(even) td { background: var(--paper-dk); }
+    .spec-table td:first-child {
+      font-weight: 700;
+      color: var(--ink);
+      white-space: nowrap;
+    }
+
+    /* Info box */
+    .info-box {
+      background: var(--paper-dk);
+      border: 1px solid var(--rule);
+      border-left: 4px solid var(--rule-dk);
+      padding: 14px 18px;
+      margin: 16px 0;
+      font-size: 16px;
+      color: var(--ink-mid);
+      line-height: 1.75;
+    }
+
+    @media (max-width: 600px) {
+      .channel-cards { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<canvas id="tapeTop" class="tape" aria-hidden="true"></canvas>
+
+<header class="masthead">
+  <div class="mh-side">PRESERVATION OF RTTY HISTORY<br>TELETYPE ART &amp; CULTURE<br>EST. LATE 1990S</div>
+  <div class="mh-center">
+    <a href="index.html" class="site-name">RTTY.COM</a>
+    <span class="site-tag">The Radio Teletype Reference &amp; Archive</span>
+  </div>
+  <div class="mh-side mh-right">THE INTERNET'S OLDEST<br>RTTY RESOURCE<br>BAUDOT &bull; TELETYPE &bull; WIRE</div>
+</header>
+
+<nav class="site-nav" aria-label="Main navigation">
+  <a href="index.html">Home</a>
+  <a href="history.html">History</a>
+  <a href="gallery.html">RTTY Art</a>
+  <a href="equipment.html">Equipment</a>
+  <a href="itty.html" class="active">ITTY</a>
+  <a href="resources.html">Resources</a>
+  <a href="community.html">Community</a>
+  <a href="links.html">Links</a>
+</nav>
+
+<div class="dateline">
+  <strong>ITTY &mdash; INTERNET TELETYPE</strong> &mdash;
+  FOUR CHANNELS &bull; 24 HOURS A DAY &bull; BAUDOT RTTY &bull; ARVADA, CO
+</div>
+
+<div class="page-wrap">
+  <div class="two-col">
+
+    <main class="col-main">
+
+      <!-- What is ITTY -->
+      <h1 class="section-hed" style="margin-top:0">What is ITTY?</h1>
+      <div class="prose">
+        <p>
+          ITTY &mdash; Internet Teletype &mdash; is a live audio stream that encodes Baudot RTTY
+          signals just as the AP and UPI wire services did for fifty years. The audio is standard
+          MP3, playable in any browser or media player. Point a software decoder at the audio
+          output, or route it through a hardware terminal unit to a real teletype machine, and
+          the news prints continuously in ALL CAPS on paper &mdash; exactly as it would have
+          in 1965.
+        </p>
+        <p>
+          ITTY broadcasts four channels, 24 hours a day, seven days a week, from Arvada, Colorado.
+          Each channel is a separate Icecast stream. There is no subscription, no login, and
+          no cost. Connect and listen.
+        </p>
+      </div>
+
+      <hr class="rule-sep">
+
+      <!-- How to listen -->
+      <h2 class="section-hed">How to Listen</h2>
+
+      <div class="info-box">
+        The simplest way to listen is to click one of the channel buttons below.
+        Your browser will open the stream directly &mdash; you will hear the FSK tones
+        of the Baudot signal. To decode the signal into readable text, route the audio
+        to a software decoder such as <strong>MMTTY</strong> or <strong>fldigi</strong>,
+        or to a hardware terminal unit connected to a teletype machine.
+      </div>
+
+      <div class="steps">
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-body">
+            <strong>Open a channel stream</strong> by clicking one of the Listen buttons
+            below. The stream will play in your browser or default media player.
+            Any internet-capable media player works &mdash; browser, VLC, Winamp, RealPlayer,
+            or any application that can open an MP3 stream URL.
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-body">
+            <strong>Route the audio to a decoder.</strong> On Windows, use a virtual audio
+            cable (e.g. VB-Cable) to feed the stream audio into <strong>MMTTY</strong> or
+            <strong>fldigi</strong>. Set the decoder to RTTY mode, 170&nbsp;Hz shift,
+            at the baud rate for your chosen channel (see Technical Details below).
+            On a Mac or Linux system, use BlackHole or Jack for audio routing.
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-body">
+            <strong>For a real teletype machine,</strong> route the stream audio to a hardware
+            FSK terminal unit (demodulator), then connect the TU&rsquo;s current loop output
+            to the machine. The signal chain is identical to a radio RTTY installation &mdash;
+            the only difference is that the audio source is the internet stream rather than
+            a radio receiver.
+          </div>
+        </div>
+      </div>
+
+      <hr class="rule-sep">
+
+      <!-- The four channels -->
+      <h2 class="section-hed">The Four Channels</h2>
+
+      <div class="channel-cards">
+
+        <div class="ch-card">
+          <div class="ch-live">LIVE 24/7</div>
+          <div class="ch-name">ITTY &mdash; 60 WPM</div>
+          <div class="ch-spec">
+            45.45 baud &bull; 170 Hz shift &bull; LSB<br>
+            internet-tty.net:8000/ITTY
+          </div>
+          <div class="ch-desc">
+            Wire service news articles, formatted and transmitted continuously
+            at the North American amateur RTTY standard of 60 words per minute.
+            Content is loaded daily.
+          </div>
+          <a class="ch-listen" href="http://internet-tty.net:8000/ITTY">
+            &#9654;&nbsp; Listen
+          </a>
+          <span class="ch-url">http://internet-tty.net:8000/ITTY</span>
+        </div>
+
+        <div class="ch-card">
+          <div class="ch-live">LIVE 24/7</div>
+          <div class="ch-name">ITTY &mdash; 100 WPM</div>
+          <div class="ch-spec">
+            75 baud &bull; 170 Hz shift &bull; LSB<br>
+            internet-tty.net:8010/ITTY100
+          </div>
+          <div class="ch-desc">
+            The same wire service content as the 60 WPM channel, transmitted
+            at 100 words per minute for machines and operators comfortable
+            at higher speed.
+          </div>
+          <a class="ch-listen" href="http://internet-tty.net:8010/ITTY100">
+            &#9654;&nbsp; Listen
+          </a>
+          <span class="ch-url">http://internet-tty.net:8010/ITTY100</span>
+        </div>
+
+        <div class="ch-card">
+          <div class="ch-live">LIVE 24/7</div>
+          <div class="ch-name">ITTY Europe</div>
+          <div class="ch-spec">
+            50 baud &bull; European RTTY standard<br>
+            internet-tty.net:8040/EUROPE
+          </div>
+          <div class="ch-desc">
+            BBC news content, fetched automatically from RSS feeds and delivered
+            at the European RTTY standard &mdash; 50 baud, matching the carrier
+            frequencies used on European radio circuits.
+          </div>
+          <a class="ch-listen" href="http://internet-tty.net:8040/EUROPE">
+            &#9654;&nbsp; Listen
+          </a>
+          <span class="ch-url">http://internet-tty.net:8040/EUROPE</span>
+        </div>
+
+        <div class="ch-card">
+          <div class="ch-live">LIVE 24/7</div>
+          <div class="ch-name">AUTOSTART</div>
+          <div class="ch-spec">
+            45.45 baud &bull; 170 Hz shift &bull; LSB<br>
+            internet-tty.net:8030/AUTOSTART
+          </div>
+          <div class="ch-desc">
+            A mixed-content channel: a daily &ldquo;This Day in History&rdquo;
+            bulletin, user-submitted articles, and selected messages from the
+            <a href="community.html" style="color:var(--red)">GreenKeys</a>
+            teletype discussion list. Content is submitted via RTTYMailer.
+          </div>
+          <a class="ch-listen" href="http://internet-tty.net:8030/AUTOSTART">
+            &#9654;&nbsp; Listen
+          </a>
+          <span class="ch-url">http://internet-tty.net:8030/AUTOSTART</span>
+        </div>
+
+      </div>
+
+      <hr class="rule-sep">
+
+      <!-- Sending content -->
+      <h2 class="section-hed">Sending Content to ITTY</h2>
+      <div class="prose">
+        <p>
+          Anyone can submit articles to the AUTOSTART channel using
+          <strong>RTTYMailer</strong>, a free Windows application written specifically
+          for ITTY. RTTYMailer handles all the formatting and transmission details
+          &mdash; you write your article, select a channel, and click Send.
+        </p>
+      </div>
+
+      <div class="steps">
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-body">
+            <strong>Download RTTYMailer</strong> and install it on a Windows PC.
+            <br>
+            <a href="https://www.rtty.com/itty/RTTYMailer%20v16.zip"
+               class="btn" style="margin-top:10px;display:inline-block;font-size:10px">
+              &#9660;&nbsp; Download RTTYMailer v16
+            </a>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-body">
+            <strong>Configure RTTYMailer</strong> with the channel address for AUTOSTART.
+            RTTYMailer includes built-in channel configuration &mdash; select AUTOSTART
+            from the channel list and the correct server settings are applied automatically.
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-body">
+            <strong>Write and send your article.</strong> Type or paste your content,
+            give it a title, and click Send. RTTYMailer delivers it to the AUTOSTART
+            queue, where it will be transmitted on the next available slot.
+          </div>
+        </div>
+      </div>
+
+      <div class="info-box">
+        <strong>Note:</strong> Some documentation mentions using a standard email client
+        to submit content by configuring a custom SMTP server. In practice this is
+        unreliable and difficult to set up correctly. Use RTTYMailer &mdash;
+        it works.
+      </div>
+
+      <hr class="rule-sep">
+
+      <!-- Technical details -->
+      <h2 class="section-hed">Technical Details</h2>
+      <div class="prose">
+        <p>
+          All ITTY streams use the Baudot (ITA2) character set, frequency-shift keying,
+          and 170&nbsp;Hz shift unless otherwise noted. The audio signal in the stream
+          is exactly what you would hear from a radio receiver tuned to an RTTY
+          transmission &mdash; set your decoder accordingly.
+        </p>
+      </div>
+
+      <table class="spec-table">
+        <thead>
+          <tr>
+            <th>Channel</th>
+            <th>Speed</th>
+            <th>Baud rate</th>
+            <th>Shift</th>
+            <th>Mode</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>ITTY 60 WPM</td>
+            <td>60 WPM</td>
+            <td>45.45 baud</td>
+            <td>170 Hz</td>
+            <td>LSB / AFSK</td>
+          </tr>
+          <tr>
+            <td>ITTY 100 WPM</td>
+            <td>100 WPM</td>
+            <td>75 baud</td>
+            <td>170 Hz</td>
+            <td>LSB / AFSK</td>
+          </tr>
+          <tr>
+            <td>ITTY Europe</td>
+            <td>66 WPM</td>
+            <td>50 baud</td>
+            <td>European std</td>
+            <td>LSB / AFSK</td>
+          </tr>
+          <tr>
+            <td>AUTOSTART</td>
+            <td>60 WPM</td>
+            <td>45.45 baud</td>
+            <td>170 Hz</td>
+            <td>LSB / AFSK</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="prose">
+        <p>
+          Listeners use a wide variety of decoders &mdash; there is no single
+          recommendation. Common software choices include <strong>MMTTY</strong>
+          and <strong>fldigi</strong>. Hardware terminal units of all vintages work
+          equally well, from the classic Mainline designs to commercial units.
+          See the <a href="equipment.html" style="color:var(--red)">Equipment</a>
+          section for schematics and documentation on terminal units and demodulators.
+        </p>
+      </div>
+
+    </main>
+
+    <!-- Sidebar -->
+    <aside class="col-side">
+
+      <div class="sb-box">
+        <div class="sb-hed">Quick Listen</div>
+        <div class="sb-note">
+          <a href="http://internet-tty.net:8000/ITTY"
+             style="display:block;padding:8px 0;border-bottom:1px dotted var(--rule);color:var(--ink);text-decoration:none;font-weight:700">
+            &#9654; ITTY 60 WPM
+          </a>
+          <a href="http://internet-tty.net:8010/ITTY100"
+             style="display:block;padding:8px 0;border-bottom:1px dotted var(--rule);color:var(--ink);text-decoration:none;font-weight:700">
+            &#9654; ITTY 100 WPM
+          </a>
+          <a href="http://internet-tty.net:8040/EUROPE"
+             style="display:block;padding:8px 0;border-bottom:1px dotted var(--rule);color:var(--ink);text-decoration:none;font-weight:700">
+            &#9654; ITTY Europe
+          </a>
+          <a href="http://internet-tty.net:8030/AUTOSTART"
+             style="display:block;padding:8px 0;color:var(--ink);text-decoration:none;font-weight:700">
+            &#9654; AUTOSTART
+          </a>
+        </div>
+      </div>
+
+      <div class="sb-box">
+        <div class="sb-hed">RTTYMailer</div>
+        <div class="sb-note">
+          Free Windows app for submitting articles to ITTY channels.
+          Written specifically for ITTY &mdash; no SMTP configuration required.
+          <br><br>
+          <a href="https://www.rtty.com/itty/RTTYMailer%20v16.zip"
+             class="btn" style="display:block;text-align:center;font-size:10px">
+            &#9660; Download v16
+          </a>
+        </div>
+      </div>
+
+      <div class="sb-box">
+        <div class="sb-hed">Suggested Decoders</div>
+        <div class="sb-note">
+          <strong style="color:var(--ink)">Software</strong><br>
+          MMTTY (Windows)<br>
+          fldigi (Win / Mac / Linux)<br>
+          <br>
+          <strong style="color:var(--ink)">Audio routing</strong><br>
+          VB-Cable (Windows)<br>
+          BlackHole (Mac)<br>
+          Jack (Linux)<br>
+          <br>
+          <strong style="color:var(--ink)">Hardware TUs</strong><br>
+          Any FSK demodulator,
+          170&nbsp;Hz shift.
+          See <a href="equipment.html" style="color:var(--red)">Equipment</a>
+          for schematics.
+        </div>
+      </div>
+
+      <div class="sb-box">
+        <div class="sb-hed">About ITTY</div>
+        <div class="sb-note">
+          ITTY was founded in 2001 by George Hutchison W7TTY
+          <span class="sk">&#9632; SK</span>.<br><br>
+          Original software by Bill Bytheway K7TTY.<br><br>
+          Currently operated by Paul Heller W2TTY from Arvada, CO.
+          Four channels &bull; 24/7 &bull; since 2001.
+        </div>
+      </div>
+
+    </aside>
+
+  </div>
+</div>
+
+<footer class="site-footer">
+  <span>RTTY.COM &mdash; W2TTY &mdash; ARVADA, CO</span>
+  <span>NON-COMMERCIAL ARCHIVE &mdash; NO TRACKING</span>
+  <span>BAUDOT 1870 &bull; TELETYPE 1906 &bull; RTTY 1922</span>
+</footer>
+
+<canvas id="tapeBot" class="tape" aria-hidden="true"></canvas>
+<script src="js/tape.js"></script>
+</body>
+</html>

@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RTTY Art Gallery — RTTY.COM</title>
+  <meta name="description" content="147 works of Baudot teletype art from the 1960s–1980s, rendered in the browser using a JavaScript ITA2 decoder faithful to the original format.">
+  <link rel="stylesheet" href="css/rtty.css">
+  <style>
+    /* Gallery-specific layout */
+    .gallery-wrap {
+      max-width: 900px;
+      margin: 0 auto;
+      border-left: 1px solid var(--rule);
+      border-right: 1px solid var(--rule);
+    }
+
+    .gallery-intro {
+      padding: 20px 28px 18px;
+      border-bottom: 1px solid var(--rule);
+      background: var(--paper-dk);
+      font-size: 16px;
+      color: var(--ink-mid);
+      line-height: 1.7;
+    }
+    .gallery-intro strong { color: var(--ink); }
+
+    .gallery-layout {
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      min-height: 600px;
+    }
+
+    /* File list panel */
+    .file-panel {
+      border-right: 1px solid var(--rule);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .filter-wrap {
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--rule);
+      background: var(--paper-dk);
+    }
+
+    .filter-input {
+      width: 100%;
+      background: var(--paper);
+      border: 1px solid var(--rule-dk);
+      color: var(--ink);
+      font-family: 'Courier Prime', monospace;
+      font-size: 11px;
+      letter-spacing: .06em;
+      padding: 5px 8px;
+      outline: none;
+    }
+    .filter-input:focus { border-color: var(--ink); }
+    .filter-input::placeholder { color: var(--ink-ghost); }
+
+    .file-count {
+      padding: 5px 12px;
+      font-size: 9px;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--ink-ghost);
+      border-bottom: 1px solid var(--rule);
+      background: var(--paper-dk);
+    }
+
+    .file-list {
+      overflow-y: auto;
+      flex: 1;
+      max-height: 680px;
+    }
+
+    .file-entry {
+      padding: 7px 12px;
+      font-size: 11px;
+      font-family: 'Courier Prime', monospace;
+      letter-spacing: .04em;
+      color: var(--ink-mid);
+      border-bottom: 1px dotted var(--rule);
+      cursor: pointer;
+      line-height: 1.3;
+      transition: background .1s;
+    }
+    .file-entry:hover { background: var(--paper-dk); color: var(--ink); }
+    .file-entry.active {
+      background: var(--ink);
+      color: var(--paper);
+    }
+    .file-entry.active .file-call { color: #c8d890; }
+
+    .file-name { display: block; }
+    .file-call {
+      display: block;
+      font-size: 9px;
+      letter-spacing: .12em;
+      color: var(--ink-ghost);
+      margin-top: 1px;
+    }
+
+    /* Viewer panel */
+    .viewer-panel {
+      display: flex;
+      flex-direction: column;
+      background: var(--paper);
+    }
+
+    .viewer-header {
+      padding: 10px 16px;
+      border-bottom: 1px solid var(--rule);
+      background: var(--paper-dk);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .viewer-title {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: .08em;
+      color: var(--ink);
+      text-transform: uppercase;
+      font-family: 'Courier Prime', monospace;
+    }
+
+    .viewer-attribution {
+      font-size: 10px;
+      letter-spacing: .1em;
+      color: var(--ink-faint);
+      text-transform: uppercase;
+    }
+
+    .viewer-actions {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .viewer-canvas-wrap {
+      padding: 16px;
+      overflow: auto;
+      flex: 1;
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-start;
+    }
+
+    #artCanvas {
+      display: block;
+      background: #fffff0;
+      border: 1px solid var(--rule);
+      image-rendering: pixelated;
+    }
+
+    .viewer-empty {
+      padding: 60px 32px;
+      text-align: center;
+      color: var(--ink-ghost);
+      font-size: 11px;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      line-height: 2.5;
+    }
+    .viewer-empty .big {
+      font-size: 14px;
+      color: var(--ink-faint);
+      letter-spacing: .25em;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .viewer-status {
+      padding: 8px 16px;
+      border-top: 1px solid var(--rule);
+      font-size: 10px;
+      letter-spacing: .1em;
+      color: var(--ink-ghost);
+      background: var(--paper-dk);
+      display: flex;
+      gap: 20px;
+    }
+
+    .zoom-controls {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-left: auto;
+    }
+    .zoom-btn {
+      background: var(--paper);
+      border: 1px solid var(--rule);
+      color: var(--ink-faint);
+      width: 22px; height: 22px;
+      font-family: 'Courier Prime', monospace;
+      font-size: 14px;
+      cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      transition: all .12s;
+      line-height: 1;
+    }
+    .zoom-btn:hover { border-color: var(--ink); color: var(--ink); }
+    .zoom-label {
+      font-size: 10px;
+      color: var(--ink-ghost);
+      letter-spacing: .1em;
+      min-width: 36px;
+      text-align: center;
+    }
+
+    /* About the format box */
+    .format-note {
+      padding: 14px 28px;
+      border-top: 2px solid var(--rule-dk);
+      background: var(--paper-dk);
+      font-size: 12px;
+      color: var(--ink-faint);
+      line-height: 1.8;
+    }
+    .format-note strong { color: var(--ink-mid); }
+
+    @media (max-width: 640px) {
+      .gallery-layout { grid-template-columns: 1fr; }
+      .file-panel { border-right: none; border-bottom: 1px solid var(--rule); }
+      .file-list { max-height: 200px; }
+    }
+  </style>
+</head>
+<body>
+
+<canvas id="tapeTop" class="tape" aria-hidden="true"></canvas>
+
+<header class="masthead">
+  <div class="mh-side">PRESERVATION OF RTTY HISTORY<br>TELETYPE ART &amp; CULTURE<br>EST. LATE 1990S</div>
+  <div class="mh-center">
+    <a href="index.html" class="site-name">RTTY.COM</a>
+    <span class="site-tag">The Radio Teletype Reference &amp; Archive</span>
+  </div>
+  <div class="mh-side mh-right">THE INTERNET'S OLDEST<br>RTTY RESOURCE<br>BAUDOT &bull; TELETYPE &bull; WIRE</div>
+</header>
+
+<nav class="site-nav" aria-label="Main navigation">
+  <a href="index.html">Home</a>
+  <a href="history.html">History</a>
+  <a href="gallery.html" class="active">RTTY Art</a>
+  <a href="equipment.html">Equipment</a>
+  <a href="itty.html">ITTY</a>
+  <a href="resources.html">Resources</a>
+  <a href="community.html">Community</a>
+  <a href="links.html">Links</a>
+</nav>
+
+<div class="dateline">
+  <strong>RTTY ART GALLERY</strong> &mdash;
+  147 WORKS &bull; BAUDOT CHARACTER ART &bull; 1960S&ndash;1980S &bull;
+  ORIGINAL VIEWER BY BILL BYTHEWAY AA6ED
+</div>
+
+<div class="gallery-wrap">
+
+  <div class="gallery-intro">
+    <strong>About the format:</strong> These files are plain text containing only the Baudot (ITA2) character set &mdash; uppercase letters, digits, and punctuation. A carriage return without a line feed produces overstrike, printing multiple characters on the same position and creating dense shading effects. Files are rendered here using a JavaScript decoder faithful to the original behavior. Click any file to view it. Use the download button to save the raw <code>.pix</code> file for use with RTTY software.
+  </div>
+
+  <div class="gallery-layout">
+
+    <!-- File list panel -->
+    <div class="file-panel">
+      <div class="filter-wrap">
+        <input type="text" class="filter-input" id="filterInput"
+               placeholder="SEARCH FILES..." autocomplete="off" spellcheck="false">
+      </div>
+      <div class="file-count" id="fileCount">147 FILES</div>
+      <div class="file-list" id="fileList"></div>
+    </div>
+
+    <!-- Viewer panel -->
+    <div class="viewer-panel">
+      <div class="viewer-header" id="viewerHeader">
+        <span class="viewer-title" id="viewerTitle">SELECT A FILE</span>
+        <div class="viewer-actions" id="viewerActions">
+          <div class="zoom-controls">
+            <span class="zoom-label" id="zoomLabel">100%</span>
+            <button class="zoom-btn" id="zoomOut" title="Zoom out">&#8722;</button>
+            <button class="zoom-btn" id="zoomIn"  title="Zoom in">+</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="viewer-canvas-wrap" id="canvasWrap">
+        <div class="viewer-empty" id="emptyState">
+          <span class="big">&#9632; RTTY ART VIEWER</span>
+          SELECT A FILE FROM THE LIST<br>
+          TO RENDER IT IN THE BROWSER<br>
+          <span style="font-size:9px;color:var(--rule-dk);margin-top:8px;display:block">
+            ITA2 BAUDOT &bull; OVERSTRIKE SUPPORTED &bull; CR/LF AUTHENTIC
+          </span>
+        </div>
+        <canvas id="artCanvas" style="display:none"></canvas>
+      </div>
+
+      <div class="viewer-status" id="viewerStatus" style="display:none">
+        <span id="statChars"></span>
+        <span id="statLines"></span>
+        <span id="statOverstrike"></span>
+        <a id="dlLink" class="btn" style="margin-left:auto;font-size:10px;padding:4px 10px"
+           href="#" download>&#9660; DOWNLOAD .PIX</a>
+      </div>
+    </div>
+
+  </div><!-- .gallery-layout -->
+
+  <div class="format-note">
+    <strong>File format:</strong> .PIX files contain Baudot character-set text.
+    Uppercase A&ndash;Z, digits 0&ndash;9, and punctuation only.
+    CR (0x0D) without LF = overstrike (carriage return, no line advance).
+    LF (0x0A) = new line. All other bytes ignored.
+    &bull; <strong>Callsigns</strong> in filenames indicate the originating operator.
+    &bull; Files may be used freely in RTTY software and broadcasts.
+  </div>
+
+</div><!-- .gallery-wrap -->
+
+<footer class="site-footer">
+  <span>RTTY.COM &mdash; W2TTY &mdash; ARVADA, CO</span>
+  <span>NON-COMMERCIAL ARCHIVE &mdash; NO TRACKING</span>
+  <span>BAUDOT 1870 &bull; TELETYPE 1906 &bull; RTTY 1922</span>
+</footer>
+
+<canvas id="tapeBot" class="tape" aria-hidden="true"></canvas>
+<script src="js/tape.js"></script>
+
+<script>
+// ============================================================
+// RTTY Art Gallery — PIX viewer and file list
+// File format: Baudot ITA2 text with CR (overstrike) / LF
+// ============================================================
+
+// Full gallery file list (147 files)
+const FILES = [
+  '1R_Balloon.pix','2ElFamosoCarlitosMoreno_W4NG.pix','adam$eve.pix',
+  'AdamAndEve.pix','AmericanDreamMachine_K9WRL.pix','andycap.pix',
+  'AnotherGirl_K1PLP.pix','apegirl.pix','ARRL.pix','AtlasBrick_WA5EHA.pix',
+  'b_boop.pix','BatGirl.pix','BatMan_W2NWQ.pix','batman.pix','bbardot.pix',
+  'BeepBeep_Unknown.pix','BeepBeepRoadRunner.pix','Beethoven.pix',
+  'BerryXmasBanner2.pix','BigMac_W2UIC.pix','Boat_Unknown.pix',
+  'Buffalo_WB4WWC.pix','BunnyFlowerPower_K9WRL.pix','calvin.pix','camels.pix',
+  'Casper_K1PLP.pix','castle.pix','CatStevens1977.pix','caveman.pix',
+  'chamglas.pix','Charlie_WA9WJE.pix','cookie.pix','cougar.pix','cowboy.pix',
+  'cy.pix','cylonrdr.pix','DateWithLucy.pix','dtchme.pix','edison.pix',
+  'F-4EPhantom_K9WRL.pix','f4e.pix','facegirl.pix','Faces.pix','fang.pix',
+  'fccgirl.pix','ffstone.pix','FlushWithPride_WB7OKG.pix','frnchnd.pix',
+  'fshnfrg.pix','Garfield_WB9ZKI.pix','garfield.pix','garroway.pix',
+  'genhtrk.pix','george.pix','girl.pix','girlface.pix','grchomrx.pix',
+  'GreatAmericanEgal_K9WRL.pix','HalloweenWitch_K1PLP.pix','HappyEaster.pix',
+  'HappyHalloween_WA9BXH.pix','HappyNewYear.pix','HappyTurkeyDay.pix',
+  'heart.pix','HeathcliffCat.pix','HighlandDanc.pix','hippo.pix',
+  'Hitshot_K9WRL.pix','holly.pix','horshead.pix','Indy500_WA6PIR.pix',
+  'indy500.pix','karate.pix','lincoln.pix','LittleAnnieFannie.pix',
+  'LittleDrummerBoy_K9WRL.pix','ltuhura.pix','lucy.pix','madmag.pix',
+  'Madonna.pix','MerryXmas.pix','MerryXmasBanner1.pix','mickymouse.pix',
+  'misdec66.pix','mismarch.pix','MissAfro_WA6PIR.pix','MissAnonomous.pix',
+  'missanta.pix','missclns.pix','MissCollins1973_WA6PIR.pix',
+  'MissJan1973_K9WRL.pix','MissJuly_K9WRL.pix','MissMarch1971_WA6PIR.pix',
+  'MissMarch1972_WA6PIR.pix','MissMay1970.pix','MissOct1972_WA6PIR.pix',
+  'MissOct1979.pix','MissPlaymate_WA6PIR.pix','misspt66.pix','mmarch01.pix',
+  'modelafo.pix','mozart.pix','Mystery_1.pix','Mystery_4.pix','Mystery_5.pix',
+  'Mystery_6.pix','Mystery_7.pix','Mystery_8.pix',
+  'OldDanishWindmill_OZ3UL.pix','OldNavyShip_WA6EZW.pix',
+  'OlivarHardy_K9WRL.pix','OlynpicDiver_WB4WWC.pix','PinkPanther_WA6PIR.pix',
+  'PlayboyBunny.pix','poison.pix','QuickBrownFox.pix','RingRing_KA9OPR.pix',
+  'rose.pix','SeasonsGreetings1962.pix','SiamesePussycat_WA6PIR.pix',
+  'smiley.pix','Snoopy.pix','SnoopySkating_WA0PCM.pix','StanLaurel_K9WRL.pix',
+  'StarWars_K7YNC.pix','TheChgeeseDigger.pix','TheDisster_N9AHP.pix',
+  'TheMisses_WA6PIR.pix','TheWrestler_G3MEJ.pix','ThreeWiseMen_WB2YXY.pix',
+  'thumper.pix','tweetybird.pix','TwoWomen_W5SOQ.pix','UPILine_W2CY.pix',
+  'USATrain1975.pix','valentine.pix','VargasGirl1968_K9WRL.pix',
+  'VargasGirl1973_K9WRL.pix','WA6LPY.pix','WCFields_K9WRL.pix',
+  'WhoIsBoss_K9TKE.pix','Wolf.pix','WorldPeace.pix','WyomingCowboy_W7RPV.pix',
+  'xmastree.pix','YosemiteSam1.pix','YosemiteSam2.pix'
+];
+
+// Extract callsign from filename if present (e.g. BigMac_W2UIC.pix → W2UIC)
+function extractCall(filename) {
+  const m = filename.match(/_([A-Z0-9]{4,7})\.pix$/i);
+  if (!m) return null;
+  const candidate = m[1].toUpperCase();
+  // Basic callsign sanity check: contains both letters and digits
+  if (/[A-Z]/.test(candidate) && /[0-9]/.test(candidate)) return candidate;
+  return null;
+}
+
+// Clean display name: remove extension and callsign suffix
+function displayName(filename) {
+  return filename
+    .replace(/\.pix$/i, '')
+    .replace(/_[A-Z0-9]{4,7}$/i, '')
+    .replace(/([a-z])([A-Z])/g, '$1 $2')  // CamelCase → spaces
+    .replace(/[_-]/g, ' ')
+    .trim();
+}
+
+// ── Build file list ─────────────────────────────────────────
+let currentFile = null;
+let zoom = 1.0;
+
+function buildList(filter) {
+  const list = document.getElementById('fileList');
+  const count = document.getElementById('fileCount');
+  const q = (filter || '').toLowerCase();
+  const matching = FILES.filter(f => f.toLowerCase().includes(q));
+
+  count.textContent = matching.length + ' FILE' + (matching.length !== 1 ? 'S' : '');
+  list.innerHTML = '';
+
+  matching.forEach(f => {
+    const call = extractCall(f);
+    const name = displayName(f);
+    const div = document.createElement('div');
+    div.className = 'file-entry' + (f === currentFile ? ' active' : '');
+    div.innerHTML = `<span class="file-name">${name}</span>`
+      + (call ? `<span class="file-call">DE ${call}</span>` : '');
+    div.addEventListener('click', () => loadFile(f));
+    list.appendChild(div);
+  });
+}
+
+// ── PIX renderer ────────────────────────────────────────────
+const BAUDOT_SET = new Set(
+  'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-$!&#\'()"/:;?,. \n\r'.split('')
+);
+const CHAR_W = 5;
+const CHAR_H = 9;
+const FONT   = `bold 8px "Courier New", Courier, monospace`;
+const BG     = '#fffff0';
+const FG     = '#111100';
+
+function renderPix(canvas, text) {
+  let col = 0, row = 0, maxCol = 0, charCount = 0, overstrikeOps = 0;
+
+  for (const c of text) {
+    if (!BAUDOT_SET.has(c)) continue;
+    if (c === '\r') { overstrikeOps++; col = 0; }
+    else if (c === '\n') { if (col > maxCol) maxCol = col; col = 0; row++; }
+    else { col++; charCount++; }
+  }
+  if (col > maxCol) maxCol = col;
+  maxCol = Math.max(maxCol, 10);
+  const maxRow = Math.max(row, 5);
+
+  const W = maxCol * CHAR_W + 12;
+  const H = (maxRow + 1) * CHAR_H + 12;
+  canvas.width  = W;
+  canvas.height = H;
+
+  const ctx = canvas.getContext('2d');
+  ctx.fillStyle = BG;
+  ctx.fillRect(0, 0, W, H);
+  ctx.font = FONT;
+  ctx.fillStyle = FG;
+  ctx.textBaseline = 'top';
+
+  col = 0; row = 0;
+  for (const c of text) {
+    if (!BAUDOT_SET.has(c)) continue;
+    if (c === '\r') { col = 0; }
+    else if (c === '\n') { col = 0; row++; }
+    else {
+      ctx.fillText(c, 6 + col * CHAR_W, 6 + row * CHAR_H);
+      col++;
+    }
+  }
+
+  return { charCount, lineCount: maxRow + 1, overstrikeOps };
+}
+
+// ── Load and display a file ─────────────────────────────────
+function loadFile(filename) {
+  currentFile = filename;
+  buildList(document.getElementById('filterInput').value);
+
+  const call = extractCall(filename);
+  const name = displayName(filename);
+
+  document.getElementById('viewerTitle').textContent = name.toUpperCase();
+
+  const attrEl = document.getElementById('viewerAttribution');
+  if (attrEl) attrEl.textContent = call ? 'DE ' + call : '';
+
+  // Show loading state
+  document.getElementById('emptyState').style.display = 'none';
+  const canvas = document.getElementById('artCanvas');
+  canvas.style.display = 'block';
+  canvas.style.transform = `scale(${zoom})`;
+  canvas.style.transformOrigin = 'top left';
+
+  // Fetch the file from the gallery directory
+  fetch('gallery/' + filename)
+    .then(r => {
+      if (!r.ok) throw new Error('HTTP ' + r.status);
+      return r.text();
+    })
+    .then(text => {
+      const stats = renderPix(canvas, text);
+
+      // Update header attribution
+      const header = document.getElementById('viewerHeader');
+      header.querySelector('.viewer-title').textContent = name.toUpperCase();
+      let attrSpan = header.querySelector('.viewer-attribution');
+      if (!attrSpan) {
+        attrSpan = document.createElement('span');
+        attrSpan.className = 'viewer-attribution';
+        header.insertBefore(attrSpan, header.querySelector('.viewer-actions'));
+      }
+      attrSpan.textContent = call ? 'DE ' + call : '';
+
+      // Status bar
+      const status = document.getElementById('viewerStatus');
+      status.style.display = 'flex';
+      document.getElementById('statChars').textContent = stats.charCount + ' CHARS';
+      document.getElementById('statLines').textContent = stats.lineCount + ' LINES';
+      document.getElementById('statOverstrike').textContent =
+        stats.overstrikeOps > 0 ? stats.overstrikeOps + ' OVERSTRIKE OPS' : 'NO OVERSTRIKE';
+
+      const dl = document.getElementById('dlLink');
+      dl.href = 'gallery/' + filename;
+      dl.download = filename;
+    })
+    .catch(err => {
+      canvas.style.display = 'none';
+      document.getElementById('emptyState').style.display = 'block';
+      document.getElementById('emptyState').innerHTML =
+        `<span class="big">&#9632; LOAD ERROR</span>${filename}<br><br>${err.message}<br><br>`
+        + `<span style="font-size:9px">FILES MUST BE SERVED FROM A WEB SERVER,<br>NOT OPENED AS LOCAL FILE://</span>`;
+    });
+}
+
+// ── Zoom controls ────────────────────────────────────────────
+function applyZoom() {
+  const canvas = document.getElementById('artCanvas');
+  canvas.style.transform = `scale(${zoom})`;
+  canvas.style.transformOrigin = 'top left';
+  document.getElementById('zoomLabel').textContent = Math.round(zoom * 100) + '%';
+}
+
+document.getElementById('zoomIn').addEventListener('click', () => {
+  zoom = Math.min(4, zoom + 0.25); applyZoom();
+});
+document.getElementById('zoomOut').addEventListener('click', () => {
+  zoom = Math.max(0.5, zoom - 0.25); applyZoom();
+});
+
+// ── Filter input ─────────────────────────────────────────────
+document.getElementById('filterInput').addEventListener('input', e => {
+  buildList(e.target.value);
+});
+
+// ── Init ─────────────────────────────────────────────────────
+buildList('');
+</script>
+</body>
+</html>

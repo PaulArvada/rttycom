@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Service &amp; Documentation — Equipment — RTTY.COM</title>
+  <meta name="description" content="Technical service manuals and reference documents for vintage teletype equipment, including Bell System Practices, Western Union Field Service Manual, and the Stunt Box Book.">
+  <link rel="stylesheet" href="css/rtty.css">
+  <style>
+    .doc-entry {
+      margin-bottom: 32px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid var(--rule);
+      scroll-margin-top: 16px;
+    }
+    .doc-entry:last-child { border-bottom: none; margin-bottom: 0; }
+
+    .doc-hed {
+      font-family: 'Special Elite', serif;
+      font-size: 22px;
+      color: var(--ink);
+      margin-bottom: 4px;
+      line-height: 1.25;
+    }
+    .doc-meta {
+      font-size: 11px;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: var(--ink-ghost);
+      margin-bottom: 10px;
+    }
+    .doc-body {
+      font-size: 16px;
+      line-height: 1.85;
+      color: var(--ink-mid);
+    }
+    .doc-body p { margin-bottom: 1em; }
+    .doc-body p:last-of-type { margin-bottom: 14px; }
+
+    /* Contents list within a document entry */
+    .doc-contents {
+      background: var(--paper-dk);
+      border: 1px solid var(--rule);
+      padding: 12px 16px;
+      margin: 12px 0;
+      font-size: 13px;
+      color: var(--ink-mid);
+      line-height: 2;
+    }
+    .doc-contents-hed {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--ink-faint);
+      margin-bottom: 6px;
+    }
+
+    .dl-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px dotted var(--rule);
+    }
+    .dl-tag {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--ink-faint);
+      padding: 5px 12px;
+      background: var(--paper-dk);
+      border: 1px solid var(--rule);
+      text-decoration: none;
+      transition: all .15s;
+    }
+    .dl-tag:hover { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+    .dl-tag.primary {
+      background: var(--ink);
+      color: var(--paper);
+      border-color: var(--ink);
+    }
+    .dl-tag.primary:hover { background: var(--red); border-color: var(--red); }
+
+    .doc-nav .sb-item a {
+      color: var(--ink-mid);
+      text-decoration: none;
+      display: block;
+      font-size: 12px;
+      line-height: 1.4;
+    }
+    .doc-nav .sb-item a:hover { color: var(--red); }
+
+    .author-credit {
+      display: inline-block;
+      font-size: 13px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--ink-ghost);
+      background: var(--paper-dk);
+      border: 1px solid var(--rule);
+      padding: 3px 8px;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<canvas id="tapeTop" class="tape" aria-hidden="true"></canvas>
+
+<header class="masthead">
+  <div class="mh-side">PRESERVATION OF RTTY HISTORY<br>TELETYPE ART &amp; CULTURE<br>EST. LATE 1990S</div>
+  <div class="mh-center">
+    <a href="index.html" class="site-name">RTTY.COM</a>
+    <span class="site-tag">The Radio Teletype Reference &amp; Archive</span>
+  </div>
+  <div class="mh-side mh-right">THE INTERNET'S OLDEST<br>RTTY RESOURCE<br>BAUDOT &bull; TELETYPE &bull; WIRE</div>
+</header>
+
+<nav class="site-nav" aria-label="Main navigation">
+  <a href="index.html">Home</a>
+  <a href="history.html">History</a>
+  <a href="gallery.html">RTTY Art</a>
+  <a href="equipment.html" class="active">Equipment</a>
+  <a href="itty.html">ITTY</a>
+  <a href="resources.html">Resources</a>
+  <a href="community.html">Community</a>
+  <a href="links.html">Links</a>
+</nav>
+
+<div class="dateline">
+  <strong>SERVICE &amp; DOCUMENTATION</strong> &mdash;
+  KRETZMAN TECHNICAL LIBRARY &mdash;
+  <a href="equipment.html" style="color:var(--ink-faint);text-decoration:none">&#8592; Back to Equipment</a>
+</div>
+
+<div class="page-wrap">
+  <div class="two-col">
+
+    <main class="col-main">
+
+      <!-- BSP Critical Adjustments -->
+      <div class="doc-entry" id="bsp">
+        <div class="doc-hed">Bell System Practices &mdash; Critical Adjustments Manual</div>
+        <div class="doc-meta">
+          BSP 570-001-901 &bull; Bell System &bull; 102 pages &bull; 7 sections
+        </div>
+        <div class="doc-body">
+          <p>
+            Bell System Practices (BSP) documents were the official technical standards
+            and procedures used throughout the Bell System for installation, maintenance,
+            and adjustment of telecommunications equipment. BSP 570-001-901 covers
+            critical adjustments for the principal Teletype models in Bell System service.
+          </p>
+          <p>
+            This document is the essential reference for anyone adjusting or restoring
+            a Model 14, 15, 28, or 33. It provides precise procedures for selector
+            adjustment, timing, range setting, and the interrelated mechanical adjustments
+            that must be performed in the correct sequence. The original publication
+            was issued in seven sections; they are presented here as a single merged PDF.
+          </p>
+        </div>
+
+        <div class="doc-contents">
+          <div class="doc-contents-hed">Sections Covered</div>
+          Model 14 Equipment<br>
+          Model 15 Typing Unit, Keyboard &amp; Keyboard Perforator-Transmitter<br>
+          Model 28/35 Typing Unit &mdash; Part One<br>
+          Model 28/35 Typing Unit &mdash; Part Two<br>
+          Model 28 Keyboard, Perforator Transmitter &amp; Typing/Non-Typing Perforator<br>
+          Model 28 Typing Reperforator<br>
+          Model 28 Transmitter Distributor &amp; Model 33
+        </div>
+
+        <div class="dl-row">
+          <a href="downloads/bsp-570-001-901-critical-adjustments.pdf"
+             class="dl-tag primary">&#9660; Download PDF &mdash; 102 pages</a>
+        </div>
+      </div>
+
+      <!-- Western Union Field Tech Manual -->
+      <div class="doc-entry" id="wubook">
+        <div class="doc-hed">Western Union Field Technical Service Manual</div>
+        <div class="doc-meta">
+          Western Union &bull; 168 pages &bull; 18 parts &bull; Complete
+        </div>
+        <div class="doc-body">
+          <p>
+            This comprehensive field service manual covers the care and maintenance of
+            the Models 28 and 35 ASRs from the Western Union perspective. At 168 pages
+            across 18 parts, it is the most detailed service reference in this library
+            for the Model 28 family, complementing the Bell System Practices critical
+            adjustments document with broader procedural coverage.
+          </p>
+          <p>
+            The manual covers mechanical and electrical theory of operation, adjustment
+            procedures, troubleshooting, and parts identification for the Model 28 and 35
+            in the configurations used on Western Union circuits. It was written for
+            Western Union field technicians and assumes professional-level familiarity
+            with teletype equipment.
+          </p>
+          <p>
+            All eighteen parts are available below, along with the cover page and table
+            of contents. Each part is a separate PDF; start with the cover and contents
+            to identify the section you need.
+          </p>
+        </div>
+
+        <div class="dl-row">
+          <a href="equipment/literature/wubook/cover.pdf"    class="dl-tag">&#9660; Cover</a>
+          <a href="equipment/literature/wubook/contents.pdf" class="dl-tag">&#9660; Contents</a>
+          <a href="equipment/literature/wubook/part1.pdf"    class="dl-tag">&#9660; Part 1</a>
+          <a href="equipment/literature/wubook/part2.pdf"    class="dl-tag">&#9660; Part 2</a>
+          <a href="equipment/literature/wubook/part3.pdf"    class="dl-tag">&#9660; Part 3</a>
+          <a href="equipment/literature/wubook/part4.pdf"    class="dl-tag">&#9660; Part 4</a>
+          <a href="equipment/literature/wubook/part5.pdf"    class="dl-tag">&#9660; Part 5</a>
+          <a href="equipment/literature/wubook/part6.pdf"    class="dl-tag">&#9660; Part 6</a>
+          <a href="equipment/literature/wubook/part7.pdf"    class="dl-tag">&#9660; Part 7</a>
+          <a href="equipment/literature/wubook/part8.pdf"    class="dl-tag">&#9660; Part 8</a>
+          <a href="equipment/literature/wubook/part9.pdf"    class="dl-tag">&#9660; Part 9</a>
+          <a href="equipment/literature/wubook/part10.pdf"   class="dl-tag">&#9660; Part 10</a>
+          <a href="equipment/literature/wubook/part11.pdf"   class="dl-tag">&#9660; Part 11</a>
+          <a href="equipment/literature/wubook/part12.pdf"   class="dl-tag">&#9660; Part 12</a>
+          <a href="equipment/literature/wubook/part13.pdf"   class="dl-tag">&#9660; Part 13</a>
+          <a href="equipment/literature/wubook/part14.pdf"   class="dl-tag">&#9660; Part 14</a>
+          <a href="equipment/literature/wubook/part15.pdf"   class="dl-tag">&#9660; Part 15</a>
+          <a href="equipment/literature/wubook/part16.pdf"   class="dl-tag">&#9660; Part 16</a>
+          <a href="equipment/literature/wubook/part17.pdf"   class="dl-tag">&#9660; Part 17</a>
+          <a href="equipment/literature/wubook/part18.pdf"   class="dl-tag">&#9660; Part 18</a>
+        </div>
+      </div>
+
+      <!-- TTY Tools Catalog -->
+      <div class="doc-entry" id="ttytools">
+        <div class="doc-hed">Teletype Corporation Maintenance Tools Catalog</div>
+        <div class="doc-meta">
+          Teletype Corporation &bull; August 1977 &bull; 23 pages
+        </div>
+        <div class="doc-body">
+          <p>
+            This catalog documents the specialized tools produced by the Teletype Corporation
+            for maintaining its equipment. Many of these tools &mdash; gauges, alignment aids,
+            and specialized wrenches &mdash; are not easily fabricated or substituted, and
+            knowing their specifications is essential for anyone attempting a thorough
+            mechanical restoration.
+          </p>
+          <p>
+            The catalog is useful both for identifying tools by part number when sourcing
+            original examples, and for understanding the intended adjustment procedures that
+            require specific tooling. Issued August 1977, this was among the last technical
+            publications produced before Teletype&rsquo;s manufacturing wind-down.
+          </p>
+        </div>
+        <div class="dl-row">
+          <a href="equipment/literature/ttytools/tools.pdf"
+             class="dl-tag primary">&#9660; Download PDF &mdash; 23 pages</a>
+          <a href="equipment/literature/ttytools/tools.htm"
+             class="dl-tag">&#9654; View Online</a>
+        </div>
+      </div>
+
+      <!-- Stunt Box Book -->
+      <div class="doc-entry" id="stuntbox">
+        <div class="doc-hed">The Stunt Box Book</div>
+        <div class="doc-meta">
+          Model 28 Function / Stunt Box &bull; Complete Reference
+        </div>
+        <div class="doc-body">
+          <p>
+            The &ldquo;stunt box&rdquo; is the Model 28&rsquo;s built-in sequential selector
+            &mdash; a 9&frac14;&Prime;&times;4&frac12;&Prime; mechanism with slots that accept
+            trains of miniature parts or switches to perform an almost unlimited array of
+            non-typing functions. The name derives from old printing telegraph usage, where
+            non-typing operations were called &ldquo;stunts.&rdquo;
+          </p>
+          <p>
+            In practice, the stunt box is one of the most powerful and least understood
+            features of the Model 28. It can respond to specific characters or sequences
+            in the incoming signal and initiate mechanical or electrical actions &mdash;
+            routing, switching, alerting, or controlling associated equipment &mdash;
+            without operator intervention.
+          </p>
+          <p>
+            The Stunt Box Book is the definitive reference for understanding, configuring,
+            and exploiting the stunt box in amateur and commercial applications.
+          </p>
+        </div>
+        <div class="dl-row">
+          <a href="downloads/stuntbox.pdf"
+             class="dl-tag primary">&#9660; Download PDF</a>
+        </div>
+      </div>
+
+      <!-- Introduction to Amateur RTTY -->
+      <div class="doc-entry" id="hoff-intro">
+        <div class="doc-hed">Introduction to Amateur Radio Teletype</div>
+        <div class="doc-meta">
+          Frederick Electronics Corporation &bull; Complete Booklet
+        </div>
+        <div class="author-credit">Irvin M. Hoff K8DKG</div>
+        <div class="doc-body">
+          <p>
+            Written by Irvin M. Hoff K8DKG for Frederick Electronics Corporation, this
+            booklet remains one of the clearest and most complete introductions to amateur
+            RTTY ever published. It covers the theory of Baudot telegraphy, the mechanics
+            of teletype machines, terminal unit design, and the practical aspects of
+            getting on the air &mdash; all from the perspective of an operator and designer
+            who built some of the most widely used terminal units in the hobby.
+          </p>
+          <p>
+            Hoff is the designer of the Mainline TT/L, ST-3, ST-5, ST-6, and UT-2
+            demodulators documented in the
+            <a href="equipment-tu.html" style="color:var(--red)">Terminal Units</a> section.
+            His writing reflects practical expertise accumulated over decades of amateur
+            RTTY operation, and the booklet is as useful today as when it was written.
+          </p>
+        </div>
+        <div class="dl-row">
+          <a href="equipment/literature/introduction.htm"
+             class="dl-tag primary">&#9654; Read Online</a>
+        </div>
+      </div>
+
+    </main>
+
+    <!-- Sidebar -->
+    <aside class="col-side">
+
+      <div class="sb-box doc-nav">
+        <div class="sb-hed">On This Page</div>
+        <div class="sb-item"><a href="#bsp">&#9654; BSP Critical Adjustments Manual</a></div>
+        <div class="sb-item"><a href="#wubook">&#9654; Western Union Field Service Manual</a></div>
+        <div class="sb-item"><a href="#ttytools">&#9654; TTY Maintenance Tools Catalog</a></div>
+        <div class="sb-item"><a href="#stuntbox">&#9654; The Stunt Box Book</a></div>
+        <div class="sb-item"><a href="#hoff-intro">&#9654; Introduction to Amateur RTTY</a></div>
+      </div>
+
+      <div class="sb-box">
+        <div class="sb-hed">Equipment Section</div>
+        <div class="sb-item"><a href="equipment.html"
+          style="color:var(--red);text-decoration:none;font-size:12px">&#9632; Library Index</a></div>
+        <div class="sb-item"><a href="equipment-teletype.html"
+          style="color:var(--ink-mid);text-decoration:none;font-size:12px">&#9654; Teletype Machines</a></div>
+        <div class="sb-item"><a href="equipment-tu.html"
+          style="color:var(--ink-mid);text-decoration:none;font-size:12px">&#9654; Terminal Units</a></div>
+        <div class="sb-item"><a href="equipment-service.html"
+          style="color:var(--ink-mid);text-decoration:none;font-size:12px;font-weight:bold">&#9654; Service &amp; Documents</a></div>
+      </div>
+
+      <div class="sb-box">
+        <div class="sb-hed">Quick Downloads</div>
+        <div class="sb-note">
+          <a href="downloads/bsp-570-001-901-critical-adjustments.pdf"
+             style="display:block;padding:6px 0;border-bottom:1px dotted var(--rule);color:var(--ink);text-decoration:none">
+            &#9660; BSP Critical Adjustments
+          </a>
+          <a href="downloads/stuntbox.pdf"
+             style="display:block;padding:6px 0;color:var(--ink);text-decoration:none">
+            &#9660; The Stunt Box Book
+          </a>
+        </div>
+      </div>
+
+      <div class="sb-box">
+        <div class="sb-hed">About the Library</div>
+        <div class="sb-note">
+          Technical documents are reproduced for historical preservation and reference.
+          Bell System Practices and Teletype Corporation materials are believed to be in
+          the public domain. Western Union materials reproduced for archival purposes.
+          <br><br>
+          Copyright &copy; 2011<br>
+          William Bytheway K7TTY<br>
+          George Hutchison W7TTY
+        </div>
+      </div>
+
+    </aside>
+
+  </div>
+</div>
+
+<footer class="site-footer">
+  <span>RTTY.COM &mdash; W2TTY &mdash; ARVADA, CO</span>
+  <span>NON-COMMERCIAL ARCHIVE &mdash; NO TRACKING</span>
+  <span>BAUDOT 1870 &bull; TELETYPE 1906 &bull; RTTY 1922</span>
+</footer>
+
+<canvas id="tapeBot" class="tape" aria-hidden="true"></canvas>
+<script src="js/tape.js"></script>
+</body>
+</html>

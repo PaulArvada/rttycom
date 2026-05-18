@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Equipment — RTTY.COM</title>
+  <meta name="description" content="The Kretzman Technical Library: teletype machine reference, terminal unit schematics, and service documentation for vintage RTTY equipment.">
+  <link rel="stylesheet" href="css/rtty.css">
+  <style>
+    .lib-dedication {
+      text-align: center;
+      padding: 20px 0 24px;
+      border-bottom: 1px dashed var(--rule);
+      margin-bottom: 24px;
+    }
+    .lib-ded-name {
+      font-family: 'Special Elite', serif;
+      font-size: 28px;
+      letter-spacing: .06em;
+      color: var(--ink);
+      display: block;
+    }
+    .lib-ded-sub {
+      font-size: 11px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--ink-faint);
+      margin-top: 4px;
+      display: block;
+    }
+    .lib-ded-note {
+      font-size: 12px;
+      color: var(--ink-faint);
+      font-style: italic;
+      margin-top: 10px;
+      line-height: 1.7;
+    }
+    .section-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 28px;
+    }
+    .section-card {
+      background: var(--paper-dk);
+      border: 1px solid var(--rule);
+      border-top: 3px solid var(--ink);
+      padding: 18px 18px 16px;
+    }
+    .sc-title {
+      font-family: 'Special Elite', serif;
+      font-size: 17px;
+      color: var(--ink);
+      margin-bottom: 8px;
+      line-height: 1.2;
+    }
+    .sc-desc {
+      font-size: 11.5px;
+      color: var(--ink-mid);
+      line-height: 1.7;
+      margin-bottom: 14px;
+    }
+    .sc-list {
+      font-size: 11px;
+      color: var(--ink-faint);
+      line-height: 2;
+      border-top: 1px dotted var(--rule);
+      padding-top: 10px;
+      margin-bottom: 14px;
+    }
+    .intro-text {
+      font-size: 16px;
+      line-height: 1.85;
+      color: var(--ink-mid);
+      margin-bottom: 20px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--rule);
+    }
+    @media (max-width: 700px) {
+      .section-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<canvas id="tapeTop" class="tape" aria-hidden="true"></canvas>
+
+<header class="masthead">
+  <div class="mh-side">PRESERVATION OF RTTY HISTORY<br>TELETYPE ART &amp; CULTURE<br>EST. LATE 1990S</div>
+  <div class="mh-center">
+    <a href="index.html" class="site-name">RTTY.COM</a>
+    <span class="site-tag">The Radio Teletype Reference &amp; Archive</span>
+  </div>
+  <div class="mh-side mh-right">THE INTERNET'S OLDEST<br>RTTY RESOURCE<br>BAUDOT &bull; TELETYPE &bull; WIRE</div>
+</header>
+
+<nav class="site-nav" aria-label="Main navigation">
+  <a href="index.html">Home</a>
+  <a href="history.html">History</a>
+  <a href="gallery.html">RTTY Art</a>
+  <a href="equipment.html" class="active">Equipment</a>
+  <a href="itty.html">ITTY</a>
+  <a href="resources.html">Resources</a>
+  <a href="community.html">Community</a>
+  <a href="links.html">Links</a>
+</nav>
+
+<div class="dateline">
+  <strong>KRETZMAN TECHNICAL LIBRARY</strong> &mdash;
+  TELETYPE MACHINES &bull; TERMINAL UNITS &bull; SERVICE DOCUMENTATION
+</div>
+
+<div class="page-wrap">
+  <div class="full-col">
+
+    <div class="lib-dedication">
+      <span class="lib-ded-name">Kretzman Technical Library</span>
+      <span class="lib-ded-sub">Dedicated to Byron W. Kretzman &mdash; W2JTP</span>
+      <div class="lib-ded-note">
+        Byron Kretzman, W2JTP, was a tireless documenter of teletype technology whose notes,
+        schematics, and institutional knowledge helped preserve the technical record of equipment
+        that manufacturers had long since stopped supporting. This library is named in his honor.
+      </div>
+    </div>
+
+    <div class="intro-text">
+      Our intent is to capture technical information for equipment that is no longer supported
+      by the manufacturer in either service or documentation. As additional material is scanned
+      and prepared, new entries will be added to these archives. Content is presented in HTML
+      where practical and Adobe PDF format for schematics, wiring diagrams, and manuals.
+      <br><br>
+      Original content copyright &copy; 2011 William Bytheway K7TTY and George Hutchison W7TTY.
+      Site maintained by W2TTY.
+    </div>
+
+    <div class="srule"><span class="srule-label">Library Sections</span></div>
+
+    <div class="section-grid">
+
+      <div class="section-card">
+        <div class="sc-title">Teletype Machines</div>
+        <div class="sc-desc">
+          Technical, electrical, and mechanical data on the principal Teletype Corporation
+          models used in commercial telegraphy and amateur RTTY. Includes schematics,
+          wiring diagrams, and operational descriptions.
+        </div>
+        <div class="sc-list">
+          Model 14 Reperforator<br>
+          Model 15 KSR<br>
+          Model 19 Teletypewriter Set<br>
+          Model 28 ASR<br>
+          Model 28 KSR / RO<br>
+          Model 28 XASR<br>
+          Model 32 ASR<br>
+          Tactical MITE (AN/TGC-14A)<br>
+          Tape Equipment &amp; Transmitter Distributors
+        </div>
+        <a href="equipment-teletype.html" class="btn">View Machines &rarr;</a>
+      </div>
+
+      <div class="section-card">
+        <div class="sc-title">Terminal Units &amp; Demodulators</div>
+        <div class="sc-desc">
+          Schematics and technical documentation for FSK demodulators, terminal units,
+          and receiving converters — both commercial units and the classic Mainline
+          designs by Irv Hoff W6FFC.
+        </div>
+        <div class="sc-list">
+          Alltronics Model-A (1955)<br>
+          W5HFZ-W5RJG Converter (1955)<br>
+          Mainline TT/L (1964)<br>
+          Mainline ST-3, ST-5, ST-6 (1970)<br>
+          Mainline UT-2 (1975)<br>
+          DT-600 Demodulator (1977)<br>
+          Frederick Electronics 1632<br>
+          RTTY-CW-800A<br>
+          Model K Converter
+        </div>
+        <a href="equipment-tu.html" class="btn">View Terminal Units &rarr;</a>
+      </div>
+
+      <div class="section-card">
+        <div class="sc-title">Service &amp; Documentation</div>
+        <div class="sc-desc">
+          Technical manuals, service guides, and reference documents. Includes the
+          Bell System Practices critical adjustments compendium covering Models
+          14 through 35, and the Western Union Field Service Manual.
+        </div>
+        <div class="sc-list">
+          Bell System Practices (BSP)<br>
+          Critical Adjustments Manual<br>
+          Western Union Field Tech Manual<br>
+          TTY Maintenance Tools Catalog<br>
+          The Stunt Box Book<br>
+          Intro to Amateur RTTY (Hoff)
+        </div>
+        <a href="equipment-service.html" class="btn">View Documents &rarr;</a>
+      </div>
+
+    </div>
+
+    <div class="srule"><span class="srule-label">A Note on Sources</span></div>
+
+    <div class="intro-text" style="margin-bottom:0; padding-bottom:0; border-bottom:none">
+      Much of the technical content in the Teletype Machines section — particularly for
+      the Mainline series of demodulators — was written by <strong style="color:var(--ink)">Irvin M. Hoff</strong>,
+      variously W6FFC and K8DKG, who designed the TT/L, ST-3, ST-5, ST-6, and UT-2
+      demodulators and documented them in the RTTY Journal and QST over many years.
+      His <em>Introduction to Amateur Radio Teletype</em>, written for Frederick Electronics
+      Corporation, remains one of the clearest primers on the subject. Content is reproduced
+      here for archival and reference purposes.
+      <br><br>
+      Wiring diagrams, schematics, and military technical manuals are reproduced from
+      official publications for historical reference. War Department and Teletype Corporation
+      materials are believed to be in the public domain. Bell System Practices documents
+      are reproduced for historical preservation purposes.
+    </div>
+
+  </div>
+</div>
+
+<footer class="site-footer">
+  <span>RTTY.COM &mdash; W2TTY &mdash; ARVADA, CO</span>
+  <span>NON-COMMERCIAL ARCHIVE &mdash; NO TRACKING</span>
+  <span>BAUDOT 1870 &bull; TELETYPE 1906 &bull; RTTY 1922</span>
+</footer>
+
+<canvas id="tapeBot" class="tape" aria-hidden="true"></canvas>
+<script src="js/tape.js"></script>
+</body>
+</html>

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Community — RTTY.COM</title>
+  <meta name="description" content="GreenKeys is the active email discussion list for teletype collectors, restorers, and RTTY enthusiasts worldwide.">
+  <link rel="stylesheet" href="css/rtty.css">
+  <style>
+    .topic-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin: 16px 0;
+    }
+    .topic-item {
+      background: var(--paper-dk);
+      border: 1px solid var(--rule);
+      padding: 8px 12px;
+      font-size: 13px;
+      color: var(--ink-mid);
+      line-height: 1.4;
+    }
+    .topic-item::before {
+      content: '&#9632;';
+      color: var(--rule-dk);
+      margin-right: 6px;
+    }
+
+    .join-box {
+      background: var(--ink);
+      color: var(--paper);
+      padding: 24px 28px;
+      margin: 24px 0;
+      text-align: center;
+    }
+    .join-box-hed {
+      font-family: 'Special Elite', serif;
+      font-size: 22px;
+      margin-bottom: 8px;
+      color: var(--paper);
+    }
+    .join-box-sub {
+      font-size: 13px;
+      color: var(--ink-ghost);
+      margin-bottom: 18px;
+      line-height: 1.6;
+    }
+    .join-btn {
+      display: inline-block;
+      font-family: 'Courier Prime', monospace;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--ink);
+      background: var(--paper);
+      padding: 10px 24px;
+      text-decoration: none;
+      transition: background .15s;
+    }
+    .join-btn:hover { background: var(--paper-dk); }
+
+    @media (max-width: 500px) {
+      .topic-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<canvas id="tapeTop" class="tape" aria-hidden="true"></canvas>
+
+<header class="masthead">
+  <div class="mh-side">PRESERVATION OF RTTY HISTORY<br>TELETYPE ART &amp; CULTURE<br>EST. LATE 1990S</div>
+  <div class="mh-center">
+    <a href="index.html" class="site-name">RTTY.COM</a>
+    <span class="site-tag">The Radio Teletype Reference &amp; Archive</span>
+  </div>
+  <div class="mh-side mh-right">THE INTERNET'S OLDEST<br>RTTY RESOURCE<br>BAUDOT &bull; TELETYPE &bull; WIRE</div>
+</header>
+
+<nav class="site-nav" aria-label="Main navigation">
+  <a href="index.html">Home</a>
+  <a href="history.html">History</a>
+  <a href="gallery.html">RTTY Art</a>
+  <a href="equipment.html">Equipment</a>
+  <a href="itty.html">ITTY</a>
+  <a href="resources.html">Resources</a>
+  <a href="community.html" class="active">Community</a>
+  <a href="links.html">Links</a>
+</nav>
+
+<div class="dateline">
+  <strong>COMMUNITY</strong> &mdash;
+  THE ACTIVE TELETYPE DISCUSSION LIST
+</div>
+
+<div class="page-wrap">
+  <div class="two-col">
+
+    <main class="col-main">
+
+      <h1 class="section-hed" style="margin-top:0">GreenKeys</h1>
+
+      <div class="prose">
+        <p>
+          GreenKeys is an email discussion list devoted to older radio teletype gear &mdash;
+          mechanical teleprinters, terminal units, paper tape, and everything else related
+          to TTY and RTTY. It is the primary active community for teletype collectors,
+          restorers, and enthusiasts worldwide, and has been running continuously for
+          many years.
+        </p>
+        <p>
+          If you own a teletype machine, want to own one, are trying to restore one,
+          or simply want to learn more about the history and technology of teleprinters,
+          GreenKeys is where the conversation happens. The list is active, friendly,
+          and knowledgeable &mdash; members range from newcomers to people who worked
+          professionally on this equipment decades ago.
+        </p>
+        <p>
+          Selected GreenKeys messages also appear on the
+          <a href="itty.html" style="color:var(--red)">AUTOSTART</a> channel of ITTY,
+          where they are broadcast in authentic Baudot RTTY for anyone listening.
+        </p>
+      </div>
+
+      <hr class="rule-sep">
+
+      <h2 class="section-hed">Topics Covered</h2>
+
+      <div class="topic-grid">
+        <div class="topic-item">TTY machine information &amp; specifications</div>
+        <div class="topic-item">Collectors and enthusiasts</div>
+        <div class="topic-item">Buy, sell &amp; swap</div>
+        <div class="topic-item">History &amp; documentation</div>
+        <div class="topic-item">Teletype Corporation &amp; other manufacturers</div>
+        <div class="topic-item">Baudot machines (M12, 14, 15, 19, 28, 31, 32, 42&hellip;)</div>
+        <div class="topic-item">ASCII machines (M33, 35, 43&hellip;)</div>
+        <div class="topic-item">ASR, KSR, RO, KTR, TD configurations</div>
+        <div class="topic-item">Restoration &amp; preservation</div>
+        <div class="topic-item">Maintenance, supplies &amp; parts</div>
+        <div class="topic-item">Terminal units for radio RTTY</div>
+        <div class="topic-item">Computer interfacing</div>
+        <div class="topic-item">Electrical, electronic &amp; mechanical topics</div>
+        <div class="topic-item">Kleinschmidt, Creed &amp; other manufacturers</div>
+      </div>
+
+      <div class="join-box">
+        <div class="join-box-hed">Join the GreenKeys List</div>
+        <div class="join-box-sub">
+          Free subscription &bull; Email-based &bull; Hosted at QTH.net<br>
+          The list is not a &ldquo;contest&rdquo; reflector &mdash; it is dedicated to<br>
+          the mechanical and historical side of RTTY.
+        </div>
+        <a href="https://mailman.qth.net/mailman/listinfo/greenkeys"
+           class="join-btn" target="_blank" rel="noopener">
+          &#8599;&nbsp;&nbsp;Subscribe at QTH.net
+        </a>
+      </div>
+
+      <hr class="rule-sep">
+
+      <h2 class="section-hed">ITTY &amp; GreenKeys</h2>
+      <div class="prose">
+        <p>
+          ITTY was founded by GreenKeys members and grew directly out of the community&rsquo;s
+          shared interest in keeping the wire alive. The AUTOSTART channel broadcasts selected
+          GreenKeys messages in authentic Baudot RTTY, so that teletype machines around the
+          world can print community discussion just as they once printed AP and UPI wire copy.
+        </p>
+        <p>
+          To submit content to ITTY, use
+          <a href="resources.html" style="color:var(--red)">RTTYMailer</a> &mdash;
+          available on the Resources page.
+        </p>
+      </div>
+
+    </main>
+
+    <!-- Sidebar -->
+    <aside class="col-side">
+
+      <div class="sb-box">
+        <div class="sb-hed">GreenKeys List</div>
+        <div class="sb-note">
+          <strong style="color:var(--ink)">Host:</strong> QTH.net Mailman<br>
+          <strong style="color:var(--ink)">Format:</strong> Email list<br>
+          <strong style="color:var(--ink)">Cost:</strong> Free<br>
+          <strong style="color:var(--ink)">Traffic:</strong> Active<br>
+          <br>
+          <a href="https://mailman.qth.net/mailman/listinfo/greenkeys"
+             class="btn" style="display:block;text-align:center;font-size:10px"
+             target="_blank" rel="noopener">
+            &#8599; Subscribe
+          </a>
+        </div>
+      </div>
+
+      <div class="sb-box">
+        <div class="sb-hed">GreenKeys on ITTY</div>
+        <div class="sb-note">
+          Selected GreenKeys messages are broadcast on the AUTOSTART channel in
+          authentic Baudot RTTY at 60 WPM.
+          <br><br>
+          <a href="http://internet-tty.net:8030/AUTOSTART"
+             style="display:block;padding:7px 0;color:var(--ink);text-decoration:none;font-weight:700">
+            &#9654; Listen to AUTOSTART
+          </a>
+        </div>
+      </div>
+
+      <div class="sb-box">
+        <div class="sb-hed">Send to ITTY</div>
+        <div class="sb-note">
+          Use RTTYMailer to submit articles to ITTY channels.
+          <br><br>
+          <a href="resources.html#software"
+             style="display:block;padding:5px 0;color:var(--ink-mid);text-decoration:none">
+            &#9654; Download RTTYMailer
+          </a>
+          <a href="itty.html"
+             style="display:block;padding:5px 0;color:var(--ink-mid);text-decoration:none">
+            &#9654; ITTY Channel Guide
+          </a>
+        </div>
+      </div>
+
+    </aside>
+
+  </div>
+</div>
+
+<footer class="site-footer">
+  <span>RTTY.COM &mdash; W2TTY &mdash; ARVADA, CO</span>
+  <span>NON-COMMERCIAL ARCHIVE &mdash; NO TRACKING</span>
+  <span>BAUDOT 1870 &bull; TELETYPE 1906 &bull; RTTY 1922</span>
+</footer>
+
+<canvas id="tapeBot" class="tape" aria-hidden="true"></canvas>
+<script src="js/tape.js"></script>
+</body>
+</html>

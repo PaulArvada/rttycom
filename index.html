@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RTTY.COM — The Radio Teletype Reference &amp; Archive</title>
+  <meta name="description" content="RTTY.COM is a non-commercial archive dedicated to the preservation of radioteletype history, Baudot teletype art, and the ITTY live wire service.">
+  <link rel="stylesheet" href="css/rtty.css">
+</head>
+<body>
+
+<!-- Top Baudot tape strip: encodes RTTY.COM in ITA2 -->
+<canvas id="tapeTop" class="tape" aria-hidden="true"></canvas>
+
+<!-- ── Masthead ── -->
+<header class="masthead">
+  <div class="mh-side">
+    PRESERVATION OF RTTY HISTORY<br>
+    TELETYPE ART &amp; CULTURE<br>
+    EST. LATE 1990S
+  </div>
+  <div class="mh-center">
+    <a href="index.html" class="site-name">RTTY.COM</a>
+    <span class="site-tag">The Radio Teletype Reference &amp; Archive</span>
+  </div>
+  <div class="mh-side mh-right">
+    THE INTERNET'S OLDEST<br>
+    RTTY RESOURCE<br>
+    BAUDOT &bull; TELETYPE &bull; WIRE
+  </div>
+</header>
+
+<!-- ── Navigation ── -->
+<nav class="site-nav" aria-label="Main navigation">
+  <a href="index.html" class="active">Home</a>
+  <a href="history.html">History</a>
+  <a href="gallery.html">RTTY Art</a>
+  <a href="equipment.html">Equipment</a>
+  <a href="itty.html">ITTY</a>
+  <a href="resources.html">Resources</a>
+  <a href="community.html">Community</a>
+  <a href="links.html">Links</a>
+</nav>
+
+<!-- ── Dateline ── -->
+<div class="dateline">
+  <strong>AP WIRE SERVICE MEMORIAL</strong> &mdash;
+  RTTY.COM ARCHIVE &mdash;
+  BAUDOT TELETYPE 1870&ndash;PRESENT &mdash;
+  W2TTY / ARVADA, CO
+</div>
+
+<!-- ── Page content ── -->
+<div class="page-wrap">
+  <div class="two-col">
+
+    <!-- Main content column -->
+    <main class="col-main">
+
+      <div class="srule"><span class="srule-label">From the Wire</span></div>
+
+      <!-- Lede -->
+      <div class="lede-wrap">
+        <span class="dropcap">B</span>efore
+        the internet, before fax machines, before email &mdash; the news traveled on wire.
+        Radioteletype machines clattered away in newsrooms, aboard ships, and in amateur radio
+        shacks around the world, printing dispatches in ALL CAPS on continuous rolls of yellow
+        paper. RTTY.COM preserves that tradition: the machines, the art form, the technical
+        history, and the people who kept the wire alive.
+      </div>
+
+      <!-- Wire item: History -->
+      <div class="wire-item">
+        <div class="wire-slug">&#9632; Feature</div>
+        <div class="wire-hed">Baudot Code: How Five Bits Carried the World&rsquo;s News</div>
+        <div class="wire-body">
+          In 1870, &Eacute;mile Baudot devised a five-bit code that could represent every letter,
+          numeral, and punctuation mark needed for telegraph transmission &mdash; an encoding
+          so efficient it remained in commercial use for over a century. The punched tape strips
+          bordering this page encode real ITA2 Baudot: RTTY.COM on top, DE W2TTY on the bottom.
+        </div>
+        <div class="wire-byline">
+          <a href="history.html">History &mdash; Read More &rarr;</a>
+        </div>
+      </div>
+
+      <!-- Wire item: Gallery -->
+      <div class="wire-item">
+        <div class="wire-slug">&#9632; Gallery</div>
+        <div class="wire-hed">The RTTY Art Collection: 250+ Works in the Baudot Tradition</div>
+        <div class="wire-body">
+          Ham radio operators in the 1960s and 70s discovered that the teletype&rsquo;s
+          fixed-pitch uppercase characters could be composed into images of surprising richness
+          and detail. The overstrike technique &mdash; CR without LF &mdash; allowed multiple
+          characters to print on the same position, creating dense shading effects impossible
+          with a typewriter. The gallery collects the best of this tradition, viewable in
+          the browser using a JavaScript renderer faithful to the original Baudot format.
+        </div>
+        <div class="wire-byline">
+          <a href="gallery.html">Gallery &mdash; Browse Collection &rarr;</a>
+        </div>
+      </div>
+
+      <!-- Wire item: ITTY -->
+      <div class="wire-item">
+        <div class="wire-slug">&#9632; ITTY Live Service</div>
+        <div class="wire-hed">ITTY: Wire Service News Delivered to Your Teletype, Today</div>
+        <div class="wire-body">
+          ITTY is a live audio stream encoding Baudot RTTY signals at 60 and 100 WPM &mdash;
+          the same format the AP and UPI ran on their wire circuits. The audio is standard MP3,
+          playable in any browser or media player. Connect your machine, tune your modem, and
+          the news prints just as it would have in 1965. Four channels broadcast 24 hours a day.
+        </div>
+        <div class="wire-byline">
+          <a href="itty.html">ITTY &mdash; Connect Now &rarr;</a>
+        </div>
+      </div>
+
+      <!-- Channel tiles -->
+      <div class="srule" style="margin-top:4px">
+        <span class="srule-label">Active Channels</span>
+      </div>
+
+      <div class="channel-grid">
+        <div class="channel-tile">
+          <div class="channel-live">LIVE</div>
+          <div class="channel-name">ITTY &mdash; 60 WPM</div>
+          <div class="channel-speed">North American Standard &bull; 45.45 baud</div>
+        </div>
+        <div class="channel-tile">
+          <div class="channel-live">LIVE</div>
+          <div class="channel-name">ITTY &mdash; 100 WPM</div>
+          <div class="channel-speed">High Speed &bull; 75 baud</div>
+        </div>
+        <div class="channel-tile">
+          <div class="channel-live">LIVE</div>
+          <div class="channel-name">EUROPE &mdash; 66 WPM</div>
+          <div class="channel-speed">50 Baud &bull; European Standard</div>
+        </div>
+        <div class="channel-tile">
+          <div class="channel-live">LIVE</div>
+          <div class="channel-name">AUTOSTART</div>
+          <div class="channel-speed">User-submitted content</div>
+        </div>
+      </div>
+
+      <a href="itty.html" class="btn">&#9654;&nbsp;&nbsp;Connect to ITTY</a>
+      &nbsp;
+      <a href="itty.html" class="btn btn-out">How it works &rarr;</a>
+
+    </main>
+
+    <!-- Sidebar -->
+    <aside class="col-side">
+
+      <!-- RTTY Art preview -->
+      <div class="sb-box">
+        <div class="sb-hed">RTTY Art Preview</div>
+        <div class="art-preview">   .      .    BIGMAC.PIX
+ .WWWWWWWWWWWWWWWW.
+MWWWWWWWWWWWWWWWWWM
+MMMWWWWWW.WW.WWWMMM
+MMMWWWWWW.WW.WWWMMM
+MMMWWWWWWWWWWWWWMMM
+.MMMWWWWWWWWWWWMMM.
+..WWWMM.....MMWWW..
+  .WWWW.....WWWW.
+    .WW.....WW.</div>
+        <a href="gallery.html" class="btn" style="width:100%;display:block;text-align:center">
+          Browse Gallery &rarr;
+        </a>
+      </div>
+
+      <!-- Site sections -->
+      <div class="sb-box">
+        <div class="sb-hed">Site Sections</div>
+        <div class="sb-note">
+          <a href="history.html"          style="color:var(--ink-mid);text-decoration:none;display:block;padding:5px 0;border-bottom:1px dotted var(--rule)">&#9654; RTTY History &amp; Origins</a>
+          <a href="downloads/teletype-story.pdf" style="color:var(--ink-mid);text-decoration:none;display:block;padding:5px 0;border-bottom:1px dotted var(--rule)">&#9654; The Teletype Story (PDF)</a>
+          <a href="gallery.html"          style="color:var(--ink-mid);text-decoration:none;display:block;padding:5px 0;border-bottom:1px dotted var(--rule)">&#9654; Baudot Code Cards</a>
+          <a href="equipment.html"        style="color:var(--ink-mid);text-decoration:none;display:block;padding:5px 0;border-bottom:1px dotted var(--rule)">&#9654; Teletype Machine Reference</a>
+          <a href="equipment.html"        style="color:var(--ink-mid);text-decoration:none;display:block;padding:5px 0;border-bottom:1px dotted var(--rule)">&#9654; Kretzman Technical Library</a>
+          <a href="gallery.html"          style="color:var(--ink-mid);text-decoration:none;display:block;padding:5px 0;border-bottom:1px dotted var(--rule)">&#9654; Download PIX Files</a>
+          <a href="resources.html"        style="color:var(--ink-mid);text-decoration:none;display:block;padding:5px 0;border-bottom:1px dotted var(--rule)">&#9654; Software &amp; Resources</a>
+          <a href="community.html"        style="color:var(--ink-mid);text-decoration:none;display:block;padding:5px 0;border-bottom:1px dotted var(--rule)">&#9654; GreenKeys Community</a>
+          <a href="links.html"            style="color:var(--ink-mid);text-decoration:none;display:block;padding:5px 0">&#9654; External Links</a>
+        </div>
+      </div>
+
+      <!-- About -->
+      <div class="sb-box">
+        <div class="sb-hed">About This Site</div>
+
+        <div class="credit-row">
+          <div class="credit-role">Founded By</div>
+          <div class="credit-name">
+            George Hutchison <span class="credit-call">W7TTY</span><br>
+            <span class="sk">&#9632; Silent Key</span>
+          </div>
+        </div>
+
+        <div class="credit-row">
+          <div class="credit-role">Original Software</div>
+          <div class="credit-name">
+            Bill Bytheway <span class="credit-call">K7TTY</span>
+          </div>
+        </div>
+
+        <div class="credit-row">
+          <div class="credit-role">Current Owner &amp; Maintainer</div>
+          <div class="credit-name">
+            Paul Heller <span class="credit-call">W2TTY</span> &mdash; Arvada, CO<br>
+            Infrastructure, software &amp; website
+          </div>
+        </div>
+
+        <div style="font-size:10px;line-height:1.65;color:var(--ink-ghost);margin-top:10px">
+          Non-commercial archive.<br>
+          No advertising. No tracking.
+        </div>
+      </div>
+
+    </aside>
+
+  </div><!-- .two-col -->
+</div><!-- .page-wrap -->
+
+<!-- ── Footer ── -->
+<footer class="site-footer">
+  <span>RTTY.COM &mdash; W2TTY &mdash; ARVADA, CO</span>
+  <span>NON-COMMERCIAL ARCHIVE &mdash; NO TRACKING</span>
+  <span>BAUDOT 1870 &bull; TELETYPE 1906 &bull; RTTY 1922</span>
+</footer>
+
+<!-- Bottom Baudot tape strip: encodes DE W2TTY in ITA2 -->
+<canvas id="tapeBot" class="tape" aria-hidden="true"></canvas>
+
+<script src="js/tape.js"></script>
+</body>
+</html>
