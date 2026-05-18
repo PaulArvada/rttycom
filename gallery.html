@@ -444,11 +444,12 @@ const BG     = '#fffff0';
 const FG     = '#111100';
 
 function renderPix(canvas, text) {
-  let col = 0, row = 0, maxCol = 0, charCount = 0, overstrikeOps = 0;
+  let col = 0, row = 0, maxCol = 0, charCount = 0;
+  const overstrikeOps = (text.match(/\r(?!\n)/g) || []).length;
 
   for (const c of text) {
     if (!BAUDOT_SET.has(c)) continue;
-    if (c === '\r') { overstrikeOps++; col = 0; }
+    if (c === '\r') { if (col > maxCol) maxCol = col; col = 0; }
     else if (c === '\n') { if (col > maxCol) maxCol = col; col = 0; row++; }
     else { col++; charCount++; }
   }
