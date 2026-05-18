@@ -90,6 +90,27 @@
       line-height: 1.75;
     }
     .series-intro strong { color: var(--ink); }
+
+    .machine-img {
+      margin: 14px 0 4px 0;
+      border: 1px solid var(--rule);
+      background: var(--paper-dk);
+      padding: 6px;
+      display: inline-block;
+      max-width: 100%;
+    }
+    .machine-img img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+    .machine-img-caption {
+      font-size: 10px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--ink-faint);
+      margin-top: 5px;
+    }
   </style>
 </head>
 <body>
@@ -129,11 +150,39 @@
 
       <!-- Mainline series intro -->
       <div class="series-intro">
-        <strong>The Mainline Series</strong> &mdash; The TT/L, ST-3, ST-5, ST-6, and UT-2
-        demodulators were designed by <strong>Irvin M. Hoff</strong>, variously W6FFC and K8DKG,
+        <strong>The Mainline Series</strong> &mdash; The TT/L, ST-3, ST-5, ST-6, UT-2, and UT-4
+        were designed by <strong>Irvin M. Hoff</strong>, variously W6FFC and K8DKG,
         and published in QST and the RTTY Journal from 1964 through 1975. They became the
         standard reference designs for amateur RTTY terminal units and were built by thousands
         of operators. Documentation is reproduced here for archival and reference purposes.
+      </div>
+
+      <!-- W2JAV -->
+      <div class="machine-entry" id="w2jav">
+        <div class="machine-hed">W2JAV RTTY Demodulator &mdash; Mark-Hold &amp; Autostart</div>
+        <div class="machine-meta">Pre-1964 &bull; Tube-Based Demodulator</div>
+        <div class="machine-body">
+          <p>
+            The W2JAV was a tube-based FSK demodulator that was widely used by amateur
+            RTTY operators before the solid-state Mainline series appeared in 1964. This
+            documentation covers a mark-hold and motor-start adapter circuit for the W2JAV,
+            written by L. G. Dedel WA2MSY.
+          </p>
+          <p>
+            The adapter uses two relays and three tubes to shut off the teletype motor when
+            no mark signal is present, preventing the machine from running open on noise.
+            A tuned 2125 Hz mark filter provides sharp selectivity. The article was written
+            for W2JAV owners who preferred to modernize their existing unit rather than
+            build a new solid-state design.
+          </p>
+        </div>
+        <div class="machine-img">
+          <img src="equipment/tu/w2jav/w2jav_fig1.jpg" alt="W2JAV mark-hold circuit diagram">
+          <div class="machine-img-caption">Mark-hold &amp; autostart circuit</div>
+        </div>
+        <div class="dl-row">
+          <a href="equipment/tu/w2jav/w2jav.htm" class="dl-tag">&#9654; View Documentation</a>
+        </div>
       </div>
 
       <!-- Alltronics Model-A -->
@@ -152,6 +201,10 @@
             required to drive a standard teletype machine. Documentation includes the
             schematic and operating notes as originally published.
           </p>
+        </div>
+        <div class="machine-img">
+          <img src="equipment/tu/alltronics/front.jpg" alt="Alltronics Model-A front panel">
+          <div class="machine-img-caption">Alltronics Model-A — front panel</div>
         </div>
         <div class="dl-row">
           <a href="equipment/tu/alltronics/alltronics.htm" class="dl-tag">&#9654; View Documentation</a>
@@ -173,6 +226,10 @@
             The documentation preserves the original circuit and construction notes
             as published.
           </p>
+        </div>
+        <div class="machine-img">
+          <img src="equipment/tu/w5hfz-w5rjg/w5hfz-w5rjg.jpg" alt="W5HFZ-W5RJG converter schematic">
+          <div class="machine-img-caption">W5HFZ-W5RJG converter circuit</div>
         </div>
         <div class="dl-row">
           <a href="equipment/tu/w5hfz-w5rjg/w5hfz-w5rjg.htm" class="dl-tag">&#9654; View Documentation</a>
@@ -198,6 +255,10 @@
             the complete schematic, parts list, and construction notes.
           </p>
         </div>
+        <div class="machine-img">
+          <img src="equipment/tu/ttl-fsk/ttl-fsk-schematic.jpg" alt="Mainline TT/L FSK demodulator schematic">
+          <div class="machine-img-caption">TT/L complete schematic</div>
+        </div>
         <div class="dl-row">
           <a href="equipment/tu/ttl-fsk/ttl-fsk.htm" class="dl-tag">&#9654; View Documentation</a>
         </div>
@@ -221,6 +282,10 @@
             drifting signals. It remained in popular use well into the 1980s.
           </p>
         </div>
+        <div class="machine-img">
+          <img src="equipment/tu/st-3/maincircuit.jpg" alt="Mainline ST-3 main circuit schematic">
+          <div class="machine-img-caption">ST-3 main circuit schematic</div>
+        </div>
         <div class="dl-row">
           <a href="equipment/tu/st-3/st-3.htm" class="dl-tag">&#9654; View Documentation</a>
         </div>
@@ -243,6 +308,10 @@
             update are presented separately, allowing direct comparison of the changes
             made between revisions.
           </p>
+        </div>
+        <div class="machine-img">
+          <img src="equipment/tu/st-5/st-5_schemetic.jpg" alt="Mainline ST-5 schematic">
+          <div class="machine-img-caption">ST-5 schematic diagram</div>
         </div>
         <div class="dl-row">
           <a href="equipment/tu/st-5/st-5_basic.htm" class="dl-tag">&#9654; ST-5 Original (1970)</a>
@@ -269,6 +338,10 @@
             design bridging the mechanical and digital eras of RTTY.
           </p>
         </div>
+        <div class="machine-img">
+          <img src="equipment/tu/st-6/st-6.jpg" alt="Mainline ST-6 demodulator">
+          <div class="machine-img-caption">ST-6 demodulator</div>
+        </div>
         <div class="dl-row">
           <a href="equipment/tu/st-6/st-6.htm" class="dl-tag">&#9654; View Documentation</a>
         </div>
@@ -291,8 +364,44 @@
             as originally published.
           </p>
         </div>
+        <div class="machine-img">
+          <img src="equipment/tu/ut-2/ut-2.jpg" alt="Mainline UT-2 schematic">
+          <div class="machine-img-caption">UT-2 schematic</div>
+        </div>
         <div class="dl-row">
           <a href="equipment/tu/ut-2/ut-2.htm" class="dl-tag">&#9654; View Documentation</a>
+        </div>
+      </div>
+
+      <!-- Mainline UT-4 -->
+      <div class="machine-entry" id="ut-4">
+        <div class="machine-hed">Mainline UT-4 FIFO Buffer</div>
+        <div class="machine-meta">March 1975 &bull; Mainline Series</div>
+        <div class="author-credit">Irv Hoff W6FFC</div>
+        <div class="machine-body">
+          <p>
+            The UT-4 is Irv Hoff&rsquo;s FIFO buffer companion to the UT-2, published in
+            March 1975. It adds 80-character buffer storage to the UT-2&rsquo;s UART-based
+            design, allowing the operator to type at a comfortable hand speed while the
+            output is delivered at a steady, uniform rate &mdash; virtually eliminating
+            character loss from over-run.
+          </p>
+          <p>
+            A status indicator (meter or lamps) shows the current buffer fill level.
+            An integral delay system lets the operator select the output Baud rate
+            independently of typing speed. With the optional Transmitter Distributor
+            control, a CQ tape can be sent at exactly the speed the operator intends
+            to hand-type during the QSO. Documentation includes the full schematic,
+            the optional T.D. control, and the optional D/A converter for the status
+            indicator.
+          </p>
+        </div>
+        <div class="machine-img">
+          <img src="equipment/tu/ut-4/ut-4.jpg" alt="Mainline UT-4 FIFO buffer schematic">
+          <div class="machine-img-caption">UT-4 schematic</div>
+        </div>
+        <div class="dl-row">
+          <a href="equipment/tu/ut-4/ut-4.htm" class="dl-tag">&#9654; View Documentation</a>
         </div>
       </div>
 
@@ -311,6 +420,10 @@
             Documentation is from a 1977 technical memorandum covering both models,
             including circuit description, alignment procedure, and specifications.
           </p>
+        </div>
+        <div class="machine-img">
+          <img src="equipment/tu/dt-600/dt-600.jpg" alt="DT-600 demodulator">
+          <div class="machine-img-caption">DT-600 demodulator</div>
         </div>
         <div class="dl-row">
           <a href="equipment/tu/dt-600/dt-600.htm" class="dl-tag">&#9654; View Documentation</a>
@@ -382,6 +495,7 @@
 
       <div class="sb-box machine-nav">
         <div class="sb-hed">On This Page</div>
+        <div class="sb-item"><a href="#w2jav">&#9654; W2JAV (pre-1964)</a></div>
         <div class="sb-item"><a href="#alltronics">&#9654; Alltronics Model-A (1955)</a></div>
         <div class="sb-item"><a href="#w5hfz">&#9654; W5HFZ-W5RJG (1955)</a></div>
         <div class="sb-item"><a href="#ttl">&#9654; Mainline TT/L (1964)</a></div>
@@ -389,6 +503,7 @@
         <div class="sb-item"><a href="#st-5">&#9654; Mainline ST-5 (1970/73)</a></div>
         <div class="sb-item"><a href="#st-6">&#9654; Mainline ST-6 (1970)</a></div>
         <div class="sb-item"><a href="#ut-2">&#9654; Mainline UT-2 (1975)</a></div>
+        <div class="sb-item"><a href="#ut-4">&#9654; Mainline UT-4 (1975)</a></div>
         <div class="sb-item"><a href="#dt-600">&#9654; DT-500 / DT-600 (1977)</a></div>
         <div class="sb-item"><a href="#fred1632">&#9654; Frederick 1632</a></div>
         <div class="sb-item"><a href="#rtty-cw-800a">&#9654; RTTY-CW-800A</a></div>
@@ -415,7 +530,7 @@
           (also K8DKG). Published in QST and the RTTY Journal. Built by
           thousands of operators and still in use today.
           <br><br>
-          TT/L &rarr; ST-3 &rarr; ST-5 &rarr; ST-6 &rarr; UT-2
+          TT/L &rarr; ST-3 &rarr; ST-5 &rarr; ST-6 &rarr; UT-2 &rarr; UT-4
         </div>
       </div>
 
