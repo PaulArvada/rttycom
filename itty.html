@@ -312,7 +312,7 @@
           <div class="ch-live">LIVE 24/7</div>
           <div class="ch-name">ITTY Europe</div>
           <div class="ch-spec">
-            50 baud &bull; European RTTY standard<br>
+            50 baud &bull; Mark 1275 Hz &bull; Space 1445 Hz<br>
             internet-tty.net:8040/EUROPE
           </div>
           <div class="ch-desc">
@@ -403,10 +403,11 @@
       <h2 class="section-hed">Technical Details</h2>
       <div class="prose">
         <p>
-          All ITTY streams use the Baudot (ITA2) character set, frequency-shift keying,
-          and 170&nbsp;Hz shift unless otherwise noted. The audio signal in the stream
-          is exactly what you would hear from a radio receiver tuned to an RTTY
-          transmission &mdash; set your decoder accordingly.
+          All ITTY streams use the Baudot (ITA2) character set and audio
+          frequency-shift keying (AFSK). The audio signal in the stream is exactly
+          what you would hear from a radio receiver tuned to an RTTY transmission.
+          Configure your decoder with the Mark and Space tone frequencies from the
+          table below &mdash; that is all your software needs to decode the signal.
         </p>
       </div>
 
@@ -416,7 +417,8 @@
             <th>Channel</th>
             <th>Speed</th>
             <th>Baud rate</th>
-            <th>Shift</th>
+            <th>Mark</th>
+            <th>Space</th>
             <th>Mode</th>
           </tr>
         </thead>
@@ -425,32 +427,42 @@
             <td>ITTY 60 WPM</td>
             <td>60 WPM</td>
             <td>45.45 baud</td>
-            <td>170 Hz</td>
+            <td>2125 Hz</td>
+            <td>2295 Hz</td>
             <td>LSB / AFSK</td>
           </tr>
           <tr>
             <td>ITTY 100 WPM</td>
             <td>100 WPM</td>
             <td>75 baud</td>
-            <td>170 Hz</td>
+            <td>2125 Hz</td>
+            <td>2295 Hz</td>
             <td>LSB / AFSK</td>
           </tr>
           <tr>
-            <td>ITTY Europe</td>
+            <td>ITTY Europe *</td>
             <td>66 WPM</td>
             <td>50 baud</td>
-            <td>European std</td>
+            <td>1275 Hz</td>
+            <td>1445 Hz</td>
             <td>LSB / AFSK</td>
           </tr>
           <tr>
             <td>AUTOSTART</td>
             <td>60 WPM</td>
             <td>45.45 baud</td>
-            <td>170 Hz</td>
+            <td>2125 Hz</td>
+            <td>2295 Hz</td>
             <td>LSB / AFSK</td>
           </tr>
         </tbody>
       </table>
+
+      <p style="font-size:13px;font-style:italic;color:var(--ink-faint);margin-top:8px;line-height:1.8">
+        * The ITTY Europe mark tone is 1275 Hertz &mdash; or 1275 Cycles, depending on
+        one&rsquo;s upbringing. The space tone is 1445 Hertz, or 1445 Cycles, once again
+        dependent on one&rsquo;s early life. &mdash; George Hutchison W7TTY
+      </p>
 
       <div class="prose">
         <p>

@@ -181,7 +181,7 @@ Four live channels, 24/7, from Arvada CO:
 |------------|------------------------------------------|-------|------------|
 | ITTY 60    | http://internet-tty.net:8000/ITTY        | 45.45 | 170 Hz LSB |
 | ITTY 100   | http://internet-tty.net:8010/ITTY100     | 75    | 170 Hz LSB |
-| ITTY Europe| http://internet-tty.net:8040/EUROPE      | 50    | European   |
+| ITTY Europe| http://internet-tty.net:8040/EUROPE      | 50    | Mark 1275 Hz / Space 1445 Hz |
 | AUTOSTART  | http://internet-tty.net:8030/AUTOSTART   | 45.45 | 170 Hz LSB |
 
 RTTYMailer v16 download:
@@ -235,7 +235,7 @@ Spelling: Hutchison (one N). Always "George Hutchison", never "Hutchinson".
 - [ ] Stunt Box PDF — needs to be copied to downloads/stuntbox.pdf
 
 ### Low priority
-- [ ] ITTY Europe FSK shift value — listed as "European std" in table, exact Hz TBD
+- [x] ITTY Europe FSK frequencies — Mark 1275 Hz / Space 1445 Hz (confirmed, updated in itty.html)
 - [ ] Launch year — listed as "late 1990s", exact year unknown (ask Bill K7TTY)
 - [ ] Country pages (Aussie, Poland) — England/ done; Aussie and Poland deferred,
       original content was mostly images with little text
