@@ -232,7 +232,7 @@ Spelling: Hutchison (one N). Always "George Hutchison", never "Hutchinson".
 - [ ] The old development HTML pages (equipment/literature/*.htm) need to be
       copied into the rttycom/ directory for the equipment-service.html links
       to work (introduction.htm, ttytools/tools.htm, etc.)
-- [ ] Stunt Box PDF — needs to be copied to downloads/stuntbox.pdf
+- [x] Stunt Box PDF — present at downloads/stuntbox.pdf (10 MB, linked from equipment-service.html)
 
 ### Low priority
 - [x] ITTY Europe FSK frequencies — Mark 1275 Hz / Space 1445 Hz (confirmed, updated in itty.html)
