@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Videos — RTTY.COM</title>
+  <meta name="description" content="Videos of teletype machines in operation, ITTY demonstrations, and RTTY events. Museum of Communications Seattle, W2TTY, and more.">
+  <link rel="stylesheet" href="css/rtty.css">
+  <style>
+    .video-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin: 16px 0 28px;
+    }
+    .video-card {
+      background: var(--paper-dk);
+      border: 1px solid var(--rule);
+      border-top: 3px solid var(--ink);
+    }
+    .video-thumb {
+      display: block;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      position: relative;
+    }
+    .video-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      filter: grayscale(25%);
+      transition: filter .2s;
+    }
+    .video-thumb:hover img { filter: grayscale(0%); }
+    .video-thumb::after {
+      content: '▶';
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+      color: rgba(255,255,255,0.85);
+      text-shadow: 0 1px 4px rgba(0,0,0,0.5);
+      pointer-events: none;
+    }
+    .video-info {
+      padding: 10px 12px 13px;
+    }
+    .video-title {
+      font-family: 'Special Elite', serif;
+      font-size: 14px;
+      color: var(--ink);
+      text-decoration: none;
+      display: block;
+      margin-bottom: 5px;
+      line-height: 1.35;
+      transition: color .15s;
+    }
+    .video-title:hover { color: var(--red); }
+    .video-desc {
+      font-size: 13px;
+      color: var(--ink-mid);
+      line-height: 1.6;
+    }
+    .video-src {
+      font-size: 10px;
+      letter-spacing: .08em;
+      color: var(--ink-faint);
+      margin-top: 5px;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 600px) {
+      .video-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<canvas id="tapeTop" class="tape" aria-hidden="true"></canvas>
+
+<header class="masthead">
+  <div class="mh-side">PRESERVATION OF RTTY HISTORY<br>TELETYPE ART &amp; CULTURE<br>EST. LATE 1990S</div>
+  <div class="mh-center">
+    <a href="index.html" class="site-name">RTTY.COM</a>
+    <span class="site-tag">The Radio Teletype Reference &amp; Archive</span>
+  </div>
+  <div class="mh-side mh-right">THE INTERNET'S OLDEST<br>RTTY RESOURCE<br>BAUDOT &bull; TELETYPE &bull; WIRE</div>
+</header>
+
+<nav class="site-nav" aria-label="Main navigation">
+  <a href="index.html">Home</a>
+  <a href="history.html">History</a>
+  <a href="gallery.html">RTTY Art</a>
+  <a href="equipment.html">Equipment</a>
+  <a href="itty.html">ITTY</a>
+  <a href="resources.html" class="active">Resources</a>
+  <a href="community.html">Community</a>
+  <a href="links.html">Links</a>
+</nav>
+
+<div class="dateline">
+  <strong>VIDEOS</strong> &mdash;
+  TELETYPE MACHINES IN OPERATION &bull; ITTY DEMONSTRATIONS &bull; RTTY EVENTS
+</div>
+
+<div class="page-wrap">
+  <div class="two-col">
+
+    <main class="col-main">
+
+      <div class="prose" style="margin-bottom:20px">
+        <p>
+          A collection of videos showing teletype machines in operation, ITTY demonstrations,
+          and RTTY events. Videos open on YouTube. More will be added as they are identified.
+        </p>
+      </div>
+
+      <!-- ITTY & RTTY.COM -->
+      <div class="srule"><span class="srule-label">ITTY &amp; RTTY.COM</span></div>
+
+      <div class="video-grid">
+
+        <div class="video-card">
+          <a class="video-thumb" href="https://www.youtube.com/watch?v=Hpek2ujfGQ4"
+             target="_blank" rel="noopener">
+            <img src="https://img.youtube.com/vi/Hpek2ujfGQ4/mqdefault.jpg"
+                 alt="ITTY Overview">
+          </a>
+          <div class="video-info">
+            <a class="video-title" href="https://www.youtube.com/watch?v=Hpek2ujfGQ4"
+               target="_blank" rel="noopener">ITTY Overview</a>
+            <div class="video-desc">
+              An overview of the ITTY Internet Teletype service — what it is, how it works,
+              and how to connect.
+            </div>
+            <div class="video-src">W2TTY &mdash; Paul Heller</div>
+          </div>
+        </div>
+
+        <div class="video-card">
+          <a class="video-thumb" href="https://www.youtube.com/watch?v=IgHqMAeReSc"
+             target="_blank" rel="noopener">
+            <img src="https://img.youtube.com/vi/IgHqMAeReSc/mqdefault.jpg"
+                 alt="ITTY 100WPM Channel">
+          </a>
+          <div class="video-info">
+            <a class="video-title" href="https://www.youtube.com/watch?v=IgHqMAeReSc"
+               target="_blank" rel="noopener">ITTY 100 WPM Channel</a>
+            <div class="video-desc">
+              A look at the ITTY 100 WPM high-speed channel, running wire service content
+              at 75 baud.
+            </div>
+            <div class="video-src">W2TTY &mdash; Paul Heller</div>
+          </div>
+        </div>
+
+        <div class="video-card">
+          <a class="video-thumb" href="https://www.youtube.com/watch?v=vrruUMhRnm8"
+             target="_blank" rel="noopener">
+            <img src="https://img.youtube.com/vi/vrruUMhRnm8/mqdefault.jpg"
+                 alt="RTTY.COM Internet Teletype Demonstration">
+          </a>
+          <div class="video-info">
+            <a class="video-title" href="https://www.youtube.com/watch?v=vrruUMhRnm8"
+               target="_blank" rel="noopener">RTTY.COM Internet Teletype Demonstration</a>
+            <div class="video-desc">
+              Demonstration of how to use the ITTY service with MMTTY decoder software
+              and RTTYMailer for article submission.
+            </div>
+            <div class="video-src">RTTY.COM</div>
+          </div>
+        </div>
+
+        <div class="video-card">
+          <a class="video-thumb" href="https://www.youtube.com/watch?v=q5fRhNFAdJ8"
+             target="_blank" rel="noopener">
+            <img src="https://img.youtube.com/vi/q5fRhNFAdJ8/mqdefault.jpg"
+                 alt="ITTY Halloween Pictures">
+          </a>
+          <div class="video-info">
+            <a class="video-title" href="https://www.youtube.com/watch?v=q5fRhNFAdJ8"
+               target="_blank" rel="noopener">ITTY Halloween Pictures</a>
+            <div class="video-desc">
+              Halloween RTTY art transmitted over the ITTY wire service.
+            </div>
+            <div class="video-src">W2TTY &mdash; Paul Heller</div>
+          </div>
+        </div>
+
+        <div class="video-card">
+          <a class="video-thumb" href="https://www.youtube.com/watch?v=-ase8QHQobg"
+             target="_blank" rel="noopener">
+            <img src="https://img.youtube.com/vi/-ase8QHQobg/mqdefault.jpg"
+                 alt="Teletype 28 KSR with electronic speed shift">
+          </a>
+          <div class="video-info">
+            <a class="video-title" href="https://www.youtube.com/watch?v=-ase8QHQobg"
+               target="_blank" rel="noopener">Teletype Model 28 KSR &mdash; Electronic Speed Shift</a>
+            <div class="video-desc">
+              A Teletype Model 28 KSR demonstrating electronic speed shifting between
+              standard RTTY speeds.
+            </div>
+            <div class="video-src">W2TTY &mdash; Paul Heller</div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Museum of Communications -->
+      <div class="srule"><span class="srule-label">Museum of Communications &mdash; Seattle, WA</span></div>
+
+      <div class="prose" style="margin-bottom:14px">
+        <p>
+          The Museum of Communications in Seattle preserves working telecommunications
+          equipment including a large collection of operational teletype machines. These
+          videos show museum machines copying live ITTY feeds.
+        </p>
+      </div>
+
+      <div class="video-grid">
+
+        <div class="video-card">
+          <a class="video-thumb" href="https://www.youtube.com/watch?v=Ml00ngVwrcU"
+             target="_blank" rel="noopener">
+            <img src="https://img.youtube.com/vi/Ml00ngVwrcU/mqdefault.jpg"
+                 alt="Teletype Model 15 KSR copying ITTY">
+          </a>
+          <div class="video-info">
+            <a class="video-title" href="https://www.youtube.com/watch?v=Ml00ngVwrcU"
+               target="_blank" rel="noopener">Teletype Model 15 KSR &mdash; Copying ITTY</a>
+            <div class="video-desc">
+              A Model 15 KSR at the Museum of Communications receiving the ITTY live wire service.
+            </div>
+            <div class="video-src">Museum of Communications, Seattle</div>
+          </div>
+        </div>
+
+        <div class="video-card">
+          <a class="video-thumb" href="https://www.youtube.com/watch?v=iNbhOpFOZgw"
+             target="_blank" rel="noopener">
+            <img src="https://img.youtube.com/vi/iNbhOpFOZgw/mqdefault.jpg"
+                 alt="Teletype Model 26 KSR copying ITTY news">
+          </a>
+          <div class="video-info">
+            <a class="video-title" href="https://www.youtube.com/watch?v=iNbhOpFOZgw"
+               target="_blank" rel="noopener">Teletype Model 26 KSR &mdash; Copying ITTY News</a>
+            <div class="video-desc">
+              A Model 26 KSR printing wire service news received from the ITTY stream.
+            </div>
+            <div class="video-src">Museum of Communications, Seattle</div>
+          </div>
+        </div>
+
+        <div class="video-card">
+          <a class="video-thumb" href="https://www.youtube.com/watch?v=XtOJRHrHkzU"
+             target="_blank" rel="noopener">
+            <img src="https://img.youtube.com/vi/XtOJRHrHkzU/mqdefault.jpg"
+                 alt="Teletype Model 14 ROTR copying ITTY">
+          </a>
+          <div class="video-info">
+            <a class="video-title" href="https://www.youtube.com/watch?v=XtOJRHrHkzU"
+               target="_blank" rel="noopener">Teletype Model 14 ROTR &mdash; Copying ITTY</a>
+            <div class="video-desc">
+              A Model 14 Receive-Only Typing Reperforator (ROTR) receiving ITTY at the museum.
+            </div>
+            <div class="video-src">Museum of Communications, Seattle</div>
+          </div>
+        </div>
+
+        <div class="video-card">
+          <a class="video-thumb" href="https://www.youtube.com/watch?v=0LhCmg20Dqs"
+             target="_blank" rel="noopener">
+            <img src="https://img.youtube.com/vi/0LhCmg20Dqs/mqdefault.jpg"
+                 alt="Teletype Model 14 TP copying ITTY news">
+          </a>
+          <div class="video-info">
+            <a class="video-title" href="https://www.youtube.com/watch?v=0LhCmg20Dqs"
+               target="_blank" rel="noopener">Teletype Model 14 TP &mdash; Copying ITTY News</a>
+            <div class="video-desc">
+              A Model 14 Typing Perforator printing wire service news from the ITTY stream.
+            </div>
+            <div class="video-src">Museum of Communications, Seattle</div>
+          </div>
+        </div>
+
+        <div class="video-card">
+          <a class="video-thumb" href="https://www.youtube.com/watch?v=gwIhZwmHe2w"
+             target="_blank" rel="noopener">
+            <img src="https://img.youtube.com/vi/gwIhZwmHe2w/mqdefault.jpg"
+                 alt="Teletype Model 28 ASR copying ITTY">
+          </a>
+          <div class="video-info">
+            <a class="video-title" href="https://www.youtube.com/watch?v=gwIhZwmHe2w"
+               target="_blank" rel="noopener">Teletype Model 28 ASR &mdash; Copying ITTY</a>
+            <div class="video-desc">
+              A Model 28 ASR at the Museum of Communications copying an ITTY Internet Teletype bulletin.
+            </div>
+            <div class="video-src">Museum of Communications, Seattle</div>
+          </div>
+        </div>
+
+        <div class="video-card">
+          <a class="video-thumb" href="https://www.youtube.com/watch?v=D1ng6v9UMw8"
+             target="_blank" rel="noopener">
+            <img src="https://img.youtube.com/vi/D1ng6v9UMw8/mqdefault.jpg"
+                 alt="Teletype Model 28 KSR copying Quick Brown Fox">
+          </a>
+          <div class="video-info">
+            <a class="video-title" href="https://www.youtube.com/watch?v=D1ng6v9UMw8"
+               target="_blank" rel="noopener">Teletype Model 28 KSR &mdash; Quick Brown Fox</a>
+            <div class="video-desc">
+              A Model 28 KSR at the museum printing the classic teletype test message.
+            </div>
+            <div class="video-src">Museum of Communications, Seattle</div>
+          </div>
+        </div>
+
+        <div class="video-card">
+          <a class="video-thumb" href="https://www.youtube.com/watch?v=PYHp29LiShY"
+             target="_blank" rel="noopener">
+            <img src="https://img.youtube.com/vi/PYHp29LiShY/mqdefault.jpg"
+                 alt="Copying RTTY ITTY AFSK">
+          </a>
+          <div class="video-info">
+            <a class="video-title" href="https://www.youtube.com/watch?v=PYHp29LiShY"
+               target="_blank" rel="noopener">Copying RTTY (ITTY) AFSK</a>
+            <div class="video-desc">
+              Demonstration of copying an ITTY AFSK signal at the Museum of Communications.
+            </div>
+            <div class="video-src">Museum of Communications, Seattle</div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Events -->
+      <div class="srule"><span class="srule-label">Events &amp; Demonstrations</span></div>
+
+      <div class="video-grid">
+
+        <div class="video-card">
+          <a class="video-thumb" href="https://www.youtube.com/watch?v=_2bLZer6ZXM"
+             target="_blank" rel="noopener">
+            <img src="https://img.youtube.com/vi/_2bLZer6ZXM/mqdefault.jpg"
+                 alt="RTTY at Pacificon 2010">
+          </a>
+          <div class="video-info">
+            <a class="video-title" href="https://www.youtube.com/watch?v=_2bLZer6ZXM"
+               target="_blank" rel="noopener">RTTY at Pacificon 2010</a>
+            <div class="video-desc">
+              RTTY demonstration at Pacificon 2010, the West Coast amateur radio convention.
+            </div>
+            <div class="video-src">Pacificon 2010</div>
+          </div>
+        </div>
+
+      </div>
+
+    </main>
+
+    <!-- Sidebar -->
+    <aside class="col-side">
+
+      <div class="sb-box">
+        <div class="sb-hed">Sections</div>
+        <div class="sb-note">
+          <a href="#" onclick="window.scrollTo(0,0);return false;"
+             style="display:block;padding:5px 0;border-bottom:1px dotted var(--rule);color:var(--ink-mid);text-decoration:none">
+            &#9654; ITTY &amp; RTTY.COM
+          </a>
+          <a href="#" onclick="document.querySelectorAll('.srule')[1].scrollIntoView();return false;"
+             style="display:block;padding:5px 0;border-bottom:1px dotted var(--rule);color:var(--ink-mid);text-decoration:none">
+            &#9654; Museum of Communications
+          </a>
+          <a href="#" onclick="document.querySelectorAll('.srule')[2].scrollIntoView();return false;"
+             style="display:block;padding:5px 0;color:var(--ink-mid);text-decoration:none">
+            &#9654; Events &amp; Demonstrations
+          </a>
+        </div>
+      </div>
+
+      <div class="sb-box">
+        <div class="sb-hed">Museum of Communications</div>
+        <div class="sb-note" style="font-size:13px;line-height:1.8">
+          The Museum of Communications in Seattle, WA preserves working
+          telecommunications equipment including a large collection of
+          operational teletype machines.<br><br>
+          <span style="color:var(--ink-faint);font-size:12px;font-style:italic">
+            Several museum machines are connected to ITTY and copy the live
+            wire service on a regular basis.
+          </span>
+        </div>
+      </div>
+
+      <div class="sb-box">
+        <div class="sb-hed">Submit a Video</div>
+        <div class="sb-note">
+          Know of a teletype or RTTY video that belongs here? Contact W2TTY
+          via the <a href="community.html" style="color:var(--red)">GreenKeys list</a>.
+        </div>
+      </div>
+
+    </aside>
+
+  </div>
+</div>
+
+<footer class="site-footer">
+  <span>RTTY.COM &mdash; W2TTY &mdash; ARVADA, CO</span>
+  <span>NON-COMMERCIAL ARCHIVE &mdash; NO TRACKING</span>
+  <span>BAUDOT 1870 &bull; TELETYPE 1906 &bull; RTTY 1922</span>
+</footer>
+
+<canvas id="tapeBot" class="tape" aria-hidden="true"></canvas>
+<script src="js/tape.js"></script>
+</body>
+</html>
