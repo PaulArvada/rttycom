@@ -83,6 +83,21 @@ rttycom/
 │           └── part1.pdf ... part18.pdf
 ├── gallery/                      ← MUST BE CREATED AND POPULATED MANUALLY.
 │   └── *.pix                     ← 147 .pix files. NOT in ZIP. Copy from source.
+├── England/                      ← Articles by Alan Hobbs G8GOJ (UK RTTY history)
+│   ├── ahobbs.htm                ← G8GOJ biography + article index
+│   ├── fiveunits.htm             ← Five-Unit Codes article
+│   ├── creed1.html               ← Teleprinters for the Radio Amateur
+│   ├── creed2.html               ← Creed & Co — The First 50 Years
+│   ├── creed444.html             ← ITT Creed Model 444 Teleprinter
+│   ├── g8goj.jpg                 ← Alan Hobbs portrait photo
+│   ├── britain.gif               ← Map of Britain graphic
+│   ├── bartg.gif                 ← BARTG logo
+│   └── cread444.jpg              ← Creed 444 photo (NOTE: typo in filename, 'cread' not 'creed')
+├── history/                      ← History Hall article pages
+│   ├── krum.htm                  ← A Brief History of the Morkrum Company
+│   ├── nelson.htm                ← History of Teletypewriter Development
+│   ├── w6owp.htm                 ← W6OWP — Letter of Recollections
+│   └── w6owpSK.htm               ← W6OWP Silent Key notice
 ├── index.html
 ├── history.html
 ├── gallery.html
@@ -152,6 +167,10 @@ Golden Anniversary booklet. 40 pages, full color scans. Available as PDF.
 
 **Western Union Field Service Manual** — 168 pages, all 18 parts present.
 
+**Alan Hobbs G8GOJ articles** — Copyright Alan Hobbs G8GOJ. Hosted with permission.
+Five articles on UK RTTY history and Creed teleprinters, linked from history.html
+History Hall. Alan is a BARTG President and Creed specialist.
+
 ---
 
 ## ITTY Technical Details
@@ -179,6 +198,7 @@ https://www.rtty.com/itty/RTTYMailer%20v16.zip
 | Paul Heller     | W2TTY    | Current owner, maintainer since 2017      |            |
 | Byron Kretzman  | W2JTP    | Kretzman Technical Library dedication     |            |
 | Irv Hoff        | W6FFC    | Mainline TU designer, Intro to RTTY author| Also K8DKG |
+| Alan Hobbs      | G8GOJ    | BARTG President, Creed specialist, author | UK-based   |
 
 Spelling: Hutchison (one N). Always "George Hutchison", never "Hutchinson".
 
@@ -200,10 +220,10 @@ Spelling: Hutchison (one N). Always "George Hutchison", never "Hutchinson".
 ## What Still Needs Doing
 
 ### High priority
-- [ ] Set up Eleventy build system to eliminate duplicated header/footer in 11 pages
+- [ ] Set up Eleventy build system to eliminate duplicated header/footer in 14 pages
 - [ ] GitHub Pages deployment and sdf.org redirect stub
 - [ ] Verify all internal links across all pages
-- [ ] Dead-link audit on links.html external URLs
+- [ ] Dead-link audit on links.html external URLs (ARRL link fixed May 2026; others not yet audited)
 
 ### Medium priority
 - [ ] RTTYApp download link — location currently unknown, needs to be found
@@ -217,8 +237,8 @@ Spelling: Hutchison (one N). Always "George Hutchison", never "Hutchinson".
 ### Low priority
 - [ ] ITTY Europe FSK shift value — listed as "European std" in table, exact Hz TBD
 - [ ] Launch year — listed as "late 1990s", exact year unknown (ask Bill K7TTY)
-- [ ] Country pages (England, Aussie, Poland) — old site had these, content
-      mostly just images, decision deferred on whether to include
+- [ ] Country pages (Aussie, Poland) — England/ done; Aussie and Poland deferred,
+      original content was mostly images with little text
 
 ---
 
@@ -251,6 +271,23 @@ Intentionally smaller (UI / narrow grid cards, not prose):
 - Do not add JavaScript frameworks or dependencies — this is a static site
 - Do not set any prose/body text below 16px — the whole site was standardized
   to match index.html
+
+### England/ article page conventions
+These pages use the standard site template (../css/rtty.css, ../js/tape.js) with
+page-specific styles in a `<style>` block. Key CSS classes:
+
+- `.machine-model` — Special Elite 19px var(--red); used for machine model numbers in creed1.html
+- `.img-right` / `.img-left` — floated images with border; always wrap in `.clearfix` div
+- `.clearfix::after` — standard float-clear hack
+- `.ref-group` — grouped reference list header; Special Elite 15px, red left border
+- `.spec-hed` — section heading for dense spec docs (17px, not .section-hed 25px);
+  used in creed444.html because ~40 headings would overwhelm at full size
+- `.spec-sub` — sub-section label within a spec heading group
+- `.dim-table` — proper HTML table replacing the original space-padded blockquote;
+  used for the Creed 444 paper margin/feed-rack dimension table
+
+Image filename note: `cread444.jpg` is a typo in the original (should be creed).
+The file exists with that name on disk — do not rename it.
 
 ### If setting up Eleventy
 The shared layout lives in every page's <header>, <nav>, <canvas> (×2),
