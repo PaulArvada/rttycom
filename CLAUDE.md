@@ -220,18 +220,19 @@ Spelling: Hutchison (one N). Always "George Hutchison", never "Hutchinson".
 ## What Still Needs Doing
 
 ### High priority
-- [ ] Set up Eleventy build system to eliminate duplicated header/footer in 14 pages
+- [ ] Set up Eleventy build system to eliminate duplicated header/footer in 14+ pages
 - [ ] GitHub Pages deployment and sdf.org redirect stub
-- [ ] Verify all internal links across all pages
-- [ ] Dead-link audit on links.html external URLs (ARRL link fixed May 2026; others not yet audited)
+- [x] Verify all internal links across all pages — clean as of May 2026
+- [x] Dead-link audit on links.html external URLs — completed May 2026
 
 ### Medium priority
-- [ ] RTTYApp download link — location currently unknown, needs to be found
+- [x] RTTYApp download link — self-hosted at downloads/RTTYApp2022v20.1.3.zip
+- [x] RTTYMailer — moved from rtty.com to self-hosted downloads/RTTYMailer v16.zip
 - [ ] Bill Bytheway's other BSDL software — lost, needs to be located
-- [ ] Videos section — old YouTube links dead, worth searching for replacements
-- [ ] The old development HTML pages (equipment/literature/*.htm) need to be
-      copied into the rttycom/ directory for the equipment-service.html links
-      to work (introduction.htm, ttytools/tools.htm, etc.)
+- [x] Videos section — videos.html created with 13 videos; more to be added
+- [ ] The old development HTML pages (equipment/literature/*.htm) — links from
+      equipment-service.html need to be verified; introduction.htm and
+      ttytools/tools.htm exist in equipment/literature/ but other links TBD
 - [x] Stunt Box PDF — present at downloads/stuntbox.pdf (10 MB, linked from equipment-service.html)
 
 ### Low priority
@@ -239,6 +240,8 @@ Spelling: Hutchison (one N). Always "George Hutchison", never "Hutchinson".
 - [ ] Launch year — listed as "late 1990s", exact year unknown (ask Bill K7TTY)
 - [ ] Country pages (Aussie, Poland) — England/ done; Aussie and Poland deferred,
       original content was mostly images with little text
+- [ ] More community links for links.html — user has additional sites to add
+- [ ] More videos for videos.html — user has additional URLs to provide
 
 ---
 
@@ -298,6 +301,29 @@ paths use relative references so adjust for the output directory structure.
 ### File encoding
 All HTML files: UTF-8. All .pix files: ASCII (Latin-1). The tape.js file
 and gallery.html renderer handle ASCII-only Baudot character filtering.
+
+Note: equipment/literature/introduction.htm was converted from Windows-1252
+to UTF-8 in May 2026. All other legacy pages are ASCII-safe.
+
+### Tape hover tooltip
+The canvas tape strips show a two-line tooltip on hover. Line 1 is plain
+English: "THIS IS ITA2 BAUDOT 5-LEVEL PUNCHED TAPE WITH THIS MESSAGE: RTTY.COM".
+Line 2 shows the actual ITA2 shift sequence: "LTRS R T T Y · FIGS . · LTRS C O M".
+Implemented in addTapeHover() in js/tape.js. Do not revert to the old
+single-line "■ ITA2 BAUDOT — RTTY.COM" format.
+
+### Software downloads — self-hosted
+Both RTTYApp and RTTYMailer are now maintained by Paul Heller W2TTY and
+hosted directly in downloads/:
+  downloads/RTTYApp2022v20.1.3.zip   — v20.1.3, server-side queue manager
+  downloads/RTTYMailer v16.zip        — v16, end-user ITTY submission client
+Do NOT relink these to www.rtty.com/itty/ — that dependency has been removed.
+
+### videos.html
+New page added May 2026. 13 videos in three sections: ITTY & RTTY.COM
+(W2TTY videos), Museum of Communications Seattle, and Events. Not in main
+nav — linked from resources.html and community.html sidebars. More videos
+to be added; user will supply additional URLs.
 
 ---
 
