@@ -185,7 +185,7 @@ Four live channels, 24/7, from Arvada CO:
 | AUTOSTART  | http://internet-tty.net:8030/AUTOSTART   | 45.45 | 170 Hz LSB |
 
 RTTYMailer v16 download:
-https://www.rtty.com/itty/RTTYMailer%20v16.zip
+downloads/RTTYMailer%20v16.zip (self-hosted; was previously at www.rtty.com/itty/)
 
 ---
 
