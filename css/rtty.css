@@ -255,9 +255,9 @@ hr.rule-sep { border: none; border-top: 1px dashed var(--rule); margin: 22px 0; 
 .wire-item:last-child { border-bottom: none; margin-bottom: 0; }
 
 .wire-slug {
-  font-size: 9px;
+  font-size: 12px;
   font-weight: 700;
-  letter-spacing: .28em;
+  letter-spacing: .22em;
   text-transform: uppercase;
   color: var(--red);
   margin-bottom: 4px;
@@ -281,7 +281,7 @@ hr.rule-sep { border: none; border-top: 1px dashed var(--rule); margin: 22px 0; 
   color: var(--ink-ghost);
   margin-top: 6px;
 }
-.wire-byline a { color: var(--ink-ghost); text-decoration: none; }
+.wire-byline a { display: block; padding-top: 3px; color: var(--ink-ghost); text-decoration: none; }
 .wire-byline a:hover { color: var(--red); }
 
 /* ── Channel grid (homepage ITTY status) ───────────────── */

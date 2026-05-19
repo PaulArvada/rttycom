@@ -1,259 +1,242 @@
-<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
-<html>
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-
-
-<title>Five-Unit Codes</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Five-Unit Codes â€” RTTY.COM History Hall</title>
+  <meta name="description" content="Alan G Hobbs G8GOJ explains the differences between Baudot, Murray, and ITA2 five-unit telegraph codes, and their relationship to the Radio Amateur. BARTG, 1999.">
+  <link rel="stylesheet" href="../css/rtty.css">
+  <style>
+    .code-figure {
+      margin: 20px 0;
+      text-align: center;
+    }
+    .code-figure img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+      border: 1px solid var(--rule);
+    }
+    .code-figure-cap {
+      font-size: 13px;
+      color: var(--ink-faint);
+      letter-spacing: .06em;
+      margin-top: 7px;
+      font-style: italic;
+    }
+    .formula-block {
+      font-family: 'Courier Prime', monospace;
+      font-size: 16px;
+      text-align: center;
+      background: var(--paper-dk);
+      border: 1px solid var(--rule);
+      padding: 12px;
+      margin: 14px 0;
+      letter-spacing: .05em;
+    }
+  </style>
 </head>
+<body>
 
-<body BGCOLOR="#C0C0C0">
+<canvas id="tapeTop" class="tape" aria-hidden="true"></canvas>
 
-<div align="center">
-	<p style="margin-bottom: 6px"><font face="Verdana" SIZE="3"><i><b>WWW.RTTY.COM History Hall</b></i></font></p>
-	<table border="0" width="600" cellpadding="20" background="ltbluegrid.gif" id="table1">
-		<tr>
-			<td>
-			<h1 align="center"><font face="Verdana">Five-unit codes</font></h1>
+<header class="masthead">
+  <div class="mh-side">PRESERVATION OF RTTY HISTORY<br>TELETYPE ART &amp; CULTURE<br>EST. LATE 1990S</div>
+  <div class="mh-center">
+    <a href="../index.html" class="site-name">RTTY.COM</a>
+    <span class="site-tag">The Radio Teletype Reference &amp; Archive</span>
+  </div>
+  <div class="mh-side mh-right">THE INTERNET'S OLDEST<br>RTTY RESOURCE<br>BAUDOT &bull; TELETYPE &bull; WIRE</div>
+</header>
 
-<p align="center"><font face="Verdana">By Alan G Hobbs, G8GOJ<br>
-President of British Amateur Radio Teledata Group, (c) 1999<br>
-<a HREF="http://www.bartg.demon.co.uk">http://www.bartg.demon.co.uk</a></font></p>
+<nav class="site-nav" aria-label="Main navigation">
+  <a href="../index.html">Home</a>
+  <a href="../history.html" class="active">History</a>
+  <a href="../gallery.html">RTTY Art</a>
+  <a href="../equipment.html">Equipment</a>
+  <a href="../itty.html">ITTY</a>
+  <a href="../resources.html">Resources</a>
+  <a href="../community.html">Community</a>
+  <a href="../links.html">Links</a>
+</nav>
 
-<hr ALIGN="CENTER" WIDTH="100%" SIZE="2">
+<div class="dateline">
+  <strong>HISTORY HALL</strong> &mdash;
+  FIVE-UNIT CODES &mdash; BY ALAN G HOBBS G8GOJ &mdash; BARTG 1999
+</div>
 
-<p><font face="Verdana">In articles that mention RTTY codes there is usually reference to Baudot, Murray and
-ITA2 codes. These codes are often taken to be identical and interchangeable. Even
-&quot;respectable&quot; engineering journals do not seem to understand the fundamental
-differences between the different codes. For any two equipments to satisfactorily
-inter-operate, it is essential that the code in use is thoroughly specified and
-understood, and the same at each end. The purpose of this article is to explain the
-similarities, and the differences, between the codes, and to indicate their relationship
-to the Radio Amateur.</font></p>
+<div class="page-wrap">
+  <div class="two-col">
 
-<p><font face="Verdana">All codes have their strengths and their weaknesses. For instance, one of the strengths
-of Morse code is that commonly used letters have short codes, making them easier to send.
-Whereas one of its weaknesses is the difference in length between the code for the
-shortest character &#145;E&#146;, and the code for the longest character &#145;0&#146;,
-which takes 19 times as long to transmit. This vast difference in length made the Morse
-code difficult, but certainly not impossible, to mechanise. For example, the Creed Morse
-printer, developed in the early 1900s, read and printed in plain language, a perforated
-Morse tape at speeds of up to 100 words per minute.</font></p>
+    <main class="col-main">
 
-<p><font face="Verdana">It had long been realised by many telegraphic engineers, that the real answer to the
-mechanisation of telegraphy was to use a code in which every character took the same time
-to transmit. A so-called &quot;constant length&quot; code. With 26 letters in the
-alphabet, it was only natural that the most popular codes would all consist of five
-signalling elements, with each element taking one of two states, e.g. +ve/-ve, off/on,
-etc. Therefore the number of available combinations is two raised to the power five:</font></p>
+      <h1 class="section-hed" style="margin-top:0">Five-Unit Codes</h1>
+      <div class="callout">
+        By Alan G Hobbs, G8GOJ<br>
+        President, British Amateur Radio Teledata Group (BARTG)<br>
+        &copy; 1999 &mdash; Reprinted by permission via Larry Rice VK6CP
+      </div>
 
-			<div align="center">
+      <div class="prose">
+        <p>In articles that mention RTTY codes there is usually reference to Baudot, Murray and ITA2 codes. These codes are often taken to be identical and interchangeable. Even &ldquo;respectable&rdquo; engineering journals do not seem to understand the fundamental differences between the different codes. For any two equipments to satisfactorily inter-operate, it is essential that the code in use is thoroughly specified and understood, and the same at each end. The purpose of this article is to explain the similarities, and the differences, between the codes, and to indicate their relationship to the Radio Amateur.</p>
 
-<pre><font face="Verdana" size="4">ie 2 x 2 x 2 x 2 x 2 = 32</font></pre>
+        <p>All codes have their strengths and their weaknesses. For instance, one of the strengths of Morse code is that commonly used letters have short codes, making them easier to send. Whereas one of its weaknesses is the difference in length between the code for the shortest character &lsquo;E&rsquo;, and the code for the longest character &lsquo;0&rsquo;, which takes 19 times as long to transmit. This vast difference in length made the Morse code difficult, but certainly not impossible, to mechanise. For example, the Creed Morse printer, developed in the early 1900s, read and printed in plain language, a perforated Morse tape at speeds of up to 100 words per minute.</p>
 
-			</div>
+        <p>It had long been realised by many telegraphic engineers, that the real answer to the mechanisation of telegraphy was to use a code in which every character took the same time to transmit. A so-called &ldquo;constant length&rdquo; code. With 26 letters in the alphabet, it was only natural that the most popular codes would all consist of five signalling elements, with each element taking one of two states, e.g. +ve/&minus;ve, off/on, etc. Therefore the number of available combinations is two raised to the power five:</p>
+      </div>
 
-<p><font face="Verdana">By reserving two of the combinations for use as non-printing shift control characters,
-it is possible to associate a numeral or punctuation mark with every letter of the
-alphabet, effectively doubling the capacity of the code. Naturally, this will slightly
-reduce the rate at which the message is transmitted, but the machinery could be designed
-to insert these shift characters automatically, thereby reducing the effort on the part of
-the operator.</font></p>
+      <div class="formula-block">ie 2 &times; 2 &times; 2 &times; 2 &times; 2 = 32</div>
 
-<h3><font face="Verdana">Baudot Multiplex System</font></h3>
+      <div class="prose">
+        <p>By reserving two of the combinations for use as non-printing shift control characters, it is possible to associate a numeral or punctuation mark with every letter of the alphabet, effectively doubling the capacity of the code. Naturally, this will slightly reduce the rate at which the message is transmitted, but the machinery could be designed to insert these shift characters automatically, thereby reducing the effort on the part of the operator.</p>
+      </div>
 
-<p><font face="Verdana">The earliest, successful, printing telegraph system which used a five-unit code, was
-the Baudot Multiplex System, which was devised by Emile Baudot, of the French Telegraphic
-Service, in 1874. This is a time division multiplex system, and utilises (1) certain
-printing details of the Hughes printing telegraph instrument, (2) the distributor
-arrangements invented by Bernard Meyer in 1871 which were employed in a Morse multiplex
-system, and (3) a five-unit code devised by Johann Gauss and Wilhelm Weber. The system was
-adopted in France in 1877, and thereafter its use in France was extensive, and it was to
-some extent adopted in other countries. The British Post Office adopted the Baudot system
-for use on a simplex circuit between London and Paris in 1897, and subsequently made
-considerable use of duplex Baudot systems on their Inland Telegraph Services.</font></p>
+      <h2 class="section-hed">Baudot Multiplex System</h2>
 
-<p><font face="Verdana">The Baudot distributor could be designed so that it could be used by from two to six
-operators, with the quadruple Baudot system, using four operators, adopted as the standard
-installation for use in the British Post Office. The distributor, consisting of copper
-segments and rotating brushes, successively connected each operator to the line, for a
-time long enough to transmit the five units corresponding to one character. Additional
-segments transmitted correcting currents, from one end to the other, to maintain
-synchronism between the sending and receiving stations. Hence the Baudot system was one of
-the earliest five-unit synchronous systems.</font></p>
+      <div class="prose">
+        <p>The earliest, successful, printing telegraph system which used a five-unit code, was the Baudot Multiplex System, which was devised by Emile Baudot, of the French Telegraphic Service, in 1874. This is a time division multiplex system, and utilises (1) certain printing details of the Hughes printing telegraph instrument, (2) the distributor arrangements invented by Bernard Meyer in 1871 which were employed in a Morse multiplex system, and (3) a five-unit code devised by Johann Gauss and Wilhelm Weber. The system was adopted in France in 1877, and thereafter its use in France was extensive, and it was to some extent adopted in other countries. The British Post Office adopted the Baudot system for use on a simplex circuit between London and Paris in 1897, and subsequently made considerable use of duplex Baudot systems on their Inland Telegraph Services.</p>
 
-<p><font face="Verdana">The standard speed of transmission, by each operator, was 180 characters per minute,
-each character being set-up manually on a small piano-like keyboard, which only had five
-keys. The keys were so arranged that once pressed down, they latched down, and were only
-released by the distributor when all the five elements of the character had been
-transmitted.</font></p>
+        <p>The Baudot distributor could be designed so that it could be used by from two to six operators, with the quadruple Baudot system, using four operators, adopted as the standard installation for use in the British Post Office. The distributor, consisting of copper segments and rotating brushes, successively connected each operator to the line, for a time long enough to transmit the five units corresponding to one character. Additional segments transmitted correcting currents, from one end to the other, to maintain synchronism between the sending and receiving stations. Hence the Baudot system was one of the earliest five-unit synchronous systems.</p>
 
-<p><font face="Verdana">The operator was given an audible indication of the keyboard unlocking by means of what
-is known as the &quot;cadence signal&quot;. This signal came from the operation of the
-electromagnet which released the keys. The manipulation of the Baudot keyboard called for
-a high degree of operating skill, since a definite, unvarying, rhythmic speed of
-signalling was necessary.</font></p>
+        <p>The standard speed of transmission, by each operator, was 180 characters per minute, each character being set-up manually on a small piano-like keyboard, which only had five keys. The keys were so arranged that once pressed down, they latched down, and were only released by the distributor when all the five elements of the character had been transmitted.</p>
 
-<p><font face="Verdana">Figure 1 shows the allocation of the Baudot code which was employed in the British Post
-Office for continental and inland services. It will be observed that a number of
-characters in the continental code are replaced by fractionals in the inland code. Code
-elements 1, 2 and 3 are transmitted by keys 1, 2 and 3, and these are operated by the
-first three fingers of the right hand. Code elements 4 and 5 are transmitted by keys 4 and
-5, and these are operated by the first two fingers of the left hand.</font></p>
+        <p>The operator was given an audible indication of the keyboard unlocking by means of what is known as the &ldquo;cadence signal&rdquo;. This signal came from the operation of the electromagnet which released the keys. The manipulation of the Baudot keyboard called for a high degree of operating skill, since a definite, unvarying, rhythmic speed of signalling was necessary.</p>
 
-<p><font face="Verdana">
-<img SRC="baudot.gif" VSPACE="0" HSPACE="0" ALT="Baudot image" BORDER="0" LOOP="0" WIDTH="671" HEIGHT="503"></font></p>
+        <p>Figure 1 shows the allocation of the Baudot code which was employed in the British Post Office for continental and inland services. It will be observed that a number of characters in the continental code are replaced by fractionals in the inland code. Code elements 1, 2 and 3 are transmitted by keys 1, 2 and 3, and these are operated by the first three fingers of the right hand. Code elements 4 and 5 are transmitted by keys 4 and 5, and these are operated by the first two fingers of the left hand.</p>
+      </div>
 
-<p><font face="Verdana">Because the combinations were set-up manually, the code was so arranged that the finger
-movements to be performed by the operator were as evenly divided as possible between the
-right and left hands, and also as few as possible for those characters having the greatest
-frequency of occurrence. This ensured the minimum fatigue of the operator.</font></p>
+      <div class="code-figure">
+        <img src="baudot.gif" alt="Figure 1: Baudot code allocation for the British Post Office">
+        <div class="code-figure-cap">Figure 1 &mdash; Baudot code allocation, British Post Office (continental and inland)</div>
+      </div>
 
-<p><font face="Verdana">A fine example of Baudot equipment may be seen in the Science Museum in London. Until
-the autumn of 1997, another fine example was to be seen in the BT Museum in London.
-Unfortunately, this museum is now closed to the public.</font></p>
+      <div class="prose">
+        <p>Because the combinations were set-up manually, the code was so arranged that the finger movements to be performed by the operator were as evenly divided as possible between the right and left hands, and also as few as possible for those characters having the greatest frequency of occurrence. This ensured the minimum fatigue of the operator.</p>
 
-<p><font face="Verdana">The Baudot code was eventually standardised for multiplex systems as the International
-Telegraph Alphabet number 1 (ITA1), and is shown in figure 2.</font></p>
+        <p>A fine example of Baudot equipment may be seen in the Science Museum in London. Until the autumn of 1997, another fine example was to be seen in the BT Museum in London. Unfortunately, this museum is now closed to the public.</p>
 
-<h4><font face="Verdana">Figure 2. International Telegraph Alphabet Number 1</font></h4>
+        <p>The Baudot code was eventually standardised for multiplex systems as the International Telegraph Alphabet number 1 (ITA1), and is shown in figure 2.</p>
+      </div>
 
-<p><font face="Verdana">
-<img SRC="figure2.gif" VSPACE="0" HSPACE="0" BORDER="0" WIDTH="644" HEIGHT="585"></font></p>
+      <div class="code-figure">
+        <img src="figure2.gif" alt="Figure 2: International Telegraph Alphabet Number 1 (ITA1)">
+        <div class="code-figure-cap">Figure 2 &mdash; International Telegraph Alphabet Number 1 (ITA1)</div>
+      </div>
 
-<h3><font face="Verdana">Murray Type Printing Multiplex System</font></h3>
+      <h2 class="section-hed">Murray Type Printing Multiplex System</h2>
 
-<p><font face="Verdana">This system was designed in 1901 by Donald Murray, a New Zealand sheep farmer, as a
-combination of the best features of the Baudot multiplex system and the Murray automatic
-system. Murray also employed a five-unit code, but the allocations of the of the signal
-combinations differed very considerably from that used in the Baudot code, as is shown in
-figure 3.</font></p>
+      <div class="prose">
+        <p>This system was designed in 1901 by Donald Murray, a New Zealand sheep farmer, as a combination of the best features of the Baudot multiplex system and the Murray automatic system. Murray also employed a five-unit code, but the allocations of the signal combinations differed very considerably from that used in the Baudot code, as is shown in figure 3.</p>
+      </div>
 
-<p><font face="Verdana">Figure 3. The Murray Code</font></p>
+      <div class="code-figure">
+        <img src="figure3.gif" alt="Figure 3: The Murray Code">
+        <div class="code-figure-cap">Figure 3 &mdash; The Murray Code</div>
+      </div>
 
-<p><font face="Verdana"><!-- $MVD$:picsz("674","778") --><img SRC="figure3.gif" WIDTH="621" HEIGHT="743" VSPACE="0" HSPACE="0" BORDER="0"></font></p>
+      <div class="prose">
+        <p>The main reason for this was that he chose to use a keyboard layout similar to that of a typewriter, which relieved the operator of the burden of setting up the individual code elements. This allowed Murray to allocate the codes so that those characters having the greatest frequency of occurrence were given a combination which involved the least number of mechanical operations, thereby reducing the wear in the equipment.</p>
 
-<p><font face="Verdana">The main reason for this was that he choose to use a keyboard layout similar to that of
-a typewriter, which relieved the operator of the burden of setting up the individual code
-elements. This allowed Murray to allocate the codes so that those characters having the
-greatest frequency of occurrence were given a combination which involved the least number
-of mechanical operations, thereby reducing the wear in the equipment.</font></p>
+        <p>At the transmitting end, the Murray system comprised: (1) A keyboard perforator, which produced a tape in which the code was perforated transversely. The feed holes being in line with the front edges of the perforations, so that the direction in which the tape should be read was at once apparent, and; (2) A transmitter which could be mounted adjacent to the perforator in order to give the minimum possible distance between the perforating and transmitting mechanisms. With this arrangement the distance was reduced to only 16 character spaces.</p>
 
-<p><font face="Verdana">At the transmitting end, the Murray system comprised: (1) A keyboard perforator, which
-produced a tape in which the code was perforated transversely. The feed holes being in
-line with the front edges of the perforations, so that the direction in which the tape
-should be read was at once apparent, and; (2) A transmitter which could be mounted
-adjacent to the perforator in order to give the minimum possible distance between the
-perforating and transmitting mechanisms. With this arrangement the distance was reduced to
-only 16 character spaces.</font></p>
+        <p>In the transmitter, the five contact levers which sensed the perforations in the tape were connected to individual segments on a distributor, very similar in principle to the Baudot transmitter distributor. Additional segments on the distributor operated an electromagnet which stepped the tape forward after the line brush had passed the segments connected to the five contact levers. A novel feature on the transmitter was a start-stop device which sensed the size of the tape loop between the perforator and the transmitter, and held the five sensing levers in the space position, thereby sending spacing currents to line until the tape became slack. Mutilation of the tape, or disconnection of the transmitter, was thus avoided.</p>
 
-<p><font face="Verdana">In the transmitter, the five contact levers which sensed the perforations in the tape
-were connected to individual segments on a distributor, very similar in principle to the
-Baudot transmitter distributor. Additional segments on the distributor operated an
-electromagnet which stepped the tape forward after the line brush had passed the segments
-connected to the five contact levers. A novel feature on the transmitter was a start-stop
-device which sensed the size of the tape loop between the perforator and the transmitter,
-and held the five sensing levers in the space position, thereby sending spacing currents
-to line until the tape became slack. Mutilation of the tape, or disconnection of the
-transmitter, was thus avoided.</font></p>
+        <p>At the receiving end, the Murray system comprised: (1) A reperforator which produced perforated tape corresponding to the original sending tape, and which could then be used for onward transmission to further stations, and; (2) A printing receiver which interpreted the incoming line signals, and printed the characters on a paper tape. The Creed multiplex printer was commonly used for this purpose, which employed a series of bell-cranks and a rotating typehead, as used on the later models 3 and 7 series of teleprinters. Either the reperforator, the printing receiver, or both, could be connected to the receiving distributor as required by the local circumstances.</p>
+      </div>
 
-<p><font face="Verdana">At the receiving end, the Murray system comprised: (1) A reperforator which produced
-perforated tape corresponding to the original sending tape, and which could then be used
-for onward transmission to further stations, and; (2) A printing receiver which
-interpreted the incoming line signals, and printed the characters on a paper tape. The
-Creed multiplex printer was commonly used for this purpose, which employed a series of
-bell-cranks and a rotating typehead, as used on the later models 3 and 7 series of
-teleprinters. Either the reperforator, the printing receiver, or both, could be connected
-to the receiving distributor as required by the local circumstances.</font></p>
+      <h2 class="section-hed">Start-Stop Systems</h2>
 
-<h3><font face="Verdana">Start-stop systems</font></h3>
+      <div class="prose">
+        <p>Synchronous printing telegraph systems employing constant length codes, such as the Baudot and Murray, were a great advance over the previous telegraph systems. However, they suffered from a lack of flexibility, and required very accurate means for maintaining accurate synchronism between the transmitting and receiving instruments. To overcome these disadvantages, a number of inventors experimented with the idea of starting and stopping the receiving mechanism for each character. For this purpose, a &ldquo;start&rdquo; signal was transmitted immediately preceding the code elements, and a &ldquo;stop&rdquo; signal was transmitted immediately the code elements had been transmitted.</p>
 
-<p><font face="Verdana">Synchronous printing telegraph systems employing constant length codes, such as the
-Baudot and Murray, were a great advance over the previous telegraph systems. However, they
-suffered from a lack of flexibility, and required very accurate means for maintaining
-accurate synchronism between the transmitting and receiving instruments. To overcome these
-disadvantages, a number of inventors experimented with the idea of starting and stopping
-the receiving mechanism for each character. For this purpose, a &quot;start&quot; signal
-was transmitted immediately preceding the code elements, and a &quot;stop&quot; signal was
-transmitted immediately the code elements had been transmitted.</font></p>
+        <p>The code employed was still a five-unit code, with the start signal equal in duration to one code element, and the stop signal being in some cases equal in duration to one code element, and in other cases more than one element &mdash; often 1.5 elements. For this reason the code is sometimes referred to as a 7&frac12; unit code. The transmitting and receiving instruments were now arranged to have a definite rest position, at which point they were precisely in phase with each other in readiness for their respective timing cycles when released.</p>
 
-<p><font face="Verdana">The code employed was still a five- unit code, with the start signal equal in duration
-to one code element, and the stop signal being in some cases equal in duration to one code
-element, and in other case more than one element &#150; often 1.5 elements. For this
-reason the code is sometimes referred to as a 7½ unit code. The transmitting and
-receiving instruments were now arranged to have a definite rest position, at which point
-they were precisely in phase with each other in readiness for their respective timing
-cycles when released.</font></p>
+        <p>Because the transmitter and receiver effectively re-synchronised at the start of each character, it was no longer necessary for the speed of the instruments to be very accurately controlled, and simpler centrifugal governors which maintained the speed to within +/&minus; 0.5% were now adequate. This implies the possibility of a noticeable speed difference between the two ends of a system, so the receiving mechanism is arranged to rotate for a shorter time period than the transmitter mechanism. The time difference usually being equal to one element period, but sometimes only equal to half of one element period. By this means the receiver was always at rest before the start of the next character, even with speed errors greater than 0.5%.</p>
 
-<p><font face="Verdana">Because the transmitter and receiver effectively re-synchronised at the start of each
-character, it was no longer necessary for the speed of the instruments to be very
-accurately controlled, and simpler centrifugal governors which maintained the speed to
-within +/- 0.5% were now adequate. This implies the possibility of a noticeable speed
-difference between the two ends of a system, so the receiving mechanism is arranged to
-rotate for a shorter time period than the transmitter mechanism. The time difference
-usually being equal to one element period, but sometimes only equal to half of one element
-period. By this means the receiver was always at rest before the start of the next
-character, even with speed errors greater than 0.5%.</font></p>
+        <p>The earliest type of start-stop instrument was introduced in America in 1907 by Charles L. Krum and his son Howard Krum. It was manufactured by the Morkrum Company, which would later become the Teletype Corporation, and began to find practical application about 1920. The instrument employed a typewriter style keyboard, and printed the received signals direct onto paper tape, without requiring the intermediate use of perforated tape at either end of the system. It was capable of working at a speed of 40 words per minute, in either simplex or duplex.</p>
 
-<p><font face="Verdana">The earliest type of start-stop instrument was introduced in America in 1907 by Charles
-L Krumm and his son H Krumm. It was manufactured by the Morkrum company, which would later
-become the Teletype corporation, and began to find practical application about 1920. The
-instrument employed a typewriter style keyboard, and printed the received signals direct
-onto paper tape, without requiring the intermediate use of perforated tape at either end
-of the system. It was capable of working at a speed of 40 words per minute, in either
-simplex or duplex.</font></p>
+        <p>In 1922, Frederick George Creed in Croydon designed a start-stop receiver, and a few years later produced a combined transmitter and receiver having a typewriter-style keyboard. This machine, known as the Model 3 and operating at 65.3 words per minute, printed the messages directly onto a gummed paper tape and was widely adopted for the British Post Office Public Telegram service. The year 1931 saw the introduction of the first Creed Model 7 page printing teleprinter, operating at the now standard speed of 66.6 words per minute.</p>
 
-<p><font face="Verdana">In 1922, Frederick George Creed in Croydon designed a start-stop receiver, and a few
-years later produced a combined transmitter and receiver having a typewriter-style
-keyboard. This machine, known as the Model 3 and operating at 65.3 words per minute,
-printed the messages directly onto a gummed paper tape and was widely adopted for the
-British Post Office Public Telegram service. The year 1931 saw the introduction of the
-first Creed Model 7 page printing teleprinter, operating at the now standard speed of 66.6
-words per minute.</font></p>
+        <p>Early start-stop machines tended to use versions of the Murray code but, in the 1930s, the CCITT standardised on the International Telegraph Alphabet number 2 (ITA2), shown in figure 4, for start-stop telegraph systems. The Americans chose to use a variation of ITA2 known as the Teletypewriter code, which is shown in figure 5.</p>
+      </div>
 
-<p><font face="Verdana">Early start-stop machines tended to use versions of the Murray code but, in the 1930s,
-the CCITT standardised on the International Telegraph Alphabet number 2 (ITA2), shown in
-figure 4, for start-stop telegraph systems. The Americans chose to use a variation of ITA2
-known as the Teletypewriter code, which is shown in figure 5.</font></p>
+      <div class="code-figure">
+        <img src="figure4.gif" alt="Figure 4: International Telegraph Alphabet Number 2 (ITA2)">
+        <div class="code-figure-cap">Figure 4 &mdash; International Telegraph Alphabet Number 2 (ITA2)</div>
+      </div>
 
-<h4><font face="Verdana">Figure 4. International Telegraph Alphabet number 2</font></h4>
+      <div class="code-figure">
+        <img src="figure5.gif" alt="Figure 5: Teletypewriter Code">
+        <div class="code-figure-cap">Figure 5 &mdash; Teletypewriter Code (American variation of ITA2)</div>
+      </div>
 
-<p align="center"><font face="Verdana">
-<img SRC="figure4.gif" VSPACE="0" HSPACE="0" BORDER="0" WIDTH="681" HEIGHT="568"></font></p>
+      <h2 class="section-hed">Summary</h2>
 
-<h4><font face="Verdana">Figure 5. Teletypewrite Code</font></h4>
+      <div class="prose">
+        <p>Virtually all mechanical teleprinter equipment which remains in Amateur hands dates from after the early 1930s and was, therefore, designed in accordance with CCITT standards, and uses either ITA2 or its American equivalent.</p>
 
-<p align="center"><font face="Verdana"><!-- $MVD$:picsz("712","1572") --><img SRC="figure5.gif" WIDTH="598" HEIGHT="1532" VSPACE="0" HSPACE="0" BORDER="0"></font></p>
+        <p>The only teleprinters which used the Murray code, and may still exist in ever decreasing numbers, are the very early Creed models 3A, 3W, 3X, 3Y and 3Z tape printing machines. The later Creed models 3B, 3C, 3D and 3E used the standard ITA2 code.</p>
 
-<h3><font face="Verdana">Summary</font></h3>
+        <p>No teleprinters were ever produced which used the Baudot code, but that is hardly surprising when one considers that the Baudot code was used in a very early synchronous system, and all teleprinters, as we now know them, operate on the start-stop (asynchronous) principle. Also, as far as this writer is aware no computer programmer has yet implemented the Baudot code or the Murray code for the Amateur home computer market, no matter what may be found in advertisements in the Amateur press. For those readers who wish to learn more about the history of telegraphic communications, and the ingenuity of the engineers and inventors, this writer would recommend a trip to a library, where you should ask for: <em>Telegraphy</em> by J. W. Freebody, published by Sir Isaac Pitman in 1958.</p>
+      </div>
 
-<p><font face="Verdana">Virtually all mechanical teleprinter equipment which remains in Amateur hands dates
-from after the early 1930s and was, therefore, designed in accordance with CCITT
-standards, and uses either ITA2 or its American equivalent.</font></p>
+      <div class="callout">
+        Presented by RTTY.COM &mdash; reprinted by permission of Alan Hobbs G8GOJ<br>
+        via Larry Rice VK6CP &mdash; 25 August 1999<br>
+        <br>
+        Copyright &copy; 2011 George Hutchison W7TTY &amp; Bill Bytheway K7TTY
+      </div>
 
-<p><font face="Verdana">&nbsp;The only teleprinters which used the Murray code, and may still exist in ever
-deceasing numbers, are the very early Creed models 3A, 3W, 3X, 3Y and 3Z tape printing
-machines. The later Creed models 3B, 3C, 3D and 3E used the standard ITA2 code.</font></p>
+    </main>
 
-<p><font face="Verdana">No teleprinters were ever produced which used the Baudot code, but that is hardly
-surprising when one considers that the Baudot code was used in a very early synchronous
-system, and all teleprinters, as we now know them, operate on the start-stop
-(asynchronous) principle. Also, as far as this writer is aware no computer programmer has
-yet implemented the Baudot code or the Murray code for the Amateur home computer market,
-no matter what may be found in advertisements in the Amateur press. For those readers who
-wish to learn more about the history of telegraphic communications, and the ingenuity of
-the engineers and inventors, this writer would recommend a trip to a library, where you
-should ask for: Telegraphy by J W Freebody, published by Sir Isaac Pitman in 1958.</font></p>
+    <aside class="col-side">
 
-<hr ALIGN="CENTER" WIDTH="100%" SIZE="2">
+      <div class="sb-box">
+        <div class="sb-hed">Article Info</div>
+        <div class="sb-note" style="font-size:13px;line-height:1.9">
+          <strong style="color:var(--ink)">Author</strong><br>
+          Alan G Hobbs, G8GOJ<br>
+          BARTG President<br>
+          <br>
+          <strong style="color:var(--ink)">Date</strong><br>
+          1999<br>
+          <br>
+          <strong style="color:var(--ink)">Source</strong><br>
+          Reprinted by permission<br>
+          via Larry Rice VK6CP<br>
+          <br>
+          <span style="color:var(--ink-faint);font-size:11px">
+            Copyright &copy; 2011<br>
+            George Hutchison W7TTY<br>
+            &amp; Bill Bytheway K7TTY
+          </span>
+        </div>
+      </div>
 
-<p align="center"><font face="Verdana">Presented by RTTY.COM<br>
-Reprinted by permission of Alan Hobbs<br>
-via Larry Rice VK6CP&nbsp; 8-25-99</font></p></td>
-		</tr>
-	</table>
-	<p align="center"><font size="1" FACE="Arial">Copyright George Hutchison, W7TTY &amp; Bill Bytheway, K7TTY 
-	-- November 2011</font></div>
+      <div class="sb-box">
+        <div class="sb-hed">More by G8GOJ</div>
+        <div class="sb-note">
+          <a href="ahobbs.htm" style="display:block;padding:5px 0;border-bottom:1px dotted var(--rule);color:var(--ink-mid);text-decoration:none">&#9654; About Alan Hobbs G8GOJ</a>
+          <a href="creed1.html" style="display:block;padding:5px 0;border-bottom:1px dotted var(--rule);color:var(--ink-mid);text-decoration:none">&#9654; Teleprinters for the Amateur</a>
+          <a href="creed2.html" style="display:block;padding:5px 0;border-bottom:1px dotted var(--rule);color:var(--ink-mid);text-decoration:none">&#9654; Creed &amp; Co. First 50 Years</a>
+          <a href="creed444.html" style="display:block;padding:5px 0;border-bottom:1px dotted var(--rule);color:var(--ink-mid);text-decoration:none">&#9654; ITT Creed Model 444</a>
+          <a href="../history.html#historyhall" style="display:block;padding:5px 0;color:var(--ink-mid);text-decoration:none">&#9654; Back to History Hall</a>
+        </div>
+      </div>
+
+    </aside>
+
+  </div>
+</div>
+
+<footer class="site-footer">
+  <span>RTTY.COM &mdash; W2TTY &mdash; ARVADA, CO</span>
+  <span>NON-COMMERCIAL ARCHIVE &mdash; NO TRACKING</span>
+  <span>BAUDOT 1870 &bull; TELETYPE 1906 &bull; RTTY 1922</span>
+</footer>
+
+<canvas id="tapeBot" class="tape" aria-hidden="true"></canvas>
+<script src="../js/tape.js"></script>
 </body>
 </html>

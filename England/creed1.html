@@ -1,905 +1,523 @@
-<html>
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-
-<title> TELEPRINTERS FOR THE RADIO AMATEUR </title>
-<meta Name="description" Content="Creed teleprinters">
-<meta Name="keywords" Content="Creed siemens teletype teleprinters">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teleprinters for the Radio Amateur — RTTY.COM History Hall</title>
+  <meta name="description" content="A guide to surplus Creed, Siemens, and Teletype teleprinters for radio amateurs, by Alan G Hobbs G8GOJ. Covers signaling, coding, speed, machine models, and connections.">
+  <link rel="stylesheet" href="../css/rtty.css">
+  <style>
+    .machine-model {
+      font-family: 'Special Elite', serif;
+      font-size: 19px;
+      color: var(--red);
+      letter-spacing: .04em;
+    }
+    .img-right {
+      float: right;
+      margin: 0 0 16px 20px;
+      max-width: 300px;
+      width: 44%;
+      height: auto;
+      border: 1px solid var(--rule);
+    }
+    .img-left {
+      float: left;
+      margin: 0 20px 16px 0;
+      max-width: 300px;
+      width: 44%;
+      height: auto;
+      border: 1px solid var(--rule);
+    }
+    .clearfix::after {
+      content: '';
+      display: table;
+      clear: both;
+    }
+    .ref-group {
+      margin: 16px 0 4px;
+      font-family: 'Special Elite', serif;
+      font-size: 15px;
+      color: var(--ink);
+      border-left: 3px solid var(--red);
+      padding-left: 8px;
+    }
+    .prose .pin-list {
+      margin: 0 0 16px 0;
+      padding-left: 24px;
+    }
+    .prose .pin-list li {
+      margin-bottom: 4px;
+      font-size: 15px;
+    }
+  </style>
 </head>
-
-<body bgcolor="#C0C0C0">
-
-<div align="center">
-	<p align="center" style="margin-top: 0; margin-bottom: 6px">
-	<font size="3" face="Verdana"><i><b>WWW.RTTY.COM History Hall</b></i></font></div>
-<div align="center">
-	<table border="0" width="600" cellpadding="20" background="ltbluegrid.gif" id="table1">
-		<tr>
-			<td>
-			<p align="center"><font face="Verdana">
-<strong><font size="5">TELEPRINTERS FOR THE RADIO AMATEUR</font><font size="+2"><br>
-</font>by Alan G Hobbs, G8GOJ<br>
-<a HREF="MailTo:Alan.Hobbs@ngc.co.uk">Alan.Hobbs@ngc.co.uk </a></strong></font></p>
-
-<p><font face="Verdana"><strong style="font-weight: 400"><br>
-There are many different types of mechanical teleprinter which become available on the
-surplus market from time to time, but we will only concern ourselves with the ones which
-are most liable to be encountered. The teleprinters that we will be considering come from
-three manufacturers: Creed &amp; Company of England, the Teletype Corporation of the
-U.S.A., and Siemens of Germany.</strong></font></p>
-
-<p><font face="Verdana"><strong style="font-weight: 400">There are three fundamental requirements which must be considered before
-purchasing a machine:</strong></font></p>
-
-<p><font face="Verdana"><strong style="font-weight: 400">1. The electrical 
-signaling characteristics. <br>
-2. The code that the machine uses. <br>
-3. The signaling speed at which the machine operates. </strong></font></p>
-
-<h1 align="center"><font face="Verdana"><strong>Signaling Characteristics</strong></font></h1>
-			<h1 align="left"><font face="Verdana"><strong>
-			<span style="font-weight: 400"><font size="3">Machines manufactured in the U.K. normally use what is known as Double Current or Polar
-			signaling, in which the two signaling states, Mark and Space, are represented by current
-flowing in opposite directions, often +/- 20mA, with Mark being represented by a negative
-current flow. Whereas machines manufactured in the U.S.A. and Germany normally use what is
-known as Single Current or Neutral signaling, in which the two signaling states, Mark
-and Space, are represented by the presence or absence of current, often 60mA, the actual
-polarity being unimportant. </font></span> </strong></font></h1>
-
-<p align="left"><font face="Verdana"><strong style="font-weight: 400">Note that we are referring to current flow in each case, and not to voltages.
-The receiving section of a teleprinter usually consists of a form of electro-mechanical
-relay, often called the electro-magnet, with a fairly high inductance, perhaps up to 4
-Henrys, and a low DC resistance, perhaps only 200 Ohms, which responds to the incoming
-signaling impulses. The actual voltage developed across the receiving electro-magnet is
-quite small, perhaps only 4 volts, but in order to reduce the time constant of the
-signaling circuit, which is represented by the total circuit inductance divided by the
-total circuit resistance, and thereby increase the speed of operation of the
-elecro-magnet, the circuit resistance must be increased to the maximum practicable, which
-is best served by a current source and not a voltage source. </strong></font></p>
-
-<p><font face="Verdana"><strong style="font-weight: 400">In the real world voltage sources are more convenient to generate than current
-sources, but a current source can be simulated by using a fairly high voltage and a series
-resistor. When the resistance is increased to reduce the time constant, the driving
-voltage must also be increased in order to maintain the required current through the
-electro-magnet. For historical reasons the voltages usually used are +/- 80 volts for
-Polar signaling, and 120 volts for Neutral signaling, but the precise values are not too
-important. However, for Polar signaling, it is important that the positive and negative
-supplies are balanced, otherwise distortion will be introduced. </strong></font></p>
-
-<p><font face="Verdana"><strong style="font-weight: 400">What all this means in practice is that a machine designed for Polar 
-signaling
-will not work in a circuit designed for Neutral signaling, and vice-versa. Designs for
-Terminal Units are available which are suitable for either type of signaling, and the
-Terminal Unit configuration required should be checked very carefully before any
-teleprinter is purchased. Having said that, some of the Creed machines can be adjusted to
-operate in Neutral circuits by means of auxiliary springs, or other means, but the parts
-required may not be fitted on individual machines, and this should be checked if single
-current operation is required. </strong></font></p>
-
-<p><font face="Verdana"><strong style="font-weight: 400">The transmitter output of a double current machine consists of a single pole
-changeover contact which operates in sympathy with the transmitted code, the two poles
-representing Mark and Space respectively. Whereas the transmitter output of a single
-current machine consists of a normally closed contact which opens for the duration of the
-Space impulses. </strong></font></p>
-
-<p><font face="Verdana"><strong style="font-weight: 400">In addition to this transmitter contact, the Creed machines usually have a
-second single pole changeover contact known as the Send-Receive switch. This contact
-operates just before the Start impulse of the character is transmitted, and restores just
-after the end of the Stop impulse has been transmitted. In the case of punched paper tape
-readers the contact remains operated for as long as characters are being transmitted, and
-restores after the end of the last character has been transmitted. </strong>
-</font></p>
-
-<p><font face="Verdana"><strong style="font-weight: 400">All of the contacts mentioned above are fitted with radio interference
-suppression networks, usually consisting of resistance, inductance and capacitance which
-are suitable for the normal signaling voltages and currents involved in teleprinter
-signaling. </strong></font></p>
-
-<h1 align="center"><font face="Verdana"><strong>Machine Coding </strong></font></h1>
-
-<p><font face="Verdana"><strong style="font-weight: 400">There are several codes in use for communications purposes, with the standard
-five unit code being the International Telegraph Alphabet number 2 (ITA2). Other five unit
-codes which may be found are: the Murray code, which has some similarities with ITA2 and
-is partially compatible with it; Elliott 403, Stantec Zebra, and Ferranti Pegasus which
-are all early computer codes dating from the 1960's and are of no practical purpose to the
-Radio Amateur; and the Baudot code which dates from the late 1800's and was never used for
-teleprinters as we now know them. The only Baudot equipment that I know of is in the
-London Science Museum, and the now closed BT Museum in London. Needless to say, none will
-be found on the Amateur surplus market! When people refer to Murray and Baudot code they
-invariably mean ITA2, because they do not appreciate the differences between the codes. </strong>
-</font></p>
-
-<p><font face="Verdana"><strong style="font-weight: 400">There is no certain way of checking the code of every machine which may be
-found without actually seeing it in operation. A simple way, which is usually a good
-guide, is to carefully inspect the keyboard. The layout of the characters should be very
-similar to that of a standard typewriter keyboard, and as long as there are no strange
-characters, the machine may well be coded for ITA2. However, even this is not guaranteed
-as machines which use the Elliott 403 computer code have a very similar keyboard layout to
-a machine coded for ITA2. </strong></font></p>
-
-<p><font face="Verdana"><strong style="font-weight: 400">In addition to five unit codes, there are also codes with seven units which are
-primarily used for data communications, rather than plain language communications. The
-main code which may be encountered is the American Standard Code for Information
-Interchange (ASCII) which is now in fairly universal use. </strong></font></p>
-
-<p><font face="Verdana"><strong style="font-weight: 400">In addition to the five information units in the code, the machine requires a
-START unit and a STOP unit or units. In order for the machine to re-synchronise at the
-start of every character, the STOP unit is usually made 1.5 units long, or in the case of
-machines from the U.S.A. 1.42 units long. This is why teleprinter codes in general, and
-ITA2 in particular, is sometimes referred to as a 7.5 unit code. The corresponding machine
-receive cycle is usually 6.5 units, which allows the machine to cope with transmit cycles
-of less than 7.5 units, and significant speed errors. </strong></font></p>
-
-<p><font face="Verdana"><strong style="font-weight: 400">Standard Radio Teleprinter TelegraphY (RTTY) communications use the ITA2 code,
-any other code is usually considered under the umbrella term of data. Machines will only
-be able to talk to each other if they use the same code, and it would be extremely
-difficult to change the coding of a machine after it is purchased. Indeed, it would be
-easier to throw it away and look for another machine! </strong></font></p>
-
-<h1 align="center"><font face="Verdana"><strong>Signalling Speed </strong>
-</font></h1>
-
-<p><font face="Verdana"><strong style="font-weight: 400">There are a number of speeds in use on the Amateur bands, but the main ones
-are: </strong></font></p>
-
-			<ol>
-				<li><font face="Verdana"><strong style="font-weight: 400">1. 45.45 Bauds, which is the original domestic speed of the U.S.A., and the
-speed at which most Amateur RTTY operation takes place. </strong></font></li>
-				<li><font face="Verdana"><strong style="font-weight: 400">50 Bauds, which is the international standard speed for the public Telex service, and
-may sometimes be found on the Amateur VHF/UHF bands.</strong></font></li>
-				<li><font face="Verdana"><strong style="font-weight: 400">75 Bauds, which is a common commercial communications speed on private networks
-connected together by land-lines.</strong></font></li>
-				<li><font face="Verdana"><strong style="font-weight: 400">110 Bauds, which is the standard speed for data machines using the ASCII code.
-				</strong></font></li>
-			</ol>
-
-<p><font face="Verdana"><strong style="font-weight: 400">Before considering speeds in greater detail, perhaps a few words about the
-&quot;Baud&quot; would be appropriate. The Baud is the unit of signaling speed, and is
-named after Emile Baudot who was an eminent French telegraphic engineer of the late
-1800's, and who also devised the now obsolete Baudot code. The signaling speed in Bauds
-may be defined as &quot;the reciprocal of the shortest signaling element in
-seconds&quot;. Therefore, a system operating at 50 Bauds will have a signal element time
-period equal to 1 second divided by 50. That is: 20 ms. This is most important, because
-machines will only be able to talk to each other if they both have the same Baud rate. </strong>
-</font></p>
-
-<p><font face="Verdana"><strong style="font-weight: 400">Knowing the number of units in the code, and the Baud rate at which it is
-transmitted, allows us to calculate the signaling speed in words per minute. For this
-calculation it is always assumed that a word consists of five letters plus a space, that
-is a total of six letter intervals. </strong></font></p>
-
-<p><font face="Verdana"><strong style="font-weight: 400">Therefore, at 50 Bauds, and using the ITA2 code with a 1.5 unit Stop bit: <br>
-Each letter lasts for: 7.5 x 20 = 150 ms <br>
-Therefore, one word lasts for: 6 x 150 = 900 ms <br>
-Therefore, the number of words transmitted in one minute is: 60 divided by 0.9 = 66.67 wpm
-</strong></font></p>
-
-<p><font face="Verdana"><strong style="font-weight: 400">This is usually abbreviated to 66 words per minute. By the same reasoning, a
-transmission at 45.45 Bauds is equivalent to 60.6 words per minute (60 words per minute,
-or 60 speed), and a transmission at 75 Bauds is equivalent to 100 words per minute. </strong>
-</font></p>
-
-<p><font face="Verdana"><strong style="font-weight: 400">Most machines use an electric motor to derive all of the internal machine
-timing, and it is the speed of this motor which sets the Baud rate for the machine. Motors
-may be governed, if they are to be run from DC supplies, or synchronous, if there is a
-stable AC mains source available. </strong></font></p>
-
-<p><font face="Verdana"><strong style="font-weight: 400">A governed motor driving a machine at 50 Bauds can usually be adjusted for
-45.45 Bauds, and vice-versa, but a motor driving a machine operating at 75 Bauds cannot be
-adjusted to operate at 45.45 or 50 Bauds because the change in speed is just too great. In
-order to check the motor speed, stroboscopic markings are normally provided on the motor
-governor case. These markings are used in conjunction with a special tuning fork which has
-small shutters attached to the tines. When the motor speed is correct, the markings on the
-governor will appear stationary when viewed through the shutters. In practice, the motor
-speed is normally set so that it is running very slightly fast when idling, and very
-slightly slow when on full load. Under average operating conditions the motor speed will
-then be just right. The stroboscopic tuning forks are sometimes found at rallies, and may
-also be obtained through the advertisement columns of Datacom, and other Amateur radio
-magazines. </strong></font></p>
-
-<p><font face="Verdana"><strong style="font-weight: 400">When synchronous motors are fitted it is necessary to replace some of the
-internal gears if it is required to operate the machine at different speeds, because the
-signaling speed is directly related to the AC mains frequency. Gears were normally
-produced for the three common speeds of 45.45/50/75 Bauds, but if they have to be
-specially manufactured they can turn out to be very expensive. Another solution which has
-successfully been used is to start the machine on 50 Hz AC mains, and then automatically
-changeover to the output from a 45.45 Hz power oscillator. Some machines may be found
-which are fitted with a manually operated dual speed gear box, usually for 45.45/50 Bauds
-or 50/75 Bauds. Intending purchasers should always check the speed at which the machine is
-operating, and what will be required to change the speed on that particular machine,
-should it be necessary. </strong></font></p>
-
-<h1 align="center"><font face="Verdana"><strong>Summary </strong></font></h1>
-
-			<p><font face="Verdana"><strong style="font-weight: 400">To 
-			summarize the items above, to be of much use in Amateur circles a
-teleprinter must: </strong></font></p>
-			<ol>
-				<li><font face="Verdana"><strong style="font-weight: 400">&nbsp;Use 
-				a signaling system which suits the terminal unit with which it is to be used. The
-BARTG ST5 series of terminal units, with the exception of the ST5C, provide a double
-current output. However, it is possible to convert the ST5 to provide a single current
-output. </strong></font></li>
-				<li><font face="Verdana"><strong style="font-weight: 400">Use the ITA2 code. (Not Murray which is now rather rare, or one of the early computer
-codes, or Baudot which will never be found.) </strong></font></li>
-				<li><font face="Verdana"><strong style="font-weight: 400">Be 
-				able to operate at least at 45.45 Bauds, and ideally at 45.45 
-				and 50 Bauds. Operation at 75 Bauds would be a bonus </strong>
-				</font></li>
-			</ol>
-			<p><font face="Verdana"><strong style="font-weight: 400"><br>Having covered the basic requirements for teleprinters, we may now look in detail at the
-individual machines which have been available on the surplus market. </strong>
-			</font></p>
-
-<p align="center"><font face="Verdana"><strong><img align="left" SRC="creedlo.jpg" ALT="Creed logo" WIDTH="164" HEIGHT="205"> <br>
-<br>
-<br>
-<br>
-<br>
-<font color="#3333FF" size="+3">Creed Machines </font></strong></font></p>
-
-<p><font face="Verdana"><br>
-<br>
-<br>
-<br>
-<font color="#3333FF" size="+2">3X </font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; This is a
-teleprinter which prints on narrow (3/8&quot; wide) gummed paper tape, and<img src="creed3.jpg" ALT="Creed 3" align="right" hspace="0" WIDTH="342" HEIGHT="246"> was introduced
-in 1927 for the Post Office Telegram service. The standard signaling speed was 49 Bauds
-using the Murray code and not ITA2, although some ITA2 coded machines were later produced.
-The ITA2 coded machines may be identified by the letters A or B in place of the X in the
-description, and a different keyboard layout. It is possible to interwork between machines
-coded for Murray code and ITA2, provided that care is taken. A governed motor is fitted as
-standard, which may be adjusted to operate at 45.45 or 50 Bauds. </font></p>
-
-<p><font face="Verdana"><br>
-<br>
-<br>
-<br>
-<font color="#3333FF" size="+2">6S</font> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; This is a punched
-paper tape reader, with reference numbers from the original 6S introduced in 1926, to the
-latest model the 6S/6 introduced in 1958. Some of these tape readers were allocated the
-Post Office reference numbers of: &quot;Automatic Transmitter No. 1B&quot; (the 6S/3),
-&quot;Automatic Transmitter No. 2D&quot; (the 6S/5), &quot;Automatic Transmitter No.
-2E&quot; (the 6S/5M), and &quot;Automatic Transmitter No. 2F&quot; (the 6S/6M). The output
-from a tape reader is a single changeover contact of exactly the same form as a
-teleprinter keyboard. The early machines used a governed motor operating at 3000 rpm,
-whilst the later machines from the 6S/3 onwards used a governed motor operating at 1500
-rpm. All of these machines are suitable for operation at 45.45 or 50 Bauds. Some versions
-of the 6S/6 may be found with a manually operated dual speed gearbox giving the choice of
-50 or 75 Bauds. The 6S/5 and 6S/6 were also available with an electromagnetic clutch on
-the tape drive, which is signified by the suffix &quot;M&quot;. The clutch requires 50
-volts DC at 20 mA to operate, and allows for remote tape control. As these machines also
-contain tape sensing contacts, the clutch may be wired in series with the sensing contacts
-to automatically stop transmission at the end of the tape. The 6S/6 and 6S/6M have an
-adjustable width tape gate in order to accept the wider 7/8&quot; wide tape used on the
-model 86 printing reperforator. </font> </p>
-
-<p><font face="Verdana"><br>
-<br>
-<font color="#3333FF" size="+2">7 </font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; This is probably
-the most famous of the Creed page<img src="cred7ina.jpg" ALT="Creed 7b without cover" align="right" hspace="0" width="260" height="246"> printing teleprinters, and was introduced in 1931 for
-the new Telex service.</font></p>
-
-<p><font face="Verdana">[Left: 4-bank Commercial Typewriter Keyboard.
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-Right: Normal 3-bank keyboard.] </font> </p>
-
-<p><font face="Verdana">&nbsp; <br>
-<img src="creed7b.jpg" ALT="Creed 7b with cover" align="left" hspace="0" WIDTH="278" HEIGHT="214"></font></p>
-
-<p><font face="Verdana"><br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-Like the model 3X it originally used the Murray code, but very rapidly changed to the
-standard ITA2 code. Over 150,000 model 7's were manufactured before production ceased in
-the late 1960's. The machine could be fitted with interchangeable platen assemblies for
-either: Friction feed paper, Sprocket feed paper, or 3/8&quot; wide paper tape. Many
-variants were also manufactured as the machine was developed, and these may be identified
-by various suffixes after the 7. These will be described later, as some of the suffixes
-are common to other machines. This machine was usually fitted with a 3000 rpm governed
-motor for operation at 50 Bauds, which is adjustable for operation at 45.45 Bauds. Motors
-were produced for DC voltage ranges of 24 volts to 220 volts, and for AC voltage ranges of
-110 volts to 230 volts. Some machines were fitted with a 3000 rpm synchronous motor for
-operation at 50 Bauds, and are not directly suitable for operation at 45.45 Bauds without
-an external AC mains supply running at 45.45 Hz, or some other form of electronic speed
-conversion. This machine was allocated the Post Office reference number &quot;Teleprinter
-No. 7&quot;. </font> </p>
-
-<p><font face="Verdana"><img align="left" align="top" SRC="perf45.gif" ALT="Creed perforator 45" width="296" height="233"> 
-</font> </p>
-
-<p><font face="Verdana"><br>
-<font color="#3333FF" size="+2">7P </font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; This is an off
-line keyboard perforator, introduced in 1934, whose sole function is to produce punched
-paper tape directly from the keyboard input. It may be found with either 1500 rpm governed
-or 1450 rpm induction motors. The punch mechanism is capable of working at up to 140 words
-per minute, so the speed of operation is entirely dependent upon the skill of the keyboard
-operator. A character counter is often fitted so that the carriage return and line feed
-characters may be inserted at the appropriate part of the text. This is essential if the
-contents of the tape are to be printed on a standard page teleprinter. <br>
-<br>
-This machine was allocated the Post Office reference number &quot;Perforator No. 45&quot;.
-</font>
-</p>
-			<p><font face="Verdana">
-<br>
-<font color="#3333FF" size="+2">7TR </font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; This is a
-non-printing tape reperforator, introduced in 1931, which uses a number of assemblies
-which are common to the model 7 teleprinter. The signal input circuit is electrically
-identical to a model 7 teleprinter, and the same range of motors may be encountered. The
-later model 7TR/3 punches two tapes simultaneously. This machine was allocated the Post
-Office reference number &quot;Reperforator No. 2&quot;. </font>
-</p>
-
-<p><font face="Verdana"><font color="#3333FF" size="+2">8 </font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; This is the
-receive only version of the model 7 teleprinter and, hence, is not fitted with a keyboard.
-It is otherwise identical to the model 7. </font> </p>
-
-<p><font face="Verdana"><font color="#3333FF" size="+2">25 </font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; This is a high
-speed non printing tape reperforator, introduced in 1955, which operates from a parallel
-drive at a speed of up to 33 characters per second. The speed of operation is independent
-of the motor speed, and is determined by the parallel drive circuitry. This machine was
-usually fitted with a 1500 rpm induction motor operating from 50 Hz AC mains, but 3000 rpm
-governed motors for DC supplies may sometimes be found. It was designed for use with some
-of the early electronic computers, and may be found in versions for 5, 6, 7, or 8 unit
-tape, and with drive voltages from 12 volts to 100 volts DC. It is not normally used for
-communications purposes, but with suitable drive electronics it can be put to good use. 
-</font> </p>
-
-<p><font face="Verdana"><font color="#3333FF" size="+2">35 </font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; This is a high
-speed paper tape reader operating at a speed of up to 40 characters per second, in either
-direction, with a parallel output. The speed of operation is independent of the motor
-speed, and is determined by the control circuitry. This machine was usually fitted with a
-1500 rpm induction motor operating from 50 Hz AC mains. It was designed for use with some
-of the early electronic computers, and may be found in versions for 5, 6, 7, or 8 unit
-tape, and with drive voltages from 12 volts to 100 volts DC. It is not normally used for
-communications purposes, but with suitable drive electronics it can be put to good use. <img align="right" SRC="creed47.jpg" ALT="Creed 47" WIDTH="381" HEIGHT="293"></font></p>
-
-<p><font face="Verdana"><br>
-<br>
-<br>
-<font color="#3333FF" size="+2">47 </font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Like the
-model 3, this teleprinter also prints on a 3/8&quot; wide gummed paper tape for the Post
-Office Telegram service, and was introduced in 1947 to replace the ageing model 3. The
-component parts have many similarities with the model 7, from which it was developed. Like
-the model 7, a governed motor was normally fitted. This machine was allocated the Post
-Office reference number &quot;Teleprinter No. 11&quot;. </font> </p>
-
-<p><font face="Verdana">
-<br>
-<img align="left" SRC="creed54.jpg" ALT="Creed 54" WIDTH="336" HEIGHT="273"> <br>
-<br>
-<font color="#3333FF" size="+2">54 </font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; This page
-printing teleprinter was introduced in 1954 as a stop gap measure pending the development
-of a totally new teleprinter (the model 75), and is really only an advanced model 7E in an
-all enclosing silence cover. This makes it a very nice machine to operate. Like the model
-7 a governed motor was usually fitted, although some synchronous motors may be found. A
-tape punch, operated from the receive mechanism, is often fitted as standard within the
-silencing cover. This machine was used as a print out device for some of the early
-electronic computers, and may be found coded for some of the early computer codes. 
-</font> </p>
-
-<p><font face="Verdana"><font color="#3333FF" size="+2">67 </font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; This is a
-combination of the model 7P keyboard perforator and the model 6S punched tape reader,
-which was introduced in 1934. This permits a tape to be punched, and transmitted directly
-to line. A governed motor operating at 1500 rpm is normally fitted, which will permit
-operation at 45.45 and 50 Bauds. It would be unusual to find a complete model 67, the
-majority of which had the transmitter head removed so that the machine reverted to a
-standard 7P keyboard perforator. </font> </p>
-
-<p><font face="Verdana"><font color="#3333FF" size="+2">71 </font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; This is a
-multiple head punched tape reader with three independent message transmitting heads which
-was introduced in 1951. It is based on an American design and provides a single current
-output, not the standard changeover contact found in other Creed machines. It was usually
-used in message relay stations so that two other messages could be loaded whilst the first
-was being transmitted. A governed motor is normally fitted, which will permit operation at
-45.45 or 50 Bauds. As a tape reader it is physically rather large. This machine was
-allocated the Post Office reference number &quot;Automatic Transmitter No. 3&quot;. 
-</font> </p>
-
-<p><font face="Verdana"><font color="#3333FF" size="+2">72 </font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; This is
-a multiple head punched tape reader with three independent number transmitting heads to
-identify the messages being sent by the model 71 tape reader. In all other respects it is
-very similar to the model 71. This machine was allocated the Post Office reference number
-&quot;Automatic Transmitter No. 4&quot;. </font> </p>
-
-<p><font face="Verdana"><font color="#3333FF" size="+2">74 </font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; This is a
-multiple head punched tape reader and is a combination of the models 71 and 72, providing
-one number transmitting head and two message transmitting heads. In all other respects it
-is very similar to the model 71. This machine was allocated the Post Office reference
-number &quot;Automatic Transmitter No. 5&quot;. <br>
-<br>
-<img align="right" SRC="creed75.jpg" ALT="Creed 75" WIDTH="376" HEIGHT="340"> <font color="#3333FF" size="+2">75 </font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-When this page printing teleprinter was introduced in 1958, it was the smallest, lightest,
-fastest, and most versatile machine in the world. It utilised a stationary paper platen,
-and a cylindrical type head which was driven by a complicated arrangement of levers
-positioned in response to the received code. The machine uses one main cam shaft for the
-transmit and receive functions, and provides the local copy by internal mechanical means.
-When used with the BARTG ST5 terminal unit a very minor wiring change is necessary to take
-account of this mechanical local record. It will operate at 45.45, 50 or 75 Bauds, and may
-be found with a dual speed gear box for 45.45 and 50 Bauds, or 50 and 75 Bauds. If the
-gear box is not fitted two gears will need to be replaced to change the operating speed of
-the machine. The standard motor fitted was a governed motor operating at 4200 rpm, but
-some machines were fitted with 3000 rpm synchronous motors for 50 Hz supplies, or 3600 rpm
-motors for 60 Hz supplies. As would be expected, the gears for the different types of
-motors are completely different and are not interchangeable. The various gears for the
-governed and 3000 rpm synchronous motors, which have colour coding spots by which they may
-be identified, are sometimes seen at rallies, but the gears for the 3600 rpm motors are
-extremely rare. Factory fitted options included a paper tape reader and/or tape punch,
-automatic carriage return/line feed, dual colour printing, and a choice of three or four
-row keyboards. The model 75 could also be supplied as a receive only machine, which could
-also fitted with an answer back unit and the associated transmitter contacts. This machine
-may also be found coded for some of the early computer codes, or with a solenoid operated
-parallel drive mechanism and parallel output contacts. This parallel drive version may
-usually be identified by the 25 way Plessey mark 4 signal connector on the rear of the
-machine. A modified version of this machine, which utilised a remote keyboard for use on
-the Telex cordless switchboards, was allocated the Post Office reference number
-&quot;Teleprinter No. 12&quot;. </font> </p>
-
-<p><font face="Verdana"><font color="#3333FF" size="+2">85 </font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; This is a
-printing reperforator, introduced in 1948, similar to the model 7 page printing
-teleprinter, but fitted with a perforating unit fitted in place of the paper platen. The
-perforator is designed to produce &quot;chadless&quot; tape, which means that the holes in
-the tape are not punched cleanly, but the chads are still attached to the tape by means of
-a small flap. The text is then printed directly on top of the tape. This style of tape may
-be read by any of the standard range of punched tape readers. The same range of motors as
-fitted to the model 7 are also fitted to this machine. This machine was allocated the Post
-Office reference number &quot;Printing Reperforator No. 1&quot;. The receive only version
-of this machine, the model 85R, was allocated the Post Office reference number
-&quot;Printing Reperforator No. 2&quot;. </font> </p>
-
-<p><font face="Verdana"><font color="#3333FF" size="+2">86 </font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; This is a
-printing reperforator, similar in most respects to the model 85, but using 7/8&quot; wide
-tape instead of the standard 11/16&quot; wide tape, and printing the text below the clean
-punched holes. This tape may be read using the 6S/6 series of tape readers, which are
-fitted with an adjustable width tape gate. The same range of motors as fitted to the model
-7 are also fitted to this machine. This machine was allocated the Post Office reference
-number &quot;Printing Reperforator No. 1D&quot;. The receive only version of this machine,
-the model 86R, was allocated the Post Office reference number &quot;Printing Reperforator
-No. 2D&quot;. </font> </p>
-
-<p><font face="Verdana"><font color="#3333FF" size="+2">92 </font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; This is an
-electromagnetically operated punched paper tape reader, introduced in 1957, which operates
-at speeds up to 20 characters per second with a parallel output. It was designed for use
-with some of the early electronic computers, and may be found in versions for 5, 6, 7 or 8
-unit tape, with drive voltages from 12 volts to 100 volts DC. It is not generally used for
-communications purposes but with suitable drive electronics it can be put to good use. The
-mark 1 and mark 2 versions caused very high tape wear, which was corrected in the mark 3
-version by redesigning the tape sensing mechanism. <br>
-<br>
-<img align="left" SRC="cread444.jpg" ALT="Creed 444" WIDTH="360" HEIGHT="257"> <font color="#3333FF" size="+2">444 </font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-This page printing teleprinter was introduced in 1966 to replace the ageing model 7 in the
-Telex and private wire services. It was designed to operate continuously at 75 Bauds, and
-was only provided with gears for 50 and 75 Bauds. It was usually fitted with a 3000 rpm
-synchronous motor for 50 Hz AC supplies, but a few machines fitted with 3750 rpm governed
-motors may be found. Machines for export were sometimes fitted with 3600 rpm synchronous
-motors for 60 Hz AC supplies, but these are now extremely rare. A replacement 45.45 Baud
-gear for 50 Baud machines fitted with the 3000 rpm synchronous motor was available from
-BARTG some years ago, but the stocks have long since been used up, and there are no plans
-to produce any more. This machine is often fitted with a built in tape punch, a paper tape
-reader, dual colour printing, and a &quot;stunt box&quot; for character recognition. It is
-a very nice machine to operate and, due to its all enclosing cover, is very quiet in
-operation. This machine was allocated the Post Office reference number &quot;Teleprinter
-No. 15&quot;. </font> </p>
-
-<p><font face="Verdana"><font color="#3333FF" size="+2">750 </font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; This page
-printing teleprinter is a very rare development of the model 75, and uses separate
-transmit and receive camshafts in a similar manner to other Creed teleprinters. Visually,
-it is slightly larger than the model 75 in order to accommodate the two camshafts. Very
-little information is available for this machine, and any intending purchaser should ask
-for a demonstration of the machine in operation. </font> </p>
-
-<p><font face="Verdana"><font color="#3333FF" size="+2">2300 </font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; This
-semi-electronic page printing teleprinter, introduced in 1974, was intended as a general
-replacement for the entirely mechanical model 444 in the Telex and private wire services.
-However, due to the variety of options available, it eventually became uneconomic to
-manufacture, and was overtaken by the emerging electronic teleprinters. The timing is
-crystal controlled, and was normally adjustable for 50, 75 and 100 Bauds. By changing the
-crystal, operation at 45.45 Bauds is possible. The electronic section contains a number of
-non standard integrated circuits and, if a serious problem develops, it may prove very
-difficult to cure. The machine was normally fitted with a 3000 rpm synchronous motor to
-drive the rotating print head. Characters were printed &quot;on the fly&quot; by a type
-hammer located behind the paper, without stopping the actual rotation of the print head.
-This machine was allocated the Post Office reference number &quot;Teleprinter No.
-23&quot;. </font> </p>
-
-<p align="center"><font size="+2" face="Verdana">Creed Machine Suffixes </font></p>
-
-<p><font face="Verdana"><font color="#3333FF" size="+2">A </font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Normally means
-that the machine transmits a 7.5 unit character and receives in a 7.0 unit cycle; 66 wpm
-at 50 Bauds. This was the early transmit and receive configuration, and is not often
-encountered. <br>
-<font color="#3333FF" size="+2">A </font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; When applied to
-the Post Office versions of the model 70 series of tape readers it indicates that the
-transmitter is configured for a 7.42 unit character. <br>
-<font color="#3333FF" size="+2">ASR </font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Automatic Send
-Receive. A machine fitted with a tape punch and tape reader. Often used with the model 444
-teleprinter. <br>
-<font color="#3333FF" size="+2">B </font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Normally means
-that the machine transmits a 7.5 unit character and receives in a 6.5 unit cycle; 66 wpm
-at 50 Bauds. This is the standard transmit and receive configuration. <br>
-<font color="#3333FF" size="+2">B </font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; When applied to
-the Post Office versions of the model 70 series of tape readers it indicates that the
-transmitter is configured for a 7.5 unit character. <br>
-<font color="#3333FF" size="+2">C </font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Normally means
-that the machine transmits a 7.0 unit character and receives in a 6.5 unit cycle; 71.4 wpm
-at 50 Bauds. This was mainly used on private wire circuits. <br>
-<font color="#3333FF" size="+2">C </font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; When applied to
-the Post Office versions of the model 70 series of tape readers it indicates that the
-transmitter is configured for a 7.0 unit character. <br>
-<font color="#3333FF" size="+2">CTK </font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Commercial
-Typewriter Keyboard. This was used on the model 7 series of machines so that an ordinary
-typist could use a teleprinter without any special training. It is very complex
-mechanically, and uses mechanical character storage to automatically insert the figures
-and letter shift signals, but is very easy to use. <br>
-<font color="#3333FF" size="+2">D </font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Normally applied
-to the model 7 teleprinter to indicate that the machine has been modified for the Telex
-service, and that it is fitted with motor on-speed contacts, an improved answer back unit,
-and a 33 way signals plug. The machine still transmits a 7.5 unit character and receives
-in a 6.5 unit cycle; 66 wpm at 50 Bauds. <br>
-<font color="#3333FF" size="+2">D </font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; When applied to
-the standard versions of the model 70 series of tape readers it indicates that the
-transmitter is configured for a 7.42 unit character. <br>
-<font color="#3333FF" size="+2">E </font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Normally applied
-to a model 7 teleprinter to indicate that the machine is fitted with the later overlap cam
-unit. This cam unit consists of three separate cam shafts, and allows characters to be
-printed as soon as they are received, rather than being printed when the next character is
-received as in the earlier versions of the model 7. This cam unit is fitted as standard to
-the model 54 teleprinter. <br>
-<font color="#3333FF" size="+2">K3 </font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The three row
-keyboard used on the model 75 teleprinter. <br>
-<font color="#3333FF" size="+2">K4 </font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The four row
-teleprinter used on the model 75 teleprinter. <br>
-<font color="#3333FF" size="+2">KSR </font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Keyboard Send
-Receive. A machine not fitted with either a tape punch or tape reader. Often used with the
-model 444 teleprinter. <br>
-<font color="#3333FF" size="+2">M </font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Fitted with an
-electro-magnetic clutch. Applied to the model 6S series of tape readers only. <br>
-<font color="#3333FF" size="+2">M3 </font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The three row
-keyboard used on the earlier model 7 series of machines. Rather heavy in operation, but
-very reliable. <br>
-<font color="#3333FF" size="+2">N3 </font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The three row
-keyboard used on the later model 7, 47 and 54 series of machines. A very nice keyboard. <br>
-<font color="#3333FF" size="+2">N4 </font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The four row
-keyboard used on the later model 7, 47 and 54 series of machines. A very nice keyboard. <br>
-<font color="#3333FF" size="+2">P </font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Fitted with a
-punched tape perforating attachment which is directly operated by the action of the
-keyboard. <br>
-<font color="#3333FF" size="+2">PR </font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Printing
-Reperforator. A machine which produces punched paper tape directly from the received
-signal, and prints the text between the feed holes. Applied to the model 75 teleprinter
-only. <br>
-<font color="#3333FF" size="+2">R </font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Receive only
-version of a machine. That is, no keyboard or transmitting mechanism is fitted. <br>
-<font color="#3333FF" size="+2">RO </font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Receive Only
-version of a machine. That is, no keyboard or transmitting mechanism is fitted. Often used
-with the model 444 teleprinter. <br>
-<font color="#3333FF" size="+2">RP </font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Fitted with a
-punched tape reperforating attachment which is operated directly by the received signal. <br>
-<font color="#3333FF" size="+2">T </font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Fitted with a
-mechanical punched taped reader operating via the keyboard transmitting mechanism. Applied
-to the model 75 teleprinter only. </font> </p>
-
-<p align="center"><font size="+2" face="Verdana">Siemens Machines </font></p>
-
-<p><font face="Verdana"><img align="right" SRC="m100s1.jpg" ALT="Siemens M100 Series one" WIDTH="280" HEIGHT="212"> <br>
-<br>
-<font color="#3333FF" size="+2">T100 </font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; This is a
-purely mechanical page printing teleprinter which, by changing gears, is capable of
-operation at 45.45, 50 or 75 Bauds. A 3000 rpm synchronous motor, or a 3750 rpm governed
-motor may be fitted. In a similar manner to the Creed model 75, the gears are not
-interchangeable between the two types of motor. The machine is designed for single current
-operation only, and may be fitted with a punched tape reader and a tape punch. Some of the
-models, which were intended for private wire use, may be found fitted with an internal
-signaling supply and an all enclosing silencing cover similar to the<img align="right" SRC="m100s2.jpg" ALT="Siemens M100 Series two" WIDTH="300" HEIGHT="204"> Creed model 444
-teleprinter.
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-Siemens 100 Series 1 machine. <br>
-<br>
-Siemens 100 Series 2 machine.&nbsp; <br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<font color="#3333FF" size="+2">T150 </font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; This is a
-semi-electronic page printing teleprinter, with an electronic keyboard, operating at 50,
-75 or 100 Bauds. The machine is powered by a 1400 rpm induction motor, but the timing is
-crystal controlled, and the machine is capable of operation at 45.45 Bauds by changing the
-crystal. As with the T100, the T150 is designed for single current operation only, and may
-be fitted with a punched tape reader and a tape punch. Internal signaling supplies are
-not usually fitted to this machine. </font> </p>
-
-<p align="center"><font size="+2" face="Verdana">Teletype Machines </font></p>
-
-<p><font face="Verdana">Note: &quot;Teletype&quot; is a registered trade mark of the Teletype Corporation,
-and may only be used to describe equipment manufactured by that company. </font> </p>
-
-<p><font face="Verdana"><font color="#3333FF" size="+2">14 </font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A number of
-different machines were given this designation, including: a tape printing teleprinter
-(similar to the Creed model 47), a chadless printing reperforator (similar to the Creed
-model 85), and non printing reperforator (similar to the Creed model 7TR). All of these
-machines normally operated at 45.45 Bauds, and were fitted with either a governed motor or
-a synchronous motor for a 60 Hz mains supply, all of which operated at 115 volts. Gears
-for the 60 Hz synchronous motors operating on 50 Hz are very difficult to find.
-</font> </p>
-
-<p><font face="Verdana"><font color="#3333FF" size="+2">14TD </font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; This is a
-punched paper tape reader providing a single current output. The transmitter does not use
-a changeover contact, as in the Creed machines, but uses a segmented distributor and
-rotating brush gear to generate the output signal, hence the name: &quot;Transmitter
-Distributor&quot;. This machine normally operated at 45.45 Bauds, and was fitted with
-either a governed motor or a synchronous motor for a 60 Hz mains supply, all of which
-operated at 115 volts. Gears for the 60 Hz synchronous motors operating on 50 Hz are very
-difficult to find. Some machines may be found with many smaller segments in the
-distributor. These were intended for cryptographic use. Whilst conversion for normal
-communications use is possible, it is hardly worth the effort. </font> </p>
-
-<p><font face="Verdana"><font color="#3333FF" size="+2">15 </font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; This was the
-standard page printing teleprinter, using a stationary platen and a moving type basket and
-in its day was probably the most widely used teleprinter by Radio Amateurs throughout the
-World. This machine normally operated at 45.45 Bauds, and was fitted with either a
-governed motor or a synchronous motor for a 60 Hz mains supply, all of which operated at
-115 volts. Gears for the 60 Hz synchronous motors operating on 50 Hz are very difficult to
-find. Receive only versions were also produced without the keyboard and transmitter
-mechanism. This teleprinter was also manufactured under licence in Germany by Lorenz, and
-was known as the LO15. It has metric threads, but is broadly identical to the standard
-TT15 in all other respects. </font> </p>
-
-<p><font face="Verdana"><font color="#3333FF" size="+2">19 </font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; This is a
-composite set, and comprises a model 15 page printing teleprinter with a built in keyboard
-perforator and a model 14TD punched tape reader, all mounted on a special table which also
-contained the necessary power supplies. A character counter was normally fitted to the
-perforator so that the carriage return and line feed characters could be inserted at the
-appropriate point, thereby producing a tape which would be suitable for reception on a
-page printer, whilst the model 15 was otherwise engaged printing an incoming message from
-line. </font> </p>
-
-<p><font face="Verdana"><font color="#3333FF" size="+2">26 </font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; This is a
-small, lightweight, page printing teleprinter, with a stationary paper platen and rotating
-type head, similar in some respects to the Creed model 75 teleprinter. However, it is not
-capable of continuous service, and spares for the worn out parts are very difficult to
-obtain. </font> </p>
-
-<p><font face="Verdana"><font color="#3333FF" size="+2">28 </font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; This is a
-heavy duty page printing teleprinter which was designed for operation at 45.45, 50 or 75
-Bauds, and was fitted with governed or synchronous motors operating from 115 volts 60 Hz.
-This machine was available as ASR or KSR versions, and with many options, including:
-automatic carriage return/line feed, a two or three speed gear box, and a built in
-&quot;stunt box&quot; for character recognition. Several different tape readers and tape
-punches could be fitted depending upon the final requirements. The model 28 is a very fine
-machine indeed. </font> </p>
-
-<p><font face="Verdana"><font color="#3333FF" size="+2">32 </font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; This is a
-modern page printing teleprinter, also available as receive only, ASR or KSR. It may be
-desk top mounted or supplied on a floor pedestal. It was designed as a light duty low cost
-machine. </font> </p>
-
-<p><font face="Verdana"><font color="#3333FF" size="+2">33 </font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; This is the
-ASCII version of the model 32, to which it is very similar in all other respects. This
-machine was very popular in the early days of home computing as a printout device, a
-function for which it was also used in the commercial field. It was manufactured for
-single current signalling and the low voltage RS232 signalling system. RS232 machines may
-usually be identified by the fitting of a 25 way &quot;D&quot; series plug. The machine
-may also be found under the name of the Data Dynamics model 390, which is the Teletype
-model 33 chassis in a larger enclosure, with built in power supplies, a paper tape punch
-and a paper tape reader. </font> </p>
-
-<p><font face="Verdana"><font color="#3333FF" size="+2">34 </font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; This is a
-modern page printing teleprinter, also available as receive only, ASR or KSR. It may be
-desk top mounted or supplied on a floor pedestal. It was designed as a heavy duty machine,
-and incorporated a &quot;stunt box&quot; similar to the model 28. </font> </p>
-
-<p><font face="Verdana"><font color="#3333FF" size="+2">35 </font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; This is the
-ASCII version of the model 34, to which it is very similar in all other respects. 
-</font> </p>
-
-<p align="center"><font size="+2" face="Verdana">Signalling Connections </font></p>
-
-<p><font face="Verdana">Due to the wide variety of equipment which may be encountered, only the standard
-connections to the Creed machines, which are the ones most likely to be encountered, will
-be considered. </font> </p>
-
-<p><font face="Verdana">The standard signalling connector for the majority of Creed machines is the 12 pin
-Multicon (miniature Jones), with the male plug connected to the machine. An additional
-connector, the Plessey mark 4 circular connector, was also used on the model 75 series of
-machines so that the power and signalling leads could be disconnected. The pin
-designations for the 12 way Plessey mark 4 signal connector are given in the (.) brackets.
-Some early Creed machines used a large 9 pin, round pin, plug for the signals connections.
-The pin designations for this 9 pin plug are given in the [.] brackets. </font> </p>
-
-<p><font face="Verdana">Pin No. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Function </font> </p>
-
-			<ol>
-				<li><font face="Verdana">(A) [6] Mark contact </font></li>
-				<li><font face="Verdana">(B) [7] Tongue Note 1</font></li>
-				<li><font face="Verdana">(C) [8] Space contact </font></li>
-				<li><font face="Verdana">(D) [9] Receive contact</font></li>
-				<li><font face="Verdana">(E) [2] Tongue </font></li>
-				<li><font face="Verdana">(F) [1] Send contact </font></li>
-				<li><font face="Verdana">(G) [5] Receive electro-magnet Note 2</font></li>
-				<li><font face="Verdana">(H) No connection </font></li>
-				<li><font face="Verdana">(J) [3] Receive electro-magnet </font>
-				</li>
-				<li><font face="Verdana">(K) [4] Bell contact Note 3 </font>
-				</li>
-				<li><font face="Verdana">(L) Bell and Who Are You Contacts Note 4
-				</font></li>
-				<li><font face="Verdana">(M) Who Are You contact Note 5 </font>
-				</li>
-			</ol>
-
-<p><font face="Verdana">Notes: </font> </p>
-
-			<ol>
-				<li><font face="Verdana">On the 444 teleprinter, link pin 12 to pin 13 on the 50 way connector, the other
-connections remain the same. </font></li>
-				<li><font face="Verdana">For &quot;Mark&quot;, current should flow into pin 7 and out of pin 9.
-				</font></li>
-				<li><font face="Verdana">This contact closes when the &quot;Bell&quot; character, figures shift J, is received.
-				</font></li>
-				<li><font face="Verdana">This pin may be bonded to the machine chassis.
-				</font></li>
-				<li><font face="Verdana">This contact closes when the &quot;Who Are You&quot; character, figures shift D, is
-received. If the machine is fitted with an Answer Back unit, a 20 character message will
-also be transmitted to line. </font></li>
-				<li><font face="Verdana">For punched tape readers, only pins 1 to 6 inclusive apply.
-				</font></li>
-			</ol>
-
-<p align="center"><font face="Verdana"><font size="+2">Useful References <br>
-</font><b>General</b> </font> </p>
-
-			<ol>
-				<li><font face="Verdana">Five Unit Codes Datacom, Winter 1998, pp 28-35
-				<br>Stroboscope Tuning Forks BARTG Newsletter, July 1982, pp 48-49
-				</font></li>
-				<li><font face="Verdana">Creed &amp; Company - The First 50 Years Datacom, Summer 1997, pp 8-20
-				</font></li>
-				<li><font face="Verdana">Teleprinter Handbook (1st Edition) Goacher and Denny, RSGB 1973
-				</font></li>
-				<li><font face="Verdana">Teleprinter Handbook (2nd Edition) Hobbs, Yeomanson and Gee, RSGB 1983</font></li>
-				<li><font face="Verdana">Creed model 3 Teleprinter Converting the Creed type 3 Printers to Print like the 7B (ITA2)
-BARTG Newsletter No. 38, pp 8-10 </font></li>
-				<li><font face="Verdana">Creed model 6S Automatic Transmitters 
-				</font></li>
-				<li><font face="Verdana">Creed 6S Series Automatic Transmitters BARTG Newsletter No. 69, September 1976, pp 20-21
-				</font></li>
-				<li><font face="Verdana">Creed 6S6 Automatic Transmitters BARTG Newsletter No. 68, June 1976, p 8
-				</font></li>
-				<li><font face="Verdana">6S6M Wiring BARTG Newsletter No. 60, June 1974, p 13
-				<br>Creed model 7 Teleprinter </font></li>
-				<li><font face="Verdana">7B Make and Break BARTG Newsletter No. 43, April 1970, pp 9-10
-				</font></li>
-				<li><font face="Verdana">7B Make and Break BARTG Newsletter No. 44, pp 5-14
-				</font></li>
-				<li><font face="Verdana">7B Make and Break BARTG Newsletter No. 61, September 1974, pp 12-16
-				</font></li>
-				<li><font face="Verdana">7B Make and Break BARTG Newsletter No.62, December 1974, pp 10-11
-				</font></li>
-				<li><font face="Verdana">Teleprinter 7B Standard Adjustments BARTG Newsletter No. 48, pp 16-18
-				</font></li>
-				<li><font face="Verdana">Model 7 and 54 Page Teleprinters (part 1) BARTG Newsletter No.59, pp 9-12
-				</font></li>
-				<li><font face="Verdana">Model 7 and 54 Page Teleprinters (part 2) BARTG Newsletter No.60, June 1974, pp 3-6
-				</font></li>
-				<li><font face="Verdana">Creed 7B 12 pin Plug Wiring BARTG Newsletter No. 45, September 1970, p 25
-				</font></li>
-				<li><font face="Verdana">A Switched Two Speed Governor BARTG Newsletter, Summer 1966, pp 4-5
-				</font></li>
-				<li><font face="Verdana">A Simple way to make a 7B Governor Dual Speed BARTG Newsletter No. 50, pp 20-21
-				</font></li>
-				<li><font face="Verdana">A Teleprinter Motor Speed Control Device BARTG Newsletter No. 65, September 1975, pp 19-25
-				</font></li>
-				<li><font face="Verdana">Automatic CR/LF for the Creed 7B BARTG Newsletter No. 60, June 1974, p 14
-				</font></li>
-				<li><font face="Verdana">Automatic CR and LF for the Creed 7 and 54 Printers BARTG Newsletter No. 70, December
-1976, pp 18-18 </font></li>
-				<li><font face="Verdana">7B/RP Reperforator BARTG Newsletter No. 46, December 1970, pp 7-10
-				</font></li>
-				<li><font face="Verdana">Thoughts on the Answer back Drum BARTG Newsletter No.71, March 1977, pp 5-6
-				</font></li>
-				<li><font face="Verdana">Answer back Ward Chart for Teleprinters 7 and 47 BARTG Newsletter No.72, June 1977, p 20
-				</font></li>
-				<li><font face="Verdana">The Creed CTK Keyboard BARTG Newsletter No. 68, June 1976, pp 6-8
-				</font></li>
-				<li><font face="Verdana">N3 Keyboard BARTG Newsletter No. 43, April 1970, pp 11-17
-				<br>Creed model 54 Teleprinter </font></li>
-				<li><font face="Verdana">Model 7 and 54 Page Teleprinters (part 1) BARTG Newsletter No.59, pp 9-12
-				</font></li>
-				<li><font face="Verdana">Model 7 and 54 Page Teleprinters (part 2) BARTG Newsletter No.60, June 1974, pp 3-6
-				</font></li>
-				<li><font face="Verdana">Model 54 Starter Switch Control BARTG Newsletter No.62, December 1974, pp 11-12
-				</font></li>
-				<li><font face="Verdana">Automatic CR and LF for the Creed 7 and 54 Printers BARTG Newsletter No. 70, December
-1976, pp 18-18 </font></li>
-				<li><font face="Verdana">Creed model 75 Teleprinter </font></li>
-				<li><font face="Verdana">The Creed model 75 Teleprinter (part 1) Datacom, Autumn 1997, pp 5-9
-				</font></li>
-				<li><font face="Verdana">The Creed model 75 Teleprinter (part 2) Datacom, Winter 1997, pp 8-11
-				</font></li>
-				<li><font face="Verdana">Creed model 75 Identification BARTG Newsletter, March 1979, p 21
-				</font></li>
-				<li><font face="Verdana">Notes on the Creed 75 for Amateur Use BARTG Newsletter No. 53, September 1972, pp 20-25
-				</font></li>
-				<li><font face="Verdana">Creed model 75 Motors and Gears BARTG Newsletter, December 1978, pp 15-16
-				</font></li>
-				<li><font face="Verdana">Creed model 75 Timing Disc BARTG Newsletter, June 1980, pp 15-16
-				</font></li>
-				<li><font face="Verdana">Creed model 444 Teleprinter </font>
-				</li>
-				<li><font face="Verdana">Introduction to the Creed 444 BARTG Newsletter, Summer 1983, pp 16-20
-				</font></li>
-				<li><font face="Verdana">The Creed 444 Teleprinter Datacom, Autumn 1995, pp 69-70
-				</font></li>
-				<li><font face="Verdana">ITT Creed model 444 Teleprinter (part 1) Datacom, Spring 1999, pp 28-37
-				</font></li>
-				<li><font face="Verdana">Maintaining the Creed 444 BARTG Newsletter, Spring 1983, pp 6-11
-				</font></li>
-				<li><font face="Verdana">Lubrication instructions for the Creed 444 Datacom, Winter 1988, pp 73-84
-				</font></li>
-				<li><font face="Verdana">The Creed 444 on 45 Bauds BARTG Newsletter, Winter 1983, pp 8-10
-				</font></li>
-				<li><font face="Verdana">The G3RED Teleprinter Synchronous Motor Speed Control BARTG Newsletter No.72, June 1977,
-pp 21-26 </font></li>
-				<li><font face="Verdana">Coding the Porcupine BARTG Newsletter, December 1982, pp 12-13
-				</font></li>
-				<li><font face="Verdana">More on the 444 Answer back Datacom, Spring 1984, p 19
-				</font></li>
-				<li><font face="Verdana">Creed 444 WRU Disable on Receive Datacom, Summer 1985, pp 64-65
-				</font></li>
-				<li><font face="Verdana">Using the Bell Contacts on the Creed 444 BARTG Newsletter, Summer 1983, pp 24-25
-				</font></li>
-				<li><font face="Verdana">The Creed 444 End of Line Lamp Datacom, Winter 1984, pp 33-34
-				</font></li>
-				<li><font face="Verdana">Creed model 2300 Teleprinter </font>
-				</li>
-				<li><font face="Verdana">The Creed 2300 (part 1) Datacom, Spring 1984, pp 16-18
-				</font></li>
-				<li><font face="Verdana">The Creed 2300 (part 2) Datacom, Summer 1984, pp 20-23
-				</font></li>
-				<li><font face="Verdana">The Creed 2300 (part 3) Datacom, Autumn 1984, pp 14-16
-				<br>The Creed 2300 Datacom, Spring 1988, pp 41-50 </font></li>
-				<li><font face="Verdana">Connecting the Creed 2300 to the ST5MC Datacom, Winter 1986, p 30
-				</font></li>
-				<li><font face="Verdana">Teletype 14 Series </font></li>
-				<li><font face="Verdana">The Story of a Teletype 14 Transmitter Distributor BARTG Newsletter, May 1965, pp 4-6
-				</font></li>
-				<li><font face="Verdana">Using Cryptographic Transmitter Distributors BARTG Newsletter, Winter 1966/67, pp 4-5
-				</font></li>
-				<li><font face="Verdana">Teletype model 15 Teleprinter </font>
-				</li>
-				<li><font face="Verdana">Speed Indicator and Controller for the Teletype model 15</font></li>
-				<li><font face="Verdana">BARTG Newsletter No. 42,
-September 1969, pp 12-20 <br>Teletype model 33 Teleprinter </font></li>
-				<li><font face="Verdana">The Data Dynamics 390 Printer Datacom, Winter 1895, pp 25-33
-				<br><br><i>Thanks to BARTG and Alan G Hobbs, G8GOJ
-				<a HREF="MailTo:Alan.Hobbs@ngc.co.uk">Alan.Hobbs@ngc.co.uk
-</a>&nbsp;the author, in allowing me to illustrate his article with images of some of the
-many machines listed. &nbsp;&nbsp;Larry Rice VK6CP 15th May 1999.</i> </font>
-				</li>
-			</ol>
-
-<p align="center"><font face="Verdana">RTTY.COM<br>
-Presented by permission<br>
-G8GOJ &amp; VK6CP<br>
-25 August 1999</font></p></td>
-		</tr>
-	</table>
+<body>
+
+<canvas id="tapeTop" class="tape" aria-hidden="true"></canvas>
+
+<header class="masthead">
+  <div class="mh-side">PRESERVATION OF RTTY HISTORY<br>TELETYPE ART &amp; CULTURE<br>EST. LATE 1990S</div>
+  <div class="mh-center">
+    <a href="../index.html" class="site-name">RTTY.COM</a>
+    <span class="site-tag">The Radio Teletype Reference &amp; Archive</span>
+  </div>
+  <div class="mh-side mh-right">THE INTERNET'S OLDEST<br>RTTY RESOURCE<br>BAUDOT &bull; TELETYPE &bull; WIRE</div>
+</header>
+
+<nav class="site-nav" aria-label="Main navigation">
+  <a href="../index.html">Home</a>
+  <a href="../history.html" class="active">History</a>
+  <a href="../gallery.html">RTTY Art</a>
+  <a href="../equipment.html">Equipment</a>
+  <a href="../itty.html">ITTY</a>
+  <a href="../resources.html">Resources</a>
+  <a href="../community.html">Community</a>
+  <a href="../links.html">Links</a>
+</nav>
+
+<div class="dateline">
+  <strong>HISTORY HALL</strong> &mdash;
+  ALAN HOBBS G8GOJ &bull; TELEPRINTERS FOR THE RADIO AMATEUR
 </div>
-<div align="center">
-	<font face="Arial" size="3">
-	<p style="margin-top: 12px; margin-bottom: 0"><font size="1">Copyright 
-	George Hutchison, W7TTY &amp; Bill Bytheway, K7TTY -- November 2011</font></font></div>
+
+<div class="page-wrap">
+  <div class="two-col">
+
+    <main class="col-main">
+
+      <h1 class="section-hed" style="margin-top:0">Teleprinters for the Radio Amateur</h1>
+      <p style="text-align:center;font-size:14px;color:var(--ink-faint);margin-top:-8px;margin-bottom:20px;letter-spacing:.06em">by Alan G Hobbs, G8GOJ &mdash; reprinted by permission via Larry Rice VK6CP, 25 August 1999</p>
+
+      <div class="prose">
+
+        <p>There are many different types of mechanical teleprinter which become available on the surplus market from time to time, but we will only concern ourselves with the ones which are most liable to be encountered. The teleprinters that we will be considering come from three manufacturers: Creed &amp; Company of England, the Teletype Corporation of the U.S.A., and Siemens of Germany.</p>
+
+        <p>There are three fundamental requirements which must be considered before purchasing a machine:</p>
+
+        <ol>
+          <li>The electrical signaling characteristics.</li>
+          <li>The code that the machine uses.</li>
+          <li>The signaling speed at which the machine operates.</li>
+        </ol>
+
+        <h2 class="section-hed">Signaling Characteristics</h2>
+
+        <p>Machines manufactured in the U.K. normally use what is known as Double Current or Polar signaling, in which the two signaling states, Mark and Space, are represented by current flowing in opposite directions, often +/&minus;20mA, with Mark being represented by a negative current flow. Whereas machines manufactured in the U.S.A. and Germany normally use what is known as Single Current or Neutral signaling, in which the two signaling states, Mark and Space, are represented by the presence or absence of current, often 60mA, the actual polarity being unimportant.</p>
+
+        <p>Note that we are referring to current flow in each case, and not to voltages. The receiving section of a teleprinter usually consists of a form of electro-mechanical relay, often called the electro-magnet, with a fairly high inductance, perhaps up to 4 Henrys, and a low DC resistance, perhaps only 200 Ohms, which responds to the incoming signaling impulses. The actual voltage developed across the receiving electro-magnet is quite small, perhaps only 4 volts, but in order to reduce the time constant of the signaling circuit, which is represented by the total circuit inductance divided by the total circuit resistance, and thereby increase the speed of operation of the electro-magnet, the circuit resistance must be increased to the maximum practicable, which is best served by a current source and not a voltage source.</p>
+
+        <p>In the real world voltage sources are more convenient to generate than current sources, but a current source can be simulated by using a fairly high voltage and a series resistor. When the resistance is increased to reduce the time constant, the driving voltage must also be increased in order to maintain the required current through the electro-magnet. For historical reasons the voltages usually used are +/&minus;80 volts for Polar signaling, and 120 volts for Neutral signaling, but the precise values are not too important. However, for Polar signaling, it is important that the positive and negative supplies are balanced, otherwise distortion will be introduced.</p>
+
+        <p>What all this means in practice is that a machine designed for Polar signaling will not work in a circuit designed for Neutral signaling, and vice-versa. Designs for Terminal Units are available which are suitable for either type of signaling, and the Terminal Unit configuration required should be checked very carefully before any teleprinter is purchased. Having said that, some of the Creed machines can be adjusted to operate in Neutral circuits by means of auxiliary springs, or other means, but the parts required may not be fitted on individual machines, and this should be checked if single current operation is required.</p>
+
+        <p>The transmitter output of a double current machine consists of a single pole changeover contact which operates in sympathy with the transmitted code, the two poles representing Mark and Space respectively. Whereas the transmitter output of a single current machine consists of a normally closed contact which opens for the duration of the Space impulses.</p>
+
+        <p>In addition to this transmitter contact, the Creed machines usually have a second single pole changeover contact known as the Send-Receive switch. This contact operates just before the Start impulse of the character is transmitted, and restores just after the end of the Stop impulse has been transmitted. In the case of punched paper tape readers the contact remains operated for as long as characters are being transmitted, and restores after the end of the last character has been transmitted.</p>
+
+        <p>All of the contacts mentioned above are fitted with radio interference suppression networks, usually consisting of resistance, inductance and capacitance which are suitable for the normal signaling voltages and currents involved in teleprinter signaling.</p>
+
+        <h2 class="section-hed">Machine Coding</h2>
+
+        <p>There are several codes in use for communications purposes, with the standard five unit code being the International Telegraph Alphabet number 2 (ITA2). Other five unit codes which may be found are: the Murray code, which has some similarities with ITA2 and is partially compatible with it; Elliott 403, Stantec Zebra, and Ferranti Pegasus which are all early computer codes dating from the 1960s and are of no practical purpose to the Radio Amateur; and the Baudot code which dates from the late 1800s and was never used for teleprinters as we now know them. The only Baudot equipment that I know of is in the London Science Museum, and the now closed BT Museum in London. Needless to say, none will be found on the Amateur surplus market! When people refer to Murray and Baudot code they invariably mean ITA2, because they do not appreciate the differences between the codes.</p>
+
+        <p>There is no certain way of checking the code of every machine which may be found without actually seeing it in operation. A simple way, which is usually a good guide, is to carefully inspect the keyboard. The layout of the characters should be very similar to that of a standard typewriter keyboard, and as long as there are no strange characters, the machine may well be coded for ITA2. However, even this is not guaranteed as machines which use the Elliott 403 computer code have a very similar keyboard layout to a machine coded for ITA2.</p>
+
+        <p>In addition to five unit codes, there are also codes with seven units which are primarily used for data communications, rather than plain language communications. The main code which may be encountered is the American Standard Code for Information Interchange (ASCII) which is now in fairly universal use.</p>
+
+        <p>In addition to the five information units in the code, the machine requires a START unit and a STOP unit or units. In order for the machine to re-synchronise at the start of every character, the STOP unit is usually made 1.5 units long, or in the case of machines from the U.S.A. 1.42 units long. This is why teleprinter codes in general, and ITA2 in particular, is sometimes referred to as a 7.5 unit code. The corresponding machine receive cycle is usually 6.5 units, which allows the machine to cope with transmit cycles of less than 7.5 units, and significant speed errors.</p>
+
+        <p>Standard Radio Teletype (RTTY) communications use the ITA2 code; any other code is usually considered under the umbrella term of data. Machines will only be able to talk to each other if they use the same code, and it would be extremely difficult to change the coding of a machine after it is purchased. Indeed, it would be easier to throw it away and look for another machine!</p>
+
+        <h2 class="section-hed">Signalling Speed</h2>
+
+        <p>There are a number of speeds in use on the Amateur bands, but the main ones are:</p>
+
+        <ol>
+          <li>45.45 Bauds, which is the original domestic speed of the U.S.A., and the speed at which most Amateur RTTY operation takes place.</li>
+          <li>50 Bauds, which is the international standard speed for the public Telex service, and may sometimes be found on the Amateur VHF/UHF bands.</li>
+          <li>75 Bauds, which is a common commercial communications speed on private networks connected together by land-lines.</li>
+          <li>110 Bauds, which is the standard speed for data machines using the ASCII code.</li>
+        </ol>
+
+        <p>Before considering speeds in greater detail, perhaps a few words about the &ldquo;Baud&rdquo; would be appropriate. The Baud is the unit of signaling speed, and is named after Emile Baudot who was an eminent French telegraphic engineer of the late 1800s, and who also devised the now obsolete Baudot code. The signaling speed in Bauds may be defined as &ldquo;the reciprocal of the shortest signaling element in seconds.&rdquo; Therefore, a system operating at 50 Bauds will have a signal element time period equal to 1 second divided by 50 &mdash; that is, 20 ms. This is most important, because machines will only be able to talk to each other if they both have the same Baud rate.</p>
+
+        <p>Knowing the number of units in the code, and the Baud rate at which it is transmitted, allows us to calculate the signaling speed in words per minute. For this calculation it is always assumed that a word consists of five letters plus a space, that is a total of six letter intervals.</p>
+
+        <p>Therefore, at 50 Bauds, and using the ITA2 code with a 1.5 unit Stop bit:<br>
+        Each letter lasts for: 7.5 &times; 20 = 150 ms<br>
+        Therefore, one word lasts for: 6 &times; 150 = 900 ms<br>
+        Therefore, the number of words transmitted in one minute is: 60 &divide; 0.9 = 66.67 wpm</p>
+
+        <p>This is usually abbreviated to 66 words per minute. By the same reasoning, a transmission at 45.45 Bauds is equivalent to 60.6 words per minute (60 words per minute, or 60 speed), and a transmission at 75 Bauds is equivalent to 100 words per minute.</p>
+
+        <p>Most machines use an electric motor to derive all of the internal machine timing, and it is the speed of this motor which sets the Baud rate for the machine. Motors may be governed, if they are to be run from DC supplies, or synchronous, if there is a stable AC mains source available.</p>
+
+        <p>A governed motor driving a machine at 50 Bauds can usually be adjusted for 45.45 Bauds, and vice-versa, but a motor driving a machine operating at 75 Bauds cannot be adjusted to operate at 45.45 or 50 Bauds because the change in speed is just too great. In order to check the motor speed, stroboscopic markings are normally provided on the motor governor case. These markings are used in conjunction with a special tuning fork which has small shutters attached to the tines. When the motor speed is correct, the markings on the governor will appear stationary when viewed through the shutters. In practice, the motor speed is normally set so that it is running very slightly fast when idling, and very slightly slow when on full load. Under average operating conditions the motor speed will then be just right. The stroboscopic tuning forks are sometimes found at rallies, and may also be obtained through the advertisement columns of Datacom, and other Amateur radio magazines.</p>
+
+        <p>When synchronous motors are fitted it is necessary to replace some of the internal gears if it is required to operate the machine at different speeds, because the signaling speed is directly related to the AC mains frequency. Gears were normally produced for the three common speeds of 45.45/50/75 Bauds, but if they have to be specially manufactured they can turn out to be very expensive. Another solution which has successfully been used is to start the machine on 50 Hz AC mains, and then automatically changeover to the output from a 45.45 Hz power oscillator. Some machines may be found which are fitted with a manually operated dual speed gear box, usually for 45.45/50 Bauds or 50/75 Bauds. Intending purchasers should always check the speed at which the machine is operating, and what will be required to change the speed on that particular machine, should it be necessary.</p>
+
+        <h2 class="section-hed">Summary</h2>
+
+        <p>To summarize the items above, to be of much use in Amateur circles a teleprinter must:</p>
+
+        <ol>
+          <li>Use a signaling system which suits the terminal unit with which it is to be used. The BARTG ST5 series of terminal units, with the exception of the ST5C, provide a double current output. However, it is possible to convert the ST5 to provide a single current output.</li>
+          <li>Use the ITA2 code. (Not Murray which is now rather rare, or one of the early computer codes, or Baudot which will never be found.)</li>
+          <li>Be able to operate at least at 45.45 Bauds, and ideally at 45.45 and 50 Bauds. Operation at 75 Bauds would be a bonus.</li>
+        </ol>
+
+        <p>Having covered the basic requirements for teleprinters, we may now look in detail at the individual machines which have been available on the surplus market.</p>
+
+        <!-- ======= CREED MACHINES ======= -->
+
+        <div class="clearfix">
+          <img src="creedlo.jpg" alt="Creed &amp; Company logo" class="img-left" style="max-width:164px;width:auto">
+          <h2 class="section-hed" style="margin-top:12px">Creed Machines</h2>
+        </div>
+
+        <div class="clearfix">
+          <img src="creed3.jpg" alt="Creed Model 3 teleprinter" class="img-right">
+          <p><span class="machine-model">3X</span> &nbsp; This is a teleprinter which prints on narrow (3/8&Prime; wide) gummed paper tape, and was introduced in 1927 for the Post Office Telegram service. The standard signaling speed was 49 Bauds using the Murray code and not ITA2, although some ITA2 coded machines were later produced. The ITA2 coded machines may be identified by the letters A or B in place of the X in the description, and a different keyboard layout. It is possible to interwork between machines coded for Murray code and ITA2, provided that care is taken. A governed motor is fitted as standard, which may be adjusted to operate at 45.45 or 50 Bauds.</p>
+        </div>
+
+        <p><span class="machine-model">6S</span> &nbsp; This is a punched paper tape reader, with reference numbers from the original 6S introduced in 1926, to the latest model the 6S/6 introduced in 1958. Some of these tape readers were allocated the Post Office reference numbers of: &ldquo;Automatic Transmitter No. 1B&rdquo; (the 6S/3), &ldquo;Automatic Transmitter No. 2D&rdquo; (the 6S/5), &ldquo;Automatic Transmitter No. 2E&rdquo; (the 6S/5M), and &ldquo;Automatic Transmitter No. 2F&rdquo; (the 6S/6M). The output from a tape reader is a single changeover contact of exactly the same form as a teleprinter keyboard. The early machines used a governed motor operating at 3000 rpm, whilst the later machines from the 6S/3 onwards used a governed motor operating at 1500 rpm. All of these machines are suitable for operation at 45.45 or 50 Bauds. Some versions of the 6S/6 may be found with a manually operated dual speed gearbox giving the choice of 50 or 75 Bauds. The 6S/5 and 6S/6 were also available with an electromagnetic clutch on the tape drive, which is signified by the suffix &ldquo;M.&rdquo; The clutch requires 50 volts DC at 20 mA to operate, and allows for remote tape control. As these machines also contain tape sensing contacts, the clutch may be wired in series with the sensing contacts to automatically stop transmission at the end of the tape. The 6S/6 and 6S/6M have an adjustable width tape gate in order to accept the wider 7/8&Prime; wide tape used on the model 86 printing reperforator.</p>
+
+        <div class="clearfix">
+          <img src="cred7ina.jpg" alt="Creed Model 7 showing 4-bank Commercial Typewriter Keyboard (left) and normal 3-bank keyboard (right)" class="img-right">
+          <img src="creed7b.jpg" alt="Creed Model 7 with cover" class="img-left">
+          <p><span class="machine-model">7</span> &nbsp; This is probably the most famous of the Creed page printing teleprinters, and was introduced in 1931 for the new Telex service. Like the model 3X it originally used the Murray code, but very rapidly changed to the standard ITA2 code. Over 150,000 model 7s were manufactured before production ceased in the late 1960s. The machine could be fitted with interchangeable platen assemblies for either: Friction feed paper, Sprocket feed paper, or 3/8&Prime; wide paper tape. Many variants were also manufactured as the machine was developed, and these may be identified by various suffixes after the 7. These will be described later, as some of the suffixes are common to other machines. This machine was usually fitted with a 3000 rpm governed motor for operation at 50 Bauds, which is adjustable for operation at 45.45 Bauds. Motors were produced for DC voltage ranges of 24 volts to 220 volts, and for AC voltage ranges of 110 volts to 230 volts. Some machines were fitted with a 3000 rpm synchronous motor for operation at 50 Bauds, and are not directly suitable for operation at 45.45 Bauds without an external AC mains supply running at 45.45 Hz, or some other form of electronic speed conversion. This machine was allocated the Post Office reference number &ldquo;Teleprinter No. 7.&rdquo;</p>
+        </div>
+
+        <div class="clearfix">
+          <img src="perf45.gif" alt="Creed Perforator No. 45 (Model 7P)" class="img-left">
+          <p><span class="machine-model">7P</span> &nbsp; This is an off-line keyboard perforator, introduced in 1934, whose sole function is to produce punched paper tape directly from the keyboard input. It may be found with either 1500 rpm governed or 1450 rpm induction motors. The punch mechanism is capable of working at up to 140 words per minute, so the speed of operation is entirely dependent upon the skill of the keyboard operator. A character counter is often fitted so that the carriage return and line feed characters may be inserted at the appropriate part of the text. This is essential if the contents of the tape are to be printed on a standard page teleprinter. This machine was allocated the Post Office reference number &ldquo;Perforator No. 45.&rdquo;</p>
+        </div>
+
+        <p><span class="machine-model">7TR</span> &nbsp; This is a non-printing tape reperforator, introduced in 1931, which uses a number of assemblies which are common to the model 7 teleprinter. The signal input circuit is electrically identical to a model 7 teleprinter, and the same range of motors may be encountered. The later model 7TR/3 punches two tapes simultaneously. This machine was allocated the Post Office reference number &ldquo;Reperforator No. 2.&rdquo;</p>
+
+        <p><span class="machine-model">8</span> &nbsp; This is the receive only version of the model 7 teleprinter and, hence, is not fitted with a keyboard. It is otherwise identical to the model 7.</p>
+
+        <p><span class="machine-model">25</span> &nbsp; This is a high speed non-printing tape reperforator, introduced in 1955, which operates from a parallel drive at a speed of up to 33 characters per second. The speed of operation is independent of the motor speed, and is determined by the parallel drive circuitry. This machine was usually fitted with a 1500 rpm induction motor operating from 50 Hz AC mains, but 3000 rpm governed motors for DC supplies may sometimes be found. It was designed for use with some of the early electronic computers, and may be found in versions for 5, 6, 7, or 8 unit tape, and with drive voltages from 12 volts to 100 volts DC. It is not normally used for communications purposes, but with suitable drive electronics it can be put to good use.</p>
+
+        <div class="clearfix">
+          <img src="creed47.jpg" alt="Creed Model 47 tape printing teleprinter" class="img-right">
+          <p><span class="machine-model">35</span> &nbsp; This is a high speed paper tape reader operating at a speed of up to 40 characters per second, in either direction, with a parallel output. The speed of operation is independent of the motor speed, and is determined by the control circuitry. This machine was usually fitted with a 1500 rpm induction motor operating from 50 Hz AC mains. It was designed for use with some of the early electronic computers, and may be found in versions for 5, 6, 7, or 8 unit tape, and with drive voltages from 12 volts to 100 volts DC. It is not normally used for communications purposes, but with suitable drive electronics it can be put to good use.</p>
+
+          <p><span class="machine-model">47</span> &nbsp; Like the model 3, this teleprinter also prints on a 3/8&Prime; wide gummed paper tape for the Post Office Telegram service, and was introduced in 1947 to replace the ageing model 3. The component parts have many similarities with the model 7, from which it was developed. Like the model 7, a governed motor was normally fitted. This machine was allocated the Post Office reference number &ldquo;Teleprinter No. 11.&rdquo;</p>
+        </div>
+
+        <div class="clearfix">
+          <img src="creed54.jpg" alt="Creed Model 54 page printing teleprinter" class="img-left">
+          <p><span class="machine-model">54</span> &nbsp; This page printing teleprinter was introduced in 1954 as a stop-gap measure pending the development of a totally new teleprinter (the model 75), and is really only an advanced model 7E in an all-enclosing silence cover. This makes it a very nice machine to operate. Like the model 7 a governed motor was usually fitted, although some synchronous motors may be found. A tape punch, operated from the receive mechanism, is often fitted as standard within the silencing cover. This machine was used as a print-out device for some of the early electronic computers, and may be found coded for some of the early computer codes.</p>
+        </div>
+
+        <p><span class="machine-model">67</span> &nbsp; This is a combination of the model 7P keyboard perforator and the model 6S punched tape reader, which was introduced in 1934. This permits a tape to be punched, and transmitted directly to line. A governed motor operating at 1500 rpm is normally fitted, which will permit operation at 45.45 and 50 Bauds. It would be unusual to find a complete model 67, the majority of which had the transmitter head removed so that the machine reverted to a standard 7P keyboard perforator.</p>
+
+        <p><span class="machine-model">71</span> &nbsp; This is a multiple head punched tape reader with three independent message transmitting heads which was introduced in 1951. It is based on an American design and provides a single current output, not the standard changeover contact found in other Creed machines. It was usually used in message relay stations so that two other messages could be loaded whilst the first was being transmitted. A governed motor is normally fitted, which will permit operation at 45.45 or 50 Bauds. As a tape reader it is physically rather large. This machine was allocated the Post Office reference number &ldquo;Automatic Transmitter No. 3.&rdquo;</p>
+
+        <p><span class="machine-model">72</span> &nbsp; This is a multiple head punched tape reader with three independent number transmitting heads to identify the messages being sent by the model 71 tape reader. In all other respects it is very similar to the model 71. This machine was allocated the Post Office reference number &ldquo;Automatic Transmitter No. 4.&rdquo;</p>
+
+        <p><span class="machine-model">74</span> &nbsp; This is a multiple head punched tape reader and is a combination of the models 71 and 72, providing one number transmitting head and two message transmitting heads. In all other respects it is very similar to the model 71. This machine was allocated the Post Office reference number &ldquo;Automatic Transmitter No. 5.&rdquo;</p>
+
+        <div class="clearfix">
+          <img src="creed75.jpg" alt="Creed Model 75 page printing teleprinter" class="img-right">
+          <p><span class="machine-model">75</span> &nbsp; When this page printing teleprinter was introduced in 1958, it was the smallest, lightest, fastest, and most versatile machine in the world. It utilised a stationary paper platen, and a cylindrical type head which was driven by a complicated arrangement of levers positioned in response to the received code. The machine uses one main cam shaft for the transmit and receive functions, and provides the local copy by internal mechanical means. When used with the BARTG ST5 terminal unit a very minor wiring change is necessary to take account of this mechanical local record. It will operate at 45.45, 50 or 75 Bauds, and may be found with a dual speed gear box for 45.45 and 50 Bauds, or 50 and 75 Bauds. If the gear box is not fitted two gears will need to be replaced to change the operating speed of the machine. The standard motor fitted was a governed motor operating at 4200 rpm, but some machines were fitted with 3000 rpm synchronous motors for 50 Hz supplies, or 3600 rpm motors for 60 Hz supplies. As would be expected, the gears for the different types of motors are completely different and are not interchangeable. The various gears for the governed and 3000 rpm synchronous motors, which have colour coding spots by which they may be identified, are sometimes seen at rallies, but the gears for the 3600 rpm motors are extremely rare. Factory fitted options included a paper tape reader and/or tape punch, automatic carriage return/line feed, dual colour printing, and a choice of three or four row keyboards. The model 75 could also be supplied as a receive only machine, which could also be fitted with an answer back unit and the associated transmitter contacts. This machine may also be found coded for some of the early computer codes, or with a solenoid operated parallel drive mechanism and parallel output contacts. This parallel drive version may usually be identified by the 25 way Plessey mark 4 signal connector on the rear of the machine. A modified version of this machine, which utilised a remote keyboard for use on the Telex cordless switchboards, was allocated the Post Office reference number &ldquo;Teleprinter No. 12.&rdquo;</p>
+        </div>
+
+        <p><span class="machine-model">85</span> &nbsp; This is a printing reperforator, introduced in 1948, similar to the model 7 page printing teleprinter, but fitted with a perforating unit in place of the paper platen. The perforator is designed to produce &ldquo;chadless&rdquo; tape, which means that the holes in the tape are not punched cleanly, but the chads are still attached to the tape by means of a small flap. The text is then printed directly on top of the tape. This style of tape may be read by any of the standard range of punched tape readers. The same range of motors as fitted to the model 7 are also fitted to this machine. This machine was allocated the Post Office reference number &ldquo;Printing Reperforator No. 1.&rdquo; The receive only version of this machine, the model 85R, was allocated the Post Office reference number &ldquo;Printing Reperforator No. 2.&rdquo;</p>
+
+        <p><span class="machine-model">86</span> &nbsp; This is a printing reperforator, similar in most respects to the model 85, but using 7/8&Prime; wide tape instead of the standard 11/16&Prime; wide tape, and printing the text below the clean punched holes. This tape may be read using the 6S/6 series of tape readers, which are fitted with an adjustable width tape gate. The same range of motors as fitted to the model 7 are also fitted to this machine. This machine was allocated the Post Office reference number &ldquo;Printing Reperforator No. 1D.&rdquo; The receive only version of this machine, the model 86R, was allocated the Post Office reference number &ldquo;Printing Reperforator No. 2D.&rdquo;</p>
+
+        <p><span class="machine-model">92</span> &nbsp; This is an electromagnetically operated punched paper tape reader, introduced in 1957, which operates at speeds up to 20 characters per second with a parallel output. It was designed for use with some of the early electronic computers, and may be found in versions for 5, 6, 7 or 8 unit tape, with drive voltages from 12 volts to 100 volts DC. It is not generally used for communications purposes but with suitable drive electronics it can be put to good use. The mark 1 and mark 2 versions caused very high tape wear, which was corrected in the mark 3 version by redesigning the tape sensing mechanism.</p>
+
+        <div class="clearfix">
+          <img src="cread444.jpg" alt="Creed Model 444 page printing teleprinter" class="img-left">
+          <p><span class="machine-model">444</span> &nbsp; This page printing teleprinter was introduced in 1966 to replace the ageing model 7 in the Telex and private wire services. It was designed to operate continuously at 75 Bauds, and was only provided with gears for 50 and 75 Bauds. It was usually fitted with a 3000 rpm synchronous motor for 50 Hz AC supplies, but a few machines fitted with 3750 rpm governed motors may be found. Machines for export were sometimes fitted with 3600 rpm synchronous motors for 60 Hz AC supplies, but these are now extremely rare. A replacement 45.45 Baud gear for 50 Baud machines fitted with the 3000 rpm synchronous motor was available from BARTG some years ago, but the stocks have long since been used up, and there are no plans to produce any more. This machine is often fitted with a built-in tape punch, a paper tape reader, dual colour printing, and a &ldquo;stunt box&rdquo; for character recognition. It is a very nice machine to operate and, due to its all-enclosing cover, is very quiet in operation. This machine was allocated the Post Office reference number &ldquo;Teleprinter No. 15.&rdquo;</p>
+        </div>
+
+        <p><span class="machine-model">750</span> &nbsp; This page printing teleprinter is a very rare development of the model 75, and uses separate transmit and receive camshafts in a similar manner to other Creed teleprinters. Visually, it is slightly larger than the model 75 in order to accommodate the two camshafts. Very little information is available for this machine, and any intending purchaser should ask for a demonstration of the machine in operation.</p>
+
+        <p><span class="machine-model">2300</span> &nbsp; This semi-electronic page printing teleprinter, introduced in 1974, was intended as a general replacement for the entirely mechanical model 444 in the Telex and private wire services. However, due to the variety of options available, it eventually became uneconomic to manufacture, and was overtaken by the emerging electronic teleprinters. The timing is crystal controlled, and was normally adjustable for 50, 75 and 100 Bauds. By changing the crystal, operation at 45.45 Bauds is possible. The electronic section contains a number of non-standard integrated circuits and, if a serious problem develops, it may prove very difficult to cure. The machine was normally fitted with a 3000 rpm synchronous motor to drive the rotating print head. Characters were printed &ldquo;on the fly&rdquo; by a type hammer located behind the paper, without stopping the actual rotation of the print head. This machine was allocated the Post Office reference number &ldquo;Teleprinter No. 23.&rdquo;</p>
+
+        <!-- ======= CREED MACHINE SUFFIXES ======= -->
+
+        <h2 class="section-hed">Creed Machine Suffixes</h2>
+
+        <p><span class="machine-model">A</span> &nbsp; Normally means that the machine transmits a 7.5 unit character and receives in a 7.0 unit cycle; 66 wpm at 50 Bauds. This was the early transmit and receive configuration, and is not often encountered.<br>
+        <span class="machine-model">A</span> &nbsp; When applied to the Post Office versions of the model 70 series of tape readers it indicates that the transmitter is configured for a 7.42 unit character.</p>
+
+        <p><span class="machine-model">ASR</span> &nbsp; Automatic Send Receive. A machine fitted with a tape punch and tape reader. Often used with the model 444 teleprinter.</p>
+
+        <p><span class="machine-model">B</span> &nbsp; Normally means that the machine transmits a 7.5 unit character and receives in a 6.5 unit cycle; 66 wpm at 50 Bauds. This is the standard transmit and receive configuration.<br>
+        <span class="machine-model">B</span> &nbsp; When applied to the Post Office versions of the model 70 series of tape readers it indicates that the transmitter is configured for a 7.5 unit character.</p>
+
+        <p><span class="machine-model">C</span> &nbsp; Normally means that the machine transmits a 7.0 unit character and receives in a 6.5 unit cycle; 71.4 wpm at 50 Bauds. This was mainly used on private wire circuits.<br>
+        <span class="machine-model">C</span> &nbsp; When applied to the Post Office versions of the model 70 series of tape readers it indicates that the transmitter is configured for a 7.0 unit character.</p>
+
+        <p><span class="machine-model">CTK</span> &nbsp; Commercial Typewriter Keyboard. This was used on the model 7 series of machines so that an ordinary typist could use a teleprinter without any special training. It is very complex mechanically, and uses mechanical character storage to automatically insert the figures and letter shift signals, but is very easy to use.</p>
+
+        <p><span class="machine-model">D</span> &nbsp; Normally applied to the model 7 teleprinter to indicate that the machine has been modified for the Telex service, and that it is fitted with motor on-speed contacts, an improved answer back unit, and a 33 way signals plug. The machine still transmits a 7.5 unit character and receives in a 6.5 unit cycle; 66 wpm at 50 Bauds.<br>
+        <span class="machine-model">D</span> &nbsp; When applied to the standard versions of the model 70 series of tape readers it indicates that the transmitter is configured for a 7.42 unit character.</p>
+
+        <p><span class="machine-model">E</span> &nbsp; Normally applied to a model 7 teleprinter to indicate that the machine is fitted with the later overlap cam unit. This cam unit consists of three separate cam shafts, and allows characters to be printed as soon as they are received, rather than being printed when the next character is received as in the earlier versions of the model 7. This cam unit is fitted as standard to the model 54 teleprinter.</p>
+
+        <p><span class="machine-model">K3</span> &nbsp; The three row keyboard used on the model 75 teleprinter.</p>
+
+        <p><span class="machine-model">K4</span> &nbsp; The four row keyboard used on the model 75 teleprinter.</p>
+
+        <p><span class="machine-model">KSR</span> &nbsp; Keyboard Send Receive. A machine not fitted with either a tape punch or tape reader. Often used with the model 444 teleprinter.</p>
+
+        <p><span class="machine-model">M</span> &nbsp; Fitted with an electro-magnetic clutch. Applied to the model 6S series of tape readers only.</p>
+
+        <p><span class="machine-model">M3</span> &nbsp; The three row keyboard used on the earlier model 7 series of machines. Rather heavy in operation, but very reliable.</p>
+
+        <p><span class="machine-model">N3</span> &nbsp; The three row keyboard used on the later model 7, 47 and 54 series of machines. A very nice keyboard.</p>
+
+        <p><span class="machine-model">N4</span> &nbsp; The four row keyboard used on the later model 7, 47 and 54 series of machines. A very nice keyboard.</p>
+
+        <p><span class="machine-model">P</span> &nbsp; Fitted with a punched tape perforating attachment which is directly operated by the action of the keyboard.</p>
+
+        <p><span class="machine-model">PR</span> &nbsp; Printing Reperforator. A machine which produces punched paper tape directly from the received signal, and prints the text between the feed holes. Applied to the model 75 teleprinter only.</p>
+
+        <p><span class="machine-model">R</span> &nbsp; Receive only version of a machine. That is, no keyboard or transmitting mechanism is fitted.</p>
+
+        <p><span class="machine-model">RO</span> &nbsp; Receive Only version of a machine. That is, no keyboard or transmitting mechanism is fitted. Often used with the model 444 teleprinter.</p>
+
+        <p><span class="machine-model">RP</span> &nbsp; Fitted with a punched tape reperforating attachment which is operated directly by the received signal.</p>
+
+        <p><span class="machine-model">T</span> &nbsp; Fitted with a mechanical punched tape reader operating via the keyboard transmitting mechanism. Applied to the model 75 teleprinter only.</p>
+
+        <!-- ======= SIEMENS MACHINES ======= -->
+
+        <h2 class="section-hed">Siemens Machines</h2>
+
+        <div class="clearfix">
+          <img src="m100s1.jpg" alt="Siemens 100 Series 1 machine" class="img-right">
+          <p><span class="machine-model">T100</span> &nbsp; This is a purely mechanical page printing teleprinter which, by changing gears, is capable of operation at 45.45, 50 or 75 Bauds. A 3000 rpm synchronous motor, or a 3750 rpm governed motor may be fitted. In a similar manner to the Creed model 75, the gears are not interchangeable between the two types of motor. The machine is designed for single current operation only, and may be fitted with a punched tape reader and a tape punch. Some of the models, which were intended for private wire use, may be found fitted with an internal signaling supply and an all-enclosing silencing cover similar to the Creed model 444 teleprinter.</p>
+          <img src="m100s2.jpg" alt="Siemens 100 Series 2 machine" class="img-right" style="clear:right">
+          <p><span class="machine-model">T150</span> &nbsp; This is a semi-electronic page printing teleprinter, with an electronic keyboard, operating at 50, 75 or 100 Bauds. The machine is powered by a 1400 rpm induction motor, but the timing is crystal controlled, and the machine is capable of operation at 45.45 Bauds by changing the crystal. As with the T100, the T150 is designed for single current operation only, and may be fitted with a punched tape reader and a tape punch. Internal signaling supplies are not usually fitted to this machine.</p>
+        </div>
+
+        <!-- ======= TELETYPE MACHINES ======= -->
+
+        <h2 class="section-hed">Teletype Machines</h2>
+
+        <p><em>Note: &ldquo;Teletype&rdquo; is a registered trade mark of the Teletype Corporation, and may only be used to describe equipment manufactured by that company.</em></p>
+
+        <p><span class="machine-model">14</span> &nbsp; A number of different machines were given this designation, including: a tape printing teleprinter (similar to the Creed model 47), a chadless printing reperforator (similar to the Creed model 85), and non-printing reperforator (similar to the Creed model 7TR). All of these machines normally operated at 45.45 Bauds, and were fitted with either a governed motor or a synchronous motor for a 60 Hz mains supply, all of which operated at 115 volts. Gears for the 60 Hz synchronous motors operating on 50 Hz are very difficult to find.</p>
+
+        <p><span class="machine-model">14TD</span> &nbsp; This is a punched paper tape reader providing a single current output. The transmitter does not use a changeover contact, as in the Creed machines, but uses a segmented distributor and rotating brush gear to generate the output signal, hence the name: &ldquo;Transmitter Distributor.&rdquo; This machine normally operated at 45.45 Bauds, and was fitted with either a governed motor or a synchronous motor for a 60 Hz mains supply, all of which operated at 115 volts. Gears for the 60 Hz synchronous motors operating on 50 Hz are very difficult to find. Some machines may be found with many smaller segments in the distributor. These were intended for cryptographic use. Whilst conversion for normal communications use is possible, it is hardly worth the effort.</p>
+
+        <p><span class="machine-model">15</span> &nbsp; This was the standard page printing teleprinter, using a stationary platen and a moving type basket and in its day was probably the most widely used teleprinter by Radio Amateurs throughout the world. This machine normally operated at 45.45 Bauds, and was fitted with either a governed motor or a synchronous motor for a 60 Hz mains supply, all of which operated at 115 volts. Gears for the 60 Hz synchronous motors operating on 50 Hz are very difficult to find. Receive only versions were also produced without the keyboard and transmitter mechanism. This teleprinter was also manufactured under licence in Germany by Lorenz, and was known as the LO15. It has metric threads, but is broadly identical to the standard TT15 in all other respects.</p>
+
+        <p><span class="machine-model">19</span> &nbsp; This is a composite set, and comprises a model 15 page printing teleprinter with a built-in keyboard perforator and a model 14TD punched tape reader, all mounted on a special table which also contained the necessary power supplies. A character counter was normally fitted to the perforator so that the carriage return and line feed characters could be inserted at the appropriate point, thereby producing a tape which would be suitable for reception on a page printer, whilst the model 15 was otherwise engaged printing an incoming message from line.</p>
+
+        <p><span class="machine-model">26</span> &nbsp; This is a small, lightweight, page printing teleprinter, with a stationary paper platen and rotating type head, similar in some respects to the Creed model 75 teleprinter. However, it is not capable of continuous service, and spares for the worn out parts are very difficult to obtain.</p>
+
+        <p><span class="machine-model">28</span> &nbsp; This is a heavy duty page printing teleprinter which was designed for operation at 45.45, 50 or 75 Bauds, and was fitted with governed or synchronous motors operating from 115 volts 60 Hz. This machine was available as ASR or KSR versions, and with many options, including: automatic carriage return/line feed, a two or three speed gear box, and a built-in &ldquo;stunt box&rdquo; for character recognition. Several different tape readers and tape punches could be fitted depending upon the final requirements. The model 28 is a very fine machine indeed.</p>
+
+        <p><span class="machine-model">32</span> &nbsp; This is a modern page printing teleprinter, also available as receive only, ASR or KSR. It may be desk top mounted or supplied on a floor pedestal. It was designed as a light duty low cost machine.</p>
+
+        <p><span class="machine-model">33</span> &nbsp; This is the ASCII version of the model 32, to which it is very similar in all other respects. This machine was very popular in the early days of home computing as a printout device, a function for which it was also used in the commercial field. It was manufactured for single current signalling and the low voltage RS232 signalling system. RS232 machines may usually be identified by the fitting of a 25 way &ldquo;D&rdquo; series plug. The machine may also be found under the name of the Data Dynamics model 390, which is the Teletype model 33 chassis in a larger enclosure, with built-in power supplies, a paper tape punch and a paper tape reader.</p>
+
+        <p><span class="machine-model">34</span> &nbsp; This is a modern page printing teleprinter, also available as receive only, ASR or KSR. It may be desk top mounted or supplied on a floor pedestal. It was designed as a heavy duty machine, and incorporated a &ldquo;stunt box&rdquo; similar to the model 28.</p>
+
+        <p><span class="machine-model">35</span> &nbsp; This is the ASCII version of the model 34, to which it is very similar in all other respects.</p>
+
+        <!-- ======= SIGNALLING CONNECTIONS ======= -->
+
+        <h2 class="section-hed">Signalling Connections</h2>
+
+        <p>Due to the wide variety of equipment which may be encountered, only the standard connections to the Creed machines, which are the ones most likely to be encountered, will be considered.</p>
+
+        <p>The standard signalling connector for the majority of Creed machines is the 12 pin Multicon (miniature Jones), with the male plug connected to the machine. An additional connector, the Plessey mark 4 circular connector, was also used on the model 75 series of machines so that the power and signalling leads could be disconnected. The pin designations for the 12 way Plessey mark 4 signal connector are given in the (.) brackets. Some early Creed machines used a large 9 pin, round pin, plug for the signals connections. The pin designations for this 9 pin plug are given in the [.] brackets.</p>
+
+        <p><strong>Pin No. &mdash; Function</strong></p>
+        <ol class="pin-list">
+          <li>(A) [6] Mark contact</li>
+          <li>(B) [7] Tongue &mdash; Note 1</li>
+          <li>(C) [8] Space contact</li>
+          <li>(D) [9] Receive contact</li>
+          <li>(E) [2] Tongue</li>
+          <li>(F) [1] Send contact</li>
+          <li>(G) [5] Receive electro-magnet &mdash; Note 2</li>
+          <li>(H) No connection</li>
+          <li>(J) [3] Receive electro-magnet</li>
+          <li>(K) [4] Bell contact &mdash; Note 3</li>
+          <li>(L) Bell and Who Are You Contacts &mdash; Note 4</li>
+          <li>(M) Who Are You contact &mdash; Note 5</li>
+        </ol>
+
+        <p><strong>Notes:</strong></p>
+        <ol class="pin-list">
+          <li>On the 444 teleprinter, link pin 12 to pin 13 on the 50 way connector; the other connections remain the same.</li>
+          <li>For &ldquo;Mark,&rdquo; current should flow into pin 7 and out of pin 9.</li>
+          <li>This contact closes when the &ldquo;Bell&rdquo; character, figures shift J, is received.</li>
+          <li>This pin may be bonded to the machine chassis.</li>
+          <li>This contact closes when the &ldquo;Who Are You&rdquo; character, figures shift D, is received. If the machine is fitted with an Answer Back unit, a 20 character message will also be transmitted to line.</li>
+          <li>For punched tape readers, only pins 1 to 6 inclusive apply.</li>
+        </ol>
+
+        <!-- ======= USEFUL REFERENCES ======= -->
+
+        <h2 class="section-hed">Useful References</h2>
+
+        <p class="ref-group">General</p>
+        <ul style="font-size:14px;line-height:1.8;color:var(--ink-mid)">
+          <li>Five Unit Codes &mdash; <em>Datacom</em>, Winter 1998, pp 28&ndash;35</li>
+          <li>Stroboscope Tuning Forks &mdash; <em>BARTG Newsletter</em>, July 1982, pp 48&ndash;49</li>
+          <li>Creed &amp; Company &mdash; The First 50 Years &mdash; <em>Datacom</em>, Summer 1997, pp 8&ndash;20</li>
+          <li>Teleprinter Handbook (1st Edition) &mdash; Goacher and Denny, RSGB 1973</li>
+          <li>Teleprinter Handbook (2nd Edition) &mdash; Hobbs, Yeomanson and Gee, RSGB 1983</li>
+        </ul>
+
+        <p class="ref-group">Creed Model 3 Teleprinter</p>
+        <ul style="font-size:14px;line-height:1.8;color:var(--ink-mid)">
+          <li>Converting the Creed Type 3 Printers to Print like the 7B (ITA2) &mdash; <em>BARTG Newsletter</em> No. 38, pp 8&ndash;10</li>
+        </ul>
+
+        <p class="ref-group">Creed Model 6S Automatic Transmitters</p>
+        <ul style="font-size:14px;line-height:1.8;color:var(--ink-mid)">
+          <li>Creed 6S Series Automatic Transmitters &mdash; <em>BARTG Newsletter</em> No. 69, September 1976, pp 20&ndash;21</li>
+          <li>Creed 6S6 Automatic Transmitters &mdash; <em>BARTG Newsletter</em> No. 68, June 1976, p 8</li>
+          <li>6S6M Wiring &mdash; <em>BARTG Newsletter</em> No. 60, June 1974, p 13</li>
+        </ul>
+
+        <p class="ref-group">Creed Model 7 Teleprinter</p>
+        <ul style="font-size:14px;line-height:1.8;color:var(--ink-mid)">
+          <li>7B Make and Break &mdash; <em>BARTG Newsletter</em> No. 43, April 1970, pp 9&ndash;10</li>
+          <li>7B Make and Break &mdash; <em>BARTG Newsletter</em> No. 44, pp 5&ndash;14</li>
+          <li>7B Make and Break &mdash; <em>BARTG Newsletter</em> No. 61, September 1974, pp 12&ndash;16</li>
+          <li>7B Make and Break &mdash; <em>BARTG Newsletter</em> No. 62, December 1974, pp 10&ndash;11</li>
+          <li>Teleprinter 7B Standard Adjustments &mdash; <em>BARTG Newsletter</em> No. 48, pp 16&ndash;18</li>
+          <li>Model 7 and 54 Page Teleprinters (part 1) &mdash; <em>BARTG Newsletter</em> No. 59, pp 9&ndash;12</li>
+          <li>Model 7 and 54 Page Teleprinters (part 2) &mdash; <em>BARTG Newsletter</em> No. 60, June 1974, pp 3&ndash;6</li>
+          <li>Creed 7B 12 Pin Plug Wiring &mdash; <em>BARTG Newsletter</em> No. 45, September 1970, p 25</li>
+          <li>A Switched Two Speed Governor &mdash; <em>BARTG Newsletter</em>, Summer 1966, pp 4&ndash;5</li>
+          <li>A Simple Way to Make a 7B Governor Dual Speed &mdash; <em>BARTG Newsletter</em> No. 50, pp 20&ndash;21</li>
+          <li>A Teleprinter Motor Speed Control Device &mdash; <em>BARTG Newsletter</em> No. 65, September 1975, pp 19&ndash;25</li>
+          <li>Automatic CR/LF for the Creed 7B &mdash; <em>BARTG Newsletter</em> No. 60, June 1974, p 14</li>
+          <li>Automatic CR and LF for the Creed 7 and 54 Printers &mdash; <em>BARTG Newsletter</em> No. 70, December 1976, pp 18&ndash;18</li>
+          <li>7B/RP Reperforator &mdash; <em>BARTG Newsletter</em> No. 46, December 1970, pp 7&ndash;10</li>
+          <li>Thoughts on the Answer Back Drum &mdash; <em>BARTG Newsletter</em> No. 71, March 1977, pp 5&ndash;6</li>
+          <li>Answer Back Ward Chart for Teleprinters 7 and 47 &mdash; <em>BARTG Newsletter</em> No. 72, June 1977, p 20</li>
+          <li>The Creed CTK Keyboard &mdash; <em>BARTG Newsletter</em> No. 68, June 1976, pp 6&ndash;8</li>
+          <li>N3 Keyboard &mdash; <em>BARTG Newsletter</em> No. 43, April 1970, pp 11&ndash;17</li>
+        </ul>
+
+        <p class="ref-group">Creed Model 54 Teleprinter</p>
+        <ul style="font-size:14px;line-height:1.8;color:var(--ink-mid)">
+          <li>Model 7 and 54 Page Teleprinters (part 1) &mdash; <em>BARTG Newsletter</em> No. 59, pp 9&ndash;12</li>
+          <li>Model 7 and 54 Page Teleprinters (part 2) &mdash; <em>BARTG Newsletter</em> No. 60, June 1974, pp 3&ndash;6</li>
+          <li>Model 54 Starter Switch Control &mdash; <em>BARTG Newsletter</em> No. 62, December 1974, pp 11&ndash;12</li>
+          <li>Automatic CR and LF for the Creed 7 and 54 Printers &mdash; <em>BARTG Newsletter</em> No. 70, December 1976, pp 18&ndash;18</li>
+        </ul>
+
+        <p class="ref-group">Creed Model 75 Teleprinter</p>
+        <ul style="font-size:14px;line-height:1.8;color:var(--ink-mid)">
+          <li>The Creed Model 75 Teleprinter (part 1) &mdash; <em>Datacom</em>, Autumn 1997, pp 5&ndash;9</li>
+          <li>The Creed Model 75 Teleprinter (part 2) &mdash; <em>Datacom</em>, Winter 1997, pp 8&ndash;11</li>
+          <li>Creed Model 75 Identification &mdash; <em>BARTG Newsletter</em>, March 1979, p 21</li>
+          <li>Notes on the Creed 75 for Amateur Use &mdash; <em>BARTG Newsletter</em> No. 53, September 1972, pp 20&ndash;25</li>
+          <li>Creed Model 75 Motors and Gears &mdash; <em>BARTG Newsletter</em>, December 1978, pp 15&ndash;16</li>
+          <li>Creed Model 75 Timing Disc &mdash; <em>BARTG Newsletter</em>, June 1980, pp 15&ndash;16</li>
+        </ul>
+
+        <p class="ref-group">Creed Model 444 Teleprinter</p>
+        <ul style="font-size:14px;line-height:1.8;color:var(--ink-mid)">
+          <li>Introduction to the Creed 444 &mdash; <em>BARTG Newsletter</em>, Summer 1983, pp 16&ndash;20</li>
+          <li>The Creed 444 Teleprinter &mdash; <em>Datacom</em>, Autumn 1995, pp 69&ndash;70</li>
+          <li>ITT Creed Model 444 Teleprinter (part 1) &mdash; <em>Datacom</em>, Spring 1999, pp 28&ndash;37</li>
+          <li>Maintaining the Creed 444 &mdash; <em>BARTG Newsletter</em>, Spring 1983, pp 6&ndash;11</li>
+          <li>Lubrication Instructions for the Creed 444 &mdash; <em>Datacom</em>, Winter 1988, pp 73&ndash;84</li>
+          <li>The Creed 444 on 45 Bauds &mdash; <em>BARTG Newsletter</em>, Winter 1983, pp 8&ndash;10</li>
+          <li>The G3RED Teleprinter Synchronous Motor Speed Control &mdash; <em>BARTG Newsletter</em> No. 72, June 1977, pp 21&ndash;26</li>
+          <li>Coding the Porcupine &mdash; <em>BARTG Newsletter</em>, December 1982, pp 12&ndash;13</li>
+          <li>More on the 444 Answer Back &mdash; <em>Datacom</em>, Spring 1984, p 19</li>
+          <li>Creed 444 WRU Disable on Receive &mdash; <em>Datacom</em>, Summer 1985, pp 64&ndash;65</li>
+          <li>Using the Bell Contacts on the Creed 444 &mdash; <em>BARTG Newsletter</em>, Summer 1983, pp 24&ndash;25</li>
+          <li>The Creed 444 End of Line Lamp &mdash; <em>Datacom</em>, Winter 1984, pp 33&ndash;34</li>
+        </ul>
+
+        <p class="ref-group">Creed Model 2300 Teleprinter</p>
+        <ul style="font-size:14px;line-height:1.8;color:var(--ink-mid)">
+          <li>The Creed 2300 (part 1) &mdash; <em>Datacom</em>, Spring 1984, pp 16&ndash;18</li>
+          <li>The Creed 2300 (part 2) &mdash; <em>Datacom</em>, Summer 1984, pp 20&ndash;23</li>
+          <li>The Creed 2300 (part 3) &mdash; <em>Datacom</em>, Autumn 1984, pp 14&ndash;16</li>
+          <li>The Creed 2300 &mdash; <em>Datacom</em>, Spring 1988, pp 41&ndash;50</li>
+          <li>Connecting the Creed 2300 to the ST5MC &mdash; <em>Datacom</em>, Winter 1986, p 30</li>
+        </ul>
+
+        <p class="ref-group">Teletype 14 Series</p>
+        <ul style="font-size:14px;line-height:1.8;color:var(--ink-mid)">
+          <li>The Story of a Teletype 14 Transmitter Distributor &mdash; <em>BARTG Newsletter</em>, May 1965, pp 4&ndash;6</li>
+          <li>Using Cryptographic Transmitter Distributors &mdash; <em>BARTG Newsletter</em>, Winter 1966/67, pp 4&ndash;5</li>
+        </ul>
+
+        <p class="ref-group">Teletype Model 15 Teleprinter</p>
+        <ul style="font-size:14px;line-height:1.8;color:var(--ink-mid)">
+          <li>Speed Indicator and Controller for the Teletype Model 15 &mdash; <em>BARTG Newsletter</em> No. 42, September 1969, pp 12&ndash;20</li>
+        </ul>
+
+        <p class="ref-group">Teletype Model 33 Teleprinter</p>
+        <ul style="font-size:14px;line-height:1.8;color:var(--ink-mid)">
+          <li>The Data Dynamics 390 Printer &mdash; <em>Datacom</em>, Winter 1995, pp 25&ndash;33</li>
+        </ul>
+
+      </div>
+
+      <div class="callout" style="margin-top:24px">
+        Thanks to BARTG and Alan G Hobbs G8GOJ, the author, in allowing Larry Rice VK6CP to illustrate his article with images of some of the many machines listed. &mdash; Larry Rice VK6CP, 15 May 1999.<br>
+        <br>
+        Copyright &copy; 2011 George Hutchison W7TTY &amp; Bill Bytheway K7TTY
+      </div>
+
+    </main>
+
+    <aside class="col-side">
+
+      <div class="sb-box">
+        <div class="sb-hed">Article Info</div>
+        <div class="sb-note" style="font-size:13px;line-height:1.9">
+          <strong style="color:var(--red)">Alan G Hobbs G8GOJ</strong><br>
+          <br>
+          Reprinted by permission<br>
+          via Larry Rice VK6CP<br>
+          25 August 1999<br>
+          <br>
+          <span style="color:var(--ink-faint);font-size:12px;font-style:italic">
+            Covers Creed, Siemens<br>
+            &amp; Teletype machines<br>
+            on the surplus market
+          </span>
+        </div>
+      </div>
+
+      <div class="sb-box">
+        <div class="sb-hed">Articles by G8GOJ</div>
+        <div class="sb-note">
+          <a href="fiveunits.htm" style="display:block;padding:5px 0;border-bottom:1px dotted var(--rule);color:var(--ink-mid);text-decoration:none">&#9654; Five-Unit Codes</a>
+          <a href="creed1.html" style="display:block;padding:5px 0;border-bottom:1px dotted var(--rule);color:var(--red);text-decoration:none;font-weight:bold">&#9654; Teleprinters for the Amateur</a>
+          <a href="creed2.html" style="display:block;padding:5px 0;border-bottom:1px dotted var(--rule);color:var(--ink-mid);text-decoration:none">&#9654; Creed &amp; Co. First 50 Years</a>
+          <a href="creed444.html" style="display:block;padding:5px 0;border-bottom:1px dotted var(--rule);color:var(--ink-mid);text-decoration:none">&#9654; ITT Creed Model 444</a>
+          <a href="ahobbs.htm" style="display:block;padding:5px 0;border-bottom:1px dotted var(--rule);color:var(--ink-mid);text-decoration:none">&#9654; About Alan Hobbs G8GOJ</a>
+          <a href="../history.html#historyhall" style="display:block;padding:5px 0;color:var(--ink-mid);text-decoration:none">&#9654; Back to History Hall</a>
+        </div>
+      </div>
+
+    </aside>
+
+  </div>
+</div>
+
+<footer class="site-footer">
+  <span>RTTY.COM &mdash; W2TTY &mdash; ARVADA, CO</span>
+  <span>NON-COMMERCIAL ARCHIVE &mdash; NO TRACKING</span>
+  <span>BAUDOT 1870 &bull; TELETYPE 1906 &bull; RTTY 1922</span>
+</footer>
+
+<canvas id="tapeBot" class="tape" aria-hidden="true"></canvas>
+<script src="../js/tape.js"></script>
 </body>
 </html>

@@ -1,926 +1,476 @@
-<html>
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
-
-<title> ITT Creed Model 444 teleprinter </title>
-<meta Name="description" Content="ITT Creed Model 444 Teleprinter">
-<meta Name="keywords" Content="Creed teleprinters">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ITT Creed Model 444 Teleprinter â€” RTTY.COM History Hall</title>
+  <meta name="description" content="Technical specification of the ITT Creed Model 444 teleprinter, by Alan G Hobbs G8GOJ. Reprinted from Creed publication 041-033-2E, 1970.">
+  <link rel="stylesheet" href="../css/rtty.css">
+  <style>
+    .spec-hed {
+      font-family: 'Special Elite', serif;
+      font-size: 17px;
+      color: var(--ink);
+      margin: 22px 0 6px;
+      letter-spacing: .03em;
+      border-bottom: 1px solid var(--rule);
+      padding-bottom: 3px;
+    }
+    .spec-sub {
+      font-family: 'Courier Prime', 'Courier New', monospace;
+      font-size: 15px;
+      font-weight: bold;
+      color: var(--ink-mid);
+      margin: 14px 0 4px;
+    }
+    .img-right {
+      float: right;
+      margin: 0 0 16px 20px;
+      height: auto;
+      border: 1px solid var(--rule);
+    }
+    .img-left {
+      float: left;
+      margin: 0 20px 16px 0;
+      height: auto;
+      border: 1px solid var(--rule);
+    }
+    .clearfix::after {
+      content: '';
+      display: table;
+      clear: both;
+    }
+    .dim-table {
+      border-collapse: collapse;
+      font-size: 14px;
+      margin: 12px 0 16px;
+      width: 100%;
+      max-width: 440px;
+    }
+    .dim-table th {
+      background: var(--paper-dk);
+      border: 1px solid var(--rule);
+      padding: 5px 10px;
+      text-align: center;
+      font-family: 'Special Elite', serif;
+      font-size: 13px;
+      color: var(--ink);
+    }
+    .dim-table td {
+      border: 1px solid var(--rule);
+      padding: 4px 10px;
+      text-align: center;
+      color: var(--ink-mid);
+    }
+    .dim-table tr:nth-child(even) td {
+      background: var(--paper-dk);
+    }
+  </style>
 </head>
+<body>
 
-<body bgcolor="#C0C0C0">
-
-<div align="center">
-	<div align="center">
-		<p align="center" style="margin-top: 0; margin-bottom: 6px">
-		<font size="3" face="Verdana"><i><b>WWW.RTTY.COM History Hall</b></i></font></div>
-	<table border="0" width="600" cellpadding="20" background="ltbluegrid.gif" id="table1">
-		<tr>
-			<td>
-			<p align="center"><font face="Verdana">&nbsp; <font size="+3">ITT 
-			Creed Model 444</font><img align="right" SRC="creedlo.jpg" ALT="Creed company logo" WIDTH="120" HEIGHT="150"><font size="+3"> 
-			Teleprinter<br>
-			</font><font size="2">by Alan G Hobbs, G8GOJ <a HREF="MailTo:Alan.Hobbs@ngc.co.uk">
-			Alan.Hobbs@ngc.co.uk </a><br>
-			</font>
-<br>
-<br>
-			<i><font size="2">(R</font></i><strong style="font-weight: 400"><font size="2">eprinted 
-			from Creed publication 041-033-2E, 1970)</font></strong></font></p>
-
-<p><font face="Verdana"><strong style="font-weight: 400">Introduction </strong>
-</font></p>
-
-<p><font face="Verdana">
-<img align="left" SRC="cread444.jpg" ALT="Cread 444" WIDTH="245" HEIGHT="182"><strong style="font-weight: 400">The 
-ITT Creed Model 444 (pronounced Four, forty-four) is a heavy-duty page-printing 
-teleprinter developed primarily to satisfy British Post Office requirements for 
-a Telex machine to CCITT standards. It can operate in either the simplex or the 
-duplex mode at speeds up to 75 Bauds, and is compatible with the majority of 
-teleprinters and circuits now in service. Each character is printed as soon as 
-it is received by type bars carried in a type basket which moves to and fro in 
-front of the stationary paper carriage. A range of additional optional features 
-is available to enable the machine to be used in specialised high-speed 
-telecommunications and data processing applications. The machine has been 
-designed to operate continuously for long periods and to function reliably with 
-the minimum of maintenance attention. With suitable lubricants and ribbon, it 
-will remain serviceable at temperatures within the range -25C to +50C. The Model 
-444 is basically a 5-unit, start-stop, two shift machine operating on 
-International Telegraph Alphabet No 2, no provision has been made for third 
-shift and there are no longer 6-unit machines. </strong></font></p>
-
-<p><font face="Verdana"><strong>Construction</strong><strong style="font-weight: 400"> </strong>
-</font></p>
-
-<p><font face="Verdana"><strong style="font-weight: 400">Robust &quot;unit 
-construction&quot; for easy maintenance and accessibility. Each major unit is carried 
-on its own casting or frame, and is secured by no more than four screws. Where 
-appropriate, eg on the motor unit, the screws have been made captive. Abutments 
-are provided to locate the units accurately. All units are interchangeable 
-without need to re-adjust except in isolated cases. Individual components have 
-been designed for easy assembly with the minimum number of adjustments. Units 
-can be dismantled and then reassembled without the need for readjustment. The 
-number of different fabricated parts is approximately 1,250 for a basic 
-transmitter/receiver version of the machine fitted with a synchronous motor. A 
-further 160 parts are involved in the Tape Reader unit, and 220 parts in the 
-Tape Punch unit. </strong></font></p>
-
-<p><font face="Verdana"><strong>Speeds</strong><strong style="font-weight: 400"> </strong>
-</font></p>
-
-<p><font face="Verdana"><strong style="font-weight: 400">The machine is designed 
-for 50 Baud and 75 Baud operation, ie 66 and 100 words per minute respectively. 
-Conversion from 50 Baud to 75 Baud operation is by changing motor and hours 
-counter gearing. This conversion can be carried out without removing the motor 
-or disturbing adjacent units. </strong></font></p>
-
-<p><font face="Verdana"><strong>Receiving Electromagnet and Orientation </strong>
-</font></p>
-
-<p><font face="Verdana"><strong style="font-weight: 400">The standard polarised 
-receiving electromagnet is designed to respond to double-current signals, but 
-can be provided with a single-current to double-current converter. Manual 
-orientation adjustment determines the selection instant over +/- 60% of a code 
-element length. The scale is calibrated to read receive margin directly. </strong>
-</font></p>
-
-<p><font face="Verdana"><strong>Alphabets </strong></font></p>
-
-<p><font face="Verdana"><strong style="font-weight: 400">Printing in all common 
-Indo-European languages is possible up to a maximum of 56 graphics on 
-two-shifts. Semitic languages such as Hebrew and cursive scripts such as Arabic, 
-both involving a right-to-left type basket traverse action, can be catered for. 
-Non-feeding type bars carrying ‘accents only’ are possible. </strong></font></p>
-
-<p><font face="Verdana"><strong>Optionals </strong></font></p>
-
-<p><font face="Verdana"><strong style="font-weight: 400">The basic Model 444 
-machine consists of a 5-unit, 50 Baud or 75 Baud receiving mechanism fitted with 
-a 3-row or 4-row keyboard, a friction feed platen, an end-of-line warning lamp, 
-the two-colour printing faciliity, a motor hours counter and motor ‘on-speed’ 
-contacts. Optional units and facilities that can be fitted to the basic machine 
-include an answer-back facility, a Tape Punch unit, a Tape Reader unit, an 
-automatic power switch, a dual purpose friction/sprocket feed platen, single 
-double/current converter, paper-low contacts, a code recognition unit (stunt 
-box), and right to left direction of printing for non Roman alphabets. The 
-machine can be supplied as a receiver with tape punch keyboard, or as a receiver 
-only. </strong></font></p>
-
-<p><font face="Verdana"><strong>Dimensions and Weight </strong></font></p>
-
-<p><font face="Verdana"><strong style="font-weight: 400">External overall 
-dimensions of the machine in its sound-reducing cover are: <br>
-Width 20 1/2 inches 52.0 cm <br>
-Depth 25 5/8 inches 65.1 cm <br>
-Height 12 3/4 inches 32.4 cm <br>
-Weight of a keyboard machine with a Tape Reader and a Tape Punch and the 
-sound-reducing cover is approximately 94 pounds (41.6 kg). This figure does not 
-include the weight of the paper roll and the tape reel. The sound-reducing cover 
-and its base weigh approximately 25 pounds (11.3 kg). <br>
-External overall dimensions of the receive only machine in its sound-reducing 
-cover are: <br>
-Width 20 1/2 inches 52.0 cm <br>
-Depth 20 1/2 inches 52.0 cm <br>
-Height 12 3/4 inches 32.4 cm <br>
-The corresponding weight of the receiver without reader or punch is 
-approximately 68 pounds (31.4 kg). </strong></font></p>
-
-<p><font face="Verdana"><strong>Line Current and Margin </strong></font></p>
-
-<p><font face="Verdana"><strong style="font-weight: 400">Line current for the 
-polarised electromagnet working on double current signals is 20mA (80+80V) with 
-wave shaping components (3.9K shunted by 4mF) in series and a surge limiter (1mF 
-+ 1.2K) in parallel with the electromagnet. These components are now included in 
-non-BPO double current machines but can be disconnected when not required. 
-Single-current working (single-to-double current converter and special coil in 
-electromagnet) will require 30 to 45mA with a line voltage of 50 to 120V. The 
-receive margin is at least +/- 42% at 50 Bauds, and +/- 38% at 75 Bauds. </strong>
-</font></p>
-
-<p><font face="Verdana"><strong>Signal Divide </strong></font></p>
-
-<p><font face="Verdana"><strong style="font-weight: 400">The transmitters 
-associated with the keyboard and with the tape reader unit are both designed for 
-7-1/2 unit operation. The teleprinter receiver is designed to accept 7 or 7-1/2 
-unit signals at 50 Bauds, and at 75 Bauds. </strong></font></p>
-
-<p><font face="Verdana"><strong>Circuits </strong></font></p>
-
-<p><font face="Verdana"><strong style="font-weight: 400">Desks, tables or 
-plinths to mount the Model 444 can be supplied equipped for Telex, Private Wire 
-or a variety of special uses such as concentrators, broadcast sets etc. to suit 
-the available transmission paths and required operating facilities; also as 
-punched tape editing sets or data loggers. The facilities provided on four 
-typical terminal sets are given below: <br>
-(A) Receive only (double or single-current) Page printing receive only, with or 
-without tape punch. <br>
-(B) Alternate direction 2-way communication with local record (double-current) 
-Keyboard or tape reader sending with electrical local record (keyboard/reader 
-interlocked). <br>
-(C) Simultaneous 2-way communication without local record (double-current). Tape 
-reader sending without local record, with solenoid switch to maintain motor 
-running. Simultaneous page printing reception, with punched tape if required. 
-Off-line tape punching with printed record (keyboard/reader interlock removed) 
-buzzer warning of incoming message. <br>
-(D) Simultaneous 2-way communication with local record As (B) but with the 
-addition of a separate Receive only Teleprinter at each terminal. Local 
-circuitry for Model 444 is similar to that used for Creed Model 7 and Creed 
-model 54; the new machine is therefore interchangeable with these earlier 
-machines. It will not be interchangeable with Creed Model Seventy-five circuitry 
-because of the mechanical local record feature of that machine, although Model 
-444 can work to a Model Seventy-five or to any other make of teleprinter which 
-conforms to CCITT standards. </strong></font></p>
-
-<p><font face="Verdana"><strong>Local Record </strong></font></p>
-
-<p><font face="Verdana"><strong style="font-weight: 400">Electrical local record 
-of double-current circuits is obtained by an automatic send-receive switch that 
-connects the send line to the electromagnet for the duration of each 
-transmitting cycle. Incoming signals are connected to the electromagnet by the 
-send-receive switch. Single-current circuits obtain local copy by the inclusion 
-of the receive electromagnet coils in the loop circuit. In both these modes an 
-accurate local copy is proof of accurate transmission. </strong></font></p>
-
-<p><font face="Verdana"><strong>Drive</strong><strong style="font-weight: 400"> </strong>
-</font></p>
-
-<p><font face="Verdana"><strong style="font-weight: 400">Transmitting and 
-receiving mechanisms are driven by a single electric motor. Receiver employs 
-three cam shafts (selector, main receive cam shaft, and type carriage feed 
-shaft) each making half a revolution for each character. The keyboard 
-transmitter has a single cam shaft which, for maximum accuracy, makes one 
-complete revolution for each transmitted character. Both ratchet and friction 
-type of clutch is used on the machine. The ratchet clutches incorporate a 
-friction-driven element which provides the homing torque, helps to equalise the 
-idling/running load, and reduces the impact when the drive is engaged. </strong>
-</font></p>
-
-<p><font face="Verdana"><strong>Motor Range </strong></font></p>
-
-<p><font face="Verdana"><strong style="font-weight: 400">Synchronous motors for 
-50Hz (3000 rpm) and 60Hz (3600 rpm) supplies, and any single voltage in the 
-range 110-125V (5-volt steps), 200-250V (10-volt steps). Power consumption is 
-approximately 80 watts. Series wound, 3750 rpm, AC single-phase governed motors 
-for any single voltage in the range 100-125V (5-volt steps), 200-250V (10-volt 
-steps), at 40, 50 and 60Hz. Series wound, 3750 rpm, DC single-phase governed 
-motors for any single voltage in the range 100-125V (5-volt steps), 200-250V 
-(10-volt steps). </strong></font></p>
-
-<p><font face="Verdana"><strong>Power and Signaling Connections </strong></font></p>
-
-<p><font face="Verdana"><strong style="font-weight: 400">Separate captive cables 
-are provided for motor power (3-way), and signaling circuits (32-way) Painton 
-series 159. Provision for an additional 12-way plug and captive signals cable 
-for code recognition contacts, if capacity of standard cable is exceeded. 
-Electrical connections from the base tray, in which the power and signaling 
-cables terminate, to the teleprinter mechanism are made via a 50-way Cannon type 
-or 50-way Carr fasteners jack-in connector for the signals wiring, and a 6-way 
-Painton Multicon connector (with twin earth pins) for the motor power supplies. 
-Power supply from the teleprinter main base to the motor unit is via another 
-6-way Painton Multicon connector. The signals and motor connectors are located 
-at the rear of the machine main base adjacent to the motor gearing. </strong>
-</font></p>
-
-<p><font face="Verdana"><strong>Maintenance </strong></font></p>
-
-<p><font face="Verdana"><strong style="font-weight: 400">Routine maintenance for 
-50-Baud machines will consist of inspection, cleaning, and lubrication after 
-each 1000 hours of operation, or at intervals of one year, whichever is earlier. 
-The overhaul interval is 5000 hours or 5 years, whichever is earlier. 
-Maintenance intervals for 75-Baud working are to be 500 hours initially, with 
-overhaul at 3000 hours or 3 years. All lubrication points requiring attention at 
-the routine maintenance interval can be reached without dismantling. Only two 
-lubricants: a light oil and a grease will be required. It will not be necessary 
-to re-lubricate shielded motor bearings as the original lubricant inserted by 
-the bearing manufacturer will last until the bearings are replaced at 5000 
-hours. All field maintenance can be carried out with common tools. Gauges will 
-be available to simplify certain adjustments. Main cover and lid are secured to 
-the base tray by two Oddie clips which require a quarter-turn with a screwdriver 
-to release them and so enable the cover to be lifted off. The release of two 
-sliding latches, and the disconnection of the internal power and signals plugs 
-at the rear of the main base, enables the complete receiving and transmitting 
-mechanisms to be lifted out of the base tray, while the input sockets and their 
-cabling remain clamped inside the tray. </strong></font></p>
-
-<p><font face="Verdana"><strong>Printing Mechanism </strong></font></p>
-
-<p><font face="Verdana"><strong style="font-weight: 400">The printing mechanism 
-of the Model 444 employs a moving typewriter-style type basket, and a stationary 
-platen unit which bears the paper roll. The type basket can hold up to 28 type 
-bars each carrying two characters, so giving a maximum capacity of 56 
-characters. A type bar is selected by allowing it to drop into a slot across an 
-arrangement of five castellated comb bars carried on the type basket carriage 
-unit and controlled by five vanes which are pivoted on the frame of the machine. 
-These vanes are in their turn controlled by the selection mechanism and the 
-incoming signals which it registers. The downward movement of the selected type 
-bar brings it into the path of a print bail which lifts the bar out of its 
-basket and so impresses the type against the ribbon to create an image on the 
-paper. Each character is printed as soon as it is received and the whole 
-printing line is visible while it is being printed. The case shift action is 
-obtained by raising the rod on which the type bars pivot so as to bring the 
-letters to the printing line, and by lowering the pivot again to bring figures, 
-symbols, and punctuation marks to the printing line. <br>
-The type basket unit runs on three parallel rails (two guide rails and the shift 
-rail), and is returned to the beginning of the line by a helical spring which is 
-progressively extended as the basket moves along the printing line. On receipt 
-of a ‘carriage return’ signal the feed mechanism is disengaged and the basket is 
-drawn rapidly back to the left hand margin position where the impact is absorbed 
-by an air dashpot. The ‘carriage return’ time (about 200mS at normal room 
-temperatures) is short enough to permit a ‘carriage return, line feed, print’ 
-sequence at speeds up to 75 Bauds. It is not therefore necessary on this machine 
-for a dummy ‘letter shift’ combination to be inserted after a ‘carriage return, 
-line feed’ sequence to allow the carriage time to return from a long line. </strong>
-</font></p>
-			<p><font face="Verdana"><strong style="font-weight: 400">Printing is 
-			through a half-inch wide typewriter ink ribbon which is wound on a 
-			flanged spool of the type used on Creed Model 47 and Model 
-			Seventy-five machines. The European standard typewriter spool DIN 
-			2103 can also be used. The automatic ribbon feed changeover 
-			mechanism will be operated by either a plain or eyeleted ribbon. A 
-			mechanically operated automatic two-colour printing facility is 
-			standard; transmitted copy normally being printed in red, and 
-			receive copy in black. <br>
-			The printing action and the letter feed action can be made 
-			inoperative, either individually or jointly, on up to a maximum of 
-			ten combinations. These normally include Carriage Return, Line Feed, 
-			Bell, WRU, Letters, Figures and All Space. The remaining three 
-			combinations are available for accents or diacritical signs. An 
-			eleventh combination, with print suppression only, is normally 
-			allocated to Letter Space. <br>
-			Letter spacing, ie the distance between centre lines of adjacent 
-			characters on the same line, is 1/10 inch nominal. Line length is 69 
-			characters as standard but can be arranged for up to 75 characters. 
-			The letter feed and dashpot mechanisms can be reversed to provide 
-			the right-to-left traverse required for non-roman alphabets. </strong>
-			</font></p>
-
-<p><font face="Verdana"><strong style="font-weight: 400">Stationery British, 
-European and American paper rolls, both in their normal and reverse-wound forms, 
-can be accommodated inside the sound-reducing cover. Maximum width for paper 
-rolls is 8-1/2 inches (216mm). Maximum diameter of roll is 5 inches (127mm). 
-Paper guide can be set by the operator to accept either 8.3 inch (210mm) or 
-8-1/2 inch (216mm) wide paper. Provision for external paper supply, and for 
-sprocket-feed printed stationery. Machine can be fitted with a friction-feed 
-platen, or with a dual-purpose friction/sprocket feed platen with retractable 
-pins which is capable of being set to accept either plain paper or 
-marginally-punched printed stationery. Platen units can be interchanged without 
-dismantling other units from the machine. An external knob is provided to turn 
-the platen and so advance the paper. Platens will accept friction-feed paper, 
-either single-ply or up to 6-ply, with or without interleaved carbon sheets, and 
-also carbonless multi-plies such as NCR paper. Print force is adjustable by 
-mechanic and can be set to print up to six carbon copies. The dual purpose 
-friction/sprocket feed platen is adjustable laterally to enable printing to take 
-place in the middle of ruled columns on printed stationery. Three degrees of 
-line feed by operator setting: 1/6 inch, 1/4 inch, and 1/3 inch, ie 4.23mm, 
-6.35mm, and 8.46mm respectively. </strong></font></p>
-			<p><font face="Verdana"><strong style="font-weight: 400">The 
-			standard line length is 69 characters when the machine is fitted 
-			with a 70 toothed feed rack. Using 8-1/2 inch (216mm) paper the left 
-			hand margin is 0.75 inch (19mm) minimum from the edge of the paper 
-			to the centre line of the first character. The right hand margin is 
-			0.95 inch (24mm). Other line lengths and margins using 8 -1/2 inch 
-			(216mm) paper are shown in the table. </strong></font></p>
-
-<blockquote>
-  <p><font face="Verdana"><strong style="font-weight: 400">Line &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Adjust 
-	stop screw&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; R.H.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-	Feed <br>
-  length&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; to give L.H. margin&nbsp;&nbsp;&nbsp;&nbsp; 
-	margin&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-	rack <br>
-  (characters)&nbsp;&nbsp;&nbsp;(inches)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(Inches)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(teeth)
-  <br>
-  &nbsp;&nbsp;&nbsp; 69&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-	0.75&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-	0.95&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-	70 <br>
-  &nbsp;&nbsp;&nbsp; 70&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-	0.65&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-	0.95&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-	70 <br>
-  &nbsp;&nbsp;&nbsp; 71&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-	0.55&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-	0.95&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-	70 <br>
-  &nbsp;&nbsp;&nbsp; 73&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-	0.75&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-	0.55&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-	74 <br>
-  &nbsp;&nbsp;&nbsp; 74&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-	0.65&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-	0.55&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-	74 <br>
-  &nbsp;&nbsp;&nbsp; 75&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-	0.55&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-	0.55&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-	74 </strong></font></p>
-</blockquote>
-
-<p><font face="Verdana"><strong>Cover </strong></font></p>
-
-<p><font face="Verdana"><strong style="font-weight: 400">A three-piece metal 
-cover consisting of a base tray, a cover unit proper, and a counterbalanced lid 
-totally enclose the teleprinter mechanism and so reduce machine noise to a 
-minimum. The Tape Reader unit, the Tape Punch unit, an 8-inch diameter tape 
-reel, and a paper roll up to 5-inch diameter can all be accommodated within this 
-cover. The fitting of the Tape Reader and Tape Punch units only affects the 
-keyboard mask, which is readily interchangeable. Receiver-only applications are 
-satisfied by using a cover with the keyboard projection omitted. All three 
-sections of the cover which together weigh about 25 pounds, are aluminum 
-pressure die castings some 1/10 inch thick, and are lined with sound-reducing 
-plastic foam to give good noise insulation. The joints between the tray and 
-cover, and between the cover and lid are sealed with a rubber strip. The lid is 
-lightly spring-loaded towards the closed position, and is also stable in the 
-fully-opened position to give easy access to the tape reel, paper roll and 
-ribbon. <br>
-The operator views the printing position through a 12-inch wide transparent 
-plastic visor which has been designed so that reflections from room lighting do 
-not reach the operator’s eyes. A paper knife is incorporated in the top face of 
-this visor. Recessed hand-holds are provided at the left-hand and right-hand 
-sides of the base tray. By lifting the front of the machine slightly, its weight 
-is transferred from its four rubber feet to two rollers located at the rear of 
-the base tray so enabling the machine to be wheeled to a new position. The entry 
-points of the power and signal cords, which are located at the rear of the base 
-tray, are recessed so that the cables will not be trapped when the machine is 
-moved in this fashion. Cables can be completely concealed if a suitable hole is 
-provided in the desk top. Provision has been made to extend the Tape Punch unit 
-cuttings chute through the base tray into a large container in the desk.&nbsp; 
-The cover and external controls were designed by David Mellor R.D.I., Des.R.C.A. </strong>
-</font></p>
-
-<p><font face="Verdana"><strong>Operators Manual Controls </strong></font></p>
-
-<p><font face="Verdana"><strong style="font-weight: 400">Keyboard: Maximum of 59 
-key buttons, plus two shift pads and a space bar </strong></font></p>
-
-<p><font face="Verdana"><strong style="font-weight: 400">Platen Controls: Platen 
-pressure ON/OFF control lever <br>
-Line feed control lever <br>
-Paper guide-face setting <br>
-Platen knob </strong></font></p>
-
-<p><font face="Verdana"><strong style="font-weight: 400">Functional Keys: <br>
-HERE IS key <br>
-RUN OUT key (see Note 1) <br>
-CARRIAGE RETURN key (see Note 2) </strong></font></p>
-
-<p><font face="Verdana"><strong style="font-weight: 400">Tape Punch Unit: <br>
-PERF OFF key <br>
-PERF ON key <br>
-BACK SPACE key <br>
-TAPE RELEASE key (see Note 3) <br>
-Catch to release panel covering cuttings box </strong></font></p>
-
-<p><font face="Verdana"><strong style="font-weight: 400">Tape Reader Unit: <br>
-TRANSMITTER ON key <br>
-TRANSMITTER OFF key <br>
-Tape gate release push button </strong></font></p>
-
-<p><font face="Verdana"><strong style="font-weight: 400">Note 1 Run-out occurs 
-on the last key depressed, ie to start continuous transmission, depress the 
-selected, release it, and then depress the run out key. <br>
-Note 2 Manual carriage return; key will return carriage even if motor is 
-switched off. <br>
-Note 3 Operating this key releases the tape so that it can be pulled through the 
-punch mechanism. <br>
-Governed Motors </strong></font></p>
-
-<p><font face="Verdana"><strong style="font-weight: 400">A range of 3750 rpm AC, 
-and DC, governed motor units has been designed. As these units contain all the 
-associated electrical equipment such as governing resitor, on-speed relay, and 
-radio interference suppression components, and plug directly into the main base 
-wiring, it is a simple operation to exchange a motor unit, or substitute one of 
-a different type or voltage. The motor unit also contains the micro-switch 
-associated with the automatic motor switch facility. This switch is operated by 
-a lever from a mechanical time delay mechanism located on the teleprinter main 
-base. The motor and its governor are protected by a metal cover which is force 
-ventilated through louvres at the rear of the base tray. This cover completely 
-encloses the motor and governor, and is retained by a single screw; live 
-surfaces such as brush boxes, which would otherwise be exposed when the main 
-cover is removed, are protected by individual plastic covers. In addition to 
-reducing radio interference and noise, and preventing accidental contact with 
-rotating parts, this overall cover prevents brush dust from finding its way on 
-to the teleprinter mechanism and also prevents the motor ventilation system from 
-drying out the lubricants. </strong></font></p>
-			<p><font face="Verdana"><strong style="font-weight: 400">Governed 
-			motors will reach correct operating speed within 1 second at normal 
-			temperatures and nominal supply voltage. A centrifugal governor (see 
-			section headed ‘Governor’) compensates for temperature variations 
-			and for supply voltage variations of +/- 10% holding motor to within 
-			+/- 0.1% of the correct speed. Speed remains stable within +/- 0.5% 
-			over 1000 hours of continuous running. Brush life averages 2000 
-			hours when the machine is operating at 50 Bauds. Brushes are similar 
-			to those used on Creed Model Seventy-five but are longer (3/4 inch 
-			(19.1mm) effective) and have a greater working area. Each brush is 
-			linked to the power supply by an insulated pigtail, and is held 
-			against the 45-segment commutator by a spiral spring designed to 
-			maintain almost uniform pressure as the brush shortens. Brushes are 
-			held in brass boxes carried on an adjustable plastic moulding and 
-			are sited so that the brushes trail. The effect of commutator 
-			rotation, brush spring pressure, and the offset positioning of the 
-			brush boxes combine to press the brushes against the side of their 
-			boxes so reducing vibration and sparking. </strong></font></p>
-			<p><font face="Verdana"><strong style="font-weight: 400">Bearing 
-			life of 10,000 hours fixes the motor overhaul interval during which 
-			operation the commutator will need resurfacing. The two 
-			double-shielded ball bearings (British Standard type BRL 012) used 
-			in the motor are lubricated by the manufacturer and do not require 
-			any further attention until the 10,000 hour interval at which they 
-			are replaced. </strong></font></p>
-			<p><font face="Verdana"><strong style="font-weight: 400">A 
-			manually-reset current overload protection device is provided as 
-			standard equipment. Resilient rubber mountings located between the 
-			main motor framework and its cradle help to reduce motor noise and 
-			vibration. A black and white 8-segment strobe disc viewed through a 
-			125 dvs (250 cps shutter speed) tuning fork is provided as a visual 
-			speed check. Motor insulation standards are to British Standard 2757 
-			Class E. </strong></font></p>
-
-<p><font face="Verdana"><strong>Synchronous Motor </strong></font></p>
-
-<p><font face="Verdana"><strong style="font-weight: 400">Capacitor-start, 
-capacitor-run motor units constructed and ventilated as governed motors 
-described above, i.e. unit contains associated electrical equipment, 
-microswitch, overload protection, etc. Absence of brushes enables motor overhaul 
-interval to be extended to 10,000 hours at which time the bearings are replaced. 
-Insulation, resilient mounting, bearings, and other applicable data as for 
-governed motors. The motor reaches the synchronous speed within 1 second. The 
-space previously taken up be the centrifugal governor is now occupied by a fan. 
-‘On-speed’ contacts are provided as part of the motor. </strong></font></p>
-
-<p><font face="Verdana"><strong>Governor</strong><strong style="font-weight: 400"> </strong>
-</font></p>
-
-<p><font face="Verdana"><strong style="font-weight: 400">A 
-centrifugally-operated governor similar in design to those used on previous 
-Creed teleprinters is employed. This device holds the motor speed constant to 
-within +/- 0.1% of nominal in the face of supply voltage variations of +/- 10%. 
-The governor spring is anchored on a bi-metallic bar which flexes to compensate 
-for the increase in length of the spring as the motor temperature rises. The 
-manually set speed-adjustment screw on the governor spring anchor is 
-electrically insulated from the main supply whatever the position of the 
-governor contacts. The governor contacts are tungsten and are 1/4 inch (6.35mm) 
-in diameter. Fins on the outside of the plastic governor cover act as a fan to 
-force air over the motor windings and commutator. </strong></font></p>
-
-<p><font face="Verdana"><strong>Keyboards</strong><strong style="font-weight: 400"> </strong>
-</font></p>
-
-<p><font face="Verdana"><strong style="font-weight: 400">Code selection by 
-action of plain (ie uncontoured) keybars on an arrangement of castellated comb 
-bars whose associated parallelogram linkages slide to the left or right 
-depending upon coding. 3-row or 4-row full or partial shift lock keyboard 
-arrangements are possible. The basic design is for a 63-slot board with 59 key 
-positions plus two shift keys and a space bar. The slots for the shift keys and 
-the space bar cannot normally be used for additional keys because of the 
-‘cut-out’ in the standard mask. The standard 4-row layout will have 57 operating 
-keys and three pads (ie rectangular-shaped keys) for space, letter shift and 
-figure shift. This layout includes two spare positions which are normally filled 
-by non-operating key bars bearing square flat-topped key buttons which fill up 
-the keyboard mask opening. The maximum number of operating keys for a 4-row 
-layout is therefore 59 keys plus 3 pads. There will also be a condensed 4-row 
-layout with 44 keys and one pad. The 3-row layout will have 33 keys plus 1 pad. 
-Pitch of keys is 3/4 inch (19.1mm) horizontally and vertically. Slope is 15 
-degrees. Average key pressure is 8 ounces. Key stroke is approximately 3/16 inch 
-on the top row of keys, and approximately 5/16 inch on the space bar. The 
-individual key buttons are 5/8 inch in diameter. </strong></font></p>
-			<p><font face="Verdana"><strong style="font-weight: 400">Two basic 
-			versions of the keyboard mask are available: the first a plain mask 
-			with no apertures for tape units, the second with two apertures, one 
-			for the Tape reader, the other for the Tape Punch. Each of these 
-			masks will have a middle aperture to suit the key button 
-			arrangements. When the ‘Here is’ key is not required a plastic plate 
-			conceals the hole in the mask. </strong></font></p>
-			<p><font face="Verdana"><strong style="font-weight: 400">The 
-			standard keybuttons will normally be matt black injection-moulded 
-			plastic and will have their white characters pre-formed and cast 
-			into them at the moulding stage. This method of manufacture ensures 
-			that the legibility of the key tops will not be affected even by 
-			prolonged use. Alternative colours, in both keybuttons and their 
-			characters, can be provided. The characters on a key can be in one 
-			colour, and the keybutton itself in another colour. For example, 
-			white characters on a red button or red characters on a black 
-			button. Special ‘organ-type’ keys control the Tape Reader and the 
-			Tape Punch, and also give a direct manual control of some machine 
-			functions, protrude through horizontal slots in the front face of 
-			the keyboard mask immediately above the keyboard. These keys are 
-			grouped according to their use and all are within easy reach of the 
-			operating position. For English speaking users these keys will carry 
-			plain-language legends such as PERF ON, and RUN OUT. Organ type keys 
-			have been produced with their legends in certain foreign languages. 
-			As an alternative, a range of keys have been designed which carry 
-			the internationally-used symbols which indicate the purpose of each 
-			key diagrammatically, and so avoid the need for alternative keys to 
-			cater for foreign language machines. A storage keyboard for the 
-			Model 444 is not envisaged at present. </strong></font></p>
-
-<p><font face="Verdana"><strong>Transmitter (Keyboard) </strong></font></p>
-
-<p><font face="Verdana"><strong style="font-weight: 400">The Model 444 has a 
-single changeover contact, cam-controlled, striker transmitting mechanism which 
-is capable of generating accurate double-current signals or, by a simple 
-readjustment, bias-free single-current signals. An automatic send-receive switch 
-is provided for operation of half-duplex or 2-wire circuits. The transmitting 
-mechanism is designed for long-term stability, and to be easily adjustable 
-without the use of special tools or test equipment.</strong></font></p>
-			<p><font face="Verdana"><strong style="font-weight: 400">Maximum 
-			start-stop synchronous transmitter distortion figures when keying 
-			each character separately are: <br>
-			+/- 3% for 50-Baud operation +/- 5% for 75-Baud operation <br>
-			A special device is fitted to ensure that the Send/Receive switch 
-			will return to receive at the end of a cycle, however slowly the 
-			cycle may have taken place. This device also provides a short delay 
-			on return to avoid splits in the stop signal at cadence or 
-			near-cadence speed keying. </strong></font></p>
-			<p><font face="Verdana"><strong style="font-weight: 400">(The Tape 
-			Reader unit has its own transmitter whose contacts, for British Post 
-			Office applications, will be in series with those of the Keyboard 
-			Transmitter. In these applications the Tape reader will also control 
-			the send/receive switch associated with the Keyboard transmitter). </strong>
-			</font></p>
-
-<p><font face="Verdana"><strong>Noise Reduction </strong></font></p>
-
-<p><font face="Verdana"><strong style="font-weight: 400">Sound and vibration 
-reducing measures include the overall metal cover and base tray with its 
-absorbent lining, the rubber mountings and overall metal cover for the motor, 
-and the resilient rubber mountings between the teleprinter main base and the 
-tray. </strong></font></p>
-
-<p><font face="Verdana"><strong>Electrical Safety Precautions </strong></font></p>
-
-<p><font face="Verdana"><strong style="font-weight: 400">The machine satisfies 
-the requirements of the British Post Office Specification D1921A (Protection 
-Requirements for Telecommunications Equipment), the relevant requirements of the 
-European ‘Commission Equipment Electrique’ (CES) for Electric Motor Operated 
-Appliances, and British Standard BS 613 in respect of leakage current from the 
-radio interference circuitry to frame. </strong></font></p>
-
-<p><font face="Verdana"><strong>Motor Control Switch </strong></font></p>
-
-<p><font face="Verdana"><strong style="font-weight: 400">A mechanically-operated 
-unit which switches off the motor automatically a short time after the end of 
-the message. At 50 Bauds this interval is about 72 seconds, and at 75 Bauds is 
-48 seconds. The teleprinter motor is started again when a space element is 
-received from line, or when the ‘letters’ key on the local keyboard is operated. 
-The micro switch which breaks the motor power circuit is located within the 
-motor unit, and is operated by a lever controlled from a mechanical time delay 
-mechanism located beneath and driven from the main cam sleeve. The motor switch 
-mechanism can be disabled by mechanic when not required, or the switch can be 
-short-circuited without causing damage. </strong></font></p>
-
-<p><font face="Verdana"><strong>Answer Back </strong></font></p>
-
-<p><font face="Verdana"><strong style="font-weight: 400">A simple answer back 
-device is built into the keyboard transmitter unit. An interchangeable 
-20-character plastic ward drum with break-out projections is used for coding 
-purposes so eliminating the need to supply a range of pre-cut metal wards. Full 
-freedom of coding on all 20 positions of this ward drum, ie it will not be 
-necessary to have the fixed character (normally all-mark or all-space) at the 
-beginning and/or end of an answer back cycle to prevent mechanical interference 
-with the transmitter, as is required with some other teleprinters. </strong>
-</font></p>
-			<p><font face="Verdana"><strong style="font-weight: 400">The Answer 
-			back device has a cadence speed drive, and so transmits to line at 
-			the same speed as the associated keyboard transmitter. This feature 
-			enables a motor speed check to be made on a distant and unattended 
-			machine. The Answer Back mechanism operates only once for each WRU 
-			signal received, although it will cycle continuously while the ‘Here 
-			Is’ key is held down. Answer back ‘off-normal’ contacts are 
-			provided. At 50 Baud working these contacts operate within the nine 
-			millisecond interval between the start of rotation and the first 
-			start transit. The contacts restore immediately following the end of 
-			the fifth element of the last character. On British Post Office 
-			machines a WRU contact will be connected in tandem with the ‘Off 
-			Normal’ contact to provide an earlier warning of impending 
-			answer-back operation. </strong></font></p>
-			<p><font face="Verdana"><strong style="font-weight: 400">All keys on 
-			the keyboard are locked during answer-back transmission, with the 
-			exception of the letter shift key which may be depressed but is 
-			ineffective. On British Post Office machine, the ‘letters’ key will 
-			also be locked. The ‘Run Out’ key, mounted above the main keyboard, 
-			is not locked while the answer back unit is operating, but operation 
-			of this key will not affect answer-back transmission. The delay 
-			between the start transit of an incoming WRU signal, and the start 
-			transit of the first answer-back code is approximately 240mS at 50 
-			Bauds. The Answer-Back mechanism and the associated Keyboard 
-			Transmitter mechanism can be fitted to a Receiver-only version of 
-			the machine, if required. </strong></font></p>
-
-<p><font face="Verdana"><strong>Tape Punch Unit </strong></font></p>
-
-<p><font face="Verdana"><strong style="font-weight: 400">This unit, and its 
-associated drive mechanism, is mounted on the left-hand side of the machine 
-within the cover, and so does not increase the overall width of the machine. It 
-produces 5-track, 11/16 inch wide tape at the maximum speed of the associated 
-machine. The tape, which is fully-punched, feeds out from the punch towards the 
-operator from beneath a V-shaped tear-off face. The unit is operated from the 
-receiving mechanism. It therefore records incoming messages directly, and 
-transmitted messages indirectly via the electrical local record path.</strong></font></p>
-			<p><font face="Verdana"><strong style="font-weight: 400">Provision 
-			has been made for automatic suppression of punching on up to four 
-			selected codes which can be in either or in both shifts. Two of 
-			these codes can be employed for mechanical control of the ‘Perf On’ 
-			and ‘Perf Off’ keys. There is also provision for the remote control 
-			of the ‘Perf On’ and ‘Perf Off’ keys via two electromagnets, one for 
-			each key. If necessary, the unit can punch all 32 combinations. 
-			Centre feed hole tape punching is standard. A single make contact 
-			set (operating point adjustable) which is wired out to the signals 
-			plug provides an alarm for a ‘tape reel low’ condition. </strong>
-			</font></p>
-			<p><font face="Verdana"><strong style="font-weight: 400">The Tape 
-			Punch and its associated drive mechanism can be fitted by the 
-			customer in the field as the necessary drive cams will be included 
-			in the main cam shaft assembly when the machine is built. The 
-			controls of the Tape Punch unit are listed in the section headed 
-			‘Operators Manual Controls’. </strong></font></p>
-
-<p><font face="Verdana"><strong>Tape Reader Unit </strong></font></p>
-
-<p><font face="Verdana"><strong style="font-weight: 400">This unit, which is 
-mounted at the right hand side of the keyboard, will read 5-track, 11/16 inch 
-fully-punched tape at the maximum speed of the associated teleprinter. It is 
-provided with its own cam-driven striker transmitter complete with radio 
-interference suppression circuitry. The tape feeds from right to left and a 
-deflector is provided to guide the tape away from the keyboard and towards the 
-operator after it has been read. When the unit is ON, the teleprinter keyboard 
-is mechanically inhibited, ie the keybars are free but ineffective. </strong>
-</font></p>
-			<p><font face="Verdana"><strong style="font-weight: 400">The 
-			Reader’s transmitter has no Send/Receive Switch of its own but 
-			shares the keyboard transmitters send/receive switch which it 
-			controls by means of a null-bar. By disabling this control linkage 
-			and also the keyboard inhibition device, and by suitably modifying 
-			the external electrical control unit, the Tape reader unit can 
-			signal to line while the teleprinter receiver, the Tape Punch, and 
-			the keyboard are being used off-line to prepare tape. Under these 
-			circumstances the incoming line will generally be terminated by an 
-			alarm relay and a circuit arranged to give precedence to the 
-			incoming call by operating the electromagnet which arrests the Tape 
-			Reader. For single current circuits this electromagnet is in series 
-			with the line, and reacts to the call or ‘spacing start’ signal from 
-			the distant station. For double-current circuits, this break-in 
-			electromagnet is operated from the control box by a relay. Off-line 
-			operation is not possible with the British Post Office version of 
-			the Model 444 as they require keyboard inhibition on all machines. <br>
-			Electrical indication of the ‘Transmitter On’ condition is provided 
-			by a single changeover contact set operated by the ‘On’ key. Another 
-			changeover contact set indicates when the electromagnetic break-in 
-			mechanism is used or when ‘tape out’ is sensed. Both sets of 
-			contacts are wired out to the signals plug and restore when the 
-			‘Transmitter Off’ key is operated. A ‘tight tape’ mechanism is 
-			envisaged. A ‘tape out’ sensing mechanism is provided which senses 
-			the tape once each cycle at a point just behind the reading line, ie 
-			the unit will read the last code in the tape and then come to rest. </strong>
-			</font></p>
-			<p><font face="Verdana"><strong style="font-weight: 400">The unit 
-			and drive pulley can be fitted by the customer in the field, as the 
-			necessary wiring will be included when the standard machine is 
-			built. The controls of the Tape Reader unit are listed in the 
-			section headed ‘Operators Manual Controls’. </strong></font></p>
-
-<p><font face="Verdana"><strong>Code Recognition Unit (stunt box) </strong>
-</font></p>
-
-<p><font face="Verdana"><strong style="font-weight: 400">The code recognition 
-unit or ‘stunt box’ provides means whereby code combinations, in either or in 
-both shifts, can be recognised mechanically and caused to operate an individual 
-contact set. These contact sets can then be used to control switching 
-operations, to switch tape units on or off, to change printing colour, etc. 
-Except for ‘Bell’ and ‘WRU’, which are changeovers at British Post Office 
-request, the remainder of these contact sets are normally fleeting single-make, 
-and all operate for some 55mS in each cycle at 50 Bauds. The ‘make’ time will be 
-reduced at higher operating speeds and will be of the order of 37mS at 75 Bauds. 
-No latching contacts have been provided. Contacts of the stunt box can also be 
-used to convert incoming 5-unit serial signals into a parallel 5-wire output 
-with shift indication. <br>
-An additional 40-way signals cord can be provided for the outgoing wiring 
-associated with the code recognition contacts. Possible requirements for which 
-the stunt box bar coding could provide are: </strong></font></p>
-
-<p><font face="Verdana"><strong style="font-weight: 400">Ø A make contact to 
-operate on each of a number of selected codes with contacts operating in both 
-shifts. <br>
-Ø A make contact to operate in the ‘figures’ case for codes 6, 7 and 8 (F, G and 
-H secondary). <br>
-Ø A changeover contact to operate in the ‘figures’ case for codes 4 and 10 (WRU 
-and Bell). <br>
-Ø Five make contacts to give a parallel code output. <br>
-Ø One make contact to indicate the ‘figure shift’ condition. <br>
-Ø One contact to operate as a clock pulse making once every receive cycle and 
-having the same timing as the other contacts. <br>
-Note that the contacts themselves will only be fitted as required and the code 
-bar coded to suit special requirements as agreed with the customer. The basic 
-stunt box code bar coding will only provide contacts for the F, G and H 
-secondaries, and for codes 27 to 32 inclusive (ie the usual functional codes). 
-This basic version is to the British Post Office Telex requirements, and in this 
-case only the Bell and WRU contact sets will be fitted. </strong></font></p>
-
-<p><font face="Verdana"><strong>Motor On-Speed Indication </strong></font></p>
-
-<p><font face="Verdana"><strong style="font-weight: 400">For governed motors a 
-relay is provided within the motor unit to indicate when the motor shaft has 
-reached governed speed. On synchronous motors a centrifugally-operated switch is 
-used to indicate when the motor has reached 75% of synchronous speed. Output 
-form for both the governed and the synchronous motors on-speed indication is a 
-single changeover contact set which is wired out to the signals plug. </strong>
-</font></p>
-
-<p><font face="Verdana"><strong>Finish </strong></font></p>
-
-<p><font face="Verdana"><strong style="font-weight: 400">Plating and other 
-finishes have been designed to provide protection adequate for indoor use and 
-for storage in temperate climates. This protection is similar in degree to that 
-provided on previous ITT Creed equipment. Subject to certain limitations the 
-finish on Model 444 will also be adequate for general use in tropical climates, 
-although it will not meet all the requirements of some armed forces 
-tropicalisation specifications. For tropical service the standard finishes will 
-have to be supplemented by treating all unplated parts with a 
-corrosion-inhibiting oil after any degreasing solvents have been used, and by 
-the use of desiccants and an airtight container when the machine is put into 
-store. The paper tear-off plate is chrome plated. Parts of the mechanism which 
-are normally free from oil are passivated zinc plate, while steel working parts 
-have a black oxide finish followed by treatment with corrosion-inhibiting oil. 
-Certain steel parts which require a wear-resistant surface are hard chrome 
-plated. Finish to the machine cover is a stoved epoxy enamel which is not 
-affected by Creed lubricants or by ordinary solvents such as white spirit or 
-trichloroethylene used at room temperatures. The finish will give a degree of 
-protection in tropical environments superior to that obtained from the 
-hammer-effect enamel used on the Model Seventy-five. The standard colour for the 
-cover is the British Post Office Light French Grey, with dark grey for the base 
-tray. The keyboard keybuttons are matt black with white legends, and the 
-organ-type function control keys are black with a white legend. </strong></font></p>
-
-<p><font face="Verdana"><strong style="font-weight: 400">Automatic CR/LF An 
-automatic carriage-return and line feed facility will be made available. </strong>
-</font></p>
-
-<p><font face="Verdana"><strong style="font-weight: 400">Combined CR/LF The 
-carriage return and the line feed functions can be combined into one key and one 
-combination, if required. The combined functions can be restricted to one shift 
-if need be. </strong></font></p>
-
-<p><font face="Verdana"><strong style="font-weight: 400">Paper Low Contacts 
-Provision can be made for a contact to operate when the paper roll is reduced to 
-a predetermined diameter. The contact is wired out to the signals plug. </strong>
-</font></p>
-
-<p><font face="Verdana"><strong>Packing</strong><strong style="font-weight: 400"> </strong>
-</font></p>
-
-<p><font face="Verdana"><strong style="font-weight: 400">The machine will be 
-shipped inside its silencing cover and tray, secured by nuts screwed to 
-extensions of the two spigots whose primary purpose is to locate the main base 
-casting in the cover tray. When the securing nuts on these spigots are tightened 
-up, the main base is pulled down against its resilient mountings until the four 
-plastic feet on the underside of the base casting make contact with the base 
-tray. This procedure retains the teleprinter securely inside the cover. A third 
-fixing point is provided by a bolt which screws through the base tray into the 
-motor unit base. The silencing cover and lid is then placed over the machine, 
-secured by its two Oddie clips, and the lid is closed. </strong></font></p>
-
-<p><font face="Verdana"><strong>Hours Counter </strong></font></p>
-
-<p><font face="Verdana"><strong style="font-weight: 400">An hours counter unit 
-is mounted at the front of the receiver main base and is visible to the operator 
-through a small plastic-filled window located above the keyboard at a point 
-adjacent to the function control keys. It records the length of time the motor 
-is running, up to 9999 hours, and then resets to zero. The driving gears to the 
-counter must be changed for different machine speeds. </strong></font></p>
-
-<p><font face="Verdana"><strong>End-of-Line Warning </strong></font></p>
-
-<p><font face="Verdana"><strong style="font-weight: 400">The standard equipment 
-for end-of-line warning is a neon lamp mounted above the keyboard in line with 
-the function control keys and the window of the motor hours counter. </strong>
-</font></p>
-			<p><font face="Verdana"><strong style="font-weight: 400">This lamp 
-			will light when the type basket is nearing the end of the printing 
-			line, and its mechanism can be set by the mechanic to signal at the 
-			54th, 55th, or 56th character of a 69-character line. </strong>
-			</font></p>
-
-<p><font face="Verdana"><strong>Parallel Output (from code recognition unit) </strong>
-</font></p>
-
-<p><font face="Verdana"><strong style="font-weight: 400">A 5-wire parallel 
-output can be obtained by serial-to-parallel conversion within the receiver and 
-code recognition unit (stunt box). </strong></font></p>
-
-<p><font face="Verdana"><strong>Two-Colour Printing </strong></font></p>
-
-<p><font face="Verdana"><strong style="font-weight: 400">An automatic change of 
-printing colour is used to discriminate between messages sent by the local 
-keyboard or tape reader, and messages received from the line. Provision has been 
-made for the remote control of the printing colour by means of an electromagnet. 
-Two-colour printing is a standard facility. </strong></font></p>
-
-<p><font face="Verdana"><strong>J Bell </strong></font></p>
-
-<p><font face="Verdana"><strong style="font-weight: 400">Secondary 
-interpretation of J code (MMSMS) operates a single changeover contact in the 
-code recognition unit (stunt box) for some 55mS (at 50 Bauds) and then restores. </strong>
-</font></p>
-
-<p><font face="Verdana"><strong>Copy Holder </strong></font></p>
-
-<p><font face="Verdana"><strong style="font-weight: 400">A transparent plastic 
-lectern is capable of being mounted in either of two positions on the left of 
-the cover. </strong></font></p>
-
-<p><font face="Verdana"><strong>Single to Double-Current Converter </strong>
-</font></p>
-
-<p><font face="Verdana"><strong style="font-weight: 400">The standard keyboard 
-and tape reader transmitting contacts are suitable for either double-current or 
-single-current operation. When used for single-current transmission their 
-contact blocks should be adjusted to remove any signal bias. <br>
-Single-current reception requires a single-current to double current converter 
-unit secured to the top right hand corner of the base tray and the receiving 
-electromagnet equipped with a special coil, a quarter section of which is used 
-for single-current operation. The full winding has the same resistance and 
-inductance as the standard coil and can be used for double-current operation 
-with the converter disconnected. This is readily achieved by positioning links 
-on a terminal block. The converter unit consists of a line isolation relay, the 
-winding of which is connected in series with the single-current line, while its 
-contacts control a solid state push-pull current amplifier and a wave-shaping 
-network to operate the teleprinter electromagnet with a peak current of up to 
-460mA. The receiving margin of the teleprinter with single-current operation is 
-substantially the same as that with double-current operation and is independent 
-of the line resistance. <br>
-Electrical connection to the teleprinter is by means of two flexible cables 
-which plug into sockets located on the teleprinter 50-way plug box. One connects 
-the 50Hz AC mains supply to the amplifier power pack, and the other is for the 
-signals input/output. </strong></font></p>
-
-<p><font face="Verdana"><strong>Summary </strong></font></p>
-			<p><font face="Verdana"><strong style="font-weight: 400">Receiving 
-			margin +/- 42% at 50 Bauds. Line relay resistance 370 ohms. 
-			Amplifier output at minus 10% mains input voltage: Approximately +/- 
-			20 volts DC, 340mA peak, 62mA hold current. <br>
-			Teleprinter electromagnet special coil: Single-current quarter 
-			section 1,250 turns 32 ohms. Double-current full winding 5,000 ohms 
-			390 ohms. </strong></font></p>
-			<p><font face="Verdana"><strong style="font-weight: 400">Amplifier 
-			transformer tapped 110, 220, 240V 50Hz. Consumption approximately 10 
-			watts. Size of unit 2-1/2 in x 3-1/2 in x 5-1/2 in high. Weight 
-			1-3/4 pounds. </strong></font></p>
-			<p><font face="Verdana"><strong style="font-weight: 400">
-			Single-current line requirements <br>
-			Line current range 30 to 45mA. Signalling supply voltage 50 to 120V. 
-			G8GOJ </strong></font></p>
-
-<p align="left"><font face="Verdana"><strong style="font-weight: 400">Thanks to 
-Alan G Hobbs, G8GOJ <a HREF="MailTo:Alan.Hobbs@ngc.co.uk">Alan.Hobbs@ngc.co.uk </a>&nbsp; 
-the author, in allowing me to reprint his article above.&nbsp; Larry Rice, VK6CP 
-7th July 1999.</strong></font></p>
-			<p align="center"><font face="Verdana">
-			<strong style="font-weight: 400">Presented By RTTY.COM <br>
-			BY Permission <br>
-			G8GOJ &amp; VK6CP</strong></font></p></td>
-		</tr>
-	</table>
-	<p align="center"><font size="1" face="Arial">Copyright George Hutchison, 
-	W7TTY &amp; Bill Bytheway, K7TTY -- November 2011</font></div>
+<canvas id="tapeTop" class="tape" aria-hidden="true"></canvas>
+
+<header class="masthead">
+  <div class="mh-side">PRESERVATION OF RTTY HISTORY<br>TELETYPE ART &amp; CULTURE<br>EST. LATE 1990S</div>
+  <div class="mh-center">
+    <a href="../index.html" class="site-name">RTTY.COM</a>
+    <span class="site-tag">The Radio Teletype Reference &amp; Archive</span>
+  </div>
+  <div class="mh-side mh-right">THE INTERNET'S OLDEST<br>RTTY RESOURCE<br>BAUDOT &bull; TELETYPE &bull; WIRE</div>
+</header>
+
+<nav class="site-nav" aria-label="Main navigation">
+  <a href="../index.html">Home</a>
+  <a href="../history.html" class="active">History</a>
+  <a href="../gallery.html">RTTY Art</a>
+  <a href="../equipment.html">Equipment</a>
+  <a href="../itty.html">ITTY</a>
+  <a href="../resources.html">Resources</a>
+  <a href="../community.html">Community</a>
+  <a href="../links.html">Links</a>
+</nav>
+
+<div class="dateline">
+  <strong>HISTORY HALL</strong> &mdash;
+  ALAN HOBBS G8GOJ &bull; ITT CREED MODEL 444 TELEPRINTER
+</div>
+
+<div class="page-wrap">
+  <div class="two-col">
+
+    <main class="col-main">
+
+      <div class="clearfix">
+        <img src="creedlo.jpg" alt="Creed &amp; Company logo" class="img-right" style="max-width:120px">
+        <h1 class="section-hed" style="margin-top:0">ITT Creed Model 444 Teleprinter</h1>
+        <p style="font-size:14px;color:var(--ink-faint);margin-top:-8px;margin-bottom:20px;letter-spacing:.06em">by Alan G Hobbs, G8GOJ &mdash; reprinted from Creed publication 041-033-2E, 1970<br>
+        via Larry Rice VK6CP, 7 July 1999</p>
+      </div>
+
+      <div class="prose">
+
+        <p class="spec-hed">Introduction</p>
+
+        <div class="clearfix">
+          <img src="cread444.jpg" alt="ITT Creed Model 444 teleprinter" class="img-left" style="max-width:245px">
+          <p>The ITT Creed Model 444 (pronounced Four, forty-four) is a heavy-duty page-printing teleprinter developed primarily to satisfy British Post Office requirements for a Telex machine to CCITT standards. It can operate in either the simplex or the duplex mode at speeds up to 75 Bauds, and is compatible with the majority of teleprinters and circuits now in service. Each character is printed as soon as it is received by type bars carried in a type basket which moves to and fro in front of the stationary paper carriage. A range of additional optional features is available to enable the machine to be used in specialised high-speed telecommunications and data processing applications. The machine has been designed to operate continuously for long periods and to function reliably with the minimum of maintenance attention. With suitable lubricants and ribbon, it will remain serviceable at temperatures within the range &minus;25&deg;C to +50&deg;C. The Model 444 is basically a 5-unit, start-stop, two shift machine operating on International Telegraph Alphabet No. 2; no provision has been made for third shift and there are no longer 6-unit machines.</p>
+        </div>
+
+        <p class="spec-hed">Construction</p>
+
+        <p>Robust &ldquo;unit construction&rdquo; for easy maintenance and accessibility. Each major unit is carried on its own casting or frame, and is secured by no more than four screws. Where appropriate, eg on the motor unit, the screws have been made captive. Abutments are provided to locate the units accurately. All units are interchangeable without need to re-adjust except in isolated cases. Individual components have been designed for easy assembly with the minimum number of adjustments. Units can be dismantled and then reassembled without the need for readjustment. The number of different fabricated parts is approximately 1,250 for a basic transmitter/receiver version of the machine fitted with a synchronous motor. A further 160 parts are involved in the Tape Reader unit, and 220 parts in the Tape Punch unit.</p>
+
+        <p class="spec-hed">Speeds</p>
+
+        <p>The machine is designed for 50 Baud and 75 Baud operation, ie 66 and 100 words per minute respectively. Conversion from 50 Baud to 75 Baud operation is by changing motor and hours counter gearing. This conversion can be carried out without removing the motor or disturbing adjacent units.</p>
+
+        <p class="spec-hed">Receiving Electromagnet and Orientation</p>
+
+        <p>The standard polarised receiving electromagnet is designed to respond to double-current signals, but can be provided with a single-current to double-current converter. Manual orientation adjustment determines the selection instant over +/&minus; 60% of a code element length. The scale is calibrated to read receive margin directly.</p>
+
+        <p class="spec-hed">Alphabets</p>
+
+        <p>Printing in all common Indo-European languages is possible up to a maximum of 56 graphics on two-shifts. Semitic languages such as Hebrew and cursive scripts such as Arabic, both involving a right-to-left type basket traverse action, can be catered for. Non-feeding type bars carrying &lsquo;accents only&rsquo; are possible.</p>
+
+        <p class="spec-hed">Optionals</p>
+
+        <p>The basic Model 444 machine consists of a 5-unit, 50 Baud or 75 Baud receiving mechanism fitted with a 3-row or 4-row keyboard, a friction feed platen, an end-of-line warning lamp, the two-colour printing facility, a motor hours counter and motor &lsquo;on-speed&rsquo; contacts. Optional units and facilities that can be fitted to the basic machine include an answer-back facility, a Tape Punch unit, a Tape Reader unit, an automatic power switch, a dual purpose friction/sprocket feed platen, single/double-current converter, paper-low contacts, a code recognition unit (stunt box), and right to left direction of printing for non-Roman alphabets. The machine can be supplied as a receiver with tape punch keyboard, or as a receiver only.</p>
+
+        <p class="spec-hed">Dimensions and Weight</p>
+
+        <p>External overall dimensions of the machine in its sound-reducing cover are:<br>
+        Width &mdash; 20&frac12; inches (52.0 cm)<br>
+        Depth &mdash; 25&frac58; inches (65.1 cm)<br>
+        Height &mdash; 12&frac34; inches (32.4 cm)</p>
+
+        <p>Weight of a keyboard machine with a Tape Reader and a Tape Punch and the sound-reducing cover is approximately 94 pounds (41.6 kg). This figure does not include the weight of the paper roll and the tape reel. The sound-reducing cover and its base weigh approximately 25 pounds (11.3 kg).</p>
+
+        <p>External overall dimensions of the receive only machine in its sound-reducing cover are:<br>
+        Width &mdash; 20&frac12; inches (52.0 cm)<br>
+        Depth &mdash; 20&frac12; inches (52.0 cm)<br>
+        Height &mdash; 12&frac34; inches (32.4 cm)</p>
+
+        <p>The corresponding weight of the receiver without reader or punch is approximately 68 pounds (31.4 kg).</p>
+
+        <p class="spec-hed">Line Current and Margin</p>
+
+        <p>Line current for the polarised electromagnet working on double current signals is 20mA (80+80V) with wave shaping components (3.9K shunted by 4mF) in series and a surge limiter (1mF + 1.2K) in parallel with the electromagnet. These components are now included in non-BPO double current machines but can be disconnected when not required. Single-current working (single-to-double current converter and special coil in electromagnet) will require 30 to 45mA with a line voltage of 50 to 120V. The receive margin is at least +/&minus; 42% at 50 Bauds, and +/&minus; 38% at 75 Bauds.</p>
+
+        <p class="spec-hed">Signal Divide</p>
+
+        <p>The transmitters associated with the keyboard and with the tape reader unit are both designed for 7&frac12; unit operation. The teleprinter receiver is designed to accept 7 or 7&frac12; unit signals at 50 Bauds, and at 75 Bauds.</p>
+
+        <p class="spec-hed">Circuits</p>
+
+        <p>Desks, tables or plinths to mount the Model 444 can be supplied equipped for Telex, Private Wire or a variety of special uses such as concentrators, broadcast sets etc. to suit the available transmission paths and required operating facilities; also as punched tape editing sets or data loggers. The facilities provided on four typical terminal sets are given below:</p>
+
+        <p>(A) <strong>Receive only</strong> (double or single-current) &mdash; Page printing receive only, with or without tape punch.</p>
+
+        <p>(B) <strong>Alternate direction 2-way communication with local record</strong> (double-current) &mdash; Keyboard or tape reader sending with electrical local record (keyboard/reader interlocked).</p>
+
+        <p>(C) <strong>Simultaneous 2-way communication without local record</strong> (double-current) &mdash; Tape reader sending without local record, with solenoid switch to maintain motor running. Simultaneous page printing reception, with punched tape if required. Off-line tape punching with printed record (keyboard/reader interlock removed) buzzer warning of incoming message.</p>
+
+        <p>(D) <strong>Simultaneous 2-way communication with local record</strong> &mdash; As (B) but with the addition of a separate Receive only Teleprinter at each terminal. Local circuitry for Model 444 is similar to that used for Creed Model 7 and Creed Model 54; the new machine is therefore interchangeable with these earlier machines. It will not be interchangeable with Creed Model 75 circuitry because of the mechanical local record feature of that machine, although Model 444 can work to a Model 75 or to any other make of teleprinter which conforms to CCITT standards.</p>
+
+        <p class="spec-hed">Local Record</p>
+
+        <p>Electrical local record of double-current circuits is obtained by an automatic send-receive switch that connects the send line to the electromagnet for the duration of each transmitting cycle. Incoming signals are connected to the electromagnet by the send-receive switch. Single-current circuits obtain local copy by the inclusion of the receive electromagnet coils in the loop circuit. In both these modes an accurate local copy is proof of accurate transmission.</p>
+
+        <p class="spec-hed">Drive</p>
+
+        <p>Transmitting and receiving mechanisms are driven by a single electric motor. Receiver employs three cam shafts (selector, main receive cam shaft, and type carriage feed shaft) each making half a revolution for each character. The keyboard transmitter has a single cam shaft which, for maximum accuracy, makes one complete revolution for each transmitted character. Both ratchet and friction type of clutch is used on the machine. The ratchet clutches incorporate a friction-driven element which provides the homing torque, helps to equalise the idling/running load, and reduces the impact when the drive is engaged.</p>
+
+        <p class="spec-hed">Motor Range</p>
+
+        <p>Synchronous motors for 50Hz (3000 rpm) and 60Hz (3600 rpm) supplies, and any single voltage in the range 110&ndash;125V (5-volt steps), 200&ndash;250V (10-volt steps). Power consumption is approximately 80 watts. Series wound, 3750 rpm, AC single-phase governed motors for any single voltage in the range 100&ndash;125V (5-volt steps), 200&ndash;250V (10-volt steps), at 40, 50 and 60Hz. Series wound, 3750 rpm, DC single-phase governed motors for any single voltage in the range 100&ndash;125V (5-volt steps), 200&ndash;250V (10-volt steps).</p>
+
+        <p class="spec-hed">Power and Signaling Connections</p>
+
+        <p>Separate captive cables are provided for motor power (3-way), and signaling circuits (32-way) Painton series 159. Provision for an additional 12-way plug and captive signals cable for code recognition contacts, if capacity of standard cable is exceeded. Electrical connections from the base tray, in which the power and signaling cables terminate, to the teleprinter mechanism are made via a 50-way Cannon type or 50-way Carr fasteners jack-in connector for the signals wiring, and a 6-way Painton Multicon connector (with twin earth pins) for the motor power supplies. Power supply from the teleprinter main base to the motor unit is via another 6-way Painton Multicon connector. The signals and motor connectors are located at the rear of the machine main base adjacent to the motor gearing.</p>
+
+        <p class="spec-hed">Maintenance</p>
+
+        <p>Routine maintenance for 50-Baud machines will consist of inspection, cleaning, and lubrication after each 1000 hours of operation, or at intervals of one year, whichever is earlier. The overhaul interval is 5000 hours or 5 years, whichever is earlier. Maintenance intervals for 75-Baud working are to be 500 hours initially, with overhaul at 3000 hours or 3 years. All lubrication points requiring attention at the routine maintenance interval can be reached without dismantling. Only two lubricants: a light oil and a grease will be required. It will not be necessary to re-lubricate shielded motor bearings as the original lubricant inserted by the bearing manufacturer will last until the bearings are replaced at 5000 hours. All field maintenance can be carried out with common tools. Gauges will be available to simplify certain adjustments. Main cover and lid are secured to the base tray by two Oddie clips which require a quarter-turn with a screwdriver to release them and so enable the cover to be lifted off. The release of two sliding latches, and the disconnection of the internal power and signals plugs at the rear of the main base, enables the complete receiving and transmitting mechanisms to be lifted out of the base tray, while the input sockets and their cabling remain clamped inside the tray.</p>
+
+        <p class="spec-hed">Printing Mechanism</p>
+
+        <p>The printing mechanism of the Model 444 employs a moving typewriter-style type basket, and a stationary platen unit which bears the paper roll. The type basket can hold up to 28 type bars each carrying two characters, so giving a maximum capacity of 56 characters. A type bar is selected by allowing it to drop into a slot across an arrangement of five castellated comb bars carried on the type basket carriage unit and controlled by five vanes which are pivoted on the frame of the machine. These vanes are in their turn controlled by the selection mechanism and the incoming signals which it registers. The downward movement of the selected type bar brings it into the path of a print bail which lifts the bar out of its basket and so impresses the type against the ribbon to create an image on the paper. Each character is printed as soon as it is received and the whole printing line is visible while it is being printed. The case shift action is obtained by raising the rod on which the type bars pivot so as to bring the letters to the printing line, and by lowering the pivot again to bring figures, symbols, and punctuation marks to the printing line.</p>
+
+        <p>The type basket unit runs on three parallel rails (two guide rails and the shift rail), and is returned to the beginning of the line by a helical spring which is progressively extended as the basket moves along the printing line. On receipt of a &lsquo;carriage return&rsquo; signal the feed mechanism is disengaged and the basket is drawn rapidly back to the left hand margin position where the impact is absorbed by an air dashpot. The &lsquo;carriage return&rsquo; time (about 200mS at normal room temperatures) is short enough to permit a &lsquo;carriage return, line feed, print&rsquo; sequence at speeds up to 75 Bauds. It is not therefore necessary on this machine for a dummy &lsquo;letter shift&rsquo; combination to be inserted after a &lsquo;carriage return, line feed&rsquo; sequence to allow the carriage time to return from a long line.</p>
+
+        <p>Printing is through a half-inch wide typewriter ink ribbon which is wound on a flanged spool of the type used on Creed Model 47 and Model 75 machines. The European standard typewriter spool DIN 2103 can also be used. The automatic ribbon feed changeover mechanism will be operated by either a plain or eyeleted ribbon. A mechanically operated automatic two-colour printing facility is standard; transmitted copy normally being printed in red, and receive copy in black.</p>
+
+        <p>The printing action and the letter feed action can be made inoperative, either individually or jointly, on up to a maximum of ten combinations. These normally include Carriage Return, Line Feed, Bell, WRU, Letters, Figures and All Space. The remaining three combinations are available for accents or diacritical signs. An eleventh combination, with print suppression only, is normally allocated to Letter Space.</p>
+
+        <p>Letter spacing, ie the distance between centre lines of adjacent characters on the same line, is 1/10 inch nominal. Line length is 69 characters as standard but can be arranged for up to 75 characters. The letter feed and dashpot mechanisms can be reversed to provide the right-to-left traverse required for non-roman alphabets.</p>
+
+        <p class="spec-sub">Stationery</p>
+
+        <p>British, European and American paper rolls, both in their normal and reverse-wound forms, can be accommodated inside the sound-reducing cover. Maximum width for paper rolls is 8&frac12; inches (216mm). Maximum diameter of roll is 5 inches (127mm). Paper guide can be set by the operator to accept either 8.3 inch (210mm) or 8&frac12; inch (216mm) wide paper. Provision for external paper supply, and for sprocket-feed printed stationery. Machine can be fitted with a friction-feed platen, or with a dual-purpose friction/sprocket feed platen with retractable pins which is capable of being set to accept either plain paper or marginally-punched printed stationery. Platen units can be interchanged without dismantling other units from the machine. An external knob is provided to turn the platen and so advance the paper. Platens will accept friction-feed paper, either single-ply or up to 6-ply, with or without interleaved carbon sheets, and also carbonless multi-plies such as NCR paper. Print force is adjustable by mechanic and can be set to print up to six carbon copies. The dual purpose friction/sprocket feed platen is adjustable laterally to enable printing to take place in the middle of ruled columns on printed stationery. Three degrees of line feed by operator setting: 1/6 inch, 1/4 inch, and 1/3 inch, ie 4.23mm, 6.35mm, and 8.46mm respectively.</p>
+
+        <p>The standard line length is 69 characters when the machine is fitted with a 70 toothed feed rack. Using 8&frac12; inch (216mm) paper the left hand margin is 0.75 inch (19mm) minimum from the edge of the paper to the centre line of the first character. The right hand margin is 0.95 inch (24mm). Other line lengths and margins using 8&frac12; inch (216mm) paper:</p>
+
+        <table class="dim-table">
+          <thead>
+            <tr>
+              <th>Line Length<br>(characters)</th>
+              <th>L.H. Margin<br>(inches)</th>
+              <th>R.H. Margin<br>(inches)</th>
+              <th>Feed Rack<br>(teeth)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>69</td><td>0.75</td><td>0.95</td><td>70</td></tr>
+            <tr><td>70</td><td>0.65</td><td>0.95</td><td>70</td></tr>
+            <tr><td>71</td><td>0.55</td><td>0.95</td><td>70</td></tr>
+            <tr><td>73</td><td>0.75</td><td>0.55</td><td>74</td></tr>
+            <tr><td>74</td><td>0.65</td><td>0.55</td><td>74</td></tr>
+            <tr><td>75</td><td>0.55</td><td>0.55</td><td>74</td></tr>
+          </tbody>
+        </table>
+
+        <p class="spec-hed">Cover</p>
+
+        <p>A three-piece metal cover consisting of a base tray, a cover unit proper, and a counterbalanced lid totally enclose the teleprinter mechanism and so reduce machine noise to a minimum. The Tape Reader unit, the Tape Punch unit, an 8-inch diameter tape reel, and a paper roll up to 5-inch diameter can all be accommodated within this cover. The fitting of the Tape Reader and Tape Punch units only affects the keyboard mask, which is readily interchangeable. Receiver-only applications are satisfied by using a cover with the keyboard projection omitted. All three sections of the cover which together weigh about 25 pounds, are aluminium pressure die castings some 1/10 inch thick, and are lined with sound-reducing plastic foam to give good noise insulation. The joints between the tray and cover, and between the cover and lid are sealed with a rubber strip. The lid is lightly spring-loaded towards the closed position, and is also stable in the fully-opened position to give easy access to the tape reel, paper roll and ribbon.</p>
+
+        <p>The operator views the printing position through a 12-inch wide transparent plastic visor which has been designed so that reflections from room lighting do not reach the operator&rsquo;s eyes. A paper knife is incorporated in the top face of this visor. Recessed hand-holds are provided at the left-hand and right-hand sides of the base tray. By lifting the front of the machine slightly, its weight is transferred from its four rubber feet to two rollers located at the rear of the base tray so enabling the machine to be wheeled to a new position. The entry points of the power and signal cords, which are located at the rear of the base tray, are recessed so that the cables will not be trapped when the machine is moved in this fashion. Cables can be completely concealed if a suitable hole is provided in the desk top. Provision has been made to extend the Tape Punch unit cuttings chute through the base tray into a large container in the desk. The cover and external controls were designed by David Mellor R.D.I., Des.R.C.A.</p>
+
+        <p class="spec-hed">Operators Manual Controls</p>
+
+        <p class="spec-sub">Keyboard</p>
+        <p>Maximum of 59 key buttons, plus two shift pads and a space bar.</p>
+
+        <p class="spec-sub">Platen Controls</p>
+        <p>Platen pressure ON/OFF control lever<br>
+        Line feed control lever<br>
+        Paper guide-face setting<br>
+        Platen knob</p>
+
+        <p class="spec-sub">Functional Keys</p>
+        <p>HERE IS key<br>
+        RUN OUT key (see Note 1)<br>
+        CARRIAGE RETURN key (see Note 2)</p>
+
+        <p class="spec-sub">Tape Punch Unit</p>
+        <p>PERF OFF key<br>
+        PERF ON key<br>
+        BACK SPACE key<br>
+        TAPE RELEASE key (see Note 3)<br>
+        Catch to release panel covering cuttings box</p>
+
+        <p class="spec-sub">Tape Reader Unit</p>
+        <p>TRANSMITTER ON key<br>
+        TRANSMITTER OFF key<br>
+        Tape gate release push button</p>
+
+        <p><em>Note 1:</em> Run-out occurs on the last key depressed, ie to start continuous transmission, depress the selected key, release it, and then depress the run out key.<br>
+        <em>Note 2:</em> Manual carriage return; key will return carriage even if motor is switched off.<br>
+        <em>Note 3:</em> Operating this key releases the tape so that it can be pulled through the punch mechanism.</p>
+
+        <p class="spec-hed">Governed Motors</p>
+
+        <p>A range of 3750 rpm AC, and DC, governed motor units has been designed. As these units contain all the associated electrical equipment such as governing resistor, on-speed relay, and radio interference suppression components, and plug directly into the main base wiring, it is a simple operation to exchange a motor unit, or substitute one of a different type or voltage. The motor unit also contains the micro-switch associated with the automatic motor switch facility. This switch is operated by a lever from a mechanical time delay mechanism located on the teleprinter main base. The motor and its governor are protected by a metal cover which is force ventilated through louvres at the rear of the base tray. This cover completely encloses the motor and governor, and is retained by a single screw; live surfaces such as brush boxes, which would otherwise be exposed when the main cover is removed, are protected by individual plastic covers. In addition to reducing radio interference and noise, and preventing accidental contact with rotating parts, this overall cover prevents brush dust from finding its way on to the teleprinter mechanism and also prevents the motor ventilation system from drying out the lubricants.</p>
+
+        <p>Governed motors will reach correct operating speed within 1 second at normal temperatures and nominal supply voltage. A centrifugal governor (see section headed &lsquo;Governor&rsquo;) compensates for temperature variations and for supply voltage variations of +/&minus; 10% holding motor to within +/&minus; 0.1% of the correct speed. Speed remains stable within +/&minus; 0.5% over 1000 hours of continuous running. Brush life averages 2000 hours when the machine is operating at 50 Bauds. Brushes are similar to those used on Creed Model 75 but are longer (3/4 inch (19.1mm) effective) and have a greater working area. Each brush is linked to the power supply by an insulated pigtail, and is held against the 45-segment commutator by a spiral spring designed to maintain almost uniform pressure as the brush shortens. Brushes are held in brass boxes carried on an adjustable plastic moulding and are sited so that the brushes trail. The effect of commutator rotation, brush spring pressure, and the offset positioning of the brush boxes combine to press the brushes against the side of their boxes so reducing vibration and sparking.</p>
+
+        <p>Bearing life of 10,000 hours fixes the motor overhaul interval during which operation the commutator will need resurfacing. The two double-shielded ball bearings (British Standard type BRL 012) used in the motor are lubricated by the manufacturer and do not require any further attention until the 10,000 hour interval at which they are replaced.</p>
+
+        <p>A manually-reset current overload protection device is provided as standard equipment. Resilient rubber mountings located between the main motor framework and its cradle help to reduce motor noise and vibration. A black and white 8-segment strobe disc viewed through a 125 dvs (250 cps shutter speed) tuning fork is provided as a visual speed check. Motor insulation standards are to British Standard 2757 Class E.</p>
+
+        <p class="spec-hed">Synchronous Motor</p>
+
+        <p>Capacitor-start, capacitor-run motor units constructed and ventilated as governed motors described above, ie unit contains associated electrical equipment, microswitch, overload protection, etc. Absence of brushes enables motor overhaul interval to be extended to 10,000 hours at which time the bearings are replaced. Insulation, resilient mounting, bearings, and other applicable data as for governed motors. The motor reaches the synchronous speed within 1 second. The space previously taken up by the centrifugal governor is now occupied by a fan. &lsquo;On-speed&rsquo; contacts are provided as part of the motor.</p>
+
+        <p class="spec-hed">Governor</p>
+
+        <p>A centrifugally-operated governor similar in design to those used on previous Creed teleprinters is employed. This device holds the motor speed constant to within +/&minus; 0.1% of nominal in the face of supply voltage variations of +/&minus; 10%. The governor spring is anchored on a bi-metallic bar which flexes to compensate for the increase in length of the spring as the motor temperature rises. The manually set speed-adjustment screw on the governor spring anchor is electrically insulated from the main supply whatever the position of the governor contacts. The governor contacts are tungsten and are 1/4 inch (6.35mm) in diameter. Fins on the outside of the plastic governor cover act as a fan to force air over the motor windings and commutator.</p>
+
+        <p class="spec-hed">Keyboards</p>
+
+        <p>Code selection by action of plain (ie uncontoured) keybars on an arrangement of castellated comb bars whose associated parallelogram linkages slide to the left or right depending upon coding. 3-row or 4-row full or partial shift lock keyboard arrangements are possible. The basic design is for a 63-slot board with 59 key positions plus two shift keys and a space bar. The slots for the shift keys and the space bar cannot normally be used for additional keys because of the &lsquo;cut-out&rsquo; in the standard mask. The standard 4-row layout will have 57 operating keys and three pads (ie rectangular-shaped keys) for space, letter shift and figure shift. This layout includes two spare positions which are normally filled by non-operating key bars bearing square flat-topped key buttons which fill up the keyboard mask opening. The maximum number of operating keys for a 4-row layout is therefore 59 keys plus 3 pads. There will also be a condensed 4-row layout with 44 keys and one pad. The 3-row layout will have 33 keys plus 1 pad. Pitch of keys is 3/4 inch (19.1mm) horizontally and vertically. Slope is 15 degrees. Average key pressure is 8 ounces. Key stroke is approximately 3/16 inch on the top row of keys, and approximately 5/16 inch on the space bar. The individual key buttons are 5/8 inch in diameter.</p>
+
+        <p>Two basic versions of the keyboard mask are available: the first a plain mask with no apertures for tape units, the second with two apertures, one for the Tape Reader, the other for the Tape Punch. Each of these masks will have a middle aperture to suit the key button arrangements. When the &lsquo;Here is&rsquo; key is not required a plastic plate conceals the hole in the mask.</p>
+
+        <p>The standard keybuttons will normally be matt black injection-moulded plastic and will have their white characters pre-formed and cast into them at the moulding stage. This method of manufacture ensures that the legibility of the key tops will not be affected even by prolonged use. Alternative colours, in both keybuttons and their characters, can be provided. The characters on a key can be in one colour, and the keybutton itself in another colour. For example, white characters on a red button or red characters on a black button. Special &lsquo;organ-type&rsquo; keys control the Tape Reader and the Tape Punch, and also give a direct manual control of some machine functions, protrude through horizontal slots in the front face of the keyboard mask immediately above the keyboard. These keys are grouped according to their use and all are within easy reach of the operating position. For English speaking users these keys will carry plain-language legends such as PERF ON, and RUN OUT. Organ type keys have been produced with their legends in certain foreign languages. As an alternative, a range of keys have been designed which carry the internationally-used symbols which indicate the purpose of each key diagrammatically, and so avoid the need for alternative keys to cater for foreign language machines. A storage keyboard for the Model 444 is not envisaged at present.</p>
+
+        <p class="spec-hed">Transmitter (Keyboard)</p>
+
+        <p>The Model 444 has a single changeover contact, cam-controlled, striker transmitting mechanism which is capable of generating accurate double-current signals or, by a simple readjustment, bias-free single-current signals. An automatic send-receive switch is provided for operation of half-duplex or 2-wire circuits. The transmitting mechanism is designed for long-term stability, and to be easily adjustable without the use of special tools or test equipment.</p>
+
+        <p>Maximum start-stop synchronous transmitter distortion figures when keying each character separately are: +/&minus; 3% for 50-Baud operation, +/&minus; 5% for 75-Baud operation. A special device is fitted to ensure that the Send/Receive switch will return to receive at the end of a cycle, however slowly the cycle may have taken place. This device also provides a short delay on return to avoid splits in the stop signal at cadence or near-cadence speed keying.</p>
+
+        <p>(The Tape Reader unit has its own transmitter whose contacts, for British Post Office applications, will be in series with those of the Keyboard Transmitter. In these applications the Tape Reader will also control the send/receive switch associated with the Keyboard Transmitter.)</p>
+
+        <p class="spec-hed">Noise Reduction</p>
+
+        <p>Sound and vibration reducing measures include the overall metal cover and base tray with its absorbent lining, the rubber mountings and overall metal cover for the motor, and the resilient rubber mountings between the teleprinter main base and the tray.</p>
+
+        <p class="spec-hed">Electrical Safety Precautions</p>
+
+        <p>The machine satisfies the requirements of the British Post Office Specification D1921A (Protection Requirements for Telecommunications Equipment), the relevant requirements of the European &lsquo;Commission Equipment Electrique&rsquo; (CES) for Electric Motor Operated Appliances, and British Standard BS 613 in respect of leakage current from the radio interference circuitry to frame.</p>
+
+        <p class="spec-hed">Motor Control Switch</p>
+
+        <p>A mechanically-operated unit which switches off the motor automatically a short time after the end of the message. At 50 Bauds this interval is about 72 seconds, and at 75 Bauds is 48 seconds. The teleprinter motor is started again when a space element is received from line, or when the &lsquo;letters&rsquo; key on the local keyboard is operated. The micro switch which breaks the motor power circuit is located within the motor unit, and is operated by a lever controlled from a mechanical time delay mechanism located beneath and driven from the main cam sleeve. The motor switch mechanism can be disabled by mechanic when not required, or the switch can be short-circuited without causing damage.</p>
+
+        <p class="spec-hed">Answer Back</p>
+
+        <p>A simple answer back device is built into the keyboard transmitter unit. An interchangeable 20-character plastic ward drum with break-out projections is used for coding purposes so eliminating the need to supply a range of pre-cut metal wards. Full freedom of coding on all 20 positions of this ward drum, ie it will not be necessary to have the fixed character (normally all-mark or all-space) at the beginning and/or end of an answer back cycle to prevent mechanical interference with the transmitter, as is required with some other teleprinters.</p>
+
+        <p>The Answer Back device has a cadence speed drive, and so transmits to line at the same speed as the associated keyboard transmitter. This feature enables a motor speed check to be made on a distant and unattended machine. The Answer Back mechanism operates only once for each WRU signal received, although it will cycle continuously while the &lsquo;Here Is&rsquo; key is held down. Answer back &lsquo;off-normal&rsquo; contacts are provided. At 50 Baud working these contacts operate within the nine millisecond interval between the start of rotation and the first start transit. The contacts restore immediately following the end of the fifth element of the last character. On British Post Office machines a WRU contact will be connected in tandem with the &lsquo;Off Normal&rsquo; contact to provide an earlier warning of impending answer-back operation.</p>
+
+        <p>All keys on the keyboard are locked during answer-back transmission, with the exception of the letter shift key which may be depressed but is ineffective. On British Post Office machines, the &lsquo;letters&rsquo; key will also be locked. The &lsquo;Run Out&rsquo; key, mounted above the main keyboard, is not locked while the answer back unit is operating, but operation of this key will not affect answer-back transmission. The delay between the start transit of an incoming WRU signal, and the start transit of the first answer-back code is approximately 240mS at 50 Bauds. The Answer-Back mechanism and the associated Keyboard Transmitter mechanism can be fitted to a Receiver-only version of the machine, if required.</p>
+
+        <p class="spec-hed">Tape Punch Unit</p>
+
+        <p>This unit, and its associated drive mechanism, is mounted on the left-hand side of the machine within the cover, and so does not increase the overall width of the machine. It produces 5-track, 11/16 inch wide tape at the maximum speed of the associated machine. The tape, which is fully-punched, feeds out from the punch towards the operator from beneath a V-shaped tear-off face. The unit is operated from the receiving mechanism. It therefore records incoming messages directly, and transmitted messages indirectly via the electrical local record path.</p>
+
+        <p>Provision has been made for automatic suppression of punching on up to four selected codes which can be in either or in both shifts. Two of these codes can be employed for mechanical control of the &lsquo;Perf On&rsquo; and &lsquo;Perf Off&rsquo; keys. There is also provision for the remote control of the &lsquo;Perf On&rsquo; and &lsquo;Perf Off&rsquo; keys via two electromagnets, one for each key. If necessary, the unit can punch all 32 combinations. Centre feed hole tape punching is standard. A single make contact set (operating point adjustable) which is wired out to the signals plug provides an alarm for a &lsquo;tape reel low&rsquo; condition.</p>
+
+        <p>The Tape Punch and its associated drive mechanism can be fitted by the customer in the field as the necessary drive cams will be included in the main cam shaft assembly when the machine is built. The controls of the Tape Punch unit are listed in the section headed &lsquo;Operators Manual Controls.&rsquo;</p>
+
+        <p class="spec-hed">Tape Reader Unit</p>
+
+        <p>This unit, which is mounted at the right hand side of the keyboard, will read 5-track, 11/16 inch fully-punched tape at the maximum speed of the associated teleprinter. It is provided with its own cam-driven striker transmitter complete with radio interference suppression circuitry. The tape feeds from right to left and a deflector is provided to guide the tape away from the keyboard and towards the operator after it has been read. When the unit is ON, the teleprinter keyboard is mechanically inhibited, ie the keybars are free but ineffective.</p>
+
+        <p>The Reader&rsquo;s transmitter has no Send/Receive Switch of its own but shares the keyboard transmitter&rsquo;s send/receive switch which it controls by means of a null-bar. By disabling this control linkage and also the keyboard inhibition device, and by suitably modifying the external electrical control unit, the Tape Reader unit can signal to line while the teleprinter receiver, the Tape Punch, and the keyboard are being used off-line to prepare tape. Under these circumstances the incoming line will generally be terminated by an alarm relay and a circuit arranged to give precedence to the incoming call by operating the electromagnet which arrests the Tape Reader. For single current circuits this electromagnet is in series with the line, and reacts to the call or &lsquo;spacing start&rsquo; signal from the distant station. For double-current circuits, this break-in electromagnet is operated from the control box by a relay. Off-line operation is not possible with the British Post Office version of the Model 444 as they require keyboard inhibition on all machines.</p>
+
+        <p>Electrical indication of the &lsquo;Transmitter On&rsquo; condition is provided by a single changeover contact set operated by the &lsquo;On&rsquo; key. Another changeover contact set indicates when the electromagnetic break-in mechanism is used or when &lsquo;tape out&rsquo; is sensed. Both sets of contacts are wired out to the signals plug and restore when the &lsquo;Transmitter Off&rsquo; key is operated. A &lsquo;tape out&rsquo; sensing mechanism is provided which senses the tape once each cycle at a point just behind the reading line, ie the unit will read the last code in the tape and then come to rest.</p>
+
+        <p>The unit and drive pulley can be fitted by the customer in the field, as the necessary wiring will be included when the standard machine is built. The controls of the Tape Reader unit are listed in the section headed &lsquo;Operators Manual Controls.&rsquo;</p>
+
+        <p class="spec-hed">Code Recognition Unit (Stunt Box)</p>
+
+        <p>The code recognition unit or &lsquo;stunt box&rsquo; provides means whereby code combinations, in either or in both shifts, can be recognised mechanically and caused to operate an individual contact set. These contact sets can then be used to control switching operations, to switch tape units on or off, to change printing colour, etc. Except for &lsquo;Bell&rsquo; and &lsquo;WRU,&rsquo; which are changeovers at British Post Office request, the remainder of these contact sets are normally fleeting single-make, and all operate for some 55mS in each cycle at 50 Bauds. The &lsquo;make&rsquo; time will be reduced at higher operating speeds and will be of the order of 37mS at 75 Bauds. No latching contacts have been provided. Contacts of the stunt box can also be used to convert incoming 5-unit serial signals into a parallel 5-wire output with shift indication. An additional 40-way signals cord can be provided for the outgoing wiring associated with the code recognition contacts. Possible requirements for which the stunt box bar coding could provide are:</p>
+
+        <ul style="font-size:16px;line-height:1.8;color:var(--ink-mid)">
+          <li>A make contact to operate on each of a number of selected codes with contacts operating in both shifts.</li>
+          <li>A make contact to operate in the &lsquo;figures&rsquo; case for codes 6, 7 and 8 (F, G and H secondary).</li>
+          <li>A changeover contact to operate in the &lsquo;figures&rsquo; case for codes 4 and 10 (WRU and Bell).</li>
+          <li>Five make contacts to give a parallel code output.</li>
+          <li>One make contact to indicate the &lsquo;figure shift&rsquo; condition.</li>
+          <li>One contact to operate as a clock pulse making once every receive cycle and having the same timing as the other contacts.</li>
+        </ul>
+
+        <p>Note that the contacts themselves will only be fitted as required and the code bar coded to suit special requirements as agreed with the customer. The basic stunt box code bar coding will only provide contacts for the F, G and H secondaries, and for codes 27 to 32 inclusive (ie the usual functional codes). This basic version is to the British Post Office Telex requirements, and in this case only the Bell and WRU contact sets will be fitted.</p>
+
+        <p class="spec-hed">Motor On-Speed Indication</p>
+
+        <p>For governed motors a relay is provided within the motor unit to indicate when the motor shaft has reached governed speed. On synchronous motors a centrifugally-operated switch is used to indicate when the motor has reached 75% of synchronous speed. Output form for both the governed and the synchronous motors on-speed indication is a single changeover contact set which is wired out to the signals plug.</p>
+
+        <p class="spec-hed">Finish</p>
+
+        <p>Plating and other finishes have been designed to provide protection adequate for indoor use and for storage in temperate climates. This protection is similar in degree to that provided on previous ITT Creed equipment. Subject to certain limitations the finish on Model 444 will also be adequate for general use in tropical climates, although it will not meet all the requirements of some armed forces tropicalisation specifications. For tropical service the standard finishes will have to be supplemented by treating all unplated parts with a corrosion-inhibiting oil after any degreasing solvents have been used, and by the use of desiccants and an airtight container when the machine is put into store. The paper tear-off plate is chrome plated. Parts of the mechanism which are normally free from oil are passivated zinc plate, while steel working parts have a black oxide finish followed by treatment with corrosion-inhibiting oil. Certain steel parts which require a wear-resistant surface are hard chrome plated. Finish to the machine cover is a stoved epoxy enamel which is not affected by Creed lubricants or by ordinary solvents such as white spirit or trichloroethylene used at room temperatures. The finish will give a degree of protection in tropical environments superior to that obtained from the hammer-effect enamel used on the Model 75. The standard colour for the cover is the British Post Office Light French Grey, with dark grey for the base tray. The keyboard keybuttons are matt black with white legends, and the organ-type function control keys are black with a white legend.</p>
+
+        <p><strong>Automatic CR/LF</strong> &mdash; An automatic carriage-return and line feed facility will be made available.</p>
+
+        <p><strong>Combined CR/LF</strong> &mdash; The carriage return and the line feed functions can be combined into one key and one combination, if required. The combined functions can be restricted to one shift if need be.</p>
+
+        <p><strong>Paper Low Contacts</strong> &mdash; Provision can be made for a contact to operate when the paper roll is reduced to a predetermined diameter. The contact is wired out to the signals plug.</p>
+
+        <p class="spec-hed">Packing</p>
+
+        <p>The machine will be shipped inside its silencing cover and tray, secured by nuts screwed to extensions of the two spigots whose primary purpose is to locate the main base casting in the cover tray. When the securing nuts on these spigots are tightened up, the main base is pulled down against its resilient mountings until the four plastic feet on the underside of the base casting make contact with the base tray. This procedure retains the teleprinter securely inside the cover. A third fixing point is provided by a bolt which screws through the base tray into the motor unit base. The silencing cover and lid is then placed over the machine, secured by its two Oddie clips, and the lid is closed.</p>
+
+        <p class="spec-hed">Hours Counter</p>
+
+        <p>An hours counter unit is mounted at the front of the receiver main base and is visible to the operator through a small plastic-filled window located above the keyboard at a point adjacent to the function control keys. It records the length of time the motor is running, up to 9999 hours, and then resets to zero. The driving gears to the counter must be changed for different machine speeds.</p>
+
+        <p class="spec-hed">End-of-Line Warning</p>
+
+        <p>The standard equipment for end-of-line warning is a neon lamp mounted above the keyboard in line with the function control keys and the window of the motor hours counter. This lamp will light when the type basket is nearing the end of the printing line, and its mechanism can be set by the mechanic to signal at the 54th, 55th, or 56th character of a 69-character line.</p>
+
+        <p class="spec-hed">Parallel Output</p>
+
+        <p>A 5-wire parallel output can be obtained by serial-to-parallel conversion within the receiver and code recognition unit (stunt box).</p>
+
+        <p class="spec-hed">Two-Colour Printing</p>
+
+        <p>An automatic change of printing colour is used to discriminate between messages sent by the local keyboard or tape reader, and messages received from the line. Provision has been made for the remote control of the printing colour by means of an electromagnet. Two-colour printing is a standard facility.</p>
+
+        <p class="spec-hed">J Bell</p>
+
+        <p>Secondary interpretation of J code (MMSMS) operates a single changeover contact in the code recognition unit (stunt box) for some 55mS (at 50 Bauds) and then restores.</p>
+
+        <p class="spec-hed">Copy Holder</p>
+
+        <p>A transparent plastic lectern is capable of being mounted in either of two positions on the left of the cover.</p>
+
+        <p class="spec-hed">Single to Double-Current Converter</p>
+
+        <p>The standard keyboard and tape reader transmitting contacts are suitable for either double-current or single-current operation. When used for single-current transmission their contact blocks should be adjusted to remove any signal bias.</p>
+
+        <p>Single-current reception requires a single-current to double-current converter unit secured to the top right hand corner of the base tray and the receiving electromagnet equipped with a special coil, a quarter section of which is used for single-current operation. The full winding has the same resistance and inductance as the standard coil and can be used for double-current operation with the converter disconnected. This is readily achieved by positioning links on a terminal block. The converter unit consists of a line isolation relay, the winding of which is connected in series with the single-current line, while its contacts control a solid state push-pull current amplifier and a wave-shaping network to operate the teleprinter electromagnet with a peak current of up to 460mA. The receiving margin of the teleprinter with single-current operation is substantially the same as that with double-current operation and is independent of the line resistance.</p>
+
+        <p>Electrical connection to the teleprinter is by means of two flexible cables which plug into sockets located on the teleprinter 50-way plug box. One connects the 50Hz AC mains supply to the amplifier power pack, and the other is for the signals input/output.</p>
+
+        <p class="spec-sub">Summary of Single-to-Double-Current Converter</p>
+
+        <p>Receiving margin +/&minus; 42% at 50 Bauds. Line relay resistance 370 ohms. Amplifier output at minus 10% mains input voltage: Approximately +/&minus; 20 volts DC, 340mA peak, 62mA hold current.</p>
+
+        <p>Teleprinter electromagnet special coil: Single-current quarter section 1,250 turns, 32 ohms. Double-current full winding 5,000 turns, 390 ohms.</p>
+
+        <p>Amplifier transformer tapped 110, 220, 240V 50Hz. Consumption approximately 10 watts. Size of unit: 2&frac12; in &times; 3&frac12; in &times; 5&frac12; in high. Weight 1&frac34; pounds.</p>
+
+        <p>Single-current line requirements: Line current range 30 to 45mA. Signalling supply voltage 50 to 120V.</p>
+
+      </div>
+
+      <div class="callout" style="margin-top:24px">
+        Thanks to Alan G Hobbs G8GOJ, the author, in allowing this article to be reprinted. &mdash; Larry Rice VK6CP, 7 July 1999.<br>
+        <br>
+        Copyright &copy; 2011 George Hutchison W7TTY &amp; Bill Bytheway K7TTY
+      </div>
+
+    </main>
+
+    <aside class="col-side">
+
+      <div class="sb-box">
+        <div class="sb-hed">Article Info</div>
+        <div class="sb-note" style="font-size:13px;line-height:1.9">
+          <strong style="color:var(--red)">Alan G Hobbs G8GOJ</strong><br>
+          <br>
+          Creed publication<br>
+          041-033-2E, 1970<br>
+          <br>
+          Reprinted by permission<br>
+          via Larry Rice VK6CP<br>
+          7 July 1999<br>
+          <br>
+          <span style="color:var(--ink-faint);font-size:12px;font-style:italic">
+            Full technical spec<br>
+            for the Creed 444<br>
+            Telex teleprinter
+          </span>
+        </div>
+      </div>
+
+      <div class="sb-box">
+        <div class="sb-hed">Articles by G8GOJ</div>
+        <div class="sb-note">
+          <a href="fiveunits.htm" style="display:block;padding:5px 0;border-bottom:1px dotted var(--rule);color:var(--ink-mid);text-decoration:none">&#9654; Five-Unit Codes</a>
+          <a href="creed1.html" style="display:block;padding:5px 0;border-bottom:1px dotted var(--rule);color:var(--ink-mid);text-decoration:none">&#9654; Teleprinters for the Amateur</a>
+          <a href="creed2.html" style="display:block;padding:5px 0;border-bottom:1px dotted var(--rule);color:var(--ink-mid);text-decoration:none">&#9654; Creed &amp; Co. First 50 Years</a>
+          <a href="creed444.html" style="display:block;padding:5px 0;border-bottom:1px dotted var(--rule);color:var(--red);text-decoration:none;font-weight:bold">&#9654; ITT Creed Model 444</a>
+          <a href="ahobbs.htm" style="display:block;padding:5px 0;border-bottom:1px dotted var(--rule);color:var(--ink-mid);text-decoration:none">&#9654; About Alan Hobbs G8GOJ</a>
+          <a href="../history.html#historyhall" style="display:block;padding:5px 0;color:var(--ink-mid);text-decoration:none">&#9654; Back to History Hall</a>
+        </div>
+      </div>
+
+    </aside>
+
+  </div>
+</div>
+
+<footer class="site-footer">
+  <span>RTTY.COM &mdash; W2TTY &mdash; ARVADA, CO</span>
+  <span>NON-COMMERCIAL ARCHIVE &mdash; NO TRACKING</span>
+  <span>BAUDOT 1870 &bull; TELETYPE 1906 &bull; RTTY 1922</span>
+</footer>
+
+<canvas id="tapeBot" class="tape" aria-hidden="true"></canvas>
+<script src="../js/tape.js"></script>
 </body>
 </html>
