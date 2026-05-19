@@ -119,12 +119,11 @@ function drawTape(canvas, bits) {
   }
 }
 
-function addTapeHover(canvas, message) {
+function addTapeHover(canvas, mainLabel, codeSeq) {
   const isTop = canvas.id === 'tapeTop';
   canvas.style.cursor = 'crosshair';
 
   const tip = document.createElement('div');
-  tip.textContent = '■ ITA2 BAUDOT — ' + message;
   Object.assign(tip.style, {
     position:       'fixed',
     background:     '#e8e0cc',
@@ -132,17 +131,35 @@ function addTapeHover(canvas, message) {
     borderLeft:     '3px solid #1a1510',
     boxShadow:      '2px 2px 0 rgba(0,0,0,0.14)',
     fontFamily:     "'Courier Prime','Courier New',monospace",
-    fontSize:       '11px',
-    letterSpacing:  '.18em',
     textTransform:  'uppercase',
-    color:          '#3a2e20',
-    padding:        '5px 14px',
     pointerEvents:  'none',
     opacity:        '0',
     transition:     'opacity .15s',
     zIndex:         '999',
     whiteSpace:     'nowrap',
+    padding:        '6px 14px 7px',
   });
+
+  const l1 = document.createElement('div');
+  l1.textContent = '■ ' + mainLabel;
+  Object.assign(l1.style, {
+    fontSize:      '11px',
+    letterSpacing: '.18em',
+    color:         '#3a2e20',
+    fontWeight:    '700',
+    marginBottom:  '3px',
+  });
+
+  const l2 = document.createElement('div');
+  l2.textContent = codeSeq;
+  Object.assign(l2.style, {
+    fontSize:      '10px',
+    letterSpacing: '.12em',
+    color:         '#7a6a50',
+  });
+
+  tip.appendChild(l1);
+  tip.appendChild(l2);
   document.body.appendChild(tip);
 
   canvas.addEventListener('mouseenter', function () {
@@ -164,6 +181,6 @@ function addTapeHover(canvas, message) {
 document.addEventListener('DOMContentLoaded', function () {
   const top = document.getElementById('tapeTop');
   const bot = document.getElementById('tapeBot');
-  if (top) { drawTape(top, TAPE_TOP); addTapeHover(top, 'RTTY.COM'); }
-  if (bot) { drawTape(bot, TAPE_BOT); addTapeHover(bot, 'DE W2TTY'); }
+  if (top) { drawTape(top, TAPE_TOP); addTapeHover(top, 'RTTY.COM — ITA2 Baudot 5-level punched tape', 'LTRS R T T Y · FIGS . · LTRS C O M'); }
+  if (bot) { drawTape(bot, TAPE_BOT); addTapeHover(bot, 'DE W2TTY — ITA2 Baudot 5-level punched tape', 'LTRS D E SP W · FIGS 2 · LTRS T T Y'); }
 });
