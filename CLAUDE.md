@@ -212,7 +212,7 @@ Spelling: Hutchison (one N). Always "George Hutchison", never "Hutchinson".
 - 1930: AT&T/Western Electric acquires Teletype
 - 1958: The Teletype Story booklet published (NOT 1956)
 - 1984: AT&T breakup, Teletype ceases manufacturing
-- 2001: ITTY and RTTY.COM founded by George Hutchison W7TTY
+- 1998: ITTY and RTTY.COM founded by George Hutchison W7TTY
 - 2017: Paul Heller W2TTY takes over
 
 ---
