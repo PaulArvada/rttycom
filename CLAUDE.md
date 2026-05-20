@@ -231,9 +231,9 @@ Spelling: Hutchison (one N). Always "George Hutchison", never "Hutchinson".
 - [x] RTTYMailer — moved from rtty.com to self-hosted downloads/RTTYMailer v16.zip
 - [ ] Bill Bytheway's other BSDL software — lost, needs to be located
 - [x] Videos section — videos.html created with 13 videos; more to be added
-- [ ] The old development HTML pages (equipment/literature/*.htm) — links from
-      equipment-service.html need to be verified; introduction.htm and
-      ttytools/tools.htm exist in equipment/literature/ but other links TBD
+- [x] The old development HTML pages (equipment/literature/*.htm) — all links from
+      equipment-service.html verified present: BSP parts 1–7, toolbook.pdf, tools.htm,
+      stuntbox.pdf, bsp-570 critical adjustments PDF
 - [x] Stunt Box PDF — present at downloads/stuntbox.pdf (10 MB, linked from equipment-service.html)
 
 ### Low priority
