@@ -220,8 +220,9 @@ Spelling: Hutchison (one N). Always "George Hutchison", never "Hutchinson".
 ## What Still Needs Doing
 
 ### High priority
-- [ ] Set up Eleventy build system to eliminate duplicated header/footer in 14+ pages
-- [ ] GitHub Pages deployment and sdf.org redirect stub
+- [x] Eleventy build system — decided against; flat HTML is simpler to maintain for a stable site
+- [x] GitHub Pages deployment — live at https://rtty.internet-tty.net (CNAME + No-IP configured)
+- [x] sdf.org redirect stub — deployed, redirects to rtty.internet-tty.net; original site linked from links.html as www.rtty.com
 - [x] Verify all internal links across all pages — clean as of May 2026
 - [x] Dead-link audit on links.html external URLs — completed May 2026
 
@@ -238,8 +239,7 @@ Spelling: Hutchison (one N). Always "George Hutchison", never "Hutchinson".
 ### Low priority
 - [x] ITTY Europe FSK frequencies — Mark 1275 Hz / Space 1445 Hz (confirmed, updated in itty.html)
 - [ ] Launch year — listed as "late 1990s", exact year unknown (ask Bill K7TTY)
-- [ ] Country pages (Aussie, Poland) — England/ done; Aussie and Poland deferred,
-      original content was mostly images with little text
+- [x] Country pages (Aussie, Poland) — dropped; not found on original site, purpose unclear
 - [ ] More community links for links.html — user has additional sites to add
 - [ ] More videos for videos.html — user has additional URLs to provide
 
@@ -351,10 +351,10 @@ One file at sdf.org/~yourname/index.html:
 ### What does not change
 The ITTY streams are on separate port-forwarded entries and are
 completely unaffected by adding the rtty subdomain.
-  internet-tty.net:8000 → pi-itty60 Icecast (ITTY 60 WPM)
-  internet-tty.net:8010 → pi-itty100 Icecast (ITTY 100 WPM)
-  internet-tty.net:8030 → pi-autostart Icecast (AUTOSTART)
-  internet-tty.net:8040 → pi-europe Icecast (EUROPE)
+  internet-tty.net:8000 — ITTY 60 WPM
+  internet-tty.net:8010 — ITTY 100 WPM
+  internet-tty.net:8030 — AUTOSTART
+  internet-tty.net:8040 — EUROPE
 
 ---
 
