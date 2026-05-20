@@ -241,7 +241,7 @@ Spelling: Hutchison (one N). Always "George Hutchison", never "Hutchinson".
 - [x] Launch year — confirmed 1998; all pages updated to EST. 1998
 - [x] Country pages (Aussie, Poland) — dropped; not found on original site, purpose unclear
 - [ ] More community links for links.html — user has additional sites to add
-- [ ] More videos for videos.html — user has additional URLs to provide
+- [x] More videos for videos.html — initial build complete; add URLs as they come in
 
 ---
 
