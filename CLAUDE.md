@@ -238,7 +238,7 @@ Spelling: Hutchison (one N). Always "George Hutchison", never "Hutchinson".
 
 ### Low priority
 - [x] ITTY Europe FSK frequencies — Mark 1275 Hz / Space 1445 Hz (confirmed, updated in itty.html)
-- [ ] Launch year — listed as "late 1990s", exact year unknown (ask Bill K7TTY)
+- [x] Launch year — confirmed 1998; all pages updated to EST. 1998
 - [x] Country pages (Aussie, Poland) — dropped; not found on original site, purpose unclear
 - [ ] More community links for links.html — user has additional sites to add
 - [ ] More videos for videos.html — user has additional URLs to provide
