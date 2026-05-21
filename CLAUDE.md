@@ -97,7 +97,9 @@ rttycom/
 │   ├── krum.htm                  ← A Brief History of the Morkrum Company
 │   ├── nelson.htm                ← History of Teletypewriter Development
 │   ├── w6owp.htm                 ← W6OWP — Letter of Recollections
-│   └── w6owpSK.htm               ← W6OWP Silent Key notice
+│   ├── w6owpSK.htm               ← W6OWP Silent Key notice
+│   ├── xasr.html                 ← Lore & Legend: George's tongue-in-cheek XASR tall tale
+│   └── M28-s.gif                 ← Image used by xasr.html
 ├── index.html
 ├── history.html
 ├── gallery.html
@@ -108,6 +110,7 @@ rttycom/
 ├── itty.html
 ├── resources.html
 ├── community.html
+├── videos.html                   ← Videos page (not in main nav; linked from resources + community sidebars)
 └── links.html
 ```
 
@@ -328,6 +331,17 @@ New page added May 2026. 13 videos in three sections: ITTY & RTTY.COM
 (W2TTY videos), Museum of Communications Seattle, and Events. Not in main
 nav — linked from resources.html and community.html sidebars. More videos
 to be added; user will supply additional URLs.
+
+### Model 28 XASR
+The XASR never existed — it was a fictional machine invented by George Hutchison W7TTY
+for a humorous article written in 2011. It has been removed from all equipment pages.
+The article is preserved at history/xasr.html, linked from history.html under
+"Lore & Legend."
+
+### Self-hosted PDFs — Model 14 and Model 19
+These PDFs were downloaded from www.rtty.com in May 2026 and are now self-hosted:
+- equipment/teletype/model-14/14reperf.pdf — Model 14 typing/non-typing reperforator schematics
+- equipment/teletype/model-19/19x01.pdf through 19x10.pdf — Model 19 drawings (9 files)
 
 ---
 
