@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 Not Found — RTTY.COM</title>
+  <meta name="description" content="The page you requested was not found on RTTY.COM.">
+  <link rel="stylesheet" href="css/rtty.css">
+</head>
+<body>
+
+<!-- Top Baudot tape strip: encodes RTTY.COM in ITA2 -->
+<canvas id="tapeTop" class="tape" aria-hidden="true"></canvas>
+
+<!-- ── Masthead ── -->
+<header class="masthead">
+  <div class="mh-side">
+    PRESERVATION OF RTTY HISTORY<br>
+    TELETYPE ART &amp; CULTURE<br>
+    EST. 1998
+  </div>
+  <div class="mh-center">
+    <a href="index.html" class="site-name">RTTY.COM</a>
+    <span class="site-tag">The Radio Teletype Reference &amp; Archive</span>
+  </div>
+  <div class="mh-side mh-right">
+    THE INTERNET'S OLDEST<br>
+    RTTY RESOURCE<br>
+    BAUDOT &bull; TELETYPE &bull; WIRE
+  </div>
+</header>
+
+<!-- ── Navigation ── -->
+<nav class="site-nav" aria-label="Main navigation">
+  <a href="index.html">Home</a>
+  <a href="history.html">History</a>
+  <a href="gallery.html">RTTY Art</a>
+  <a href="equipment.html">Equipment</a>
+  <a href="itty.html">ITTY</a>
+  <a href="resources.html">Resources</a>
+  <a href="community.html">Community</a>
+  <a href="links.html">Links</a>
+</nav>
+
+<!-- ── Dateline ── -->
+<div class="dateline">
+  <strong>TRANSMISSION ERROR</strong> &mdash;
+  CIRCUIT DEAD &mdash; PAGE NOT FOUND &mdash;
+  ERROR 404 &mdash; W2TTY / ARVADA, CO
+</div>
+
+<!-- ── Page content ── -->
+<div class="page-wrap">
+  <div class="two-col">
+
+    <!-- Main content column -->
+    <main class="col-main">
+
+      <div class="wire-item">
+        <div class="wire-slug">&#9632; Error 404</div>
+        <div class="wire-hed">Circuit Dead &mdash; Page Not Found</div>
+        <div class="wire-body">
+          <p>The page you requested is not on file. The circuit may be broken,
+          the address may have changed, or the transmission never reached this
+          station.</p>
+          <p>Return to the wire and try again.</p>
+        </div>
+        <div class="wire-byline">
+          <a href="index.html">&#9654; Return to RTTY.COM Home</a>
+        </div>
+      </div>
+
+      <hr class="rule-sep">
+
+      <div class="prose" style="color:var(--ink-faint);font-style:italic;font-size:14px">
+        If you followed a link from within this site and reached this page,
+        please report it to <strong style="font-style:normal;color:var(--ink-mid)">W2TTY</strong>
+        via the <a href="community.html">Community</a> page.
+      </div>
+
+    </main>
+
+    <!-- Sidebar -->
+    <aside class="col-side">
+
+      <div class="sb-box">
+        <div class="sb-hed">Site Sections</div>
+        <div class="sb-note">
+          <a href="index.html"      style="color:var(--ink-mid);text-decoration:none;display:block;padding:5px 0;border-bottom:1px dotted var(--rule)">&#9654; Home</a>
+          <a href="history.html"    style="color:var(--ink-mid);text-decoration:none;display:block;padding:5px 0;border-bottom:1px dotted var(--rule)">&#9654; History</a>
+          <a href="gallery.html"    style="color:var(--ink-mid);text-decoration:none;display:block;padding:5px 0;border-bottom:1px dotted var(--rule)">&#9654; RTTY Art</a>
+          <a href="equipment.html"  style="color:var(--ink-mid);text-decoration:none;display:block;padding:5px 0;border-bottom:1px dotted var(--rule)">&#9654; Equipment</a>
+          <a href="itty.html"       style="color:var(--ink-mid);text-decoration:none;display:block;padding:5px 0;border-bottom:1px dotted var(--rule)">&#9654; ITTY</a>
+          <a href="resources.html"  style="color:var(--ink-mid);text-decoration:none;display:block;padding:5px 0;border-bottom:1px dotted var(--rule)">&#9654; Resources</a>
+          <a href="community.html"  style="color:var(--ink-mid);text-decoration:none;display:block;padding:5px 0;border-bottom:1px dotted var(--rule)">&#9654; Community</a>
+          <a href="links.html"      style="color:var(--ink-mid);text-decoration:none;display:block;padding:5px 0">&#9654; Links</a>
+        </div>
+      </div>
+
+    </aside>
+
+  </div><!-- .two-col -->
+</div><!-- .page-wrap -->
+
+<!-- ── Footer ── -->
+<footer class="site-footer">
+  <span>RTTY.COM &mdash; W2TTY &mdash; ARVADA, CO</span>
+  <span>NON-COMMERCIAL ARCHIVE &mdash; NO TRACKING</span>
+  <span>BAUDOT 1870 &bull; TELETYPE 1906 &bull; RTTY 1922</span>
+</footer>
+
+<!-- Bottom Baudot tape strip: encodes DE W2TTY in ITA2 -->
+<canvas id="tapeBot" class="tape" aria-hidden="true"></canvas>
+
+<script src="js/tape.js"></script>
+</body>
+</html>
