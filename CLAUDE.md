@@ -225,18 +225,16 @@ Spelling: Hutchison (one N). Always "George Hutchison", never "Hutchinson".
 ### High priority
 - [x] Eleventy build system — decided against; flat HTML is simpler to maintain for a stable site
 - [x] GitHub Pages deployment — live at https://rtty.internet-tty.net (CNAME + No-IP configured)
-- [x] sdf.org redirect stub — deployed, redirects to rtty.internet-tty.net; original site linked from links.html as www.rtty.com
+- [x] sdf.org redirect stub — deployed, redirects to rtty.internet-tty.net; original site linked from links.html as www.rtty.com/index.htm (bare root redirects to new site, so index.htm is used to reach legacy content)
 - [x] Verify all internal links across all pages — clean as of May 2026
 - [x] Dead-link audit on links.html external URLs — completed May 2026
 
 ### Medium priority
 - [x] RTTYApp download link — self-hosted at downloads/RTTYApp2022v20.1.3.zip
 - [x] RTTYMailer — moved from rtty.com to self-hosted downloads/RTTYMailer v16.zip
-- [ ] Bill Bytheway's other BSDL software — lost, needs to be located
-- [ ] BAUDOT tape-to-ASCII capture tool — referenced in equipment/software/RTTYArt.htm as
-      hosted on www.rtty.com; needs to be found and self-hosted (likely K7TTY software)
-- [ ] JAVA RTTY art viewer — referenced in equipment/software/RTTYArt.htm; allows viewing
-      full-length .pix art; needs to be found and self-hosted (likely K7TTY software)
+- [ ] Bill Bytheway's other BSDL software — lost, needs to be located; ask Bill when following up on RTTYArt
+- [ ] RTTYArt.exe — Baudot tape-to-ASCII capture tool (Windows); asked Bill K7TTY May 2026; awaiting reply. If obtained, self-host in downloads/ and add to resources.html and equipment/software/index.html
+- [x] JAVA RTTY art viewer — no longer needed; replaced by the gallery.html canvas renderer
 - [x] Videos section — videos.html created with 13 videos; more to be added
 - [x] The old development HTML pages (equipment/literature/*.htm) — all links from
       equipment-service.html verified present: BSP parts 1–7, toolbook.pdf, tools.htm,
