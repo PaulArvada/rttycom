@@ -6,9 +6,9 @@
  *   #tapeTop — encodes RTTY.COM in ITA2
  *   #tapeBot — encodes DE W2TTY in ITA2
  *
- * ITA2 bit order in this file: [b5, b4, b3, b2, b1]
- * where b5 is the top data channel and b1 is the bottom.
- * The sprocket hole sits between channels 3 and 2 (always punched).
+ * ITA2 bit order in this file: [b1, b2, b3, b4, b5]
+ * where b1 is the top data channel and b5 is the bottom.
+ * The sprocket hole sits between channels 2 and 3 (always punched).
  *
  * ITA2 code reference (decimal → bit pattern):
  *   LTRS=31 FIGS=27 SP=4 CR=8 LF=2
@@ -22,15 +22,15 @@
 const TAPE_TOP = [
   [1,1,1,1,1], // LTRS (31)
   [0,1,0,1,0], // R    (10)
-  [1,0,0,0,0], // T    (16)
-  [1,0,0,0,0], // T    (16)
+  [0,0,0,0,1], // T    (16)
+  [0,0,0,0,1], // T    (16)
   [1,0,1,0,1], // Y    (21)
   [1,1,0,1,1], // FIGS (27)
-  [1,1,1,0,0], // .    M-key in FIGS (28)
+  [0,0,1,1,1], // .    M-key in FIGS (28)
   [1,1,1,1,1], // LTRS (31)
   [0,1,1,1,0], // C    (14)
-  [1,1,0,0,0], // O    (24)
-  [1,1,1,0,0], // M    (28)
+  [0,0,0,1,1], // O    (24)
+  [0,0,1,1,1], // M    (28)
   [0,0,1,0,0], // SP   (4)
 ];
 
@@ -38,15 +38,15 @@ const TAPE_TOP = [
 // W2TTY: W is a letter; 2 requires FIGS shift (W-key=19 in figures); then LTRS back for TTY
 const TAPE_BOT = [
   [1,1,1,1,1], // LTRS (31)
-  [0,1,0,0,1], // D    (9)
-  [0,0,0,0,1], // E    (1)
+  [1,0,0,1,0], // D    (9)
+  [1,0,0,0,0], // E    (1)
   [0,0,1,0,0], // SP   (4)
-  [1,0,0,1,1], // W    (19)
+  [1,1,0,0,1], // W    (19)
   [1,1,0,1,1], // FIGS (27)
-  [1,0,0,1,1], // 2    W-key in FIGS (19)
+  [1,1,0,0,1], // 2    W-key in FIGS (19)
   [1,1,1,1,1], // LTRS (31)
-  [1,0,0,0,0], // T    (16)
-  [1,0,0,0,0], // T    (16)
+  [0,0,0,0,1], // T    (16)
+  [0,0,0,0,1], // T    (16)
   [1,0,1,0,1], // Y    (21)
   [0,0,1,0,0], // SP   (4)
 ];
@@ -62,8 +62,8 @@ function drawTape(canvas, bits) {
 
   // Layout constants
   const COL = 13;                               // pixels per character column
-  const CH  = [6.5, 14.5, 22.5, 35.5, 43.5];  // y-centers: channels 5→1
-  const SPY = 29;                               // sprocket y-center
+  const CH  = [8.5, 16.5, 29.5, 37.5, 45.5];  // y-centers: channels 1→5
+  const SPY = 23;                               // sprocket y-center
   const HR  = 4.2;                              // data hole radius (px)
   const SR  = 2.0;                              // sprocket hole radius (px)
 

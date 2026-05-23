@@ -51,7 +51,7 @@ Baudot (ITA2) punched tape. Rendered by `js/tape.js`.
 - **Top tape encodes:** `RTTY.COM` (LTRS R T T Y FIGS . LTRS C O M SP)
 - **Bottom tape encodes:** `DE W2TTY` (LTRS D E SP W FIGS 2 LTRS T T Y SP)
 - Sprocket holes between channels 3 and 2, always punched, smaller radius
-- Bit order in TAPE_TOP/TAPE_BOT arrays: [b5, b4, b3, b2, b1]
+- Bit order in TAPE_TOP/TAPE_BOT arrays: [b1, b2, b3, b4, b5]
 - **Hover tooltip:** mouseover shows a styled label (`■ ITA2 BAUDOT — RTTY.COM` /
   `■ ITA2 BAUDOT — DE W2TTY`) positioned at the cursor. Top tape tooltip appears
   below the strip; bottom tape tooltip appears above. Implemented in `addTapeHover()`
