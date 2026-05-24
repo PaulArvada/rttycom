@@ -52,10 +52,10 @@ Baudot (ITA2) punched tape. Rendered by `js/tape.js`.
 - **Bottom tape encodes:** `DE W2TTY` (LTRS D E SP W FIGS 2 LTRS T T Y SP)
 - Sprocket holes between channels 3 and 2, always punched, smaller radius
 - Bit order in TAPE_TOP/TAPE_BOT arrays: [b1, b2, b3, b4, b5]
-- **Hover tooltip:** mouseover shows a styled label (`■ ITA2 BAUDOT — RTTY.COM` /
-  `■ ITA2 BAUDOT — DE W2TTY`) positioned at the cursor. Top tape tooltip appears
-  below the strip; bottom tape tooltip appears above. Implemented in `addTapeHover()`
-  in tape.js using a fixed-position div updated on mousemove.
+- **Hover tooltip:** mouseover shows a two-line label — line 1 is the message
+  (`RTTY.COM` / `DE W2TTY`) at 13px bold; line 2 is `ITA2 BAUDOT 5-LEVEL PUNCHED TAPE`
+  at 10px. Top tape tooltip appears below the strip; bottom tape tooltip appears above.
+  Implemented in `addTapeHover()` in tape.js using a fixed-position div updated on mousemove.
 
 ### Layout
 - Max-width: 900px, centered, border left/right
@@ -110,7 +110,7 @@ rttycom/
 ├── itty.html
 ├── resources.html
 ├── community.html
-├── videos.html                   ← Videos page (not in main nav; linked from resources + community sidebars)
+├── videos.html                   ← Videos page (in main nav between Resources and Community)
 └── links.html
 ```
 
@@ -123,13 +123,14 @@ rttycom/
 
 ## Navigation Structure
 
-All 8 nav items link to real pages:
+All 9 nav items link to real pages:
 Home → index.html
 History → history.html
 RTTY Art → gallery.html
 Equipment → equipment.html (landing) → equipment-teletype.html, equipment-tu.html, equipment-service.html
 ITTY → itty.html
 Resources → resources.html
+Videos → videos.html
 Community → community.html
 Links → links.html
 
@@ -311,11 +312,11 @@ Note: equipment/literature/introduction.htm was converted from Windows-1252
 to UTF-8 in May 2026. All other legacy pages are ASCII-safe.
 
 ### Tape hover tooltip
-The canvas tape strips show a two-line tooltip on hover. Line 1 is plain
-English: "THIS IS ITA2 BAUDOT 5-LEVEL PUNCHED TAPE WITH THIS MESSAGE: RTTY.COM".
-Line 2 shows the actual ITA2 shift sequence: "LTRS R T T Y · FIGS . · LTRS C O M".
-Implemented in addTapeHover() in js/tape.js. Do not revert to the old
-single-line "■ ITA2 BAUDOT — RTTY.COM" format.
+The canvas tape strips show a two-line tooltip on hover. Line 1 is the message
+(`RTTY.COM` / `DE W2TTY`) at 13px bold. Line 2 is `ITA2 BAUDOT 5-LEVEL PUNCHED TAPE`
+at 10px. Implemented in addTapeHover() in js/tape.js. The ITA2 shift sequence
+(LTRS R T T Y · FIGS . · LTRS C O M) was intentionally dropped for brevity but
+Paul liked it — it can be restored as a third line if requested.
 
 ### Software downloads — self-hosted
 Both RTTYApp and RTTYMailer are now maintained by Paul Heller W2TTY and
@@ -325,10 +326,10 @@ hosted directly in downloads/:
 Do NOT relink these to www.rtty.com/itty/ — that dependency has been removed.
 
 ### videos.html
-New page added May 2026. 13 videos in three sections: ITTY & RTTY.COM
-(W2TTY videos), Museum of Communications Seattle, and Events. Not in main
-nav — linked from resources.html and community.html sidebars. More videos
-to be added; user will supply additional URLs.
+Added May 2026. Now in main nav (between Resources and Community). Four sections:
+ITTY & RTTY.COM (W2TTY videos), Museum of Communications Seattle, AWA Communication
+Technologies Museum (Duncan Brown K2OEQ + Teletype Corp museum tour c.1980), and
+Events. More videos to be added; user will supply additional URLs.
 
 ### Model 28 XASR
 The XASR never existed — it was a fictional machine invented by George Hutchison W7TTY
