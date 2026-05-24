@@ -53,7 +53,7 @@ Baudot (ITA2) punched tape. Rendered by `js/tape.js`.
 - Sprocket holes between channels 3 and 2, always punched, smaller radius
 - Bit order in TAPE_TOP/TAPE_BOT arrays: [b1, b2, b3, b4, b5]
 - **Hover tooltip:** mouseover shows a two-line label — line 1 is the message
-  (`RTTY.COM` / `DE W2TTY`) at 13px bold; line 2 is `ITA2 BAUDOT 5-LEVEL PUNCHED TAPE`
+  (`RTTY.COM` / `DE W2TTY`) at 13px bold; line 2 is `ITA2 5-LEVEL PUNCHED TAPE`
   at 10px. Top tape tooltip appears below the strip; bottom tape tooltip appears above.
   Implemented in `addTapeHover()` in tape.js using a fixed-position div updated on mousemove.
 
