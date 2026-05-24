@@ -108,6 +108,7 @@ rttycom/
 ├── equipment-tu.html
 ├── equipment-service.html
 ├── itty.html
+├── telex.html                    ← Telex history & i-Telex revival (in main nav between ITTY and Resources)
 ├── resources.html
 ├── community.html
 ├── videos.html                   ← Videos page (in main nav between Resources and Community)
@@ -123,12 +124,13 @@ rttycom/
 
 ## Navigation Structure
 
-All 9 nav items link to real pages:
+All 10 nav items link to real pages:
 Home → index.html
 History → history.html
 RTTY Art → gallery.html
 Equipment → equipment.html (landing) → equipment-teletype.html, equipment-tu.html, equipment-service.html
 ITTY → itty.html
+Telex → telex.html
 Resources → resources.html
 Videos → videos.html
 Community → community.html

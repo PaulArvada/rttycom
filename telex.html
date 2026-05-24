@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Telex: The Global Teleprinter Network — RTTY.COM</title>
+  <meta name="description" content="The history of telex — the global teleprinter network that preceded internet-based email — and the i-Telex hobbyist revival that keeps vintage machines connected today.">
+  <link rel="stylesheet" href="css/rtty.css">
+</head>
+<body>
+
+<canvas id="tapeTop" class="tape" aria-hidden="true"></canvas>
+
+<header class="masthead">
+  <div class="mh-side">PRESERVATION OF RTTY HISTORY<br>TELETYPE ART &amp; CULTURE<br>EST. 1998</div>
+  <div class="mh-center">
+    <a href="index.html" class="site-name">RTTY.COM</a>
+    <span class="site-tag">The Radio Teletype Reference &amp; Archive</span>
+  </div>
+  <div class="mh-side mh-right">THE INTERNET'S OLDEST<br>RTTY RESOURCE<br>BAUDOT &bull; TELETYPE &bull; WIRE</div>
+</header>
+
+<nav class="site-nav" aria-label="Main navigation">
+  <a href="index.html">Home</a>
+  <a href="history.html">History</a>
+  <a href="gallery.html">RTTY Art</a>
+  <a href="equipment.html">Equipment</a>
+  <a href="itty.html">ITTY</a>
+  <a href="telex.html" class="active">Telex</a>
+  <a href="resources.html">Resources</a>
+  <a href="videos.html">Videos</a>
+  <a href="community.html">Community</a>
+  <a href="links.html">Links</a>
+</nav>
+
+<div class="dateline">
+  <strong>TELEX</strong> &mdash;
+  THE GLOBAL TELEPRINTER NETWORK &mdash;
+  HISTORY &bull; ANSWERBACK &bull; I-TELEX REVIVAL
+</div>
+
+<div class="page-wrap">
+  <div class="two-col">
+
+    <main class="col-main">
+
+      <h1 class="section-hed" style="margin-top:0">Telex: The Global Teleprinter Network</h1>
+
+      <div class="prose">
+        <p>
+          <span class="dropcap">B</span>efore internet-based email and long before fax machines,
+          telex was the world&rsquo;s primary method of sending written messages across international
+          distances. At its peak it connected over a million subscribers in more than two hundred
+          countries &mdash; banks, news agencies, shipping companies, governments, and hotels &mdash;
+          all exchanging typed text in real time over a dedicated switched network. Like RTTY, it ran
+          on Baudot encoding and electromechanical teleprinters. Unlike RTTY, it was a public dial-up
+          network, complete with subscriber numbers, answerback codes, and legal standing as a business
+          document.
+        </p>
+      </div>
+
+      <hr class="rule-sep">
+
+      <h2 class="section-hed">Origins</h2>
+
+      <div class="prose">
+        <p>
+          Telex systems originated in the United Kingdom and several other European countries during
+          the early 1930s. The underlying technology was the same five-bit Baudot/ITA2 code used in
+          press RTTY, running at 50 baud &mdash; slow enough to be highly reliable over long-distance
+          circuits that were still quite noisy by modern standards.
+        </p>
+        <p>
+          In the United States, development took a parallel but distinct path. In 1931 AT&amp;T
+          introduced its Teletypewriter Exchange Service, TWX. TWX used machines built by the Teletype
+          Corporation &mdash; an AT&amp;T subsidiary &mdash; including the heavy-duty Model 15 and the
+          later Models 32, 33, and 35. These were the same machines familiar to American RTTY operators.
+          In 1962 Western Union established its Telex system in the United States, and eight years later
+          acquired TWX from AT&amp;T.
+        </p>
+        <p>
+          The two American systems were not directly compatible. Telex and TWX could not communicate
+          with one another because the keyboard coding schemes and transmission speeds differed; the
+          amalgamated systems were connected by processing computers that translated between the two
+          codes during transmission. TWX had evolved toward ASCII and higher speeds; Telex remained on
+          Baudot/ITA2 at 50 baud, consistent with the international standard.
+        </p>
+        <p>
+          European telex equipment came primarily from manufacturers such as Siemens, Lorenz, and AEG.
+          The machines looked and behaved similarly to American teleprinters but were built to European
+          electrical standards and wiring conventions.
+        </p>
+      </div>
+
+      <hr class="rule-sep">
+
+      <h2 class="section-hed">How Telex Worked</h2>
+
+      <div class="prose">
+        <p>
+          Telex is a network of teleprinters connected by a system of switched exchanges. Subscribers
+          exchange communications directly with one another; a connection is opened by entering the
+          assigned call number of the destination subscriber. The destination responds with a code
+          verifying its identity, and the communication line is opened.
+        </p>
+        <p>
+          That identity code &mdash; the answerback &mdash; was central to telex&rsquo;s character.
+          Each subscriber had a unique code combining a subscriber number, an abbreviated name, and a
+          country code. For example, the answerback
+          <strong style="letter-spacing:.04em">39286 drwal a</strong>
+          identifies subscriber number 39286, abbreviated name DRWAL, registered in Austria (country
+          code a). When a connection was established, both machines exchanged answerbacks automatically,
+          confirming that the right parties were connected and creating a record of the transaction.
+        </p>
+        <p>
+          This made telex legally authoritative in a way that fax and internet-based email never
+          achieved: both sender and recipient were positively identified, and the exchange was on the
+          record. Telex messages carried legal standing in many jurisdictions, and maritime law required
+          ships to carry telex capability well into the modern era.
+        </p>
+        <p>
+          The physical interface was simple: a 20&nbsp;mA current loop, two wires, mark and space &mdash;
+          the same interface used by RTTY machines on landlines. Strip the network infrastructure away
+          and a telex machine is, electrically, an RTTY machine, which is why so many of the same
+          devices served both roles.
+        </p>
+      </div>
+
+      <div style="border-top:2px solid var(--rule-dk);border-bottom:2px solid var(--rule-dk);padding:20px 24px;margin:28px 0;text-align:center">
+        <div style="font-family:'Special Elite',serif;font-size:20px;color:var(--ink);line-height:1.45">
+          &ldquo;The machines didn&rsquo;t care whether the circuit was copper or radio.&rdquo;
+        </div>
+      </div>
+
+      <hr class="rule-sep">
+
+      <h2 class="section-hed">Decline</h2>
+
+      <div class="prose">
+        <p>
+          Beginning in the 1980s, the ability to conduct high-speed digital communication &mdash;
+          particularly fax transmission &mdash; over dial-up telephone lines led to a decline in the
+          use of telex. Western Union sold its Telex network to AT&amp;T in 1990 before declaring
+          bankruptcy in 1993. In 2008 both AT&amp;T and British Telecom announced that they would no
+          longer directly provide telex service. In Germany, the public telex network closed on
+          31&nbsp;December 2007.
+        </p>
+      </div>
+
+      <hr class="rule-sep">
+
+      <h2 class="section-hed">i-Telex: The Hobbyist Revival</h2>
+
+      <div class="prose">
+        <p>
+          Shortly before the German network closed, enthusiasts had already begun building a
+          replacement. i-Telex is a hobby telex network launched around 2000 by Philipp Hachtmann
+          and Henning Treumann to bring old teleprinters back to life. Philipp developed an adapter
+          and a connection protocol so that a teleprinter with the German TW39 switching unit could
+          be connected to remote stations via telephone lines using V.21 modems, simulating a real
+          telex connection.
+        </p>
+        <p>
+          As V.21 modems became difficult to obtain and additional features such as keyboard dialing
+          were needed, a completely redesigned version&nbsp;2 was developed, allowing connections over
+          the Internet. The hardware is open source, built on Eurocard PCBs, and configured through
+          a web interface. An Ethernet interface connects the teleprinter to the i-Telex network over
+          ordinary broadband.
+        </p>
+        <p>
+          The network has subscribers in Germany, Finland, Australia, Canada, the United States,
+          Italy, Sweden, Switzerland, and the Netherlands, and the number continues to grow. The
+          network has been demonstrated at Maker Faires across Germany with considerable interest
+          from new participants. Telecommunications museums use i-Telex to give visitors the
+          experience of exchanging live messages with another machine somewhere in the world &mdash;
+          the same experience that made telex indispensable to business for half a century.
+        </p>
+        <p>
+          The ITTY teleprinter network participates in i-Telex via a gateway node in Innsbruck,
+          Austria, putting our machines on the same network as vintage teleprinters around the world.
+        </p>
+        <p>
+          For technical details, subscriber information, and hardware sources, visit the i-Telex
+          project at
+          <a href="https://www.i-telex.net" target="_blank" rel="noopener"
+             style="color:var(--red)">www.i-telex.net</a>.
+        </p>
+      </div>
+
+    </main>
+
+    <!-- Sidebar -->
+    <aside class="col-side">
+
+      <div class="sb-box">
+        <div class="sb-hed">Telex at a Glance</div>
+        <div class="sb-note">
+          <strong style="color:var(--ink)">Encoding:</strong> Baudot/ITA2, 5-bit<br>
+          <strong style="color:var(--ink)">Speed:</strong> 50 baud (international standard)<br>
+          <strong style="color:var(--ink)">Interface:</strong> 20&nbsp;mA current loop<br>
+          <strong style="color:var(--ink)">Peak subscribers:</strong> 1&nbsp;million+<br>
+          <strong style="color:var(--ink)">Countries:</strong> 200+<br>
+          <strong style="color:var(--ink)">US operators:</strong> AT&amp;T (TWX), Western Union<br>
+          <strong style="color:var(--ink)">German network closed:</strong> 31 Dec 2007
+        </div>
+      </div>
+
+      <div class="sb-box">
+        <div class="sb-hed">The Answerback</div>
+        <div class="sb-note">
+          Each telex subscriber had a unique code identifying their number, abbreviated name,
+          and country. Answerbacks were exchanged automatically at the start of every call,
+          giving telex its legal standing as a business document.
+          <br><br>
+          Example:<br>
+          <strong style="display:block;padding:6px 0;letter-spacing:.04em">39286 drwal a</strong>
+          Subscriber 39286, name DRWAL, Austria.
+        </div>
+      </div>
+
+      <div class="sb-box">
+        <div class="sb-hed">i-Telex Revival</div>
+        <div class="sb-note">
+          The i-Telex network connects vintage teleprinters over the Internet using
+          open-source hardware. Subscribers in a dozen countries exchange live messages
+          exactly as telex subscribers did decades ago.
+          <br><br>
+          <a href="https://www.i-telex.net" target="_blank" rel="noopener"
+             style="display:block;padding:7px 0;color:var(--ink);text-decoration:none;font-weight:700">
+            &#8599;&nbsp; i-Telex Project
+          </a>
+        </div>
+      </div>
+
+      <div class="sb-box">
+        <div class="sb-hed">ITTY &amp; i-Telex</div>
+        <div class="sb-note">
+          ITTY participates in the i-Telex network via a gateway node in Innsbruck,
+          Austria. Our machines are on the same network as vintage teleprinters
+          across Europe, Australia, and North America.
+          <br><br>
+          <a href="itty.html"
+             style="display:block;padding:5px 0;color:var(--ink-mid);text-decoration:none">
+            &#9654; ITTY Channel Guide
+          </a>
+        </div>
+      </div>
+
+      <div class="sb-box">
+        <div class="sb-hed">Related Pages</div>
+        <div class="sb-note">
+          <a href="history.html"
+             style="display:block;padding:5px 0;border-bottom:1px dotted var(--rule);color:var(--ink-mid);text-decoration:none">
+            &#9654; RTTY History &amp; Origins
+          </a>
+          <a href="equipment.html"
+             style="display:block;padding:5px 0;border-bottom:1px dotted var(--rule);color:var(--ink-mid);text-decoration:none">
+            &#9654; Teletype Equipment
+          </a>
+          <a href="itty.html"
+             style="display:block;padding:5px 0;color:var(--ink-mid);text-decoration:none">
+            &#9654; ITTY Live Wire Service
+          </a>
+        </div>
+      </div>
+
+    </aside>
+
+  </div>
+</div>
+
+<footer class="site-footer">
+  <span>RTTY.COM &mdash; W2TTY &mdash; ARVADA, CO</span>
+  <span>NON-COMMERCIAL ARCHIVE &mdash; NO TRACKING</span>
+  <span>BAUDOT 1870 &bull; TELETYPE 1906 &bull; RTTY 1922</span>
+</footer>
+
+<canvas id="tapeBot" class="tape" aria-hidden="true"></canvas>
+<script src="js/tape.js"></script>
+</body>
+</html>
