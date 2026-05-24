@@ -143,7 +143,7 @@ function addTapeHover(canvas, mainLabel, codeSeq) {
   const l1 = document.createElement('div');
   l1.textContent = mainLabel;
   Object.assign(l1.style, {
-    fontSize:      '11px',
+    fontSize:      '13px',
     letterSpacing: '.18em',
     color:         '#3a2e20',
     fontWeight:    '700',
@@ -181,6 +181,6 @@ function addTapeHover(canvas, mainLabel, codeSeq) {
 document.addEventListener('DOMContentLoaded', function () {
   const top = document.getElementById('tapeTop');
   const bot = document.getElementById('tapeBot');
-  if (top) { drawTape(top, TAPE_TOP); addTapeHover(top, 'THIS IS ITA2 BAUDOT 5-LEVEL PUNCHED TAPE WITH THIS MESSAGE: RTTY.COM', 'LTRS R T T Y · FIGS . · LTRS C O M'); }
-  if (bot) { drawTape(bot, TAPE_BOT); addTapeHover(bot, 'THIS IS ITA2 BAUDOT 5-LEVEL PUNCHED TAPE WITH THIS MESSAGE: DE W2TTY', 'LTRS D E SP W · FIGS 2 · LTRS T T Y'); }
+  if (top) { drawTape(top, TAPE_TOP); addTapeHover(top, 'RTTY.COM', 'ITA2 BAUDOT 5-LEVEL PUNCHED TAPE'); }
+  if (bot) { drawTape(bot, TAPE_BOT); addTapeHover(bot, 'DE W2TTY', 'ITA2 BAUDOT 5-LEVEL PUNCHED TAPE'); }
 });
