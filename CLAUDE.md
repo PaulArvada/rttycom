@@ -213,9 +213,9 @@ Spelling: Hutchison (one N). Always "George Hutchison", never "Hutchinson".
 ## History Dates (verified)
 
 - 1870: Baudot invents 5-unit code (ITA1, NOT ITA2)
+- 1902: Frank Pearne and Joy Morton finance Charles Krum's printing telegraph experiments in Chicago
 - ~1905: Donald Murray develops ITA2 (Murray Code) — adds LF/CR for page printing; reassigns
   codes to minimize perforator wear. Standardized internationally as ITA2. This is what RTTY uses.
-- 1902: Frank Pearne and Joy Morton finance Charles Krum's printing telegraph experiments in Chicago
 - 1907: Morkrum Company incorporated (October 5) — NOT 1906
 - 1910: First commercial sale — Postal Telegraph, New York to Boston
 - 1924: Morkrum-Kleinschmidt Corporation formed (merger with Kleinschmidt Electric)
@@ -326,7 +326,7 @@ to UTF-8 in May 2026. All other legacy pages are ASCII-safe.
 
 ### Tape hover tooltip
 The canvas tape strips show a two-line tooltip on hover. Line 1 is the message
-(`RTTY.COM` / `DE W2TTY`) at 13px bold. Line 2 is `ITA2 BAUDOT 5-LEVEL PUNCHED TAPE`
+(`RTTY.COM` / `DE W2TTY`) at 13px bold. Line 2 is `ITA2 5-LEVEL PUNCHED TAPE`
 at 10px. Implemented in addTapeHover() in js/tape.js. The ITA2 shift sequence
 (LTRS R T T Y · FIGS . · LTRS C O M) was intentionally dropped for brevity but
 Paul liked it — it can be restored as a third line if requested.
@@ -343,6 +343,18 @@ Added May 2026. Now in main nav (between Resources and Community). Four sections
 ITTY & RTTY.COM (W2TTY videos), Museum of Communications Seattle, AWA Communication
 Technologies Museum (Duncan Brown K2OEQ + Teletype Corp museum tour c.1980), and
 Events. More videos to be added; user will supply additional URLs.
+
+### telex.html — verified facts
+Do not change these without discussion — they were specifically researched and corrected:
+- European telex manufacturers: **Siemens, Lorenz, and Creed** (not AEG)
+- Telex current loop interface: **40 mA** (not 20 mA)
+- i-Telex was technically founded by **Fred Sonnenrein** (Diplom-Ingenieur, railway
+  signalling specialty), who built the TW39 switching system, modem card (2008), and
+  Ethernet card (end of 2011). Henning Treumann coined the name "i-Telex" in early 2012
+  and assembled the first complete systems. They met at the Railway Museum in Braunschweig
+  in July 2007. Fred passed away 5 June 2024. He was not a licensed amateur radio operator
+  — do not assign him a callsign.
+- The original predecessor network was called "telexphone" (~2001, ~20 subscribers, modem-based).
 
 ### Model 28 XASR
 The XASR never existed — it was a fictional machine invented by George Hutchison W7TTY

@@ -181,6 +181,6 @@ function addTapeHover(canvas, mainLabel, codeSeq) {
 document.addEventListener('DOMContentLoaded', function () {
   const top = document.getElementById('tapeTop');
   const bot = document.getElementById('tapeBot');
-  if (top) { drawTape(top, TAPE_TOP); addTapeHover(top, 'RTTY.COM', 'ITA2 BAUDOT 5-LEVEL PUNCHED TAPE'); }
-  if (bot) { drawTape(bot, TAPE_BOT); addTapeHover(bot, 'DE W2TTY', 'ITA2 BAUDOT 5-LEVEL PUNCHED TAPE'); }
+  if (top) { drawTape(top, TAPE_TOP); addTapeHover(top, 'RTTY.COM', 'ITA2 5-LEVEL PUNCHED TAPE'); }
+  if (bot) { drawTape(bot, TAPE_BOT); addTapeHover(bot, 'DE W2TTY', 'ITA2 5-LEVEL PUNCHED TAPE'); }
 });
