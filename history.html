@@ -58,6 +58,27 @@
     <!-- Main content column -->
     <main class="col-main">
 
+      <div class="page-nav">
+        <p class="page-nav-lede">This page gives a narrative overview of radioteletype history. Jump to a section:</p>
+        <div class="page-nav-links">
+          <a href="#baudot-murray">From Baudot to Murray</a>
+          <span class="page-nav-sep">&bull;</span>
+          <a href="#morkrum">Morkrum, Kleinschmidt &amp; the Birth of Teletype</a>
+          <span class="page-nav-sep">&bull;</span>
+          <a href="#teletype-corp">The Teletype Corporation</a>
+          <span class="page-nav-sep">&bull;</span>
+          <a href="#wire-services">The Wire Services</a>
+          <span class="page-nav-sep">&bull;</span>
+          <a href="#amateur-rtty">RTTY in Amateur Radio</a>
+          <span class="page-nav-sep">&bull;</span>
+          <a href="#teletype-story">The Teletype Story</a>
+          <span class="page-nav-sep">&bull;</span>
+          <a href="#historyhall">History Hall</a>
+          <span class="page-nav-sep">&bull;</span>
+          <a href="#lore-legend">Lore &amp; Legend</a>
+        </div>
+      </div>
+
       <h1 class="section-hed" style="margin-top:0">A Brief History of Radioteletype</h1>
 
       <div class="prose">
@@ -79,62 +100,119 @@
 
       <hr class="rule-sep">
 
-      <h2 class="section-hed">The Baudot Code</h2>
+      <h2 class="section-hed" id="baudot-murray">From Baudot to Murray: The Origins of ITA2</h2>
       <div class="prose">
         <p>
-          At the heart of every RTTY transmission is the Baudot code &mdash; a five-unit binary
-          encoding invented by French telegraph engineer &Eacute;mile Baudot in 1870 and
-          standardized internationally as ITA2 (International Telegraph Alphabet No.&nbsp;2).
-          Five bits yields 32 possible combinations; by using two &ldquo;shift&rdquo; states
-          &mdash; Letters and Figures &mdash; the same 32 codes serve double duty, providing
-          the full uppercase alphabet plus digits and punctuation.
+          The five-bit encoding at the heart of every RTTY transmission has two fathers. French
+          telegraph engineer &Eacute;mile Baudot invented the five-bit concept in 1870 for a tape
+          printer of his own design. New Zealand-born engineer Donald Murray refined and extended
+          it around 1905 into the standard the world actually adopted: ITA2.
         </p>
         <p>
-          The genius of the Baudot code lies in its mechanical simplicity. Each character is
-          transmitted as a sequence of five equal-duration mark or space intervals, making it
-          ideal for electromechanical reproduction. At 45.45 baud &mdash; the North American
-          standard for amateur RTTY &mdash; each character takes 22 milliseconds to transmit,
+          Baudot&rsquo;s system &mdash; standardized as ITA1 (International Telegraph Alphabet
+          No.&nbsp;1) &mdash; assigned codes to make them easy for operators to learn. His machine
+          was a tape printer; it had no need for line feed or carriage return codes. Five bits
+          yields 32 possible combinations; Baudot used two shift states &mdash; Letters and
+          Figures &mdash; to serve double duty, providing the full uppercase alphabet plus digits
+          and punctuation.
+        </p>
+        <p>
+          Murray&rsquo;s redesign addressed a different set of requirements. He was developing a
+          page printer &mdash; a machine that printed on a continuous roll of paper, as modern
+          teleprinters do &mdash; and a page printer requires line feed and carriage return codes
+          that ITA1 simply lacked. Murray also rethought the entire code assignment from scratch,
+          applying an engineering principle Baudot had not used: minimize mechanical wear. The
+          most frequently typed characters received codes with the fewest punched holes, reducing
+          wear on the perforating mechanism. The result was a fundamentally different code that
+          happened to share the same five-bit structure.
+        </p>
+        <p>
+          Murray&rsquo;s code was adopted internationally as ITA2 (International Telegraph
+          Alphabet No.&nbsp;2). It is ITA2 &mdash; not ITA1 &mdash; that all RTTY uses,
+          including the ITTY broadcasts on this site. Each character is transmitted as a sequence
+          of five equal-duration mark or space intervals. At 45.45 baud &mdash; the North
+          American amateur standard &mdash; each character takes 22 milliseconds to transmit,
           yielding approximately 60 words per minute. The 75-baud standard allows approximately
-          100 WPM.
-        </p>
-        <p>
-          The punched tape strips at the top and bottom of this page encode real ITA2 Baudot:
+          100 WPM. The punched tape strips at the top and bottom of this page encode real ITA2:
           RTTY.COM on top, DE W2TTY on the bottom. Anyone who knows the code can read them
           hole by hole.
         </p>
       </div>
 
       <div class="callout">
-        Baudot never saw the full flowering of his invention. He died in 1903, before RTTY
-        became widespread &mdash; yet his five-unit code is still in active use today,
-        transmitted by ITTY on this website, decoded by mechanical teleprinters built
-        sixty years ago.
+        Baudot died in 1903, before radioteletype became widespread &mdash; but his five-bit
+        concept lived on. Refined and extended by Donald Murray into ITA2, it remains in
+        active use today, transmitted by ITTY on this website, decoded by mechanical
+        teleprinters built sixty years ago.
       </div>
 
       <hr class="rule-sep">
 
-      <h2 class="section-hed">The Teletype Corporation</h2>
+      <h2 class="section-hed" id="morkrum">Morkrum, Kleinschmidt, and the Birth of Teletype</h2>
       <div class="prose">
         <p>
-          Founded in 1906, the Teletype Corporation manufactured the electromechanical machines
-          that defined a century of telecommunications. Beginning with the crude mechanical
-          printers of the early telegraphic era, Teletype progressively refined the technology
-          into precision instruments that became standard equipment in newsrooms, military
-          installations, weather services, and amateur radio shacks worldwide.
+          In 1902, a young electrical engineer named Frank Pearne arrived in Chicago with an idea
+          and a letter of introduction to Joy Morton &mdash; of Morton Salt. Morton was intrigued
+          and consulted a friend, Charles L. Krum, a distinguished mechanical engineer. A
+          laboratory was set up in the attic of Morton&rsquo;s cold storage company, and
+          experimental work on printing telegraphy began.
         </p>
         <p>
-          The company's landmark models &mdash; the Model 14, 15, 19, 28, 32, and 33 &mdash;
-          each represented a significant advance in speed, reliability, and capability. The
-          Model 15, introduced in the 1930s, became the dominant machine in American commercial
-          telegraphy. The Model 28 of the 1950s brought modern industrial design to the product
-          line. The Model 33, designed for data communications with ASCII encoding, bridged the
-          gap between the mechanical telegraphy era and the computer age.
+          After about a year, Pearne lost interest and moved on. Krum continued. By 1906 he had
+          a promising working model, and his son Howard &mdash; a newly graduated electrical
+          engineer &mdash; joined him. On October 5, 1907, the Morkrum Company was incorporated,
+          the name combining Morton and Krum, with capital of $150,000.
         </p>
         <p>
-          Teletype became a subsidiary of Western Electric and ultimately AT&amp;T. When AT&amp;T
-          was broken up in 1984, Teletype ceased manufacturing. Millions of machines remained in
-          service for years afterward; the last commercial RTTY circuits were not decommissioned
-          until well into the 1990s.
+          The first commercial installation came in 1910, when Postal Telegraph placed Morkrum
+          equipment on its New York to Boston circuit. The test proved highly successful. Western
+          Union followed in 1912. Railroad installations multiplied. When the United States
+          entered World War I, military demand for printing telegraphy accelerated rapidly
+          &mdash; unlike Morse code, the new machines required no operators who could read dots
+          and dashes. Anyone could read the printed output.
+        </p>
+        <p>
+          Meanwhile, in New York, Edward Kleinschmidt had founded Kleinschmidt Electric Company,
+          also manufacturing printing telegraph instruments and serving many of the same
+          commercial customers. The competition between the two firms eventually produced a
+          patent dispute, and in 1924 the dispute was resolved by merger. The
+          Morkrum-Kleinschmidt Corporation was formed, with Sterling Morton as president and
+          Edward Kleinschmidt and Howard Krum as vice presidents.
+        </p>
+        <p>
+          In December 1928, the corporate name was simplified to Teletype Corporation &mdash;
+          the product trademark had become better known than either of the original company
+          names, and the consolidation was complete. The founding years of printing telegraphy
+          are documented in two primary sources available on this site:
+          <a href="history/krum.htm" style="color:var(--red)">Howard Krum&rsquo;s own
+          manuscript account of the Morkrum years</a> and
+          <a href="downloads/teletype-story.pdf" style="color:var(--red)">the Teletype
+          Corporation&rsquo;s retrospective booklet from 1958</a>.
+        </p>
+      </div>
+
+      <hr class="rule-sep">
+
+      <h2 class="section-hed" id="teletype-corp">The Teletype Corporation</h2>
+      <div class="prose">
+        <p>
+          In 1930, the Teletype Corporation was acquired by AT&amp;T and became a subsidiary of
+          Western Electric. Already the dominant manufacturer of printing telegraph equipment in
+          North America, Teletype now had the resources to develop its landmark product line
+          through the mid-century decades of peak commercial telegraphy.
+        </p>
+        <p>
+          The company&rsquo;s landmark models &mdash; the Model 14, 15, 19, 28, 32, and 33
+          &mdash; each represented a significant advance in speed, reliability, and capability.
+          The Model 15, introduced in the 1930s, became the dominant machine in American
+          commercial telegraphy. The Model 28 of the 1950s brought modern industrial design to
+          the product line. The Model 33, designed for data communications with ASCII encoding,
+          bridged the gap between the mechanical telegraphy era and the computer age.
+        </p>
+        <p>
+          When AT&amp;T was broken up in 1984, Teletype ceased manufacturing. Millions of
+          machines remained in service for years afterward; the last commercial RTTY circuits
+          were not decommissioned until well into the 1990s.
         </p>
         <p>
           See the <a href="equipment.html" style="color:var(--red)">Equipment</a> section for
@@ -145,7 +223,7 @@
 
       <hr class="rule-sep">
 
-      <h2 class="section-hed">The Wire Services</h2>
+      <h2 class="section-hed" id="wire-services">The Wire Services</h2>
       <div class="prose">
         <p>
           For fifty years, the Associated Press, United Press International, and other news wire
@@ -171,7 +249,7 @@
 
       <hr class="rule-sep">
 
-      <h2 class="section-hed">RTTY in Amateur Radio</h2>
+      <h2 class="section-hed" id="amateur-rtty">RTTY in Amateur Radio</h2>
       <div class="prose">
         <p>
           Amateur radio operators began experimenting with radioteletype in the late 1940s and
@@ -196,7 +274,7 @@
       <hr class="rule-sep">
 
       <!-- Teletype Story download block -->
-      <div class="dl-block">
+      <div class="dl-block" id="teletype-story">
         <div class="dl-title">The Teletype Story</div>
         <div class="dl-meta">Teletype Corporation &bull; Copyright 1958 &bull; 40 pages &bull; 6.4 MB</div>
         <div class="dl-desc">
@@ -291,7 +369,7 @@
 
       <hr class="rule-sep">
 
-      <h2 class="section-hed">Lore &amp; Legend</h2>
+      <h2 class="section-hed" id="lore-legend">Lore &amp; Legend</h2>
       <p style="font-size:16px;line-height:1.72;color:var(--ink-mid);margin-bottom:1em">
         Not everything written about teletype machines was strictly factual. George Hutchison W7TTY
         &mdash; founder of ITTY and RTTY.COM &mdash; had a gift for deadpan. This piece
@@ -320,9 +398,15 @@
 
       <div class="sb-box">
         <div class="sb-hed">Key Dates</div>
-        <div class="tl-item"><span class="tl-year">1870</span><span class="tl-event">Baudot invents the 5-unit code</span></div>
-        <div class="tl-item"><span class="tl-year">1903</span><span class="tl-event">Baudot dies; code already in commercial use</span></div>
-        <div class="tl-item"><span class="tl-year">1906</span><span class="tl-event">Charles &amp; Howard Krum develop working printing telegraph model; Morkrum Company incorporated Oct. 5, 1907</span></div>
+        <div class="tl-item"><span class="tl-year">1870</span><span class="tl-event">Baudot invents the 5-unit code (ITA1)</span></div>
+        <div class="tl-item"><span class="tl-year">1902</span><span class="tl-event">Frank Pearne and Joy Morton finance Charles Krum&rsquo;s printing telegraph experiments in Chicago</span></div>
+        <div class="tl-item"><span class="tl-year">1903</span><span class="tl-event">Baudot dies; ITA1 already in commercial use</span></div>
+        <div class="tl-item"><span class="tl-year">~1905</span><span class="tl-event">Donald Murray develops ITA2 &mdash; adds LF and CR for page printing; reassigns codes to minimize perforator wear. Standardized internationally as ITA2. The code used by all RTTY.</span></div>
+        <div class="tl-item"><span class="tl-year">1907</span><span class="tl-event">Morkrum Company incorporated (October 5)</span></div>
+        <div class="tl-item"><span class="tl-year">1910</span><span class="tl-event">First commercial sale &mdash; Postal Telegraph, New York to Boston</span></div>
+        <div class="tl-item"><span class="tl-year">1924</span><span class="tl-event">Merger with Kleinschmidt Electric &rarr; Morkrum-Kleinschmidt Corporation</span></div>
+        <div class="tl-item"><span class="tl-year">1928</span><span class="tl-event">Name changed to Teletype Corporation</span></div>
+        <div class="tl-item"><span class="tl-year">1930</span><span class="tl-event">AT&amp;T/Western Electric acquires Teletype</span></div>
         <div class="tl-item"><span class="tl-year">1930s</span><span class="tl-event">Model 15 becomes commercial standard; wire services expand</span></div>
         <div class="tl-item"><span class="tl-year">1950s</span><span class="tl-event">Model 28 introduced; amateur RTTY begins</span></div>
         <div class="tl-item"><span class="tl-year">1957</span><span class="tl-event">Teletype Corporation Golden Anniversary (50 years). <em>The Teletype Story</em> booklet published 1958.</span></div>
@@ -337,7 +421,7 @@
       <div class="sb-box">
         <div class="sb-hed">Technical Standards</div>
         <div class="sb-note">
-          <strong style="color:var(--ink)">Encoding:</strong> ITA2 (Baudot), 5-unit<br>
+          <strong style="color:var(--ink)">Encoding:</strong> ITA2 (Murray Code), 5-unit<br>
           <strong style="color:var(--ink)">Speed (60 WPM):</strong> 45.45 baud<br>
           <strong style="color:var(--ink)">Speed (100 WPM):</strong> 75 baud<br>
           <strong style="color:var(--ink)">Shift:</strong> 170 Hz (NA standard)<br>

@@ -156,6 +156,29 @@ hr.rule-sep { border: none; border-top: 1px dashed var(--rule); margin: 22px 0; 
   line-height: 1.75;
 }
 
+/* ── Page section navigation ───────────────────────────── */
+.page-nav {
+  margin-bottom: 18px;
+  padding-bottom: 14px;
+  border-bottom: 1px dashed var(--rule);
+}
+.page-nav-lede {
+  font-size: 12px;
+  letter-spacing: .06em;
+  color: var(--ink-faint);
+  margin-bottom: 6px;
+}
+.page-nav-links {
+  font-size: 11px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  line-height: 1.9;
+}
+.page-nav-links a { color: var(--ink-faint); text-decoration: none; }
+.page-nav-links a:hover { color: var(--red); }
+.page-nav-sep { margin: 0 4px; color: var(--rule-dk); }
+
 /* ── Sidebar boxes ─────────────────────────────────────── */
 .sb-box { margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid var(--rule); }
 .sb-box:last-child { border-bottom: none; margin-bottom: 0; }

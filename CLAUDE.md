@@ -212,8 +212,13 @@ Spelling: Hutchison (one N). Always "George Hutchison", never "Hutchinson".
 
 ## History Dates (verified)
 
-- 1870: Baudot invents 5-unit code
+- 1870: Baudot invents 5-unit code (ITA1, NOT ITA2)
+- ~1905: Donald Murray develops ITA2 (Murray Code) — adds LF/CR for page printing; reassigns
+  codes to minimize perforator wear. Standardized internationally as ITA2. This is what RTTY uses.
+- 1902: Frank Pearne and Joy Morton finance Charles Krum's printing telegraph experiments in Chicago
 - 1907: Morkrum Company incorporated (October 5) — NOT 1906
+- 1910: First commercial sale — Postal Telegraph, New York to Boston
+- 1924: Morkrum-Kleinschmidt Corporation formed (merger with Kleinschmidt Electric)
 - 1928: Name changed to Teletype Corporation
 - 1930: AT&T/Western Electric acquires Teletype
 - 1958: The Teletype Story booklet published (NOT 1956)
@@ -273,6 +278,12 @@ Intentionally smaller (UI / narrow grid cards, not prose):
 - `equipment.html .sc-desc` — 11.5px (3-column card grid)
 - `community.html .topic-item` — 13px (2-column tag grid)
 - Various meta/label/slug elements — 9–13px
+
+### ITA2 attribution
+The site correctly attributes ITA2 to Donald Murray (~1905), not Baudot. Baudot invented ITA1
+(1870). Do not revert this — "ITA2 (Baudot)" is historically wrong. The correct forms are
+"ITA2", "ITA2 (Murray Code)", or "Murray Code". See England/fiveunits.htm (Alan Hobbs G8GOJ)
+for an authoritative technical explanation.
 
 ### Do NOT do these things
 - Do not change the tape strip encoding without updating both TAPE_TOP and
