@@ -53,7 +53,7 @@
           distances. At its peak it connected over a million subscribers in more than two hundred
           countries &mdash; banks, news agencies, shipping companies, governments, and hotels &mdash;
           all exchanging typed text in real time over a dedicated switched network. Like RTTY, it ran
-          on Baudot encoding and electromechanical teleprinters. Unlike RTTY, it was a public dial-up
+          on ITA2 (Murray Code) and electromechanical teleprinters. Unlike RTTY, it was a public dial-up
           network, complete with subscriber numbers, answerback codes, and legal standing as a business
           document.
         </p>
@@ -66,7 +66,7 @@
       <div class="prose">
         <p>
           Telex systems originated in the United Kingdom and several other European countries during
-          the early 1930s. The underlying technology was the same five-bit Baudot/ITA2 code used in
+          the early 1930s. The underlying technology was the same five-bit ITA2 (Murray Code) used in
           press RTTY, running at 50 baud &mdash; slow enough to be highly reliable over long-distance
           circuits that were still quite noisy by modern standards.
         </p>
@@ -83,12 +83,21 @@
           with one another because the keyboard coding schemes and transmission speeds differed; the
           amalgamated systems were connected by processing computers that translated between the two
           codes during transmission. TWX had evolved toward ASCII and higher speeds; Telex remained on
-          Baudot/ITA2 at 50 baud, consistent with the international standard.
+          ITA2 at 50 baud, consistent with the international standard.
         </p>
         <p>
-          European telex equipment came primarily from manufacturers such as Siemens, Lorenz, and AEG.
+          European telex equipment came primarily from manufacturers such as Siemens, Lorenz, and Creed.
           The machines looked and behaved similarly to American teleprinters but were built to European
           electrical standards and wiring conventions.
+        </p>
+        <p>
+          Many surplus telex machines of earlier model generations found their way into amateur hands,
+          forming the foundation of the RTTY scene in Europe. Because European commercial telex ran at
+          50 baud, and because most European machines used governed motors rather than synchronous
+          motors, it was straightforward for amateurs to reduce speed from 50 baud to 45 baud &mdash;
+          the North American amateur RTTY standard &mdash; by adjusting the governor. This gave
+          European amateurs an easy entry point into RTTY using equipment that was plentiful and
+          inexpensive as the commercial networks modernized.
         </p>
       </div>
 
@@ -119,7 +128,7 @@
           ships to carry telex capability well into the modern era.
         </p>
         <p>
-          The physical interface was simple: a 20&nbsp;mA current loop, two wires, mark and space &mdash;
+          The physical interface was simple: a 40&nbsp;mA current loop, two wires, mark and space &mdash;
           the same interface used by RTTY machines on landlines. Strip the network infrastructure away
           and a telex machine is, electrically, an RTTY machine, which is why so many of the same
           devices served both roles.
@@ -153,27 +162,60 @@
 
       <div class="prose">
         <p>
-          Shortly before the German network closed, enthusiasts had already begun building a
-          replacement. i-Telex is a hobby telex network launched around 2000 by Philipp Hachtmann
-          and Henning Treumann to bring old teleprinters back to life. Philipp developed an adapter
-          and a connection protocol so that a teleprinter with the German TW39 switching unit could
-          be connected to remote stations via telephone lines using V.21 modems, simulating a real
-          telex connection.
+          A hobby telex network existed as early as 2001 &mdash; a modem-based system called
+          &ldquo;telexphone,&rdquo; with roughly twenty subscribers. The technology that transformed
+          it into what i-Telex is today began to take shape in July 2007, when Henning Treumann
+          visited a railway museum in Braunschweig and met Fred Sonnenrein.
         </p>
         <p>
-          As V.21 modems became difficult to obtain and additional features such as keyboard dialing
-          were needed, a completely redesigned version&nbsp;2 was developed, allowing connections over
-          the Internet. The hardware is open source, built on Eurocard PCBs, and configured through
-          a web interface. An Ethernet interface connects the teleprinter to the i-Telex network over
+          Fred was a Diplom-Ingenieur in electrical engineering whose professional specialty was
+          railway signalling technology. In his workshop, however, he had built something remarkable:
+          a self-built TW39 switching system, already connected to teleprinters and fitted with
+          connectors, designed for local operation &mdash; no modem, no Ethernet, but a working
+          demonstration that the full telex switching experience could be recreated from scratch.
+          What it lacked was a network.
+        </p>
+        <p>
+          Over the years that followed, Fred designed the components that made the network possible.
+          In 2008 he designed the modem card for the redesigned system, then called Telexphone2.
+          By the end of 2011, after intensive planning with Henning, Fred completed an Ethernet card.
+          In early 2012 Henning assembled the first complete systems and coined the name: i-Telex.
+          The hardware is open source, built on Eurocard PCBs, and configured through a web
+          interface. An Ethernet connection links the teleprinter to the i-Telex network over
           ordinary broadband.
         </p>
         <p>
-          The network has subscribers in Germany, Finland, Australia, Canada, the United States,
-          Italy, Sweden, Switzerland, and the Netherlands, and the number continues to grow. The
-          network has been demonstrated at Maker Faires across Germany with considerable interest
-          from new participants. Telecommunications museums use i-Telex to give visitors the
-          experience of exchanging live messages with another machine somewhere in the world &mdash;
-          the same experience that made telex indispensable to business for half a century.
+          Henning later described Fred&rsquo;s contribution: &ldquo;All ideas were implemented
+          promptly and purposefully by Fred. Fred has been immersed in i-Telex &mdash; for him it
+          was a huge hobby project, always with the premise that TW39 and ED1000 are realized as
+          authentically as possible with the i-Telex system. Fred has changed all our lives with
+          his newly created system.&rdquo;
+        </p>
+      </div>
+
+      <div style="background:var(--paper-dk);border-left:4px solid var(--ink);padding:16px 22px;margin:24px 0">
+        <div style="font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--ink);margin-bottom:12px">
+          Fred Sonnenrein &mdash; In Memoriam &mdash; 5 June 2024
+        </div>
+        <p style="font-size:15px;line-height:1.8;color:var(--ink-mid);font-style:italic;margin-bottom:10px">
+          &ldquo;Friendly, modest, helpful, far-sighted, not dogmatic. Open to other ideas and
+          arguments, always discussing on a factual level. Thoughtful and never hot-tempered.
+          Deeply engaged in i-Telex. A good friend and advisor. A role model.&rdquo;
+        </p>
+        <div style="font-size:12px;letter-spacing:.06em;color:var(--ink-faint)">
+          &mdash; Werner, friend and colleague
+        </div>
+      </div>
+
+      <div class="prose">
+        <p>
+          Fred&rsquo;s designs live on in several hundred i-Telex systems worldwide. The network
+          has subscribers in Germany, Finland, Australia, Canada, the United States, Italy, Sweden,
+          Switzerland, and the Netherlands, and the number continues to grow &mdash; today larger
+          than many country-level commercial telex networks were at their peak. Telecommunications
+          museums use i-Telex to give visitors the experience of exchanging live messages with a
+          machine somewhere in the world, the same experience that made telex indispensable to
+          business for half a century.
         </p>
         <p>
           The ITTY teleprinter network participates in i-Telex via a gateway node in Innsbruck,
@@ -197,9 +239,9 @@
       <div class="sb-box">
         <div class="sb-hed">Telex at a Glance</div>
         <div class="sb-note">
-          <strong style="color:var(--ink)">Encoding:</strong> Baudot/ITA2, 5-bit<br>
+          <strong style="color:var(--ink)">Encoding:</strong> ITA2 (Murray Code), 5-bit<br>
           <strong style="color:var(--ink)">Speed:</strong> 50 baud (international standard)<br>
-          <strong style="color:var(--ink)">Interface:</strong> 20&nbsp;mA current loop<br>
+          <strong style="color:var(--ink)">Interface:</strong> 40&nbsp;mA current loop<br>
           <strong style="color:var(--ink)">Peak subscribers:</strong> 1&nbsp;million+<br>
           <strong style="color:var(--ink)">Countries:</strong> 200+<br>
           <strong style="color:var(--ink)">US operators:</strong> AT&amp;T (TWX), Western Union<br>
