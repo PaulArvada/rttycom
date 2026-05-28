@@ -138,6 +138,12 @@ Links → links.html
 
 The `active` class on `.site-nav a` highlights the current page in red.
 
+**When adding a new nav item**, update ALL of these — not just the top-level pages:
+- All pages in `history/` (krum.htm, nelson.htm, w6owp.htm, w6owpSK.htm, xasr.html)
+- All pages in `England/` (ahobbs.htm, creed1.html, creed2.html, creed444.html, fiveunits.htm)
+- `equipment/software/index.html`
+These sub-pages carry the full nav but are easy to miss.
+
 ---
 
 ## The PIX Format (RTTY Art)
