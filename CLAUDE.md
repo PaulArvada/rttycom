@@ -347,8 +347,17 @@ Do NOT relink these to www.rtty.com/itty/ — that dependency has been removed.
 ### videos.html
 Added May 2026. Now in main nav (between Resources and Community). Four sections:
 ITTY & RTTY.COM (W2TTY videos), Museum of Communications Seattle, AWA Communication
-Technologies Museum (Duncan Brown K2OEQ + Teletype Corp museum tour c.1980), and
-Events. More videos to be added; user will supply additional URLs.
+Technologies Museum, and Events. More videos to be added; user will supply additional URLs.
+
+AWA section structure: all AWA videos in one grid (currently Ransom Slayton / Teletype
+Corp Museum Tour + two Duncan Brown K2OEQ presentations), followed by a `.contrib-label`
+byline ("— About Duncan Brown · K2OEQ") and his bio. Future AWA videos from other
+presenters go in the grid; future Duncan videos also go in the grid above his bio.
+
+### .contrib-label CSS class
+Left-aligned sub-section byline in `--ink-faint`, no horizontal rules, 11px uppercase.
+Use when introducing a contributor within a larger section (as opposed to `.srule` which
+delineates peer-level sections). Currently used only in videos.html.
 
 ### telex.html — verified facts
 Do not change these without discussion — they were specifically researched and corrected:
