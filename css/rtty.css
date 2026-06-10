@@ -119,6 +119,7 @@ canvas.tape { display: block; width: 100%; height: 52px; }
 .srule { display: flex; align-items: center; gap: 8px; margin-bottom: 14px; }
 .srule::before, .srule::after { content: ''; flex: 1; height: 1px; background: var(--rule-dk); }
 .srule-label { font-size: 12px; letter-spacing: .32em; text-transform: uppercase; color: var(--ink-faint); white-space: nowrap; }
+.contrib-label { font-size: 11px; letter-spacing: .2em; text-transform: uppercase; color: var(--ink-faint); margin: 22px 0 10px; }
 
 /* ── Body text ─────────────────────────────────────────── */
 .prose { font-size: 16px; line-height: 1.88; color: var(--ink-mid); }
