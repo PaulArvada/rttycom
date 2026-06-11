@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ITA2 and the American Teletypewriter Code — RTTY.COM History Hall</title>
+  <meta name="description" content="Why American Teletype machines print ! where an ITA2 code chart shows %. The story of USTTY — the American variant of ITA2 — and how surplus military hardware defined amateur RTTY.">
+  <link rel="stylesheet" href="../css/rtty.css">
+  <style>
+    .diff-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.2em 0;
+      font-size: 15px;
+    }
+    .diff-table th {
+      font-family: 'Special Elite', serif;
+      font-size: 13px;
+      letter-spacing: .06em;
+      color: var(--ink);
+      border-bottom: 2px solid var(--rule-dk);
+      padding: 6px 10px;
+      text-align: left;
+    }
+    .diff-table td {
+      padding: 6px 10px;
+      border-bottom: 1px solid var(--rule);
+      color: var(--ink-mid);
+      vertical-align: top;
+    }
+    .diff-table tr:last-child td { border-bottom: none; }
+    .diff-table td.key-col {
+      font-family: 'Special Elite', serif;
+      font-size: 14px;
+      color: var(--ink);
+      white-space: nowrap;
+    }
+    .diff-table td.ita2-col { color: var(--ink-faint); }
+    .diff-table td.ustty-col { color: var(--red); font-weight: 700; }
+    .diff-table thead th.ita2-col { color: var(--ink-faint); }
+    .diff-table thead th.ustty-col { color: var(--red); }
+  </style>
+</head>
+<body>
+
+<canvas id="tapeTop" class="tape" aria-hidden="true"></canvas>
+
+<header class="masthead">
+  <div class="mh-side">PRESERVATION OF RTTY HISTORY<br>TELETYPE ART &amp; CULTURE<br>EST. 1998</div>
+  <div class="mh-center">
+    <a href="../index.html" class="site-name">RTTY.COM</a>
+    <span class="site-tag">The Radio Teletype Reference &amp; Archive</span>
+  </div>
+  <div class="mh-side mh-right">THE INTERNET'S OLDEST<br>RTTY RESOURCE<br>BAUDOT &bull; TELETYPE &bull; WIRE</div>
+</header>
+
+<nav class="site-nav" aria-label="Main navigation">
+  <a href="../index.html">Home</a>
+  <a href="../history.html" class="active">History</a>
+  <a href="../gallery.html">RTTY Art</a>
+  <a href="../equipment.html">Equipment</a>
+  <a href="../itty.html">ITTY</a>
+  <a href="../telex.html">Telex</a>
+  <a href="../resources.html">Resources</a>
+  <a href="../videos.html">Videos</a>
+  <a href="../community.html">Community</a>
+  <a href="../links.html">Links</a>
+</nav>
+
+<div class="dateline">
+  <strong>HISTORY HALL</strong> &mdash;
+  ITA2, USTTY, AND THE AMERICAN TELETYPEWRITER CODE
+</div>
+
+<div class="page-wrap">
+  <div class="two-col">
+
+    <main class="col-main">
+
+      <h1 class="section-hed" style="margin-top:0">ITA2 and the American Teletypewriter Code</h1>
+
+      <div class="prose">
+
+        <p>
+          <span class="dropcap">P</span>ick up a code card for a Teletype Model 28 and look at
+          Figures-F. It says <strong>%</strong>. Now go to the nearest Model 28 on your bench,
+          shift to FIGS, and press the F key. It prints <strong>!</strong>.
+        </p>
+        <p>
+          The card is not wrong. Your machine is not wrong. They are simply using two
+          different national dialects of the same five-unit code.
+        </p>
+
+        <h2 class="section-hed">ITA2 and Its Open Slots</h2>
+
+        <p>
+          The five-bit code used by all RTTY is ITA2 &mdash; International Telegraph
+          Alphabet No.&nbsp;2, standardized by the CCITT in the 1930s on the foundation
+          Donald Murray had laid around 1905. ITA2 defines 32 unique bit patterns across
+          two shift states (Letters and Figures), but it does not fill every slot. Several
+          figures-shift positions were deliberately left as &ldquo;reserved for national
+          use&rdquo; &mdash; a formal acknowledgment that different countries would need
+          different punctuation and control characters.
+        </p>
+        <p>
+          Every national variant of ITA2 sends exactly the same bits for letters A through Z,
+          for digits 0 through 9, and for the shift control codes (LTRS, FIGS, CR, LF, BEL,
+          DEL). The variants differ only in how they assign meaning to those open figures slots.
+          On the wire, two machines running different national variants are exchanging identical
+          bit patterns. What appears on paper depends entirely on how the receiving machine&rsquo;s
+          type basket was cast.
+        </p>
+
+        <h2 class="section-hed">The Teletypewriter Code: America&rsquo;s ITA2</h2>
+
+        <p>
+          The Teletype Corporation &mdash; the dominant American manufacturer from the
+          1920s through the 1980s &mdash; standardized its own figures assignment for all
+          its equipment. This is the <em>Teletypewriter Code</em>, commonly abbreviated
+          USTTY (US TeleTYpewriter code) or referred to simply as &ldquo;the US
+          arrangement&rdquo; or &ldquo;the American arrangement.&rdquo;
+        </p>
+        <p>
+          The key differences from international ITA2 are all in the figures case. The most
+          visible: ITA2 assigns <strong>%</strong> to the F-key; USTTY assigns
+          <strong>!</strong>. The bell character also moves: ITA2 puts BELL on the J-key,
+          USTTY puts it on the S-key, swapping with the apostrophe. The H-key in
+          USTTY carries STOP, a dedicated end-of-message marker used in formatted
+          commercial and military traffic.
+        </p>
+
+        <table class="diff-table">
+          <thead>
+            <tr>
+              <th class="key-col">Key (FIGS)</th>
+              <th class="ita2-col">ITA2 (International)</th>
+              <th class="ustty-col">USTTY (American)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="key-col">F</td>
+              <td class="ita2-col">% (percent)</td>
+              <td class="ustty-col">! (exclamation)</td>
+            </tr>
+            <tr>
+              <td class="key-col">S</td>
+              <td class="ita2-col">&#x2019; (apostrophe)</td>
+              <td class="ustty-col">BEL (bell)</td>
+            </tr>
+            <tr>
+              <td class="key-col">J</td>
+              <td class="ita2-col">BEL (bell)</td>
+              <td class="ustty-col">&#x2019; (apostrophe)</td>
+            </tr>
+            <tr>
+              <td class="key-col">H</td>
+              <td class="ita2-col">(national use)</td>
+              <td class="ustty-col">STOP</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>
+          These differences are small in number but significant in practice. A machine
+          expecting USTTY and receiving traffic formatted for international ITA2 will ring
+          its bell at unexpected moments (when an apostrophe was intended) and silently miss
+          it at others. An exclamation mark transmitted by a USTTY sender will arrive as a
+          blank space on a true ITA2 receiver. The codes are interoperable for plain text in
+          most cases; the hazards lie in punctuation, control characters, and formatted traffic.
+        </p>
+
+        <h2 class="section-hed">The Type Basket Rules</h2>
+
+        <p>
+          The practical reality for anyone reading a code card: the five-bit pattern that
+          leaves the sender is fixed. What appears on the paper at the receiving end is
+          determined by the type basket &mdash; the physical ring of typebars or the
+          printwheel slug cast for that specific character position. A sender has no way
+          to change what a remote machine prints; that was decided at the factory.
+        </p>
+        <p>
+          Teletype Corporation cast its American machines with ! in the F-key type slug,
+          bell circuitry wired to the S-key code, and STOP in the H-key position. Every
+          Model 15, 19, 28, 32, 32ASR, and 33 that left the Skokie plant carried
+          the same USTTY figures basket. The code card labeled &ldquo;ITA2&rdquo; in the
+          collection is technically accurate &mdash; USTTY is a national variant of ITA2
+          &mdash; but it describes the international standard assignment, not the one
+          your machine implements.
+        </p>
+
+        <h2 class="section-hed">The Military Pipeline</h2>
+
+        <p>
+          The reason virtually every mechanical teletype in amateur hands uses the USTTY
+          arrangement has little to do with the amateur community&rsquo;s own standards
+          and everything to do with the United States military.
+        </p>
+        <p>
+          USTTY became the standard teletype code for the US Army, Navy, and Air Force
+          through the middle decades of the twentieth century. Military communications networks
+          ran Teletype Corporation machines on USTTY throughout World War II, Korea, and
+          Vietnam-era logistics traffic. By the 1950s and 1960s, the armed forces were the
+          single largest user of landline and radio teletype equipment in the country.
+        </p>
+        <p>
+          When those circuits were upgraded or decommissioned, the machines entered the
+          surplus market. Model 15s, 19s, and 28s &mdash; robust, well-maintained, and now
+          far cheaper than anything a hobbyist could have bought new &mdash; turned up at
+          surplus dealers, military auctions, and hamfests across North America. Amateur
+          radio operators who had been watching the commercial RTTY services with interest
+          suddenly had access to the hardware.
+        </p>
+        <p>
+          The first serious amateur RTTY activity in North America, in the late 1940s and
+          early 1950s, was built almost entirely on this surplus foundation. The Western Union
+          and Postal Telegraph upgrades of the 1940s had put similar Teletype machines onto
+          the market a decade earlier; former Press Wireless operators like Forrest
+          &ldquo;Bart&rdquo; Bartlett W6OWP were at the center of the early amateur community
+          and already knew the equipment intimately from their commercial careers.
+        </p>
+        <p>
+          The North American amateur standard &mdash; 45.45 baud, 170&nbsp;Hz shift, lower
+          sideband &mdash; was effectively inherited from these machines. So was the figures
+          arrangement. In amateur RTTY circles the USTTY assignment is often called the
+          &ldquo;military arrangement&rdquo; or simply &ldquo;the US code,&rdquo; a
+          colloquial acknowledgment of where the hardware came from. The name stuck even as
+          the amateur community moved to terminal units, software decoders, and sound cards.
+        </p>
+        <p>
+          Today ITTY transmits on 45.45 baud USTTY, the same code and speed at which
+          those surplus Model 19s first went on the air more than seventy years ago.
+          Owners of restored Teletype machines connect, tune their demodulator, and watch
+          their ! print exactly where the designers of the type basket intended it.
+        </p>
+
+        <hr class="rule-sep">
+
+        <p>
+          For the technical history of five-unit codes from Baudot through Murray through
+          ITA2, see Alan Hobbs G8GOJ&rsquo;s authoritative treatment:
+          <a href="../England/fiveunits.htm" style="color:var(--red)">Five-Unit Codes for
+          the Radio Amateur &rarr;</a>
+        </p>
+        <p>
+          For a first-hand account of early amateur RTTY on the West Coast, including the
+          surplus equipment era:
+          <a href="w6owp.htm" style="color:var(--red)">Letter of Recollections &mdash;
+          Forrest Bartlett W6OWP &rarr;</a>
+        </p>
+
+      </div>
+
+    </main>
+
+    <!-- Sidebar -->
+    <aside class="col-side">
+
+      <div class="sb-box">
+        <div class="sb-hed">Key Terms</div>
+        <div class="sb-note" style="font-size:12px;line-height:1.75">
+          <strong style="color:var(--ink)">ITA2</strong> &mdash; International Telegraph
+          Alphabet No.&nbsp;2. The CCITT-standardized five-unit code, c. 1930s. Defines
+          letters and digits universally; leaves several figures-shift positions for
+          national assignment.<br><br>
+          <strong style="color:var(--ink)">USTTY</strong> &mdash; US TeleTYpewriter Code.
+          The American national variant of ITA2, standardized by the Teletype Corporation.
+          Used on all Teletype Corp models: 15, 19, 28, 32, 33. Also called
+          &ldquo;the US arrangement&rdquo; or &ldquo;the military arrangement.&rdquo;<br><br>
+          <strong style="color:var(--ink)">Type basket</strong> &mdash; The ring of
+          typebars or printwheel carrying the physical character slugs. Determines
+          what glyph prints for each five-bit code, independent of the sender&rsquo;s
+          national variant.
+        </div>
+      </div>
+
+      <div class="sb-box">
+        <div class="sb-hed">In History Hall</div>
+        <div class="sb-note" style="font-size:12px">
+          <a href="../history.html#baudot-murray" style="color:var(--ink-mid);text-decoration:none">&#9654; From Baudot to Murray</a><br>
+          <a href="../England/fiveunits.htm"       style="color:var(--ink-mid);text-decoration:none">&#9654; Five-Unit Codes &mdash; G8GOJ</a><br>
+          <a href="w6owp.htm"                      style="color:var(--ink-mid);text-decoration:none">&#9654; Recollections &mdash; W6OWP</a><br>
+          <a href="krum.htm"                       style="color:var(--ink-mid);text-decoration:none">&#9654; Morkrum Company &mdash; H. Krum</a>
+        </div>
+      </div>
+
+      <div class="sb-box">
+        <div class="sb-hed">On the Code Cards</div>
+        <div class="sb-note" style="font-size:12px;line-height:1.7">
+          The code card collection at RTTY.COM includes cards from multiple national
+          variants. The Teletype Corporation cards (Model 28, 50th Anniversary) use
+          USTTY. The UK Post Office and Telecom Australia cards use their respective
+          national ITA2 arrangements. None are wrong &mdash; they reflect the
+          figures assignments of the machines that used them.
+          <br><br>
+          <a href="../codecards.html" style="color:var(--red);text-decoration:none">Code Card Corner &rarr;</a>
+        </div>
+      </div>
+
+    </aside>
+
+  </div><!-- .two-col -->
+</div><!-- .page-wrap -->
+
+<footer class="site-footer">
+  <span>RTTY.COM &mdash; W2TTY &mdash; ARVADA, CO</span>
+  <span>NON-COMMERCIAL ARCHIVE &mdash; NO TRACKING</span>
+  <span>BAUDOT 1870 &bull; TELETYPE 1906 &bull; RTTY 1922</span>
+</footer>
+
+<canvas id="tapeBot" class="tape" aria-hidden="true"></canvas>
+<script src="../js/tape.js"></script>
+</body>
+</html>
