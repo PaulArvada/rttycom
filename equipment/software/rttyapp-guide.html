@@ -313,6 +313,13 @@ ITTYFrequencies = 2125.00, 2295.0    <span class="cmt">// Mark / Space tones (st
         <p>This is how Daniel built the WW2 stream, all on <strong>one Windows PC</strong>:</p>
       </div>
       <div class="flow-box">RTTYApp (sound-card audio)  &rarr;  BUTT  &rarr;  Icecast server  &rarr;  listeners</div>
+      <div class="prose">
+        <p style="font-size:14px;font-style:italic;color:var(--ink-faint)">
+          Icecast is the streaming server that listeners connect to; it doesn&rsquo;t
+          capture audio itself, so a separate source client &mdash; BUTT, below &mdash;
+          feeds it your sound-card output.
+        </p>
+      </div>
       <div class="steps">
         <div class="step">
           <div class="step-num"></div>
