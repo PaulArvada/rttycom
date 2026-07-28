@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RTTYApp — Transmit Queue &amp; Scheduling — RTTY.COM</title>
+  <meta name="description" content="How RTTYApp decides what to transmit, in what order, and when — the queue, the two schedule files, $reload, and the feed-by-historical-date technique.">
+  <link rel="stylesheet" href="../../css/rtty.css">
+  <style>
+    .spec-hed {
+      font-family: 'Special Elite', serif;
+      font-size: 17px;
+      color: var(--ink);
+      margin: 26px 0 8px;
+      letter-spacing: .03em;
+      border-bottom: 1px solid var(--rule);
+      padding-bottom: 3px;
+    }
+    .spec-hed:first-of-type { margin-top: 0; }
+    .spec-sub {
+      font-family: 'Courier Prime', 'Courier New', monospace;
+      font-size: 15px;
+      font-weight: bold;
+      color: var(--ink-mid);
+      margin: 14px 0 4px;
+    }
+    .info-box {
+      background: var(--paper-dk);
+      border: 1px solid var(--rule);
+      border-left: 4px solid var(--rule-dk);
+      padding: 14px 18px;
+      margin: 16px 0;
+      font-size: 15px;
+      color: var(--ink-mid);
+      line-height: 1.75;
+    }
+    .info-box a { color: var(--red); }
+    .code-block {
+      background: var(--paper-dk);
+      border: 1px solid var(--rule);
+      border-left: 3px solid var(--rule-dk);
+      padding: 10px 16px;
+      margin: 10px 0 16px;
+      font-size: 14px;
+      line-height: 1.7;
+      color: var(--ink);
+      overflow-x: auto;
+      white-space: pre;
+    }
+    .code-block .cmt { color: var(--ink-faint); font-style: italic; }
+    .flow-box {
+      background: var(--paper-dk);
+      border: 1px solid var(--rule-dk);
+      padding: 14px 18px;
+      margin: 14px 0;
+      font-size: 14px;
+      line-height: 1.9;
+      color: var(--ink-mid);
+      overflow-x: auto;
+      white-space: pre;
+    }
+    .doc-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13.5px;
+      margin: 10px 0 18px;
+    }
+    .doc-table th {
+      background: var(--ink);
+      color: var(--paper);
+      font-family: 'Courier Prime', monospace;
+      font-size: 10px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      padding: 6px 10px;
+      text-align: left;
+      font-weight: 700;
+    }
+    .doc-table td {
+      padding: 6px 10px;
+      border-bottom: 1px solid var(--rule);
+      color: var(--ink-mid);
+      vertical-align: top;
+    }
+    .doc-table tr:last-child td { border-bottom: none; }
+    .doc-table tr:nth-child(even) td { background: var(--paper-dk); }
+    .doc-table code {
+      font-family: 'Courier Prime', monospace;
+      font-size: 12.5px;
+      color: var(--ink);
+    }
+    .doc-list-item {
+      padding: 7px 0 7px 22px;
+      border-bottom: 1px dotted var(--rule);
+      position: relative;
+      font-size: 15px;
+      line-height: 1.7;
+      color: var(--ink-mid);
+    }
+    .doc-list-item:last-child { border-bottom: none; }
+    .doc-list-item::before { content: '\2014'; position: absolute; left: 0; color: var(--rule-dk); }
+    .doc-list-item strong { color: var(--ink); }
+  </style>
+</head>
+<body>
+
+<canvas id="tapeTop" class="tape" aria-hidden="true"></canvas>
+
+<header class="masthead">
+  <div class="mh-side">PRESERVATION OF RTTY HISTORY<br>TELETYPE ART &amp; CULTURE<br>EST. 1998</div>
+  <div class="mh-center">
+    <a href="../../index.html" class="site-name">RTTY.COM</a>
+    <span class="site-tag">The Radio Teletype Reference &amp; Archive</span>
+  </div>
+  <div class="mh-side mh-right">THE INTERNET'S OLDEST<br>RTTY RESOURCE<br>BAUDOT &bull; TELETYPE &bull; WIRE</div>
+</header>
+
+<nav class="site-nav" aria-label="Main navigation">
+  <a href="../../index.html">Home</a>
+  <a href="../../history.html">History</a>
+  <a href="../../gallery.html">RTTY Art</a>
+  <a href="../../equipment.html" class="active">Equipment</a>
+  <a href="../../itty.html">ITTY</a>
+  <a href="../../telex.html">Telex</a>
+  <a href="../../resources.html">Resources</a>
+  <a href="../../videos.html">Videos</a>
+  <a href="../../community.html">Community</a>
+  <a href="../../links.html">Links</a>
+  <a href="../../contact.html">Contact</a>
+</nav>
+
+<div class="dateline">
+  <strong>RTTYAPP</strong> &mdash;
+  TRANSMIT QUEUE &amp; SCHEDULING &bull; ADVANCED / MAINTAINER REFERENCE
+</div>
+
+<div class="page-wrap">
+  <div class="two-col">
+
+    <main class="col-main">
+
+      <h1 class="section-hed" style="margin-top:0">Transmit Queue &amp; Scheduling</h1>
+
+      <div class="prose">
+        <p>
+          How RTTYApp decides what to transmit, in what order, and when. This covers the
+          queue, the two schedule files, <code>$reload</code>, and what the date/time
+          stamps actually mean. Written for the maintainer and advanced operators; code
+          references are to <code>RTTYAppDlg.cpp</code> unless noted.
+        </p>
+      </div>
+      <div class="info-box">
+        New to RTTYApp? Start with the
+        <a href="rttyapp-guide.html">Getting Started guide</a> first &mdash; this page
+        assumes you already have it installed and running.
+      </div>
+
+      <h2 class="spec-hed">1. The One Big Idea: the Queue <em>Is</em> the On-Screen List Box</h2>
+      <div class="prose">
+        <p>
+          The actual transmit queue is the <strong>list box in the main window</strong>
+          (<code>ListBox</code>, control <code>IDC_LISTBOX</code>). Nothing transmits
+          except what is in that list box. The schedule files on disk are just a way to
+          <strong>load lines into</strong> it.
+        </p>
+        <p>
+          Once per second, a routine called <code>Availability()</code> (<code>:1522</code>)
+          looks at the <strong>top line</strong> of the list box and decides whether to
+          transmit it now, wait, or (if it&rsquo;s a command) act on it. When a line is
+          sent, it is deleted from the top; the next line becomes the new top. That&rsquo;s
+          the whole engine.
+        </p>
+      </div>
+
+      <h2 class="spec-hed">2. The Two Schedule Files</h2>
+      <div class="prose">
+        <p>Both live in the data directory and are plain text, one entry per line.</p>
+      </div>
+      <table class="doc-table">
+        <thead><tr><th>File</th><th>Holds</th><th>Purpose</th></tr></thead>
+        <tbody>
+          <tr><td><code>schedule_temp.lst</code></td><td>file names (optionally date-stamped)</td><td>the working queue &mdash; the actual things to send, in order</td></tr>
+          <tr><td><code>schedule.lst</code></td><td>commands (one of which is usually <code>$reload</code>)</td><td>the &ldquo;deck&rdquo; re-read when the queue needs refilling</td></tr>
+        </tbody>
+      </table>
+      <div class="prose">
+        <p>
+          <strong>On startup and on every reload</strong>,
+          <code>Reload_Schedule_Lst_File()</code> (<code>:901</code>) is called for
+          <code>schedule_temp.lst</code> <strong>first</strong>, then
+          <code>schedule.lst</code> (<code>:1088-1089</code>, <code>:4915-4916</code>). So
+          the list box ends up as:
+        </p>
+      </div>
+      <div class="flow-box">[ everything from schedule_temp.lst ]
+[ everything from schedule.lst  ]   &lt;-- $reload usually sits here, at the bottom</div>
+      <div class="prose">
+        <p>
+          <strong>How an incoming SMTP article enters the queue</strong> (non-AutoStart
+          mail-fed channels): <code>StoreDataMessage</code> (<code>MTServer.cpp</code>)
+          sets the list-box selection to the top and calls <code>OnFileadd</code> &rarr;
+          <code>OnManagequeueAddfile()</code> (<code>:4593</code>), which does
+          <code>InsertString(GetCurSel(), &hellip;)</code> &mdash; i.e. <strong>inserts
+          the article at the top of the list box, so it transmits next</strong>. It also
+          appends the file name to the <strong>bottom of <code>schedule_temp.lst</code></strong>
+          (<code>append_filename_schedule_lst</code>), so the article rejoins the
+          persistent rotation the next time the schedule reloads. Net effect: a fresh
+          bulletin jumps the queue immediately, then recurs in arrival order. (In
+          <strong>AutoStart</strong> mode the behavior differs: the arriving file is
+          appended to the <em>bottom</em> of the list box and is <strong>not</strong>
+          written to <code>schedule_temp.lst</code> &mdash; <code>:4628-4629</code>.)
+        </p>
+      </div>
+
+      <h2 class="spec-hed">3. Anatomy of a Queue Line &mdash; and Where the Timestamp Comes From</h2>
+      <div class="prose">
+        <p>Every line in the list box has the form:</p>
+      </div>
+      <div class="flow-box">MM/DD/YYYY HH:MM:SS  &lt;name&gt;</div>
+      <div class="prose">
+        <p>
+          where <code>&lt;name&gt;</code> is either a <strong>file name</strong>
+          (<code>bulletin.txt</code>) or a <strong>command</strong> (<code>$reload</code>).
+          The timestamp is always present in the list box, but it gets there two
+          different ways depending on what was written in the schedule file:
+        </p>
+      </div>
+      <div class="spec-sub">A. A bare name (no date) &mdash; e.g. <code>bulletin.txt</code> or <code>$reload</code>.</div>
+      <div class="prose">
+        <p>
+          <code>Reload_Schedule_Lst_File</code> <strong>computes</strong> a timestamp for
+          it (<code>:1000-1024</code>). It starts a running clock at &ldquo;now +
+          10s&rdquo; and, for each successive entry, advances it by the <strong>estimated
+          time to transmit</strong> that file (file size &times; seconds-per-character at
+          the current baud). So bare files get <strong>staggered timestamps</strong> that
+          approximate &ldquo;when each one will actually go out.&rdquo; A bare
+          <code>$reload</code> is treated the same way &mdash; it&rsquo;s a single token,
+          so <strong>it too gets a computed timestamp and becomes a normal timestamped
+          line in the queue.</strong> <em>(This is the part that&rsquo;s easy to forget:
+          the reload command is just another timed entry in the list box.)</em>
+        </p>
+      </div>
+      <div class="spec-sub">B. An explicit date &mdash; e.g. <code>1/18/2025 10:00:00 bulletin.txt</code>.</div>
+      <div class="prose">
+        <p>
+          The timestamp you wrote is used as-is &mdash; <strong>but the line is only
+          added to the queue if that time is still in the future</strong>
+          (<code>:1034-1058</code>). If the time has already passed, the entry is
+          <strong>skipped</strong> and logged as an &ldquo;Expired time tag.&rdquo; This is
+          the mechanism behind everything in &sect;5.
+        </p>
+      </div>
+
+      <h2 class="spec-hed">4. The Once-Per-Second Send Loop (<code>Availability</code>, <code>:1522</code>)</h2>
+      <div class="prose">
+        <p>Each tick, it reads the <strong>top</strong> list-box line and:</p>
+      </div>
+      <div class="doc-list" style="margin:10px 0 16px">
+        <div class="doc-list-item"><strong>No-Timer mode</strong> (<code>checkNoTimer</code> true &mdash; the default): set the wait to 0 &rarr; <strong>send the top line immediately.</strong> Timestamps are ignored; the queue just pours out top-to-bottom as fast as it can. (<code>:1547-1550</code>)</div>
+        <div class="doc-list-item"><strong>Timer mode</strong> (<code>checkNoTimer</code> false): compute <code>wait = entry_timestamp &minus; now</code> (<code>:1553-1554</code>, <code>tt_queue</code>). If <code>wait &lt;= 0</code> (the entry&rsquo;s time has arrived/passed) &rarr; <strong>send it</strong> and delete it from the top (<code>:1561</code>). If <code>wait &gt; 0</code> (still in the future) &rarr; <strong>do not send</strong>; write <code>wait</code> (seconds) to the <strong>Count Down box</strong> and try again next tick (<code>:1630-1633</code>).</div>
+      </div>
+      <div class="prose">
+        <p>When a line <em>is</em> selected to send:</p>
+      </div>
+      <div class="doc-list" style="margin:10px 0 16px">
+        <div class="doc-list-item">If <code>&lt;name&gt;</code> starts with <code>$</code>, it is a <strong>command</strong>, not a file &rarr; hand <code>&lt;name&gt;</code> to <code>SetMode()</code> (<code>:1564-1568</code>) and return. (<code>$reload</code> is handled here.)</div>
+        <div class="doc-list-item">Otherwise open <code>data/&lt;name&gt;</code> and transmit it: key up, optional <code>header.txt</code>, the file, optional <code>footer.txt</code>, then drop back to receive (<code>:1577-1616</code>).</div>
+        <div class="doc-list-item">If the queue is empty, it logs &ldquo;Queue Empty: Nothing to Send.&rdquo; (<code>:1636-1641</code>)</div>
+      </div>
+
+      <h2 class="spec-hed">5. What the Timestamps <em>Mean</em></h2>
+      <div class="prose">
+        <p>
+          Because of the &ldquo;add only if still in the future&rdquo; rule at load
+          (&sect;3B) combined with the send loop (&sect;4), a date/time stamp is an
+          <strong>&ldquo;effective-until&rdquo; (expiry), not an
+          &ldquo;effective-from&rdquo;</strong>:
+        </p>
+      </div>
+      <div class="spec-sub">On a file</div>
+      <div class="prose">
+        <p>the file stays in rotation <strong>until</strong> its timestamp passes; after that, each reload drops it. One-shot / expiring content.</p>
+      </div>
+      <div class="code-block">schedule.lst:            $reload
+schedule_temp.lst:       1/18/2025 10:00:00 bulletin.txt
+                         standing.txt</div>
+      <div class="prose">
+        <p style="font-size:14px;font-style:italic;color:var(--ink-faint)">
+          <code>bulletin.txt</code> and <code>standing.txt</code> both transmit and loop
+          &mdash; until 10:00 on Jan 18. After that, reloads skip <code>bulletin.txt</code>;
+          only <code>standing.txt</code> continues.
+        </p>
+      </div>
+      <div class="spec-sub">On <code>$reload</code></div>
+      <div class="prose">
+        <p>the loop keeps refiring <strong>until</strong> the stamp passes; after that the reload no longer fires, the queue drains, and the system <strong>stops</strong>.</p>
+      </div>
+      <div class="code-block">schedule.lst:            1/15/2025 19:30:15 $reload
+schedule_temp.lst:       fileA.txt
+                         fileB.txt</div>
+      <div class="prose">
+        <p style="font-size:14px;font-style:italic;color:var(--ink-faint)">
+          A and B send and resend until 19:30:15 on Jan 15, then stop.
+        </p>
+        <p>
+          <strong>In Timer mode, a future stamp also means &ldquo;don&rsquo;t send until
+          then.&rdquo;</strong> That&rsquo;s the scheduling lever: a line with a future
+          timestamp waits (showing the countdown) and fires when its time arrives.
+        </p>
+        <p>
+          There is <strong>no &ldquo;effective-from&rdquo; date and no
+          delay-between-transmissions command</strong> in the code. (<code>SetMode</code>
+          has no such directive.) Scheduling is done entirely with expiry stamps + the
+          timer, plus the clock trick in &sect;7.
+        </p>
+      </div>
+
+      <h2 class="spec-hed">6. <code>$reload</code> and How the Loop Works</h2>
+      <div class="prose">
+        <p>
+          <code>$reload</code> is a command entry. When the send loop reaches it,
+          <code>SetMode</code> matches <code>"REL"</code> and calls
+          <code>OnReload()</code> (<code>:1766-1767</code>), which re-runs
+          <code>Reload_Schedule_Lst_File</code> on <code>schedule_temp.lst</code> then
+          <code>schedule.lst</code> (<code>:4915-4916</code>) &mdash;
+          <strong>re-appending their current contents to the list box.</strong> That
+          refill is what makes the queue loop forever. Remove the <code>$reload</code>
+          and the queue plays once and stops.
+        </p>
+      </div>
+      <div class="info-box">
+        ITTY&rsquo;s production <code>schedule.lst</code> files carry <strong>three</strong>
+        <code>$reload</code> lines as a belt-and-suspenders guard: if
+        <code>schedule_temp.lst</code> is momentarily empty or being re-written by an
+        incoming SMTP article at the instant of a reload, the extra reloads keep the
+        queue from stalling.
+      </div>
+
+      <h2 class="spec-hed" id="timer">7. Timer Mode, the Count Down Box, and &ldquo;Feed by Historical Date&rdquo;</h2>
+      <div class="doc-list" style="margin:10px 0 16px">
+        <div class="doc-list-item"><strong>No-Timer mode</strong> (Control menu &rarr; <em>No Timer</em>, checked by default; ini <code>ITTYNoTimer = 1</code>): continuous transmission, timestamps ignored. This is what most always-on streams use.</div>
+        <div class="doc-list-item"><strong>Timer mode</strong> (<code>ITTYNoTimer = 0</code>): timestamps gate transmission. The <strong>Count Down box</strong> shows the seconds remaining until the next timed line goes out.</div>
+      </div>
+      <div class="prose">
+        <p>
+          <strong>Feed-by-historical-date technique</strong> (worked out with Daniel
+          Jones, K6YIC, for his WW2 Nimitz Gray Book stream): put each message in
+          <code>schedule_temp.lst</code> with the timestamp of its <strong>original</strong>
+          historical send time, run in <strong>Timer mode</strong>, and <strong>set the
+          transmitting PC&rsquo;s clock to the target date</strong>. Each message then
+          waits in the queue until &ldquo;its&rdquo; time and rolls off at the original
+          hour &mdash; replaying a day&rsquo;s traffic in real time. Because the
+          machine&rsquo;s clock is deliberately wrong, this wants a <strong>dedicated
+          computer</strong> (Daniel used a cheap mini-PC per feed). The Count Down box is
+          how you see &ldquo;N seconds to the next transmission.&rdquo;
+        </p>
+      </div>
+
+      <h2 class="spec-hed">8. The <code>$</code> Command Reference (<code>SetMode</code>, <code>:1645</code>)</h2>
+      <div class="prose">
+        <p>Any queue entry (or incoming directive) beginning with <code>$</code> is a command. Matched case-insensitively on the first few letters:</p>
+      </div>
+      <table class="doc-table">
+        <thead><tr><th>Command</th><th>Action</th></tr></thead>
+        <tbody>
+          <tr><td><code>$ASCII</code> <code>$ITA2</code> <code>$TELEX</code> <code>$MILITARY</code> <code>$CW</code> <code>$PSK31</code></td><td>set encoding mode</td></tr>
+          <tr><td><code>$PSK=nnnn</code> <code>$FSK=nnnn</code> <code>$F1500</code>&hellip;<code>$F2100</code></td><td>set PSK/FSK center frequency</td></tr>
+          <tr><td><code>$B45</code> <code>$B50</code> <code>$B56</code> <code>$B74</code> <code>$B100</code> &hellip; <code>$B56000</code></td><td>set baud rate</td></tr>
+          <tr><td><code>$TX</code> <code>$RX</code> <code>$DISABLE</code></td><td>transmit / receive / disable</td></tr>
+          <tr><td><code>$RTS</code> <code>$DTR</code></td><td>select RS-232 PTT line</td></tr>
+          <tr><td><code>$CWID</code> <code>$CWTimer</code> <code>$CWStop</code></td><td>send CW ID / start / stop hourly CW-ID timer</td></tr>
+          <tr><td><code>$HEADER</code> <code>$NOHEADER</code></td><td>enable / disable header+footer per file</td></tr>
+          <tr><td><code>$DITTLE</code> <code>$NODITTLE</code></td><td>enable / disable diddle (idle)</td></tr>
+          <tr><td><code>$COM1</code>&hellip;<code>$COM8</code></td><td>switch COM port</td></tr>
+          <tr><td><strong><code>$reload</code></strong></td><td><strong>reload the schedule files into the queue (the loop)</strong></td></tr>
+        </tbody>
+      </table>
+      <div class="prose">
+        <p style="font-size:14px;font-style:italic;color:var(--ink-faint)">
+          (All of these are also listed as <code>ITTYBadWord</code> entries in the ini so
+          they can&rsquo;t be injected into the transmit stream by an incoming SMTP
+          message.)
+        </p>
+      </div>
+
+      <h2 class="spec-hed">9. Practical Gotchas (From Real Deployments)</h2>
+      <div class="doc-list" style="margin:10px 0 18px">
+        <div class="doc-list-item"><strong>Preparing content from PDFs:</strong> text pasted from a PDF often <em>looks</em> wrapped but has no real line breaks &mdash; it will run on when transmitted. Make sure every line ends in a genuine carriage return.</div>
+        <div class="doc-list-item"><strong>Streaming silence is a <em>client</em> issue, not an Icecast one:</strong> Icecast (and DarkIce &rarr; Icecast) handle long silent gaps fine &mdash; the AUTOSTART channel is idle for long stretches with no dropouts. Some Windows streaming <em>clients</em>, notably <strong>BUTT</strong>, instead stop the connection when they detect silence; if you hit that, adjust the client&rsquo;s silence/signal settings or feed it a faint continuous background tone. Do <strong>not</strong> use RTTY diddle (continuous <code>LTRS</code>) for this &mdash; it disturbs receiving teletypes and punches blank paper tape.</div>
+        <div class="doc-list-item"><strong>Timestamps are estimates for bare files:</strong> the computed stamp for an un-dated file is based on file size &times; baud, so it approximates real transmit time; it is not exact.</div>
+      </div>
+
+      <h2 class="spec-hed">10. Code Map (for Maintainers)</h2>
+      <table class="doc-table">
+        <thead><tr><th>Piece</th><th>Location</th></tr></thead>
+        <tbody>
+          <tr><td>Load a schedule file &rarr; list box</td><td><code>Reload_Schedule_Lst_File()</code> <code>:901</code></td></tr>
+          <tr><td>Bare-entry timestamp computation</td><td><code>:1000-1024</code></td></tr>
+          <tr><td>Dated-entry &ldquo;add only if future&rdquo;</td><td><code>:1034-1058</code></td></tr>
+          <tr><td>Reload both files</td><td><code>OnManagequeueReloadqueue()</code> <code>:4907</code>; <code>OnReload()</code> <code>:1068</code></td></tr>
+          <tr><td>Per-second send/wait engine</td><td><code>Availability()</code> <code>:1522</code></td></tr>
+          <tr><td>Timer on/off branch</td><td><code>:1547-1556</code></td></tr>
+          <tr><td>Send-now decision + file transmit</td><td><code>:1561-1616</code></td></tr>
+          <tr><td>Count Down box update</td><td><code>:1632-1633</code></td></tr>
+          <tr><td><code>$</code> command dispatch (incl. <code>$reload</code>)</td><td><code>SetMode()</code> <code>:1645</code>; reload at <code>:1766</code></td></tr>
+          <tr><td>Time-string parser</td><td><code>ParseTime()</code> <code>:834</code></td></tr>
+        </tbody>
+      </table>
+
+    </main>
+
+    <!-- Sidebar -->
+    <aside class="col-side">
+
+      <div class="sb-box">
+        <div class="sb-hed">Download RTTYApp</div>
+        <div class="sb-note">
+          <a href="../../downloads/RTTYApp-Setup-21.0.exe"
+             class="btn" style="display:block;text-align:center;font-size:10px">
+            &#9660; Download v21.0
+          </a>
+        </div>
+      </div>
+
+      <div class="sb-box">
+        <div class="sb-hed">Related Documents</div>
+        <div class="sb-note">
+          <a href="rttyapp-guide.html" style="display:block;padding:5px 0;border-bottom:1px dotted var(--rule);color:var(--ink-mid);text-decoration:none">&#9654; Getting Started</a>
+          <a href="rttyapp-macro-commands.txt" style="display:block;padding:5px 0;border-bottom:1px dotted var(--rule);color:var(--ink-mid);text-decoration:none">&#9654; Macro Commands (.txt)</a>
+          <a href="rttyapp-readme.txt" style="display:block;padding:5px 0;color:var(--ink-ghost);text-decoration:none;font-size:13px">&#9654; Build / developer notes (.txt)</a>
+        </div>
+      </div>
+
+      <div class="sb-box">
+        <div class="sb-hed">Credit</div>
+        <div class="sb-note" style="font-size:14px;line-height:1.9">
+          <strong style="color:var(--red)">Bill Bytheway, K7TTY</strong><br>
+          Original author<br>
+          <br>
+          <strong style="color:var(--red)">Paul Heller, W2TTY</strong><br>
+          Current maintainer
+        </div>
+      </div>
+
+      <div class="sb-box">
+        <div class="sb-hed">Also See</div>
+        <div class="sb-note">
+          <a href="rttymailer-guide.html" style="display:block;padding:5px 0;border-bottom:1px dotted var(--rule);color:var(--ink-mid);text-decoration:none">&#9654; RTTYMailer Getting Started</a>
+          <a href="../../resources.html#software" style="display:block;padding:5px 0;color:var(--ink-mid);text-decoration:none">&#9654; Resources &mdash; Software</a>
+        </div>
+      </div>
+
+    </aside>
+
+  </div>
+</div>
+
+<footer class="site-footer">
+  <span>RTTY.COM &mdash; W2TTY &mdash; ARVADA, CO</span>
+  <span>NON-COMMERCIAL ARCHIVE &mdash; NO TRACKING</span>
+  <span>BAUDOT 1870 &bull; TELETYPE 1906 &bull; RTTY 1922</span>
+</footer>
+
+<canvas id="tapeBot" class="tape" aria-hidden="true"></canvas>
+<script src="../../js/tape.js"></script>
+</body>
+</html>

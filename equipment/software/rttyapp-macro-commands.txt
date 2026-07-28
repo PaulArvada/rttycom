@@ -1,0 +1,10 @@
+--- Macro Commands Expand in Text Files ---
+^L   // Full date 'TUESDAY, MAY 12, 2001'
+^D   // Day,month,day,year 'MAY 12, 2001'
+^W'  // Weekday            'TUESDAY'
+^T   // Local Time         '12:35(PST)'
+^U   // UTC Time           '12:35(UTC)'
+^1   // Sends BELL once
+^2   // Sends Bell twice
+...  // Sends Bell 1 - 9 Times
+^9   // Sends Bell nine times, annoying!

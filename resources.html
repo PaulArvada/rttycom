@@ -113,6 +113,25 @@
       line-height: 1.7;
       margin: 10px 0;
     }
+
+    .warn-box {
+      background: var(--paper-dk);
+      border: 2px solid var(--red);
+      padding: 12px 16px;
+      margin: 10px 0 12px;
+      font-size: 14px;
+      color: var(--ink);
+      line-height: 1.7;
+    }
+    .warn-label {
+      display: block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 5px;
+    }
   </style>
 </head>
 <body>
@@ -160,14 +179,29 @@
           <div class="sw-name">RTTYMailer</div>
           <div class="sw-meta">Windows &bull; Free &bull; ITTY submission client &bull; W2TTY</div>
           <div class="sw-desc">
-            RTTYMailer is the recommended way to submit articles to the ITTY AUTOSTART
-            channel. Originally written by Bill Bytheway K7TTY; currently maintained by
-            Paul Heller W2TTY. Handles all server configuration automatically &mdash;
-            no SMTP setup required. Write your article, select a channel, and click Send.
+            RTTYMailer is the recommended way to submit articles to any ITTY channel
+            &mdash; ITTY, Europe, Autostart, or ITTY 100 &mdash; chosen from a dropdown
+            in the program. Originally written by Bill Bytheway K7TTY; currently
+            maintained by Paul Heller W2TTY. Handles all server configuration
+            automatically &mdash; no SMTP setup required. Version 21.0 is a substantial
+            release: it also carries forward several years of unpublished fixes, and
+            submissions to ITTY 100 &mdash; broken since it shipped &mdash; now work
+            correctly for the first time. Write your article, select a channel, and
+            click Send.
+          </div>
+          <div class="warn-box">
+            <span class="warn-label">Upgrading from an older RTTYMailer?</span>
+            Uninstall it first (Settings &rarr; Apps &rarr; Installed apps). The 21.0
+            installer will not upgrade an older copy in place, and running it over an
+            existing install leaves two copies on the machine. Settings, queue, and
+            composed messages are unaffected either way. This only applies to versions
+            before 21.0.
           </div>
           <div class="dl-row">
-            <a href="downloads/RTTYMailer%20v16.zip"
-               class="dl-tag primary">&#9660; Download RTTYMailer v16</a>
+            <a href="downloads/RTTYMailer-Setup-21.0.exe"
+               class="dl-tag primary">&#9660; Download RTTYMailer v21.0</a>
+            <a href="equipment/software/rttymailer-guide.html"
+               class="dl-tag">&#8599; Getting Started Guide</a>
           </div>
         </div>
 
@@ -176,14 +210,19 @@
           <div class="sw-meta">Windows &bull; SMTP listener &bull; Queue manager &bull; Modem driver &bull; W2TTY</div>
           <div class="sw-desc">
             RTTYApp is the server-side software that manages the article queue for each
-            ITTY channel and drives the HAL ST8000 modem. It operates as an SMTP listener,
-            receiving submissions from RTTYMailer and feeding them to the teletype machine
+            ITTY channel and turns text into RTTY (Baudot) FSK audio &mdash; driving a
+            HAL ST8000 modem, a sound card, or an internet stream. It operates as an
+            SMTP listener, receiving submissions from RTTYMailer and feeding them out
             in sequence. Originally written by Bill Bytheway K7TTY; currently maintained
             by Paul Heller W2TTY. RTTYApp is used by channel operators, not end listeners.
           </div>
           <div class="dl-row">
-            <a href="downloads/RTTYApp2022v20.1.3.zip"
-               class="dl-tag primary">&#9660; Download RTTYApp v20.1.3</a>
+            <a href="downloads/RTTYApp-Setup-21.0.exe"
+               class="dl-tag primary">&#9660; Download RTTYApp v21.0</a>
+            <a href="equipment/software/rttyapp-guide.html"
+               class="dl-tag">&#8599; Getting Started Guide</a>
+            <a href="equipment/software/rttyapp-queue.html"
+               class="dl-tag">&#8599; Queue &amp; Scheduling</a>
           </div>
         </div>
 
@@ -356,9 +395,9 @@
       <div class="sb-box">
         <div class="sb-hed">Quick Downloads</div>
         <div class="sb-note">
-          <a href="downloads/RTTYMailer%20v16.zip"
+          <a href="downloads/RTTYMailer-Setup-21.0.exe"
              style="display:block;padding:6px 0;border-bottom:1px dotted var(--rule);color:var(--ink);text-decoration:none">
-            &#9660; RTTYMailer v16
+            &#9660; RTTYMailer v21.0
           </a>
           <a href="https://hamsoft.ca/pages/mmtty.php" target="_blank" rel="noopener"
              style="display:block;padding:6px 0;border-bottom:1px dotted var(--rule);color:var(--ink);text-decoration:none">

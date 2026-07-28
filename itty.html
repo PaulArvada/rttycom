@@ -163,6 +163,26 @@
       line-height: 1.75;
     }
 
+    /* Warning box */
+    .warn-box {
+      background: var(--paper-dk);
+      border: 2px solid var(--red);
+      padding: 14px 18px;
+      margin: 16px 0;
+      font-size: 15px;
+      color: var(--ink);
+      line-height: 1.7;
+    }
+    .warn-label {
+      display: block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 5px;
+    }
+
     @media (max-width: 600px) {
       .channel-cards { grid-template-columns: 1fr; }
     }
@@ -356,11 +376,21 @@
       <h2 class="section-hed">Sending Content to ITTY</h2>
       <div class="prose">
         <p>
-          Anyone can submit articles to the AUTOSTART channel using
+          Anyone can submit articles to ITTY using
           <strong>RTTYMailer</strong>, a free Windows application written specifically
           for ITTY. RTTYMailer handles all the formatting and transmission details
-          &mdash; you write your article, select a channel, and click Send.
+          &mdash; write your article, choose from ITTY, Europe, Autostart, or ITTY 100,
+          and click Send.
         </p>
+      </div>
+
+      <div class="warn-box">
+        <span class="warn-label">Upgrading from an older RTTYMailer?</span>
+        Uninstall it first (Settings &rarr; Apps &rarr; Installed apps). Version 21.0
+        uses a new installer that will not upgrade an older copy in place &mdash;
+        running it over an existing install leaves two copies on the machine. Settings,
+        queue, and composed messages are unaffected either way. This only applies to
+        versions before 21.0.
       </div>
 
       <div class="steps">
@@ -369,26 +399,28 @@
           <div class="step-body">
             <strong>Download RTTYMailer</strong> and install it on a Windows PC.
             <br>
-            <a href="downloads/RTTYMailer%20v16.zip"
+            <a href="downloads/RTTYMailer-Setup-21.0.exe"
                class="btn" style="margin-top:10px;display:inline-block;font-size:10px">
-              &#9660;&nbsp; Download RTTYMailer v16
+              &#9660;&nbsp; Download RTTYMailer v21.0
             </a>
           </div>
         </div>
         <div class="step">
           <div class="step-num"></div>
           <div class="step-body">
-            <strong>Configure RTTYMailer</strong> with the channel address for AUTOSTART.
-            RTTYMailer includes built-in channel configuration &mdash; select AUTOSTART
-            from the channel list and the correct server settings are applied automatically.
+            <strong>Configure RTTYMailer</strong> with the channel you want to submit
+            to. RTTYMailer includes built-in channel configuration &mdash; select ITTY,
+            Europe, Autostart, or ITTY 100 from the channel list and the correct server
+            settings are applied automatically.
           </div>
         </div>
         <div class="step">
           <div class="step-num"></div>
           <div class="step-body">
             <strong>Write and send your article.</strong> Type or paste your content,
-            give it a title, and click Send. RTTYMailer delivers it to the AUTOSTART
-            queue, where it will be transmitted on the next available slot.
+            give it a title, and click Send. RTTYMailer delivers it to that
+            channel&rsquo;s queue, where it will be transmitted on the next available
+            slot.
           </div>
         </div>
       </div>
@@ -398,6 +430,13 @@
         to submit content by configuring a custom SMTP server. In practice this is
         unreliable and difficult to set up correctly. Use RTTYMailer &mdash;
         it works.
+      </div>
+
+      <div class="prose">
+        <p style="font-size:14px">
+          Full install and configuration details, including troubleshooting, are in the
+          <a href="equipment/software/rttymailer-guide.html" style="color:var(--red)">RTTYMailer Getting Started guide</a>.
+        </p>
       </div>
 
       <hr class="rule-sep">
@@ -511,9 +550,12 @@
           Free Windows app for submitting articles to ITTY channels.
           Written specifically for ITTY &mdash; no SMTP configuration required.
           <br><br>
-          <a href="downloads/RTTYMailer%20v16.zip"
-             class="btn" style="display:block;text-align:center;font-size:10px">
-            &#9660; Download v16
+          <span style="display:block;font-size:12px;color:var(--red);font-weight:700">
+            Upgrading? Uninstall the old version first.
+          </span>
+          <a href="downloads/RTTYMailer-Setup-21.0.exe"
+             class="btn" style="display:block;text-align:center;font-size:10px;margin-top:8px">
+            &#9660; Download v21.0
           </a>
         </div>
       </div>

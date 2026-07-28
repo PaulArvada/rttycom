@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Getting Started with RTTYMailer — RTTY.COM</title>
+  <meta name="description" content="Install and use RTTYMailer 21.0 to submit articles to any ITTY channel. Includes the required uninstall-first step for anyone upgrading from an older version.">
+  <link rel="stylesheet" href="../../css/rtty.css">
+  <style>
+    .info-box {
+      background: var(--paper-dk);
+      border: 1px solid var(--rule);
+      border-left: 4px solid var(--rule-dk);
+      padding: 14px 18px;
+      margin: 16px 0;
+      font-size: 16px;
+      color: var(--ink-mid);
+      line-height: 1.75;
+    }
+    .info-box a { color: var(--red); }
+
+    .warn-box {
+      background: var(--paper-dk);
+      border: 2px solid var(--red);
+      padding: 14px 18px;
+      margin: 16px 0;
+      font-size: 16px;
+      color: var(--ink);
+      line-height: 1.75;
+    }
+    .warn-label {
+      display: block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 6px;
+    }
+
+    /* How-to steps */
+    .steps { counter-reset: step; margin: 14px 0; }
+    .step {
+      display: grid;
+      grid-template-columns: 32px 1fr;
+      gap: 12px;
+      padding: 12px 0;
+      border-bottom: 1px dotted var(--rule);
+      align-items: start;
+    }
+    .step:last-child { border-bottom: none; }
+    .step-num {
+      counter-increment: step;
+      font-family: 'Special Elite', serif;
+      font-size: 22px;
+      color: var(--rule-dk);
+      line-height: 1;
+      text-align: center;
+      padding-top: 2px;
+    }
+    .step-num::before { content: counter(step); }
+    .step-body { font-size: 16px; color: var(--ink-mid); line-height: 1.7; }
+    .step-body strong { color: var(--ink); }
+    .step-body code {
+      font-family: 'Courier Prime', monospace;
+      font-size: 12px;
+      background: var(--paper-dk);
+      padding: 1px 5px;
+      border: 1px solid var(--rule);
+      color: var(--ink);
+    }
+
+    .doc-list { margin: 10px 0 18px; }
+    .doc-list-item {
+      padding: 7px 0 7px 22px;
+      border-bottom: 1px dotted var(--rule);
+      position: relative;
+      font-size: 16px;
+      line-height: 1.7;
+      color: var(--ink-mid);
+    }
+    .doc-list-item:last-child { border-bottom: none; }
+    .doc-list-item::before { content: '\2014'; position: absolute; left: 0; color: var(--rule-dk); }
+    .doc-list-item strong { color: var(--ink); }
+    .doc-list-item code {
+      font-family: 'Courier Prime', monospace;
+      font-size: 13px;
+      background: var(--paper-dk);
+      padding: 1px 5px;
+      border: 1px solid var(--rule);
+      color: var(--ink);
+    }
+
+    .code-block {
+      background: var(--paper-dk);
+      border: 1px solid var(--rule);
+      border-left: 3px solid var(--rule-dk);
+      padding: 10px 16px;
+      margin: 10px 0 16px;
+      font-size: 14px;
+      line-height: 1.7;
+      color: var(--ink);
+      overflow-x: auto;
+      white-space: pre;
+    }
+
+    .flow-box {
+      background: var(--paper-dk);
+      border: 1px solid var(--rule-dk);
+      padding: 16px 18px;
+      margin: 14px 0;
+      font-size: 14px;
+      line-height: 2;
+      color: var(--ink-mid);
+      text-align: center;
+      overflow-x: auto;
+      white-space: pre;
+    }
+
+    .doc-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+      margin: 10px 0 18px;
+    }
+    .doc-table th {
+      background: var(--ink);
+      color: var(--paper);
+      font-family: 'Courier Prime', monospace;
+      font-size: 10px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      padding: 6px 10px;
+      text-align: left;
+      font-weight: 700;
+    }
+    .doc-table td {
+      padding: 7px 10px;
+      border-bottom: 1px solid var(--rule);
+      color: var(--ink-mid);
+      vertical-align: top;
+    }
+    .doc-table tr:last-child td { border-bottom: none; }
+    .doc-table tr:nth-child(even) td { background: var(--paper-dk); }
+    .doc-table code {
+      font-family: 'Courier Prime', monospace;
+      font-size: 13px;
+      color: var(--ink);
+    }
+  </style>
+</head>
+<body>
+
+<canvas id="tapeTop" class="tape" aria-hidden="true"></canvas>
+
+<header class="masthead">
+  <div class="mh-side">PRESERVATION OF RTTY HISTORY<br>TELETYPE ART &amp; CULTURE<br>EST. 1998</div>
+  <div class="mh-center">
+    <a href="../../index.html" class="site-name">RTTY.COM</a>
+    <span class="site-tag">The Radio Teletype Reference &amp; Archive</span>
+  </div>
+  <div class="mh-side mh-right">THE INTERNET'S OLDEST<br>RTTY RESOURCE<br>BAUDOT &bull; TELETYPE &bull; WIRE</div>
+</header>
+
+<nav class="site-nav" aria-label="Main navigation">
+  <a href="../../index.html">Home</a>
+  <a href="../../history.html">History</a>
+  <a href="../../gallery.html">RTTY Art</a>
+  <a href="../../equipment.html" class="active">Equipment</a>
+  <a href="../../itty.html">ITTY</a>
+  <a href="../../telex.html">Telex</a>
+  <a href="../../resources.html">Resources</a>
+  <a href="../../videos.html">Videos</a>
+  <a href="../../community.html">Community</a>
+  <a href="../../links.html">Links</a>
+  <a href="../../contact.html">Contact</a>
+</nav>
+
+<div class="dateline">
+  <strong>RTTYMAILER</strong> &mdash;
+  GETTING STARTED GUIDE &bull; v21.0
+</div>
+
+<div class="page-wrap">
+  <div class="two-col">
+
+    <main class="col-main">
+
+      <h1 class="section-hed" style="margin-top:0">Getting Started with RTTYMailer</h1>
+
+      <div class="prose">
+        <p>
+          RTTYMailer is how you <strong>get your text onto a teletype machine that
+          someone else is running</strong>. You point it at a text file, pick a channel,
+          and press send. Minutes later that text is clattering out of a real Teletype
+          on the other end of an internet feed.
+        </p>
+        <p>
+          It does that by talking directly to the <strong>internet-TTY gateway</strong>
+          at <code>internet-tty.net</code>. The gateway is RTTYApp &mdash; the same
+          program that turns text into the FSK &ldquo;warble&rdquo; &mdash; sitting on
+          the far end listening for submissions. So the pair works like this:
+        </p>
+      </div>
+      <div class="flow-box">   You                          rtty.com / internet-tty.net
+   RTTYMailer  &mdash;&mdash;&mdash;&mdash; SMTP &mdash;&mdash;&mdash;&mdash;&#9654;  RTTYApp  &#9654;  RTTY audio  &#9654;  teletypes</div>
+      <div class="prose">
+        <p>
+          If you want to run your <em>own</em> channel and generate the audio yourself,
+          that&rsquo;s RTTYApp &mdash; see its
+          <a href="rttyapp-guide.html" style="color:var(--red)">Getting Started guide</a>.
+          RTTYMailer is the sending end: it&rsquo;s for contributing content to channels
+          that already exist.
+        </p>
+      </div>
+      <div class="info-box">
+        RTTYMailer and RTTYApp are versioned independently. A version number here says
+        nothing about which RTTYApp version you&rsquo;re talking to.
+      </div>
+
+      <h2 class="section-hed">1. What You&rsquo;ll Need</h2>
+      <div class="doc-list">
+        <div class="doc-list-item"><strong>A Windows PC</strong> (Windows 7 or newer). No sound card, no radio, no hardware at all &mdash; RTTYMailer only sends text over the internet.</div>
+        <div class="doc-list-item">An internet connection that permits outbound connections on ports <strong>593&ndash;598</strong>. Some corporate and school networks block unusual ports; a home connection is normally fine.</div>
+        <div class="doc-list-item">Your <strong>amateur callsign</strong>, or whatever name you want your traffic to appear under.</div>
+      </div>
+
+      <h2 class="section-hed">2. Install</h2>
+
+      <div class="warn-box">
+        <span class="warn-label">If you already have an older RTTYMailer, uninstall it first</span>
+        Version 21.0 moved to a different kind of installer package, so it will
+        <strong>not</strong> replace an older install automatically &mdash; you&rsquo;d
+        end up with two copies and two entries in Programs and Features. Your settings,
+        your queue, and anything in <code>AutoStartMail\</code> are left alone by the
+        uninstall. This only applies coming from a version <strong>before</strong> 21.0
+        &mdash; upgrades from 21.0 onward are normal in-place installs.
+      </div>
+
+      <div class="steps">
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-body">
+            If upgrading from an older version: <strong>Settings &rarr; Apps &rarr;
+            Installed apps</strong>, find <strong>RTTYMailer</strong>, choose
+            <strong>Uninstall</strong>.
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-body">Download <code>RTTYMailer-Setup-21.0.exe</code> below.</div>
+        </div>
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-body">
+            Run it. Windows may show a SmartScreen warning (&ldquo;unknown
+            publisher&rdquo;) because the installer isn&rsquo;t code-signed &mdash;
+            click <strong>More info &rarr; Run anyway</strong>. It&rsquo;s safe.
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-body">
+            It installs to <code>C:\RTTYMailer</code>, not Program Files. That&rsquo;s
+            deliberate: the program keeps its settings, its logs and your messages in
+            its own folder, and Windows won&rsquo;t let an ordinary user write inside
+            Program Files.
+          </div>
+        </div>
+      </div>
+      <div class="prose">
+        <p>
+          Upgrading later is just running the newer installer &mdash; from 21.0 onward
+          it replaces the program and leaves your settings, your queue and your messages
+          untouched.
+        </p>
+      </div>
+
+      <h2 class="section-hed">3. First Run</h2>
+      <div class="prose">
+        <p>
+          Launch <strong>RTTYMailer</strong> from the Start menu. You&rsquo;ll see one
+          window with a big empty list at the top &mdash; that&rsquo;s the
+          <strong>queue</strong>, the files waiting to be sent.
+        </p>
+        <p>
+          <strong>Before anything else, set &ldquo;Mail From.&rdquo;</strong> It ships as
+          <code>NoBody</code>, and the program will refuse to send until you change it.
+          Put your callsign there. This is what appears as the sender on the printed
+          copy, so it&rsquo;s how people know who sent the traffic.
+        </p>
+        <p>
+          The install includes a sample message, <code>AutoStartMail\WELCOME.txt</code>,
+          so you have something harmless to practise with.
+        </p>
+      </div>
+
+      <h2 class="section-hed">4. Sending a File</h2>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-body">Press <strong>Get Files</strong> and pick one or more <code>.txt</code> files. They appear in the queue. (You can select several at once.)</div>
+        </div>
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-body">Choose a channel in the <strong>Address</strong> dropdown &mdash; see &sect;5.</div>
+        </div>
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-body">Check <strong>Mail From</strong> is your callsign, not <code>NoBody</code>.</div>
+        </div>
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-body">Press <strong>Send Mail</strong> to send everything in the queue, or <strong>Send next mail item in list</strong> to send just the first one.</div>
+        </div>
+      </div>
+      <div class="prose">
+        <p>
+          The panel along the bottom is the <strong>log</strong>. Watch it: it shows the
+          whole conversation with the gateway, and it&rsquo;s where you&rsquo;ll see
+          either a cheerful <code>message succesfully stored</code> or an explanation of
+          what went wrong.
+        </p>
+        <p>
+          <strong>Subject lines.</strong> The Subject box normally reads <em>&ldquo;Default
+          (To use file name as subject, do not change this line)&rdquo;</em>. Leave it
+          &mdash; the file&rsquo;s name becomes the subject, which is usually what you
+          want. Name your files descriptively and you get sensible subjects for free.
+        </p>
+      </div>
+
+      <h2 class="section-hed">5. Choosing a Channel</h2>
+      <div class="prose">
+        <p>The <strong>Address</strong> dropdown lists the channels from <code>servers.ini</code>:</p>
+      </div>
+      <table class="doc-table">
+        <thead><tr><th>Channel</th><th>What it is</th></tr></thead>
+        <tbody>
+          <tr><td><strong>ITTY</strong></td><td>The main internet-TTY channel</td></tr>
+          <tr><td><strong>Europe</strong></td><td>The European feed</td></tr>
+          <tr><td><strong>Autostart</strong></td><td>The autostart channel</td></tr>
+          <tr><td><strong>ITTY 100</strong></td><td>The 100 wpm channel</td></tr>
+        </tbody>
+      </table>
+      <div class="prose">
+        <p>
+          Picking one fills in the right server address and port automatically. Each
+          channel is a separate machine at the far end with its own audience, so send to
+          the one that fits your content.
+        </p>
+      </div>
+
+      <h2 class="section-hed">6. Writing a Message</h2>
+      <div class="prose">
+        <p>
+          Press <strong>Mail Composer</strong> for a compose window with the teletype
+          character set in mind. Or just write <code>.txt</code> files in any editor and
+          queue them with <strong>Get Files</strong> &mdash; the composer is a
+          convenience, not a requirement.
+        </p>
+        <p><strong>Rules that will save you grief.</strong> RTTY is 5-bit Baudot, a 1920s character set with 32 codes. It is far more limited than you&rsquo;re used to:</p>
+      </div>
+      <div class="doc-list">
+        <div class="doc-list-item"><strong>Type in UPPERCASE.</strong> Lowercase does not exist in Baudot.</div>
+        <div class="doc-list-item"><strong>Keep lines short</strong> &mdash; about <strong>72 characters</strong> maximum. The gateway will reject a file outright if any line is too long.</div>
+        <div class="doc-list-item"><strong>Stick to plain punctuation.</strong> Letters, digits, and <code>. , ? / ( ) : ; ' -</code> are safe. Curly quotes, em-dashes, accented letters and emoji are not.</div>
+        <div class="doc-list-item"><strong>Watch pasted text.</strong> Text copied from a PDF or a web page often <em>looks</em> wrapped but has no real line breaks in it, so it arrives as one enormous run-on line and gets rejected. Make sure every line ends with a genuine Enter.</div>
+        <div class="doc-list-item"><strong>Remember where it&rsquo;s going.</strong> This prints on someone&rsquo;s machine, on paper, possibly in their living room. The gateways screen for offensive language and will refuse files that trip it.</div>
+      </div>
+
+      <h2 class="section-hed">7. Metered Mail</h2>
+      <div class="prose">
+        <p>
+          <strong>Metered Mail</strong> sends one queued file at a time with a fixed gap
+          between them, instead of firing everything off at once. Tick <strong>Start
+          Metered Mail</strong>, set <strong>Seconds Between Files</strong>, and the
+          countdown runs. The minimum interval is 60 seconds.
+        </p>
+        <p>
+          Use it when you&rsquo;re sending a batch and don&rsquo;t want to dump twenty
+          messages onto a channel in three seconds.
+        </p>
+      </div>
+
+      <h2 class="section-hed">8. Advanced Controls</h2>
+      <div class="prose">
+        <p>
+          The <strong>Server</strong>, <strong>Port</strong> and <strong>Subject</strong>
+          boxes are greyed out on purpose &mdash; picking a channel sets them correctly,
+          and editing them by hand is how people break things.
+        </p>
+        <p>
+          If you genuinely need them (testing your own gateway, say), use
+          <strong>Options &rarr; Field Options &rarr; Toggle Advanced Controls</strong>.
+        </p>
+      </div>
+
+      <h2 class="section-hed">9. Where Everything Lives</h2>
+      <div class="prose">
+        <p>All in <code>C:\RTTYMailer</code>, next to the program:</p>
+      </div>
+      <table class="doc-table">
+        <thead><tr><th>File</th><th>What it is</th></tr></thead>
+        <tbody>
+          <tr><td><code>servers.ini</code></td><td>The channel list. Replaced on upgrade.</td></tr>
+          <tr><td><code>servers_additional.ini</code></td><td><strong>Your</strong> extra channels. Never touched by the installer.</td></tr>
+          <tr><td><code>RTTYMailer.INI</code></td><td>Main window settings and the saved queue.</td></tr>
+          <tr><td><code>RTTYEditor.INI</code></td><td>Compose window settings.</td></tr>
+          <tr><td><code>YYYYMMDD.log</code></td><td>One log per day &mdash; the full conversation with the gateway.</td></tr>
+          <tr><td><code>AutoStartMail\</code></td><td>Composed and queued messages.</td></tr>
+        </tbody>
+      </table>
+      <div class="prose">
+        <p>
+          <strong>Adding your own gateway.</strong> If you run your own RTTYApp,
+          don&rsquo;t edit <code>servers.ini</code> &mdash; it gets replaced when you
+          upgrade. Create <strong><code>servers_additional.ini</code></strong> instead,
+          which the installer never overwrites. One channel per line:
+        </p>
+      </div>
+      <div class="code-block">name;address;port;
+MyShack;192.168.1.50;593;</div>
+      <div class="prose">
+        <p>
+          <strong>The trailing semicolon is required.</strong> Without it the port
+          won&rsquo;t be read and the entry silently won&rsquo;t work.
+        </p>
+        <p>
+          If the name you want to display isn&rsquo;t a legal mail address &mdash;
+          because it has a space in it, for instance &mdash; add a fourth field with the
+          actual mailbox:
+        </p>
+      </div>
+      <div class="code-block">My Shack;192.168.1.50;593;MYSHACK;</div>
+      <div class="prose">
+        <p>
+          The list shows <code>My Shack</code>; the mail goes to <code>MYSHACK</code>.
+          That&rsquo;s exactly how the <strong>ITTY 100</strong> entry works.
+        </p>
+      </div>
+
+      <h2 class="section-hed">10. When Something Goes Wrong</h2>
+      <div class="prose">
+        <p>Read the log panel at the bottom, or today&rsquo;s <code>YYYYMMDD.log</code>. The usual suspects:</p>
+      </div>
+      <table class="doc-table">
+        <thead><tr><th>What you see</th><th>What it means</th></tr></thead>
+        <tbody>
+          <tr><td><code>Mail From "NoBody" is not allowed</code></td><td>Put your callsign in the Mail From box (&sect;3).</td></tr>
+          <tr><td><code>550 No such user here</code></td><td>The gateway doesn&rsquo;t recognise that address. Re-pick the channel from the dropdown rather than typing it.</td></tr>
+          <tr><td><code>not sent because of line length greater than 0</code></td><td>A line in your file is too long. Re-wrap to 72 characters (&sect;6).</td></tr>
+          <tr><td><code>not sent because of bad word violation</code></td><td>The gateway&rsquo;s content filter rejected it.</td></tr>
+          <tr><td><code>Can't resolve [...]</code></td><td>DNS or connectivity problem &mdash; check you&rsquo;re online.</td></tr>
+          <tr><td><code>Connection Failed</code></td><td>Reached the internet but not that port. A firewall is the usual cause.</td></tr>
+          <tr><td><code>Cannot open server list</code></td><td><code>servers.ini</code> is missing from <code>C:\RTTYMailer</code>. Reinstall.</td></tr>
+        </tbody>
+      </table>
+      <div class="prose">
+        <p>
+          A message is only really delivered when you see
+          <code>250 message succesfully stored as "&lt;name&gt;.txt"</code>. Anything
+          else means it didn&rsquo;t arrive.
+        </p>
+      </div>
+
+      <h2 class="section-hed">11. Updating &amp; Getting Help</h2>
+      <div class="prose">
+        <p>
+          <strong>Updates:</strong> download the newer
+          <code>RTTYMailer-Setup-&lt;version&gt;.exe</code> from rtty.com and run it.
+          From 21.0 onward it upgrades in place and preserves your settings, your queue
+          and your messages. (Coming <em>from</em> a pre-21.0 version, uninstall the old
+          one first &mdash; &sect;2.)
+        </p>
+        <p><strong>What changed:</strong> version 21.0 also carries forward several years of fixes that were completed but never published, including <code>servers_additional.ini</code> support and a fix for messages being silently truncated mid-transmission &mdash; so anyone upgrading from the site&rsquo;s previous v16 is getting more than the 21.0 work alone.</p>
+        <p>
+          <strong>Community &amp; help:</strong> the <strong>GreenKeys</strong> teletype
+          mailing list
+          (<a href="http://mailman.qth.net/mailman/listinfo/greenkeys" style="color:var(--red)" target="_blank" rel="noopener">mailman.qth.net/mailman/listinfo/greenkeys</a>)
+          is where the teletype crowd hangs out, and more documentation lives right here
+          on rtty.com.
+        </p>
+        <p style="font-style:italic;color:var(--ink-faint)">Now go put something on the wire. 73.</p>
+      </div>
+
+    </main>
+
+    <!-- Sidebar -->
+    <aside class="col-side">
+
+      <div class="sb-box">
+        <div class="sb-hed">Download</div>
+        <div class="sb-note">
+          RTTYMailer v21.0 &mdash; Windows, free.
+          <div class="warn-box" style="margin:10px 0;padding:10px 12px;font-size:12.5px;line-height:1.6">
+            <span class="warn-label" style="font-size:9.5px;margin-bottom:4px">Upgrading?</span>
+            Uninstall any older RTTYMailer first &mdash; see &sect;2.
+          </div>
+          <a href="../../downloads/RTTYMailer-Setup-21.0.exe"
+             class="btn" style="display:block;text-align:center;font-size:10px">
+            &#9660; Download RTTYMailer v21.0
+          </a>
+        </div>
+      </div>
+
+      <div class="sb-box">
+        <div class="sb-hed">Quick Facts</div>
+        <div class="sb-note" style="font-size:14px;line-height:1.85">
+          Windows 7 or newer &bull; 32-bit, runs fine on 64-bit<br>
+          No sound card or hardware needed &mdash; text over the internet only<br>
+          Installer is unsigned (SmartScreen warning is normal)<br>
+          Installs to <code style="font-size:12px;background:var(--paper-dk);border:1px solid var(--rule);padding:1px 4px">C:\RTTYMailer</code>, not Program Files<br>
+          Submits to all 4 ITTY channels via a dropdown
+        </div>
+      </div>
+
+      <div class="sb-box">
+        <div class="sb-hed">Related Documents</div>
+        <div class="sb-note">
+          <a href="rttymailer-readme.txt" style="display:block;padding:5px 0;color:var(--ink-ghost);text-decoration:none;font-size:13px">&#9654; Build / developer notes (.txt)</a>
+        </div>
+      </div>
+
+      <div class="sb-box">
+        <div class="sb-hed">Credit</div>
+        <div class="sb-note" style="font-size:14px;line-height:1.9">
+          <strong style="color:var(--red)">Bill Bytheway, K7TTY</strong><br>
+          Original author<br>
+          <br>
+          <strong style="color:var(--red)">Paul Heller, W2TTY</strong><br>
+          Current maintainer
+        </div>
+      </div>
+
+      <div class="sb-box">
+        <div class="sb-hed">Also See</div>
+        <div class="sb-note">
+          <a href="rttyapp-guide.html" style="display:block;padding:5px 0;border-bottom:1px dotted var(--rule);color:var(--ink-mid);text-decoration:none">&#9654; RTTYApp Getting Started</a>
+          <a href="../../itty.html" style="display:block;padding:5px 0;border-bottom:1px dotted var(--rule);color:var(--ink-mid);text-decoration:none">&#9654; ITTY Connection Guide</a>
+          <a href="../../resources.html#software" style="display:block;padding:5px 0;color:var(--ink-mid);text-decoration:none">&#9654; Resources &mdash; Software</a>
+        </div>
+      </div>
+
+    </aside>
+
+  </div>
+</div>
+
+<footer class="site-footer">
+  <span>RTTY.COM &mdash; W2TTY &mdash; ARVADA, CO</span>
+  <span>NON-COMMERCIAL ARCHIVE &mdash; NO TRACKING</span>
+  <span>BAUDOT 1870 &bull; TELETYPE 1906 &bull; RTTY 1922</span>
+</footer>
+
+<canvas id="tapeBot" class="tape" aria-hidden="true"></canvas>
+<script src="../../js/tape.js"></script>
+</body>
+</html>

@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Getting Started with RTTYApp — RTTY.COM</title>
+  <meta name="description" content="Install and configure RTTYApp 21.0 — the RTTY transmission engine that turns text into Baudot FSK audio for a teletype or an internet stream.">
+  <link rel="stylesheet" href="../../css/rtty.css">
+  <style>
+    .info-box {
+      background: var(--paper-dk);
+      border: 1px solid var(--rule);
+      border-left: 4px solid var(--rule-dk);
+      padding: 14px 18px;
+      margin: 16px 0;
+      font-size: 16px;
+      color: var(--ink-mid);
+      line-height: 1.75;
+    }
+    .info-box a { color: var(--red); }
+
+    /* How-to steps */
+    .steps { counter-reset: step; margin: 14px 0; }
+    .step {
+      display: grid;
+      grid-template-columns: 32px 1fr;
+      gap: 12px;
+      padding: 12px 0;
+      border-bottom: 1px dotted var(--rule);
+      align-items: start;
+    }
+    .step:last-child { border-bottom: none; }
+    .step-num {
+      counter-increment: step;
+      font-family: 'Special Elite', serif;
+      font-size: 22px;
+      color: var(--rule-dk);
+      line-height: 1;
+      text-align: center;
+      padding-top: 2px;
+    }
+    .step-num::before { content: counter(step); }
+    .step-body { font-size: 16px; color: var(--ink-mid); line-height: 1.7; }
+    .step-body strong { color: var(--ink); }
+    .step-body code {
+      font-family: 'Courier Prime', monospace;
+      font-size: 12px;
+      background: var(--paper-dk);
+      padding: 1px 5px;
+      border: 1px solid var(--rule);
+      color: var(--ink);
+    }
+
+    /* Dash list — site avoids bulleted <ul>, uses a wire-style dash list instead */
+    .doc-list { margin: 10px 0 18px; }
+    .doc-list-item {
+      padding: 7px 0 7px 22px;
+      border-bottom: 1px dotted var(--rule);
+      position: relative;
+      font-size: 16px;
+      line-height: 1.7;
+      color: var(--ink-mid);
+    }
+    .doc-list-item:last-child { border-bottom: none; }
+    .doc-list-item::before { content: '\2014'; position: absolute; left: 0; color: var(--rule-dk); }
+    .doc-list-item strong { color: var(--ink); }
+    .doc-list-item code {
+      font-family: 'Courier Prime', monospace;
+      font-size: 13px;
+      background: var(--paper-dk);
+      padding: 1px 5px;
+      border: 1px solid var(--rule);
+      color: var(--ink);
+    }
+
+    /* Code / ini block */
+    .code-block {
+      background: var(--paper-dk);
+      border: 1px solid var(--rule);
+      border-left: 3px solid var(--rule-dk);
+      padding: 10px 16px;
+      margin: 10px 0 16px;
+      font-size: 14px;
+      line-height: 1.7;
+      color: var(--ink);
+      overflow-x: auto;
+      white-space: pre;
+    }
+    .code-block .cmt { color: var(--ink-faint); font-style: italic; }
+
+    /* Flow diagram */
+    .flow-box {
+      background: var(--paper-dk);
+      border: 1px solid var(--rule-dk);
+      padding: 16px 18px;
+      margin: 14px 0;
+      font-size: 14px;
+      line-height: 2;
+      color: var(--ink-mid);
+      text-align: center;
+      overflow-x: auto;
+      white-space: pre;
+    }
+
+  </style>
+</head>
+<body>
+
+<canvas id="tapeTop" class="tape" aria-hidden="true"></canvas>
+
+<header class="masthead">
+  <div class="mh-side">PRESERVATION OF RTTY HISTORY<br>TELETYPE ART &amp; CULTURE<br>EST. 1998</div>
+  <div class="mh-center">
+    <a href="../../index.html" class="site-name">RTTY.COM</a>
+    <span class="site-tag">The Radio Teletype Reference &amp; Archive</span>
+  </div>
+  <div class="mh-side mh-right">THE INTERNET'S OLDEST<br>RTTY RESOURCE<br>BAUDOT &bull; TELETYPE &bull; WIRE</div>
+</header>
+
+<nav class="site-nav" aria-label="Main navigation">
+  <a href="../../index.html">Home</a>
+  <a href="../../history.html">History</a>
+  <a href="../../gallery.html">RTTY Art</a>
+  <a href="../../equipment.html" class="active">Equipment</a>
+  <a href="../../itty.html">ITTY</a>
+  <a href="../../telex.html">Telex</a>
+  <a href="../../resources.html">Resources</a>
+  <a href="../../videos.html">Videos</a>
+  <a href="../../community.html">Community</a>
+  <a href="../../links.html">Links</a>
+  <a href="../../contact.html">Contact</a>
+</nav>
+
+<div class="dateline">
+  <strong>RTTYAPP</strong> &mdash;
+  GETTING STARTED GUIDE &bull; v21.0
+</div>
+
+<div class="page-wrap">
+  <div class="two-col">
+
+    <main class="col-main">
+
+      <h1 class="section-hed" style="margin-top:0">Getting Started with RTTYApp</h1>
+
+      <div class="prose">
+        <p>
+          RTTYApp turns plain text files into a <strong>RTTY (radioteletype) audio
+          signal</strong> &mdash; the same 5-bit Baudot code that news wire services and
+          teletype machines used for decades. You give it text; it produces the classic
+          FSK &ldquo;warble.&rdquo; What you do with that audio is up to you: drive a real
+          Teletype through a terminal unit, or put it on the internet where anyone can
+          listen and decode it with a teletype, a sound-card decoder, or software like
+          FLDIGI.
+        </p>
+        <p>
+          A great example of the second path: Daniel Jones (K6YIC) built a stream that
+          replays <strong>WWII naval communications</strong> from the Nimitz Gray Book,
+          timed to the original 1941&ndash;42 dates, so listeners hear history &ldquo;as
+          it happened.&rdquo; This guide gets you to the same kind of setup.
+        </p>
+      </div>
+
+      <div class="info-box">
+        This is the quick-start. For how the transmit queue and scheduling actually
+        work &mdash; including the feed-by-historical-date technique &mdash; see the
+        <a href="rttyapp-queue.html">Queue &amp; Scheduling guide</a>.
+      </div>
+
+      <hr class="rule-sep">
+
+      <h2 class="section-hed">1. What You&rsquo;ll Need</h2>
+      <div class="doc-list">
+        <div class="doc-list-item"><strong>A Windows PC</strong> (Windows 7 or newer).</div>
+        <div class="doc-list-item"><strong>A sound card</strong> &mdash; RTTYApp can generate the RTTY audio in software, so you do <strong>not</strong> need a vintage hardware modem to get started.</div>
+        <div class="doc-list-item"><strong>To drive a teletype:</strong> a terminal unit (TU) / current-loop interface between the PC audio and your machine.</div>
+        <div class="doc-list-item"><strong>To stream online:</strong> an <a href="https://icecast.org" style="color:var(--red)" target="_blank" rel="noopener">Icecast</a> server (your own or a host) plus a streaming tool &mdash; see &sect;7 below.</div>
+      </div>
+      <div class="prose">
+        <p style="font-size:14px;font-style:italic;color:var(--ink-faint)">
+          Advanced/legacy: RTTYApp can also drive a real transmitter or a hardware modem
+          like the HAL ST-8000A over an RS-232 COM port. That&rsquo;s not covered here
+          &mdash; most new users use the sound card.
+        </p>
+      </div>
+
+      <h2 class="section-hed">2. Install</h2>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-body">
+            Download <code>RTTYApp-Setup-21.0.exe</code> below.
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-body">
+            Run it. Windows may show a SmartScreen warning (&ldquo;unknown
+            publisher&rdquo;) because the installer isn&rsquo;t code-signed &mdash;
+            click <strong>More info &rarr; Run anyway</strong>. It&rsquo;s safe.
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-body">
+            It installs to <code>C:\RTTYApp</code> (not Program Files, so the program
+            can write its own settings and logs) and offers optional Desktop and
+            &ldquo;<strong>Launch when Windows starts</strong>&rdquo; shortcuts. If
+            you&rsquo;re building an always-on stream, tick the startup option
+            (see &sect;8).
+          </div>
+        </div>
+      </div>
+      <div class="prose">
+        <p>
+          The installer includes everything needed to run, plus a starter configuration
+          and a sample message, so a fresh install transmits something the first time.
+        </p>
+      </div>
+
+      <h2 class="section-hed">3. First Run</h2>
+      <div class="prose">
+        <p>
+          Launch <strong>RTTYApp</strong> (Start menu or desktop). On first start
+          you&rsquo;ll see a <strong>KEY / Trial Mode</strong> dialog &mdash; just click
+          <strong>OK</strong> (or Cancel). The software is <strong>fully functional
+          either way</strong>; the key is a legacy leftover and isn&rsquo;t required.
+        </p>
+        <p>
+          Out of the box, RTTYApp starts sending the included <code>welcome.txt</code>
+          in a loop, so you&rsquo;ll see it working immediately.
+        </p>
+      </div>
+
+      <h2 class="section-hed">4. Basic Configuration</h2>
+      <div class="prose">
+        <p>
+          Settings live in <code>C:\RTTYApp\RttyApp.ini</code> (a plain text file
+          &mdash; edit it, then restart RTTYApp). The essentials:
+        </p>
+      </div>
+      <div class="code-block">ITTYCallsign    = "YOURCALL"    <span class="cmt">// your amateur callsign</span>
+Baud            = "B45"         <span class="cmt">// 45.45 baud = 60 wpm, the RTTY standard</span>
+Mode            = "ITA2"        <span class="cmt">// Baudot; also MILITARY, TELEX, ASCII, PSK31</span></div>
+      <div class="prose">
+        <p>
+          Then pick your <strong>transmit path</strong> &mdash; sound card
+          (recommended) or hardware. To have RTTYApp generate the FSK audio directly:
+        </p>
+      </div>
+      <div class="code-block">ITTYSoundCardID = -1                 <span class="cmt">// -1 = auto-pick a card; or 1,2,3,4; 99 = off</span>
+ITTYFrequencies = 2125.00, 2295.0    <span class="cmt">// Mark / Space tones (standard RTTY)</span></div>
+      <div class="prose">
+        <p>
+          Connect that sound output to your TU (&sect;6) or your streaming tool
+          (&sect;7).
+        </p>
+      </div>
+      <div class="info-box">
+        The sound card and the RS-232 data output can&rsquo;t be used at the same time
+        &mdash; pick one. Leave <code>ITTYCommPort = "NULL"</code> when using the sound
+        card.
+      </div>
+
+      <h2 class="section-hed">5. Sending Your Own Content</h2>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-body">Put your message as a <code>.txt</code> file in <code>C:\RTTYApp\data\</code>.</div>
+        </div>
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-body">List its file name in <code>C:\RTTYApp\data\schedule_temp.lst</code> (one file per line).</div>
+        </div>
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-body">Keep the standard <code>schedule.lst</code> (which contains <code>$reload</code>) so the queue loops.</div>
+        </div>
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-body">Reload the queue (File &rarr; Reload Queue) or restart RTTYApp.</div>
+        </div>
+      </div>
+      <div class="prose">
+        <p><strong>Preparing text &mdash; a few rules that save headaches:</strong></p>
+      </div>
+      <div class="doc-list">
+        <div class="doc-list-item">RTTY/Baudot is <strong>UPPERCASE</strong> with limited punctuation. Type in caps; RTTYApp translates many extended characters, but simpler is safer.</div>
+        <div class="doc-list-item">Keep lines to about <strong>72 characters</strong> or fewer.</div>
+        <div class="doc-list-item"><strong>Watch carriage returns when pasting from a PDF:</strong> pasted text often <em>looks</em> wrapped but has no real line breaks, so it will run on when transmitted. Make sure every line ends in a genuine Enter/return.</div>
+      </div>
+      <div class="prose">
+        <p>
+          For how ordering, looping, and <code>$reload</code> actually work, read the
+          <a href="rttyapp-queue.html" style="color:var(--red)">Queue &amp; Scheduling guide</a>.
+        </p>
+      </div>
+
+      <h2 class="section-hed">6. Path A &mdash; Drive Your Own Teletype</h2>
+      <div class="prose">
+        <p>
+          Feed the sound-card audio into a <strong>terminal unit (TU)</strong>, which
+          converts the FSK tones into the current-loop signaling your Teletype machine
+          expects, and it prints. The RTTYApp side is just the sound-card configuration
+          in &sect;4; the hardware side (TU choice, loop supply, machine wiring) is
+          specific to your equipment &mdash; the teletype community (see &sect;9) is the
+          best resource for that.
+        </p>
+      </div>
+
+      <h2 class="section-hed">7. Path B &mdash; Create Your Own Online Stream</h2>
+      <div class="prose">
+        <p>This is how Daniel built the WW2 stream, all on <strong>one Windows PC</strong>:</p>
+      </div>
+      <div class="flow-box">RTTYApp (sound-card audio)  &rarr;  BUTT  &rarr;  Icecast server  &rarr;  listeners</div>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-body"><strong>RTTYApp</strong> generates the RTTY audio out your sound card (&sect;4).</div>
+        </div>
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-body">
+            <strong>BUTT</strong> &mdash; &ldquo;Broadcast Using This Tool,&rdquo; a free
+            Windows app (<a href="https://danielnoethen.de/butt" style="color:var(--red)" target="_blank" rel="noopener">danielnoethen.de/butt</a>)
+            &mdash; grabs that sound-card output and sends it to your Icecast server. In
+            BUTT you select the audio input (the sound device RTTYApp is playing to) and
+            enter your Icecast server address, port, mount, and password.
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-body"><strong>Icecast</strong> publishes the stream at a public URL like <code>http://yourhost:8000/yourmount</code>.</div>
+        </div>
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-body"><strong>Listeners</strong> open that URL in a browser, a decoder like FLDIGI, or a real teletype fed from their speaker &mdash; and copy the RTTY.</div>
+        </div>
+      </div>
+      <div class="info-box">
+        <strong>A note on silence between messages.</strong> Icecast itself streams
+        silence fine &mdash; a channel can sit idle for long stretches without dropping
+        (the ITTY AUTOSTART channel does exactly that). The wrinkle is specific to the
+        Windows client <strong>BUTT</strong>, which tends to <strong>stop the stream when
+        it detects silence</strong>. If you hit that, check its silence/signal settings,
+        or keep a faint continuous background tone feeding the same audio device so BUTT
+        always sees a signal (that&rsquo;s the workaround Daniel used). <strong>Don&rsquo;t</strong>
+        use RTTY diddle (continuous LTRS) for this &mdash; it keeps a receiving teletype
+        hammering and punches blank paper tape on any listener running a tape punch.
+      </div>
+      <div class="prose">
+        <p style="font-size:14px;font-style:italic;color:var(--ink-faint)">
+          Setting up the Icecast server itself is its own task &mdash; run your own or
+          use a host. See the Icecast and BUTT documentation.
+        </p>
+      </div>
+
+      <h2 class="section-hed">8. Running Unattended, 24/7</h2>
+      <div class="doc-list">
+        <div class="doc-list-item">Use the installer&rsquo;s <strong>&ldquo;Launch when Windows starts&rdquo;</strong> option so RTTYApp comes back automatically after a reboot or power blip.</div>
+        <div class="doc-list-item">Dedicate a machine to it. Cheap mini-PCs work fine (Daniel used a ~$39 Lenovo M73). This matters especially for the <strong>feed-by-date</strong> trick below.</div>
+      </div>
+      <div class="prose">
+        <p>
+          <strong>Advanced &mdash; feed messages by historical date.</strong> Put each
+          message in <code>schedule_temp.lst</code> stamped with its original date/time,
+          run in <strong>Timer mode</strong> (uncheck <em>No Timer</em> on the Control
+          menu), and <strong>set that PC&rsquo;s clock to the target date</strong>. Each
+          message then waits and rolls off at &ldquo;its&rdquo; time &mdash; replaying a
+          day&rsquo;s traffic in real time. Because the clock is deliberately set to the
+          past, use a dedicated machine for this. Full details in the
+          <a href="rttyapp-queue.html#timer" style="color:var(--red)">Queue &amp; Scheduling guide, &sect;7</a>.
+        </p>
+      </div>
+
+      <h2 class="section-hed">9. Updating &amp; Getting Help</h2>
+      <div class="prose">
+        <p>
+          <strong>Updates:</strong> download the newer
+          <code>RTTYApp-Setup-&lt;version&gt;.exe</code> and run it. It upgrades in
+          place; your <code>RttyApp.ini</code>, your <code>data\</code> content, and your
+          settings are <strong>preserved</strong> &mdash; a new version never overwrites
+          them.
+        </p>
+        <p>
+          <strong>Community &amp; help:</strong> the <strong>GreenKeys</strong> teletype
+          mailing list
+          (<a href="http://mailman.qth.net/mailman/listinfo/greenkeys" style="color:var(--red)" target="_blank" rel="noopener">mailman.qth.net/mailman/listinfo/greenkeys</a>)
+          is where the teletype crowd hangs out, and more RTTYApp documentation lives
+          right here on rtty.com.
+        </p>
+        <p style="font-style:italic;color:var(--ink-faint)">Welcome to the wire service. 73.</p>
+      </div>
+
+    </main>
+
+    <!-- Sidebar -->
+    <aside class="col-side">
+
+      <div class="sb-box">
+        <div class="sb-hed">Download</div>
+        <div class="sb-note">
+          RTTYApp v21.0 &mdash; Windows, free.
+          <br><br>
+          <a href="../../downloads/RTTYApp-Setup-21.0.exe"
+             class="btn" style="display:block;text-align:center;font-size:10px">
+            &#9660; Download RTTYApp v21.0
+          </a>
+        </div>
+      </div>
+
+      <div class="sb-box">
+        <div class="sb-hed">Quick Facts</div>
+        <div class="sb-note" style="font-size:14px;line-height:1.85">
+          Windows 7 or newer &bull; 32-bit, runs fine on 64-bit<br>
+          Sound card recommended &mdash; no vintage modem required<br>
+          Installer is unsigned (SmartScreen warning is normal)<br>
+          Installs to <code style="font-size:12px;background:var(--paper-dk);border:1px solid var(--rule);padding:1px 4px">C:\RTTYApp</code>, not Program Files<br>
+          Upgrades in place &mdash; no uninstall needed
+        </div>
+      </div>
+
+      <div class="sb-box">
+        <div class="sb-hed">Related Documents</div>
+        <div class="sb-note">
+          <a href="rttyapp-queue.html" style="display:block;padding:5px 0;border-bottom:1px dotted var(--rule);color:var(--ink-mid);text-decoration:none">&#9654; Queue &amp; Scheduling</a>
+          <a href="rttyapp-macro-commands.txt" style="display:block;padding:5px 0;border-bottom:1px dotted var(--rule);color:var(--ink-mid);text-decoration:none">&#9654; Macro Commands (.txt)</a>
+          <a href="rttyapp-readme.txt" style="display:block;padding:5px 0;color:var(--ink-ghost);text-decoration:none;font-size:13px">&#9654; Build / developer notes (.txt)</a>
+        </div>
+      </div>
+
+      <div class="sb-box">
+        <div class="sb-hed">Credit</div>
+        <div class="sb-note" style="font-size:14px;line-height:1.9">
+          <strong style="color:var(--red)">Bill Bytheway, K7TTY</strong><br>
+          Original author<br>
+          <br>
+          <strong style="color:var(--red)">Paul Heller, W2TTY</strong><br>
+          Current maintainer
+        </div>
+      </div>
+
+      <div class="sb-box">
+        <div class="sb-hed">Also See</div>
+        <div class="sb-note">
+          <a href="rttymailer-guide.html" style="display:block;padding:5px 0;border-bottom:1px dotted var(--rule);color:var(--ink-mid);text-decoration:none">&#9654; RTTYMailer Getting Started</a>
+          <a href="../../itty.html" style="display:block;padding:5px 0;border-bottom:1px dotted var(--rule);color:var(--ink-mid);text-decoration:none">&#9654; ITTY Connection Guide</a>
+          <a href="../../resources.html#software" style="display:block;padding:5px 0;color:var(--ink-mid);text-decoration:none">&#9654; Resources &mdash; Software</a>
+        </div>
+      </div>
+
+    </aside>
+
+  </div>
+</div>
+
+<footer class="site-footer">
+  <span>RTTY.COM &mdash; W2TTY &mdash; ARVADA, CO</span>
+  <span>NON-COMMERCIAL ARCHIVE &mdash; NO TRACKING</span>
+  <span>BAUDOT 1870 &bull; TELETYPE 1906 &bull; RTTY 1922</span>
+</footer>
+
+<canvas id="tapeBot" class="tape" aria-hidden="true"></canvas>
+<script src="../../js/tape.js"></script>
+</body>
+</html>
