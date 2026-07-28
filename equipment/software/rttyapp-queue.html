@@ -390,23 +390,6 @@ schedule_temp.lst:       fileA.txt
         <div class="doc-list-item"><strong>Timestamps are estimates for bare files:</strong> the computed stamp for an un-dated file is based on file size &times; baud, so it approximates real transmit time; it is not exact.</div>
       </div>
 
-      <h2 class="spec-hed">10. Code Map (for Maintainers)</h2>
-      <table class="doc-table">
-        <thead><tr><th>Piece</th><th>Location</th></tr></thead>
-        <tbody>
-          <tr><td>Load a schedule file &rarr; list box</td><td><code>Reload_Schedule_Lst_File()</code> <code>:901</code></td></tr>
-          <tr><td>Bare-entry timestamp computation</td><td><code>:1000-1024</code></td></tr>
-          <tr><td>Dated-entry &ldquo;add only if future&rdquo;</td><td><code>:1034-1058</code></td></tr>
-          <tr><td>Reload both files</td><td><code>OnManagequeueReloadqueue()</code> <code>:4907</code>; <code>OnReload()</code> <code>:1068</code></td></tr>
-          <tr><td>Per-second send/wait engine</td><td><code>Availability()</code> <code>:1522</code></td></tr>
-          <tr><td>Timer on/off branch</td><td><code>:1547-1556</code></td></tr>
-          <tr><td>Send-now decision + file transmit</td><td><code>:1561-1616</code></td></tr>
-          <tr><td>Count Down box update</td><td><code>:1632-1633</code></td></tr>
-          <tr><td><code>$</code> command dispatch (incl. <code>$reload</code>)</td><td><code>SetMode()</code> <code>:1645</code>; reload at <code>:1766</code></td></tr>
-          <tr><td>Time-string parser</td><td><code>ParseTime()</code> <code>:834</code></td></tr>
-        </tbody>
-      </table>
-
     </main>
 
     <!-- Sidebar -->
