@@ -89,6 +89,7 @@
       font-size: 12.5px;
       color: var(--ink);
     }
+    .doc-list { margin: 10px 0 18px; }
     .doc-list-item {
       padding: 7px 0 7px 22px;
       border-bottom: 1px dotted var(--rule);
@@ -131,7 +132,7 @@
 
 <div class="dateline">
   <strong>RTTYAPP</strong> &mdash;
-  TRANSMIT QUEUE &amp; SCHEDULING &bull; ADVANCED / MAINTAINER REFERENCE
+  TRANSMIT QUEUE &amp; SCHEDULING &bull; FOR CHANNEL OPERATORS
 </div>
 
 <div class="page-wrap">
@@ -145,8 +146,9 @@
         <p>
           How RTTYApp decides what to transmit, in what order, and when. This covers the
           queue, the two schedule files, <code>$reload</code>, and what the date/time
-          stamps actually mean. Written for the maintainer and advanced operators; code
-          references are to <code>RTTYAppDlg.cpp</code> unless noted.
+          stamps actually mean. Written for channel operators who want to go beyond the
+          basics &mdash; if you&rsquo;re setting RTTYApp up for the first time, start
+          with the Getting Started guide.
         </p>
       </div>
       <div class="info-box">
@@ -155,20 +157,18 @@
         assumes you already have it installed and running.
       </div>
 
-      <h2 class="spec-hed">1. The One Big Idea: the Queue <em>Is</em> the On-Screen List Box</h2>
+      <h2 class="spec-hed">1. The One Big Idea: the Queue <em>Is</em> the On-Screen List</h2>
       <div class="prose">
         <p>
-          The actual transmit queue is the <strong>list box in the main window</strong>
-          (<code>ListBox</code>, control <code>IDC_LISTBOX</code>). Nothing transmits
-          except what is in that list box. The schedule files on disk are just a way to
-          <strong>load lines into</strong> it.
+          The actual transmit queue is the <strong>list in the main window</strong>.
+          Nothing transmits except what is in that list. The schedule files on disk are
+          just a way to <strong>load lines into</strong> it.
         </p>
         <p>
-          Once per second, a routine called <code>Availability()</code> (<code>:1522</code>)
-          looks at the <strong>top line</strong> of the list box and decides whether to
-          transmit it now, wait, or (if it&rsquo;s a command) act on it. When a line is
-          sent, it is deleted from the top; the next line becomes the new top. That&rsquo;s
-          the whole engine.
+          Once per second, RTTYApp looks at the <strong>top line</strong> of the list and
+          decides whether to transmit it now, wait, or (if it&rsquo;s a command) act on
+          it. When a line is sent, it is deleted from the top; the next line becomes the
+          new top. That&rsquo;s the whole engine.
         </p>
       </div>
 
@@ -185,87 +185,84 @@
       </table>
       <div class="prose">
         <p>
-          <strong>On startup and on every reload</strong>,
-          <code>Reload_Schedule_Lst_File()</code> (<code>:901</code>) is called for
-          <code>schedule_temp.lst</code> <strong>first</strong>, then
-          <code>schedule.lst</code> (<code>:1088-1089</code>, <code>:4915-4916</code>). So
-          the list box ends up as:
+          <strong>On startup and on every reload</strong>, <code>schedule_temp.lst</code>
+          is read <strong>first</strong>, then <code>schedule.lst</code>. So the list ends
+          up as:
         </p>
       </div>
       <div class="flow-box">[ everything from schedule_temp.lst ]
-[ everything from schedule.lst  ]   &lt;-- $reload usually sits here, at the bottom</div>
+[ everything from schedule.lst      ]   &lt;-- $reload usually sits here, at the bottom</div>
       <div class="prose">
         <p>
-          <strong>How an incoming SMTP article enters the queue</strong> (non-AutoStart
-          mail-fed channels): <code>StoreDataMessage</code> (<code>MTServer.cpp</code>)
-          sets the list-box selection to the top and calls <code>OnFileadd</code> &rarr;
-          <code>OnManagequeueAddfile()</code> (<code>:4593</code>), which does
-          <code>InsertString(GetCurSel(), &hellip;)</code> &mdash; i.e. <strong>inserts
-          the article at the top of the list box, so it transmits next</strong>. It also
-          appends the file name to the <strong>bottom of <code>schedule_temp.lst</code></strong>
-          (<code>append_filename_schedule_lst</code>), so the article rejoins the
-          persistent rotation the next time the schedule reloads. Net effect: a fresh
-          bulletin jumps the queue immediately, then recurs in arrival order. (In
-          <strong>AutoStart</strong> mode the behavior differs: the arriving file is
-          appended to the <em>bottom</em> of the list box and is <strong>not</strong>
-          written to <code>schedule_temp.lst</code> &mdash; <code>:4628-4629</code>.)
+          <strong>How an incoming SMTP article enters the queue</strong> (on mail-fed
+          channels that aren&rsquo;t in AutoStart mode): the arriving article is
+          <strong>inserted at the top of the queue, so it transmits next</strong>. Its
+          file name is also appended to the <strong>bottom of
+          <code>schedule_temp.lst</code></strong>, so the article rejoins the persistent
+          rotation the next time the schedule reloads. Net effect: a fresh bulletin jumps
+          the queue immediately, then recurs in arrival order.
+        </p>
+        <p>
+          In <strong>AutoStart</strong> mode the behaviour differs &mdash; the arriving
+          file is appended to the <em>bottom</em> of the queue and is <strong>not</strong>
+          written to <code>schedule_temp.lst</code>.
         </p>
       </div>
 
       <h2 class="spec-hed">3. Anatomy of a Queue Line &mdash; and Where the Timestamp Comes From</h2>
       <div class="prose">
-        <p>Every line in the list box has the form:</p>
+        <p>Every line in the queue has the form:</p>
       </div>
       <div class="flow-box">MM/DD/YYYY HH:MM:SS  &lt;name&gt;</div>
       <div class="prose">
         <p>
           where <code>&lt;name&gt;</code> is either a <strong>file name</strong>
           (<code>bulletin.txt</code>) or a <strong>command</strong> (<code>$reload</code>).
-          The timestamp is always present in the list box, but it gets there two
-          different ways depending on what was written in the schedule file:
+          The timestamp is always present in the queue, but it gets there two different
+          ways depending on what was written in the schedule file:
         </p>
       </div>
       <div class="spec-sub">A. A bare name (no date) &mdash; e.g. <code>bulletin.txt</code> or <code>$reload</code>.</div>
       <div class="prose">
         <p>
-          <code>Reload_Schedule_Lst_File</code> <strong>computes</strong> a timestamp for
-          it (<code>:1000-1024</code>). It starts a running clock at &ldquo;now +
-          10s&rdquo; and, for each successive entry, advances it by the <strong>estimated
-          time to transmit</strong> that file (file size &times; seconds-per-character at
-          the current baud). So bare files get <strong>staggered timestamps</strong> that
-          approximate &ldquo;when each one will actually go out.&rdquo; A bare
-          <code>$reload</code> is treated the same way &mdash; it&rsquo;s a single token,
-          so <strong>it too gets a computed timestamp and becomes a normal timestamped
-          line in the queue.</strong> <em>(This is the part that&rsquo;s easy to forget:
-          the reload command is just another timed entry in the list box.)</em>
+          RTTYApp <strong>computes</strong> a timestamp for it. It starts a running clock
+          at &ldquo;now + 10s&rdquo; and, for each successive entry, advances it by the
+          <strong>estimated time to transmit</strong> that file (file size &times;
+          seconds-per-character at the current baud). So bare files get
+          <strong>staggered timestamps</strong> that approximate &ldquo;when each one
+          will actually go out.&rdquo; A bare <code>$reload</code> is treated the same
+          way &mdash; it&rsquo;s a single token, so <strong>it too gets a computed
+          timestamp and becomes a normal timestamped line in the queue.</strong>
+          <em>(This is the part that&rsquo;s easy to forget: the reload command is just
+          another timed entry.)</em>
         </p>
       </div>
       <div class="spec-sub">B. An explicit date &mdash; e.g. <code>1/18/2025 10:00:00 bulletin.txt</code>.</div>
       <div class="prose">
         <p>
           The timestamp you wrote is used as-is &mdash; <strong>but the line is only
-          added to the queue if that time is still in the future</strong>
-          (<code>:1034-1058</code>). If the time has already passed, the entry is
-          <strong>skipped</strong> and logged as an &ldquo;Expired time tag.&rdquo; This is
-          the mechanism behind everything in &sect;5.
+          added to the queue if that time is still in the future</strong>. If the time
+          has already passed, the entry is <strong>skipped</strong> and logged as an
+          &ldquo;Expired time tag.&rdquo; This is the mechanism behind everything in
+          &sect;5.
         </p>
       </div>
 
-      <h2 class="spec-hed">4. The Once-Per-Second Send Loop (<code>Availability</code>, <code>:1522</code>)</h2>
+      <h2 class="spec-hed">4. The Once-Per-Second Send Loop</h2>
       <div class="prose">
-        <p>Each tick, it reads the <strong>top</strong> list-box line and:</p>
+        <p>Each tick, RTTYApp reads the <strong>top</strong> queue line and:</p>
       </div>
-      <div class="doc-list" style="margin:10px 0 16px">
-        <div class="doc-list-item"><strong>No-Timer mode</strong> (<code>checkNoTimer</code> true &mdash; the default): set the wait to 0 &rarr; <strong>send the top line immediately.</strong> Timestamps are ignored; the queue just pours out top-to-bottom as fast as it can. (<code>:1547-1550</code>)</div>
-        <div class="doc-list-item"><strong>Timer mode</strong> (<code>checkNoTimer</code> false): compute <code>wait = entry_timestamp &minus; now</code> (<code>:1553-1554</code>, <code>tt_queue</code>). If <code>wait &lt;= 0</code> (the entry&rsquo;s time has arrived/passed) &rarr; <strong>send it</strong> and delete it from the top (<code>:1561</code>). If <code>wait &gt; 0</code> (still in the future) &rarr; <strong>do not send</strong>; write <code>wait</code> (seconds) to the <strong>Count Down box</strong> and try again next tick (<code>:1630-1633</code>).</div>
+      <div class="doc-list">
+        <div class="doc-list-item"><strong>No-Timer mode</strong> (the default): set the wait to 0 &rarr; <strong>send the top line immediately.</strong> Timestamps are ignored; the queue just pours out top-to-bottom as fast as it can.</div>
+        <div class="doc-list-item"><strong>Timer mode</strong>: compute <code>wait = entry_timestamp &minus; now</code>. If <code>wait &lt;= 0</code> (the entry&rsquo;s time has arrived or passed) &rarr; <strong>send it</strong> and delete it from the top. If <code>wait &gt; 0</code> (still in the future) &rarr; <strong>do not send</strong>; write <code>wait</code> (seconds) to the <strong>Count Down box</strong> and try again next tick.</div>
       </div>
       <div class="prose">
         <p>When a line <em>is</em> selected to send:</p>
       </div>
-      <div class="doc-list" style="margin:10px 0 16px">
-        <div class="doc-list-item">If <code>&lt;name&gt;</code> starts with <code>$</code>, it is a <strong>command</strong>, not a file &rarr; hand <code>&lt;name&gt;</code> to <code>SetMode()</code> (<code>:1564-1568</code>) and return. (<code>$reload</code> is handled here.)</div>
-        <div class="doc-list-item">Otherwise open <code>data/&lt;name&gt;</code> and transmit it: key up, optional <code>header.txt</code>, the file, optional <code>footer.txt</code>, then drop back to receive (<code>:1577-1616</code>).</div>
-        <div class="doc-list-item">If the queue is empty, it logs &ldquo;Queue Empty: Nothing to Send.&rdquo; (<code>:1636-1641</code>)</div>
+      <div class="doc-list">
+        <div class="doc-list-item">If <code>&lt;name&gt;</code> starts with <code>$</code>, it is a <strong>command</strong>, not a file &mdash; it is acted on and the tick ends. (<code>$reload</code> is handled here.)</div>
+        <div class="doc-list-item">Otherwise open <code>data/&lt;name&gt;</code> and transmit it: key up, optional <code>header.txt</code>, the file, optional <code>footer.txt</code>, then drop back to receive.</div>
+        <div class="doc-list-item">If the queue is empty, it logs &ldquo;Queue Empty: Nothing to Send.&rdquo;</div>
       </div>
 
       <h2 class="spec-hed">5. What the Timestamps <em>Mean</em></h2>
@@ -309,9 +306,8 @@ schedule_temp.lst:       fileA.txt
         </p>
         <p>
           There is <strong>no &ldquo;effective-from&rdquo; date and no
-          delay-between-transmissions command</strong> in the code. (<code>SetMode</code>
-          has no such directive.) Scheduling is done entirely with expiry stamps + the
-          timer, plus the clock trick in &sect;7.
+          delay-between-transmissions command</strong>. Scheduling is done entirely with
+          expiry stamps plus the timer, and the clock trick in &sect;7.
         </p>
       </div>
 
@@ -319,13 +315,10 @@ schedule_temp.lst:       fileA.txt
       <div class="prose">
         <p>
           <code>$reload</code> is a command entry. When the send loop reaches it,
-          <code>SetMode</code> matches <code>"REL"</code> and calls
-          <code>OnReload()</code> (<code>:1766-1767</code>), which re-runs
-          <code>Reload_Schedule_Lst_File</code> on <code>schedule_temp.lst</code> then
-          <code>schedule.lst</code> (<code>:4915-4916</code>) &mdash;
-          <strong>re-appending their current contents to the list box.</strong> That
-          refill is what makes the queue loop forever. Remove the <code>$reload</code>
-          and the queue plays once and stops.
+          RTTYApp re-reads <code>schedule_temp.lst</code> and then
+          <code>schedule.lst</code> &mdash; <strong>re-appending their current contents
+          to the queue.</strong> That refill is what makes the queue loop forever.
+          Remove the <code>$reload</code> and the queue plays once and stops.
         </p>
       </div>
       <div class="info-box">
@@ -337,7 +330,7 @@ schedule_temp.lst:       fileA.txt
       </div>
 
       <h2 class="spec-hed" id="timer">7. Timer Mode, the Count Down Box, and &ldquo;Feed by Historical Date&rdquo;</h2>
-      <div class="doc-list" style="margin:10px 0 16px">
+      <div class="doc-list">
         <div class="doc-list-item"><strong>No-Timer mode</strong> (Control menu &rarr; <em>No Timer</em>, checked by default; ini <code>ITTYNoTimer = 1</code>): continuous transmission, timestamps ignored. This is what most always-on streams use.</div>
         <div class="doc-list-item"><strong>Timer mode</strong> (<code>ITTYNoTimer = 0</code>): timestamps gate transmission. The <strong>Count Down box</strong> shows the seconds remaining until the next timed line goes out.</div>
       </div>
@@ -356,7 +349,7 @@ schedule_temp.lst:       fileA.txt
         </p>
       </div>
 
-      <h2 class="spec-hed">8. The <code>$</code> Command Reference (<code>SetMode</code>, <code>:1645</code>)</h2>
+      <h2 class="spec-hed">8. The <code>$</code> Command Reference</h2>
       <div class="prose">
         <p>Any queue entry (or incoming directive) beginning with <code>$</code> is a command. Matched case-insensitively on the first few letters:</p>
       </div>

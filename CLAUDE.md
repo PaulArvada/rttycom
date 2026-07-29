@@ -366,9 +366,11 @@ Full setup docs for both live in equipment/software/:
   rttyapp-guide.html       — RTTYApp Getting Started (installed, config, sound-card vs.
                              hardware modem, driving a teletype, building an internet
                              stream with BUTT/Icecast)
-  rttyapp-queue.html       — RTTYApp transmit queue & scheduling reference (advanced/
-                             maintainer-oriented; deliberately excludes source line-number
-                             references — see "Do NOT do these things" below)
+  rttyapp-queue.html       — RTTYApp transmit queue & scheduling reference, for channel
+                             operators going beyond the basics (rewritten from source Jul
+                             2026 to remove ALL source file/line-number references
+                             throughout, not just the maintainer-only code map that was
+                             cut earlier — see "Do NOT do these things" below)
   rttymailer-guide.html    — RTTYMailer Getting Started (install, channels, troubleshooting)
   rttyapp-macro-commands.txt, rttyapp-readme.txt, rttymailer-readme.txt — raw reference
                              files, linked secondarily (readme.txt files are developer/build
