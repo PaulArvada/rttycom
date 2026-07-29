@@ -247,7 +247,8 @@ Spelling: Hutchison (one N). Always "George Hutchison", never "Hutchinson".
 - [x] RTTYApp download link — self-hosted at downloads/RTTYApp2022v20.1.3.zip
 - [x] RTTYMailer — moved from rtty.com to self-hosted downloads/RTTYMailer v16.zip
 - [ ] Bill Bytheway's other BSDL software — lost, needs to be located; ask Bill when following up on RTTYArt
-- [ ] RTTYArt.exe — Baudot tape-to-ASCII capture tool (Windows); asked Bill K7TTY May 2026; awaiting reply. If obtained, self-host in downloads/ and add to resources.html and equipment/software/index.html
+- [x] RTTYArt.exe — located and self-hosted at downloads/RTTYArt.exe; linked from resources.html,
+      equipment/software/index.html, and equipment/software/RTTYArt.htm
 - [x] JAVA RTTY art viewer — no longer needed; replaced by the gallery.html canvas renderer
 - [x] Videos section — videos.html created with 13 videos; more to be added
 - [x] The old development HTML pages (equipment/literature/*.htm) — all links from
