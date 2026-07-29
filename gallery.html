@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>RTTY Art Gallery — RTTY.COM</title>
-  <meta name="description" content="147 works of Baudot teletype art from the 1960s–1980s, rendered in the browser using a JavaScript ITA2 decoder faithful to the original format.">
+  <meta name="description" content="155 works of Baudot teletype art from the 1960s–1980s, rendered in the browser using a JavaScript ITA2 decoder faithful to the original format.">
   <link rel="stylesheet" href="css/rtty.css">
   <style>
     /* Gallery-specific layout */
@@ -259,14 +259,22 @@
 
 <div class="dateline">
   <strong>RTTY ART GALLERY</strong> &mdash;
-  147 WORKS &bull; BAUDOT CHARACTER ART &bull; 1960S&ndash;1980S &bull;
-  ORIGINAL VIEWER BY BILL BYTHEWAY AA6ED
+  155 WORKS &bull; BAUDOT CHARACTER ART &bull; 1960S&ndash;1980S &bull;
+  ORIGINAL VIEWER BY BILL BYTHEWAY K7TTY
 </div>
 
 <div class="gallery-wrap">
 
   <div class="gallery-intro">
     <strong>About the format:</strong> These files are plain text containing only the Baudot (ITA2) character set &mdash; uppercase letters, digits, and punctuation. A carriage return without a line feed produces overstrike, printing multiple characters on the same position and creating dense shading effects. Files are rendered here using a JavaScript decoder faithful to the original behavior. Click any file to view it. Use the download button to save the raw <code>.pix</code> file for use with RTTY software.
+  </div>
+
+  <div class="callout">
+    This gallery&rsquo;s renderer honors the original RTTY Art Viewer, written by
+    Bill Bytheway, K7TTY. His 1999 Java applet is what first put this collection
+    online, and the carriage and overstrike model his code worked out is still
+    what drives the rendering here today. None of this would exist without his
+    foundational work.
   </div>
 
   <div class="gallery-layout">
@@ -277,7 +285,7 @@
         <input type="text" class="filter-input" id="filterInput"
                placeholder="SEARCH FILES..." autocomplete="off" spellcheck="false">
       </div>
-      <div class="file-count" id="fileCount">147 FILES</div>
+      <div class="file-count" id="fileCount">155 FILES</div>
       <div class="file-list" id="fileList"></div>
     </div>
 
@@ -336,6 +344,7 @@
 
 <canvas id="tapeBot" class="tape" aria-hidden="true"></canvas>
 <script src="js/tape.js"></script>
+<script src="js/rttyart-render.js"></script>
 
 <script>
 // ============================================================
@@ -343,12 +352,12 @@
 // File format: Baudot ITA2 text with CR (overstrike) / LF
 // ============================================================
 
-// Full gallery file list (147 files)
+// Full gallery file list (155 files)
 const FILES = [
   '1R_Balloon.pix','2ElFamosoCarlitosMoreno_W4NG.pix','adam$eve.pix',
   'AdamAndEve.pix','AmericanDreamMachine_K9WRL.pix','andycap.pix',
   'AnotherGirl_K1PLP.pix','apegirl.pix','ARRL.pix','AtlasBrick_WA5EHA.pix',
-  'b_boop.pix','BatGirl.pix','BatMan_W2NWQ.pix','batman.pix','bbardot.pix',
+  'BatGirl.pix','BatMan_W2NWQ.pix','batman.pix','bbardot.pix',
   'BeepBeep_Unknown.pix','BeepBeepRoadRunner.pix','Beethoven.pix',
   'BerryXmasBanner2.pix','BigMac_W2UIC.pix','Boat_Unknown.pix',
   'Buffalo_WB4WWC.pix','BunnyFlowerPower_K9WRL.pix','calvin.pix','camels.pix',
@@ -357,7 +366,7 @@ const FILES = [
   'crane.pox','cy.pix','cylonrdr.pix','DateWithLucy.pix','dtchme.pix','edison.pix',
   'entrpriz.pix','F-4EPhantom_K9WRL.pix','f4e.pix','facegirl.pix','Faces.pix',
   'fang.pix','fccgirl.pix','ffstone.pix','FinalFrontier_WA5OZH.pix',
-  'flinstones.pix','FlushWithPride_WB7OKG.pix','frnchnd.pix',
+  'FlushWithPride_WB7OKG.pix','frnchnd.pix',
   'fshnfrg.pix','Garfield_WB9ZKI.pix','garfield.pix','garroway.pix',
   'genhtrk.pix','george.pix','getinout.pox','girl.pix','girlface.pix','grchomrx.pix',
   'GreatAmericanEgal_K9WRL.pix','HalloweenWitch_K1PLP.pix','HappyEaster.pix',
@@ -381,35 +390,19 @@ const FILES = [
   'PinkPanther_WA6PIR.pix',
   'PlayboyBunny.pix','poison.pix','QuickBrownFox.pix','RingRing_KA9OPR.pix',
   'rose.pix','SeasonsGreetings1962.pix','SiamesePussycat_WA6PIR.pix',
-  'smiley.pix','Snoopy.pix','SnoopySkating_WA0PCM.pix','StanLaurel_K9WRL.pix',
+  'Snoopy.pix','SnoopySkating_WA0PCM.pix','StanLaurel_K9WRL.pix',
   'StarWars_K7YNC.pix','TheChgeeseDigger.pix','TheDisster_N9AHP.pix',
   'TheMisses_WA6PIR.pix','TheWrestler_G3MEJ.pix','ThreeWiseMen_WB2YXY.pix',
-  'thumper.pix','tweetybird.pix','TwoWomen_W5SOQ.pix','UPILine_W2CY.pix',
+  'tweetybird.pix','TwoWomen_W5SOQ.pix','UPILine_W2CY.pix',
   'USATrain1975.pix','valentine.pix','VargasGirl1968_K9WRL.pix',
   'VargasGirl1973_K9WRL.pix','WA6LPY.pix','WCFields_K9WRL.pix',
   'WhoIsBoss_K9TKE.pix','Wolf.pix','WorldPeace.pix','WyomingCowboy_W7RPV.pix',
   'xmastree.pix','YosemiteSam1.pix','YosemiteSam2.pix'
 ];
 
-// Extract callsign from filename if present (e.g. BigMac_W2UIC.pix → W2UIC)
-function extractCall(filename) {
-  const m = filename.match(/_([A-Z0-9]{4,7})\.pix$/i);
-  if (!m) return null;
-  const candidate = m[1].toUpperCase();
-  // Basic callsign sanity check: contains both letters and digits
-  if (/[A-Z]/.test(candidate) && /[0-9]/.test(candidate)) return candidate;
-  return null;
-}
-
-// Clean display name: remove extension and callsign suffix
-function displayName(filename) {
-  return filename
-    .replace(/\.pix$/i, '')
-    .replace(/_[A-Z0-9]{4,7}$/i, '')
-    .replace(/([a-z])([A-Z])/g, '$1 $2')  // CamelCase → spaces
-    .replace(/[_-]/g, ' ')
-    .trim();
-}
+// extractCall() and displayName() now live in js/rttyart-render.js
+// (RTTYArt.extractCall / RTTYArt.displayName) -- those versions also
+// handle the two .pox files, which these did not.
 
 // ── Build file list ─────────────────────────────────────────
 let currentFile = null;
@@ -425,8 +418,8 @@ function buildList(filter) {
   list.innerHTML = '';
 
   matching.forEach(f => {
-    const call = extractCall(f);
-    const name = displayName(f);
+    const call = RTTYArt.extractCall(f);
+    const name = RTTYArt.displayName(f);
     const div = document.createElement('div');
     div.className = 'file-entry' + (f === currentFile ? ' active' : '');
     div.innerHTML = `<span class="file-name">${name}</span>`
@@ -437,53 +430,12 @@ function buildList(filter) {
 }
 
 // ── PIX renderer ────────────────────────────────────────────
-const BAUDOT_SET = new Set(
-  'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-$!&#\'()"/:;?,. \n\r'.split('')
-);
-const CHAR_W = 5;
-const CHAR_H = 9;
-const FONT   = `bold 8px "Courier New", Courier, monospace`;
-const BG     = '#fffff0';
-const FG     = '#111100';
-
+// Rendering itself lives in js/rttyart-render.js (RTTYArt.render). This is a
+// shim: it keeps the raw text on the canvas so applyZoom() can re-render at
+// a new scale without re-fetching the file.
 function renderPix(canvas, text) {
-  let col = 0, row = 0, maxCol = 0, charCount = 0;
-  const overstrikeOps = (text.match(/\r(?!\n)/g) || []).length;
-
-  for (const c of text) {
-    if (!BAUDOT_SET.has(c)) continue;
-    if (c === '\r') { if (col > maxCol) maxCol = col; col = 0; }
-    else if (c === '\n') { if (col > maxCol) maxCol = col; col = 0; row++; }
-    else { col++; charCount++; }
-  }
-  if (col > maxCol) maxCol = col;
-  maxCol = Math.max(maxCol, 10);
-  const maxRow = Math.max(row, 5);
-
-  const W = maxCol * CHAR_W + 12;
-  const H = (maxRow + 1) * CHAR_H + 12;
-  canvas.width  = W;
-  canvas.height = H;
-
-  const ctx = canvas.getContext('2d');
-  ctx.fillStyle = BG;
-  ctx.fillRect(0, 0, W, H);
-  ctx.font = FONT;
-  ctx.fillStyle = FG;
-  ctx.textBaseline = 'top';
-
-  col = 0; row = 0;
-  for (const c of text) {
-    if (!BAUDOT_SET.has(c)) continue;
-    if (c === '\r') { col = 0; }
-    else if (c === '\n') { col = 0; row++; }
-    else {
-      ctx.fillText(c, 6 + col * CHAR_W, 6 + row * CHAR_H);
-      col++;
-    }
-  }
-
-  return { charCount, lineCount: maxRow + 1, overstrikeOps };
+  canvas.__text = text;
+  return RTTYArt.render(canvas, text, { scale: zoom });
 }
 
 // ── Load and display a file ─────────────────────────────────
@@ -491,8 +443,8 @@ function loadFile(filename) {
   currentFile = filename;
   buildList(document.getElementById('filterInput').value);
 
-  const call = extractCall(filename);
-  const name = displayName(filename);
+  const call = RTTYArt.extractCall(filename);
+  const name = RTTYArt.displayName(filename);
 
   document.getElementById('viewerTitle').textContent = name.toUpperCase();
 
@@ -503,8 +455,6 @@ function loadFile(filename) {
   document.getElementById('emptyState').style.display = 'none';
   const canvas = document.getElementById('artCanvas');
   canvas.style.display = 'block';
-  canvas.style.transform = `scale(${zoom})`;
-  canvas.style.transformOrigin = 'top left';
 
   // Fetch the file from the gallery directory
   fetch('gallery/' + filename)
@@ -532,7 +482,9 @@ function loadFile(filename) {
       document.getElementById('statChars').textContent = stats.charCount + ' CHARS';
       document.getElementById('statLines').textContent = stats.lineCount + ' LINES';
       document.getElementById('statOverstrike').textContent =
-        stats.overstrikeOps > 0 ? stats.overstrikeOps + ' OVERSTRIKE OPS' : 'NO OVERSTRIKE';
+        stats.multiStruckCells > 0
+          ? stats.multiStruckCells.toLocaleString() + ' CELLS OVERSTRUCK (' + stats.pctMulti + '%)'
+          : (stats.overstrikeOps > 0 ? 'CR USED FOR SPACING' : 'NO OVERSTRIKE');
 
       const dl = document.getElementById('dlLink');
       dl.href = 'gallery/' + filename;
@@ -550,8 +502,7 @@ function loadFile(filename) {
 // ── Zoom controls ────────────────────────────────────────────
 function applyZoom() {
   const canvas = document.getElementById('artCanvas');
-  canvas.style.transform = `scale(${zoom})`;
-  canvas.style.transformOrigin = 'top left';
+  if (canvas.__text) RTTYArt.render(canvas, canvas.__text, { scale: zoom });
   document.getElementById('zoomLabel').textContent = Math.round(zoom * 100) + '%';
 }
 
