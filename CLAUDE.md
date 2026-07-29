@@ -196,8 +196,8 @@ Four live channels, 24/7, from Arvada CO:
 | ITTY Europe| http://internet-tty.net:8040/EUROPE      | 50    | Mark 1275 Hz / Space 1445 Hz |
 | AUTOSTART  | http://internet-tty.net:8030/AUTOSTART   | 45.45 | 170 Hz LSB |
 
-RTTYMailer v16 download:
-downloads/RTTYMailer%20v16.zip (self-hosted; was previously at www.rtty.com/itty/)
+RTTYMailer v21.0 download:
+downloads/RTTYMailer-Setup-21.0.exe (self-hosted; was previously at www.rtty.com/itty/)
 
 ---
 
@@ -244,9 +244,12 @@ Spelling: Hutchison (one N). Always "George Hutchison", never "Hutchinson".
 - [x] Dead-link audit on links.html external URLs — completed May 2026
 
 ### Medium priority
-- [x] RTTYApp download link — self-hosted at downloads/RTTYApp2022v20.1.3.zip
-- [x] RTTYMailer — moved from rtty.com to self-hosted downloads/RTTYMailer v16.zip
-- [ ] Bill Bytheway's other BSDL software — lost, needs to be located; ask Bill when following up on RTTYArt
+- [x] RTTYApp download link — self-hosted at downloads/RTTYApp-Setup-21.0.exe (v21.0; renamed
+      from "RTTYApp2022" and switched from .zip to an Inno Setup .exe installer)
+- [x] RTTYMailer — self-hosted at downloads/RTTYMailer-Setup-21.0.exe (v21.0; switched from
+      .zip to an Inno Setup .exe installer; moved from rtty.com originally)
+- [ ] Bill Bytheway's other BSDL software — still lost; RTTYArt itself was located and
+      published July 2026 (see below), but the rest of the BSDL suite is unaccounted for
 - [x] RTTYArt.exe — located and self-hosted at downloads/RTTYArt.exe; linked from resources.html,
       equipment/software/index.html, and equipment/software/RTTYArt.htm
 - [x] JAVA RTTY art viewer — no longer needed; replaced by the gallery.html canvas renderer
@@ -300,6 +303,9 @@ for an authoritative technical explanation.
 - Do not add JavaScript frameworks or dependencies — this is a static site
 - Do not set any prose/body text below 16px — the whole site was standardized
   to match index.html
+- Do not add source file/line-number references (e.g. `RTTYAppDlg.cpp :1522`) to public
+  guide pages — meaningless without the source published alongside them, and belongs in
+  the same "developer notes" bucket as ReadMe.txt, not a public guide section
 
 ### England/ article page conventions
 These pages use the standard site template (../css/rtty.css, ../js/tape.js) with
@@ -340,10 +346,38 @@ Paul liked it — it can be restored as a third line if requested.
 
 ### Software downloads — self-hosted
 Both RTTYApp and RTTYMailer are now maintained by Paul Heller W2TTY and
-hosted directly in downloads/:
-  downloads/RTTYApp2022v20.1.3.zip   — v20.1.3, server-side queue manager
-  downloads/RTTYMailer v16.zip        — v16, end-user ITTY submission client
-Do NOT relink these to www.rtty.com/itty/ — that dependency has been removed.
+hosted directly in downloads/, currently at v21.0 for both (published July 2026;
+version numbers are independent — same version today is coincidence, not policy):
+  downloads/RTTYApp-Setup-21.0.exe      — transmission engine (text → RTTY/Baudot FSK audio)
+  downloads/RTTYMailer-Setup-21.0.exe   — submission client (SMTP → any of the 4 ITTY channels)
+Both are Inno Setup installers (replacing older Visual Studio/.zip packages), install to
+C:\RTTYApp and C:\RTTYMailer respectively (not Program Files), and are unsigned (normal
+SmartScreen warning). Do NOT relink these to www.rtty.com/itty/ — that dependency has been
+removed.
+
+**RTTYMailer upgrade warning:** existing installs from before v21.0 used a different
+installer identity (old VS-built MSI) and will NOT be upgraded in place by the new Inno
+Setup package — running it over an old install leaves two copies on disk. The download
+page and itty.html both carry a boxed warning to uninstall the old version first. This
+does not apply to RTTYApp, which upgrades in place normally, or to RTTYMailer upgrades
+from 21.0 onward.
+
+Full setup docs for both live in equipment/software/:
+  rttyapp-guide.html       — RTTYApp Getting Started (installed, config, sound-card vs.
+                             hardware modem, driving a teletype, building an internet
+                             stream with BUTT/Icecast)
+  rttyapp-queue.html       — RTTYApp transmit queue & scheduling reference (advanced/
+                             maintainer-oriented; deliberately excludes source line-number
+                             references — see "Do NOT do these things" below)
+  rttymailer-guide.html    — RTTYMailer Getting Started (install, channels, troubleshooting)
+  rttyapp-macro-commands.txt, rttyapp-readme.txt, rttymailer-readme.txt — raw reference
+                             files, linked secondarily (readme.txt files are developer/build
+                             notes, not new-user material)
+These pages share rtty.css's `.col-main`/`.col-side` grid; `.col-main` has `min-width: 0`
+specifically so wide unwrapped content (`.code-block`, `.flow-box`, `white-space:pre`)
+scrolls internally via its own `overflow-x:auto` instead of stretching the whole grid past
+the 900px frame and pushing the sidebar out past page-wrap's border. Don't remove that
+min-width:0 rule.
 
 ### videos.html
 Added May 2026. Now in main nav (between Resources and Community). Four sections:
